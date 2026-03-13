@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*modal style */
+@media (min-width: 768px)
+{
+.modal-dialog {
+    width: 100%;
+    margin: 30px auto;
+    height: 100%;
+}
+
+}
+.mdl-head h5 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin-left: 5px;
+    padding: 7px 0;
+	font-family:sans-serif;
+	
+}
+
+.mdl-bdy p {
+    font-size: 20px;
+     font-weight: 500;
+    color: #000;
+    padding: 0;
+    text-align: center;
+    line-height: 150%;
+}
+
+
+.blue-save {
+    color: #034bb9;
+    font-weight: 600;
+}
+
+.shake {
+    animation-name: shake;
+    animation-duration: 8s;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+@keyframes shake {
+  0% {left: 0}
+  1% {left: -5px}
+  2% {left: 10px}
+  3% {left: -15px}
+  4% {left: 15px}
+  5% {left: -10px}
+  6% {left: 5px}
+  7% {left: 0}
+}
+
+.mybutton {
+    color: #fff !important;
+    font-family: Arial;
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .35);
+    border: 1px solid #3e8f3e;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #429742;
+    /* background-image: url(images/fbf-exit-to-written-btnbg-50pc.png); */
+    background-position: top;
+    background-repeat: repeat-x;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .55);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .55);
+    padding: .5em 1.25em;
+    margin: .25em 0;
+    display: inline-block;
+    transition: all 250ms ease;
+    opacity: 1;
+    position: relative;
+    z-index: 999;
+}
+
+.mybutton:hover
+{ text-decoration:none;
+    background-color: rgb(46,171,38);
+}
+
+
+.mdl-foot
+{ border-top:none;
+}
+
+.mdl-head {
+    background: red;
+    color: #fff;
+    padding: 5px;
+}
+
+.mdl-content
+{ text-align:center;
+
+}
+
+.exit-gif {
+    /* position: absolute; */
+    left: 120px;
+    bottom: 0px;
+    /* top: 63%; */
+    margin-top: -112px;
+    width: 400px;
+    height: 300px;
+}
+
+.mdl-close {
+	background: #000 !important;
+	border: 2px solid #fff !important;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 700;
+	padding: 1px 9px !important;
+	position: absolute;
+	top: -14px;
+	right: -14px;
+	text-decoration: none!important;
+	display: block;
+	width: 35px;
+	height: 35px;
+	z-index: 321;
+	opacity: 0.5;
+}
+
+
+
+
+@media only screen and (max-width: 480px)
+{
+.exit-gif {
+    margin-top: -70px !important;
+}
+
+.mdl-head h5 {
+    font-size: 24px;
+}
+
+.mybutton {
+    font-size: 18px;
+}
+
+.mdl-bdy p {
+    font-size: 20px;
+
+
+
+}

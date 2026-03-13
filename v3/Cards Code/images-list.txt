@@ -1,0 +1,25 @@
+IMAGES USED IN PRICING CARDS & SOCIAL PROOF
+============================================
+
+PRICING CARDS:
+--------------
+Product Images:
+- images/prostate bottle.png       (2 Bottles card)
+- images/6-bottles.png             (6+1 Bottles card - Best Value)
+- images/3-bottle-buy-btn.png      (4 Bottles card)
+
+Button Images:
+- images/buy-now.webp              (Standard Buy Now button)
+- images/buy-now2.webp             (Featured card Buy Now button)
+- images/subscribe.webp            (Subscribe button - swapped when subscription selected)
+
+Payment Icons:
+- images/cards.webp                (Payment method icons)
+
+
+SOCIAL PROOF NOTIFICATION:
+--------------------------
+- images/1bottle.png               (Notification popup product image)
+
+
+TOTAL: 8 images

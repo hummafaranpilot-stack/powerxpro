@@ -1,0 +1,45 @@
+BROKEN LINKS IN index.html (Manhood Miracle)
+=============================================
+
+These are local image paths that need to be downloaded/provided:
+
+LOCAL IMAGES (./images/main/):
+------------------------------
+- ./images/main/15.png
+- ./images/main/16.png
+- ./images/main/22.png
+- ./images/main/23.png
+- ./images/main/24.png
+- ./images/main/31.png
+- ./images/main/44.jpg
+- ./images/main/Quote_Pic.png
+- ./images/main/3D Version Cover.png
+- ./images/main/Buy_Button.jpeg
+- ./images/main/ManhoodMiracle_Bundle.jpeg
+- ./images/main/back_image.png
+- ./images/main/MM_Bundle_Offer.png
+- ./images/main/MM_BuyButton_BIG.png (in comments)
+- ./images/main/7.png (in comments)
+- ./images/main/21.png (in comments)
+
+EXTERNAL DEPENDENCIES (manhoodmagic.com):
+-----------------------------------------
+- https://manhoodmagic.com/stylesheets/main.css
+- https://manhoodmagic.com/javascripts/cbf_extract_parameters.js
+- https://manhoodmagic.com/images/main/HerbalSwagger_3D.png
+- https://manhoodmagic.com/images/main/MM_Bundle_Offer_Update_Tiny.png
+- https://manhoodmagic.com/privacy
+- https://manhoodmagic.com/terms
+- https://manhoodmagic.com/disclaimer
+- https://manhoodmagic.com/contact
+
+OTHER EXTERNAL LINKS:
+---------------------
+- https://cbtb.clickbank.net/
+- Various reference links (health.harvard.edu, medicalnewstoday.com, etc.)
+
+TO FIX:
+-------
+1. Create folder: images/main/
+2. Download all local images from manhoodmagic.com or provide them
+3. The CSS and JS from manhoodmagic.com will load from external URLs

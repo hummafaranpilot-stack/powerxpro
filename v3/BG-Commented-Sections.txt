@@ -1,0 +1,221 @@
+============================================================
+  BUYGOODS COMPLIANCE - COMMENTED OUT SECTIONS
+  Uncomment ONLY after BuyGoods approval
+============================================================
+
+These sections have been commented out per BuyGoods compliance
+requirements. Do NOT uncomment without explicit BG approval.
+
+------------------------------------------------------------
+1. "As Seen On" Media Logos Bar
+------------------------------------------------------------
+   Page:    short/go/index.html
+   Line:    ~965 (search for "Pending BuyGoods Approval")
+   Content: "AS SEEN ON" bar with USA Today, NBC,
+            Good Housekeeping, Martha Stewart Living logos
+   Action:  Remove the HTML comment tags to restore
+
+   Look for:
+   <!-- COMMENTED OUT - Pending BuyGoods Approval - "As Seen On" bar
+   ...
+   -->
+
+------------------------------------------------------------
+2. Headline - "Bulging, Throbbing, Primal Erections"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~295 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original headline: "The Truth To Achieving Bulging,
+            Throbbing, Primal Erections Anytime You Want –
+            Just By Thinking About It"
+   Current: Replaced with "Long-Lasting, Powerful Erections
+            Anytime You Want – Naturally And Confidently"
+   Action:  Remove the new h3 line, uncomment the original h3
+
+   Look for:
+   <!-- ORIGINAL - Pending BuyGoods Approval to restore
+   ...
+   -->
+
+------------------------------------------------------------
+3. Subheadline - "Eliminate Poor Sexual Performance"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~300 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "Reveals How To Eliminate Poor Sexual
+            Performance Once And For All"
+   Current: Replaced with "Reveals How To Fight Poor Sexual
+            Performance"
+   Action:  Remove the new h4 line, uncomment the original h4
+
+------------------------------------------------------------
+4. Paragraph - "rock-hard erections / bucking bronco"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~304 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: explicit sexual paragraph about
+            "rock-hard erections...dripping wet...bucking bronco"
+   Current: Replaced with toned-down version about
+            "long-lasting performance...reignites the spark"
+   Action:  Remove the new p line, uncomment the original p
+
+------------------------------------------------------------
+5. Word Change - "solution" → "formula"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~309 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "ultimate solution"
+   Current: Replaced with "ultimate formula"
+   Action:  Remove the new line, uncomment the original
+
+------------------------------------------------------------
+6a. Phrase - "Once And For All" (headline)
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~324 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "Overcome Your Erectile Dysfunction
+            Once And For All!"
+   Current: Replaced with "Overcome Your Erectile Dysfunction
+            Quickly And Effectively!"
+   Action:  Remove the new h3 line, uncomment the original h3
+
+------------------------------------------------------------
+6b. Phrase - "once and for all" (confidence)
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~496 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "regain your confidence once and for all?"
+   Current: Replaced with "regain your confidence quickly
+            and naturally?"
+   Action:  Remove the new p line, uncomment the original p
+
+------------------------------------------------------------
+7. Word Change - "dangerous" → "questionable"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~333 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "dangerous 'truck stop pills'"
+   Current: Replaced with "questionable 'truck stop pills'"
+   Action:  Remove the new p line, uncomment the original p
+
+------------------------------------------------------------
+8. Words - "thick, pulsing" → "strong, steady"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~350 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "thick, pulsing, and full erections"
+   Current: Replaced with "strong, steady, and full erections"
+   Action:  Remove the new p line, uncomment the original p
+
+------------------------------------------------------------
+9. Phrase - "Had Your Penis Cut Off"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~386 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "Had Your Penis Cut Off Without Even
+            Knowing It"
+   Current: Replaced with "Had Your Performance Taken Away
+            Without Even Knowing It"
+   Action:  Remove the new h3 line, uncomment the original h3
+
+------------------------------------------------------------
+10. Word Change - "pains" → "discomfort"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~398 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "aches and pains that come from age"
+   Current: Replaced with "aches and discomfort that come from age"
+   Action:  Remove the new p line, uncomment the original p
+
+------------------------------------------------------------
+11. Phrase - "Death / fix / solution"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~404 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "Why not pills? Death – expensive –
+            1 time fix, not a lifetime solution."
+   Current: Replaced with "Why not pills? Risk – expensive –
+            1 time adjustment, not a lifetime formula."
+   Action:  Remove the new p line, uncomment the original p
+
+------------------------------------------------------------
+12. Phrase - "cure / get rid / ANNIHILATE"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~429 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "trying to cure your ED...get rid of
+            your erectile dysfunction...completely ANNIHILATE it
+            so you'll never have to worry about it coming back!"
+   Current: Replaced with "trying to answer your ED...manage
+            your erectile dysfunction...comprehensively support
+            your body so you'll feel confident moving forward!"
+   Action:  Remove the new p line, uncomment the original p
+
+------------------------------------------------------------
+13. Word Change - "instantly" → "rapidly" + "eliminate" → "remove"
+------------------------------------------------------------
+   Page:    short2/index.html
+   Line:    ~434 (search for "ORIGINAL - Pending BuyGoods Approval")
+   Content: Original: "Once you eliminate these 7 items...
+            your body will instantly begin producing"
+   Current: Replaced with "Once you remove these 7 items...
+            your body will rapidly begin producing"
+   Action:  Remove the new p line, uncomment the original p
+
+------------------------------------------------------------
+14. short3 - "hard" → "strong" (multiple instances)
+------------------------------------------------------------
+   Page:    short3/index.html
+   Lines:   ~1145, ~1161, ~1162, ~1205
+   Content: All instances of "hard" in erection context
+   Current: Replaced with "strong" or "stronger"
+   Action:  Remove new lines, uncomment originals
+
+------------------------------------------------------------
+15. short3 - "rock hard" → "long-lasting"
+------------------------------------------------------------
+   Page:    short3/index.html
+   Lines:   ~1150, ~1574 (FAQ "rock-solid" → "ironclad")
+   Content: "rock hard" erections / "rock-solid" guarantee
+   Current: Replaced with "long-lasting" / "ironclad"
+   Action:  Remove new lines, uncomment originals
+
+------------------------------------------------------------
+16. short3 - "hardness" → "vitality/strength/quality"
+------------------------------------------------------------
+   Page:    short3/index.html
+   Lines:   ~1187, ~1231, ~1250
+   Content: "hardness" in ingredient descriptions
+   Current: Replaced with "strength", "vitality", "quality"
+   Action:  Remove new lines, uncomment originals
+
+------------------------------------------------------------
+17. short3 - "solution" → "formula"
+------------------------------------------------------------
+   Page:    short3/index.html
+   Lines:   ~1184, ~1572
+   Content: "every other solution" / "other solutions"
+   Current: Replaced with "formula" / "formulas"
+   Action:  Remove new lines, uncomment originals
+
+------------------------------------------------------------
+18. short3 - "root cause" → "underlying factor"
+------------------------------------------------------------
+   Page:    short3/index.html
+   Lines:   ~1199, ~1602
+   Content: "root cause of men's failure to perform"
+   Current: Replaced with "underlying factor behind"
+   Action:  Remove new lines, uncomment originals
+
+------------------------------------------------------------
+19. short3 - "restore" → "improve"
+------------------------------------------------------------
+   Page:    short3/index.html
+   Line:    ~1326
+   Content: "Maybe you want to restore the firm..."
+   Current: Replaced with "Maybe you want to improve the firm..."
+   Action:  Remove new lines, uncomment originals
+
+============================================================
+  Last Updated: 2026-03-12
+============================================================

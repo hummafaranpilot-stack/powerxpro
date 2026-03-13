@@ -1,0 +1,551 @@
+body {
+    background-color: #f9f8f9 !important;
+}
+
+header {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../images/main/Header.png) center center no-repeat;
+    background-size: cover;
+    filter: blur(4px);
+    z-index: -1;
+}
+.header-row {
+    margin-top: 7%;
+    color: #fff;
+    padding: 20px; 
+}
+.separator {
+    border-bottom: 2px solid #343434;
+    width: 250px;
+    margin:0;
+    padding: 15px;
+}
+.subheader-text {
+    font-weight: 400;
+    padding-top: 25px;
+}
+.header-text {
+    font-weight: 600; 
+}
+.header-button {
+    margin-top: 25px;
+    font-size:20px;
+    border-radius: 0 !important;
+}
+.arrow-images {
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 250px;
+}
+.container-sections {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: -250px;
+    padding: 60px;
+}
+  
+.section-1-header {
+    padding-bottom: 50px;
+}
+
+.section-1-2-row {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 2px solid #f5f5f5;
+    border-bottom: 2px solid #f5f5f5;
+    margin-top: 50px; 
+}
+
+p{
+    font-size: 25px;
+    color: #3d444c;
+}
+
+.section-1-row-3 {
+    margin-top: 50px;
+}
+
+.section-2-container {
+    margin-top: 60px;
+    background-color: #fafafa;
+    padding: 50px;
+}
+
+.section-2-middle-content {
+    padding: 40px;
+    color: #c31b35;
+    border-top: 2px solid #f0f0f0;
+    border-bottom: 2px solid #f0f0f0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.section-3-container {
+    text-align: center;
+    padding: 50px; 
+}
+
+.section-3-image {
+    float: left;
+    padding-right: 40px;
+}
+
+.remove-br br {
+    display: block;
+}    
+
+.section-4-container {
+    margin-top: 50px;
+    padding: 15px; 
+    border: 1px solid #fcf4f5;
+}
+
+.section-4-content {
+    text-align: center;
+    padding: 60px;
+    background: #c31b35;
+    color: #fff;
+}
+
+.check-icon {
+    color: #fff;
+    background: red;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.section-7-content {
+    margin-top: -5px;
+} 
+
+.section-7-content-here-is-just {
+    margin-top: -5px;
+}
+
+.section-8-image { 
+    float: left;
+    padding-right: 50px;  
+}
+
+.section-8-container, .section-13-container {
+    padding: 0;
+}
+
+.section-9-content {
+    padding: 40px;
+    text-align: center;
+    background: #fafafa; 
+    margin-bottom: 50px;
+}
+
+.section-11-content { 
+    margin-top: 50px;
+    margin-bottom: 50px; 
+}
+
+.section-13-image { 
+    float: right;
+    padding-left: 40px;  
+}
+
+.section-14-content { 
+    background-color: #fafafa;
+    padding: 50px;
+}
+
+.section-14-2-row {
+    border-top: 2px solid #e4e4e4;
+    border-bottom: 2px solid #e4e4e4;
+    padding: 20px;
+    margin-top: 50px; 
+    margin-bottom: 40px;
+}
+
+.section-15-2nd-content {
+    padding-top:90px;
+    margin-left:340px;
+}
+
+.section-15-2nd-content-text {
+    width: 400px;
+    margin-left: 220px;
+}
+
+.section-18-content br {
+    display: block;
+}
+
+.section-19-content {
+    padding-top:40px;
+    padding-bottom:40px;
+    border-top:2px solid #ebebeb;
+    border-bottom:2px solid #ebebeb;
+    padding-left:0;
+    padding-right:0;
+    margin-top:50px;
+}
+
+p {
+    font-weight: 500;
+}
+
+
+/* footer */
+
+div#discalimer {
+    padding: 1.5em;
+    /* max-width: 1000px; */
+    font-family: 'AvertaStd';
+    /* float: left; */
+    width: 100%;
+    background-color: white !important;
+}
+
+
+.footer-links li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.footer-links li a {
+    padding: 0 7px;
+    font-size: 18px  !important;
+    font-weight: normal !important;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: black;
+}
+@media only screen and (max-width : 1200px) {
+    .container-sections{
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width : 992px) { 
+    .section-7-icon {
+        position: absolute;
+        display: block;
+    }
+    .section-7-content {
+        margin-left:50px;
+    }
+    .section-7-content-here-is-just {
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width : 933px) {
+    .quote-image{
+        /* display: none; */
+    }
+    .section-7-extend {
+        padding-left: 50px;
+    }
+} 
+
+@media only screen and (max-width : 699px) { 
+    .section-1-row-3{
+        position: absolute;
+        display: block;
+        width: 400px;
+        padding-top: 60px;
+        width: 500px;
+    }
+    .section-2-container {
+        margin-top: 650px;
+        padding: 10px !important;
+
+    }
+    .container-sections {
+        padding: 10px !important;
+    }
+    .section-3-middle-content{
+        width: 100% !important;
+        margin-left: 0 !important;
+        text-align: center;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .section-2-middle-content{
+        text-align: center;
+    }
+    .section-3-image {
+        padding-right:0 !important;
+        width: 100%;
+        height: 40%;
+        margin-top: 0 !important;
+    }
+    .remove-br br {
+        display: none;
+    }       
+    .section-8-image { 
+        float: left;
+        padding-right: 40px;  
+        width: 100%;
+        padding-right: 0;
+        height: 400px;
+    }
+    .section-13-image {
+        width: 460px;
+        height: 400px;
+        padding: 0;
+    }
+    .section-13-content {
+        padding: 0 !important;
+    }
+    .section-15-2nd-content {
+        padding-top:0;
+        margin-left:0;
+        float:left;
+    } 
+    .section-15-2nd-content-text { 
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+    .section-17-images {
+        padding: 10px !important;
+        width: 90% !important;
+        height: 50% !important;
+    }
+    .section-18-content br {
+        display: none;
+    }
+    .section-23-list-text {
+        margin-left: 0 !important;
+    }
+    .sec-13-23 {
+        margin-top: 40px !important;
+    }
+    .section-16-container p {
+        width: 90%;
+    }
+    .sec-16-img {
+        margin-top: 20px !important;
+    }
+    .section-16-container {
+        padding: 0;
+    }
+    .image-2-section {
+        width: 100% !important;
+    }
+    .buy_button {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .spacer {
+        margin-top: 0 !important;   
+    }
+    .quote-image{
+        margin-left: 40%;
+        margin-right: 50%;
+    }
+    .phase-2 {
+        width: 90%;
+    }
+    .row-bottom {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .section-1-image-1 {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .section-1-image-2 {
+        width: 100% !important;
+        margin-top: 80px !important;
+    }
+    .section-1-row-3-2 {
+        padding-top: 0 !important;
+        padding: 10px !important;
+        width: 380px !important;
+    } 
+    .remove-br {
+        padding-bottom: 0 !important;
+    }
+    .section-13-container-margin {
+        margin-top: 0 !important;
+    }
+    .section-11-image-1 {
+        height: 150px !important;
+        padding-bottom: 0 !important;
+    }
+    .section-11-image-2 {
+        height: 250px !important;
+    }
+    .section-13-image-3 {
+        height: 500px !important;
+    }
+    .section-11-image-4 {
+        height: 250px !important;
+    }
+    .section-11-image-5 {
+        height: 250px !important;
+    }
+    .section-11-image-6 {
+        height: 250px !important;
+    }
+    .section-11-image-7 {
+        height: 250px !important;
+    }
+    .section-11-image-8 {
+        height: 250px !important;
+    }
+    .section-13-image-9 {
+        height: 500px !important;
+    }
+    .section-11-image-10 {
+        height: 250px !important;
+    }
+    .section-13-image {
+        height: 500px !important;
+    }
+    .section-11-image-12 {
+        height: 200px !important;
+    }
+    .section-11-image {
+        height: 220px !important; 
+        width: 100% !important;
+    }
+    .section-11-image-14 {
+        height: 500px !important;
+        width: 100% !important;
+    }
+    .tenmins-header {
+        font-size: 18px !important;
+    }
+    .section-13-container-1 {
+        padding: 10px !important;
+    }
+    .section-10min {
+        padding: 20px !important;
+    }
+    .section-manhoodmiracle {
+        padding: 20px !important;
+    }
+    .section-7-content {
+        padding-right: 20px !important;
+    }
+    .section-7-content-here-is-just {
+        margin-right: 20px !important;
+    }
+    .section-13-content {
+        padding: 20px !important;
+    }
+    .section-8-image {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .finally-span {
+        font-size: 22px !important;
+    }
+    .section-11-header {
+        margin-left: 0 !important;
+    }
+    .section-19-container {
+        padding-left: 20px !important;
+    }
+    .who-am-i-content {
+        padding-left: 0 !important;
+    }
+    .the-manhood-miracle-heading {
+        padding-left: 0 !important;
+    }
+    .header-text, .subheader-text {
+        font-size: 30px !important;
+    }
+    .header-button {
+        font-size: 33px !important;
+    }
+    .arrow-image {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .arrow-images {
+        width: 100% !important;
+    }
+    .not-because {
+        text-align: center !important;
+    }
+    .section-14-content {
+        padding: 10px !important;
+    }
+    .she-was-screaming {
+        width: 100% !important;
+        margin-right: 0 !important;
+        padding: 20px !important;
+    }
+    .she-was-screaming-img {
+        width: 100% !important;
+        height: 50% !important;
+    }
+    .section-13-image {
+        margin-top: 0 !important;
+    }
+    .section-17-images {
+        width: 100% !important;
+        height: 50% !important;
+    }
+    .section-13-image {
+        width: 100% !important;
+    }
+    .bupkins {
+        margin-top: 0 !important;
+    }
+    .when-discovered {
+        padding: 10px !important;
+    }
+    .night-cap-content {
+        width: 400px !important;
+    }
+    .sec-16-img {
+        width: 100% !important;
+        height: 50% !important;
+    }
+    .section-7-content {
+        margin-left: 0 !important;
+        padding: 20px !important;
+        margin-top: 0 !important;
+    }
+    .discover-few-minutes {
+        margin-left: 0 !important;
+    }
+    .im-going-back {
+        width: 360px !important;
+        margin-left: 5px !important;
+    }
+    .im-going-back-content {
+        padding: 20px !important;
+    }
+    .section-7-content-manhood-miracle {
+        margin-left: 45px !important;
+    }
+}
+
+@media only screen and (max-width : 500px) {
+    .img-fluid{
+        height: 250px !important;
+    } 
+}
+
+

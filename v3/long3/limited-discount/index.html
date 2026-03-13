@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from thewarriorssecret.com/limited-discount/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Jan 2026 07:26:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <title>limited-discount</title>
+            <meta property="og:url" content="https://rapidfire.thewarriorssecret.com/limited-discount">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta charset="utf-8">
+
+    <script>
+      __app = Object.freeze({
+        query: Object.freeze(window.location.search.substr(1).split(/&+/).reduce(function(map,c) {
+          var a = c.match(/([^=]+)=(.*)/) || []
+          if (a[1]) {
+            map[a[1]] = a[2]
+          }
+          return map
+        }, {})),
+        cookies: Object.freeze(document.cookie.split(/;\s+/).reduce(function(map,c) {
+          var a = c.match(/([^=]+)=(.*)/) || []
+          if (a[1]) {
+            map[a[1]] = a[2]
+          }
+          return map
+        }, {})),
+      })
+    </script>
+  
+        <!-- <script defer async>
+          (function(script) {
+            script.src = '//' + location.hostname
+              + 'api/visits?page_id=18&page_version=&request_id=AC452124%3A60C4_A2DB8C0E%3A01BB_605FA595_101636%3A17F6A0'
+              + '&querystring=' + encodeURIComponent(window.location.search.substr(1))
+              + '&fbclid=' + encodeURIComponent(__app.query.fbclid || '')
+              + '&fbp=' + encodeURIComponent(__app.cookies._fbp || '')
+              + '&fbc=' + encodeURIComponent(__app.cookies._fbc || '')
+              + '&referrer=' + encodeURIComponent(document.referrer);
+            document.head.appendChild(script);
+          })(document.createElement('script'));
+        </script> -->
+      </head>
+<body>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/zhtml.css" />
+<link rel="stylesheet" type="text/css" href="css/font.css" />
+<link rel="stylesheet" type="text/css" href="css/modal-txt1b26.css?v2" />
+<link rel="stylesheet" type="text/css" href="css/styledc79.css?v=1.14" />
+
+<!-- jQuery -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+
+
+
+  var mins = 7;
+	var secs = 0;
+	var timer = null;
+
+	function getTime() {
+
+		var time = '';
+
+		time += mins > 7 ? mins : '0' + mins;
+
+		time += secs > 7 ? ':' + secs : ':0' + secs;
+
+		return time;
+
+	}
+
+
+	function showPopup() {
+
+    var bodyWidth = $('BODY').width();
+
+    popupWidth = (bodyWidth > 960 ? 480 : bodyWidth - 20);
+
+    $("#expireMessage").dialog({
+        closeOnEscape: true,
+
+        dialogClass: 'noTitleStuff',
+        draggable: false,
+        hide: {
+
+            effect: "explode",
+
+          duration: 500
+
+
+        },
+
+        modal: true,
+
+        resizable: false,
+
+        show: {
+            effect: "fade",
+
+            duration: 250
+
+        },
+
+        width: popupWidth,
+
+        create: function(event, ui) {
+
+            $("#expireMessage .closeDialog").click(function() {
+
+                $('#expireMessage').dialog("close")
+
+            });
+
+
+        },
+
+
+        open: function() {
+
+            $(".ui-widget-overlay").click(function() {
+
+                $('#expireMessage').dialog("close")
+
+            });
+
+        }
+
+    });
+
+	}
+
+
+	function showTime() {
+
+		$('.fast-timer').html(getTime());
+
+		secs -= 1;
+		if (secs < 0) {
+
+			mins -= 1;
+
+			secs = 59;
+		}
+
+
+
+		if (mins < 0) {
+
+	$('.purchase').addClass('disabled');
+
+			$('.purchase').attr("href", "javascript:;");
+
+			$('.purchase img').addClass('greyout');
+
+			$('.purchase').click(function(e) {
+
+				e.preventDefault();
+
+				showPopup();
+
+			});
+
+			return false;
+
+		}
+
+		timer = setTimeout('showTime()', 1000);
+
+	}
+
+
+	$(function() {
+
+		setTimeout('showTime()', 1000);
+
+	}); 
+
+
+
+</script>
+<script>
+
+function formatAMPM() {
+
+    var date = new Date();
+
+    var currDate = date.getDate();
+
+    var hours = date.getHours();
+
+    var dayName = getDayName(date.getDay());
+
+    var minutes = date.getMinutes();
+
+    var monthName = getMonthName(date.getMonth());
+
+    var year = date.getFullYear();
+
+    var ampm = hours >= 12 ? 'pm' : 'am';
+
+    hours = hours % 12;
+
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    //var strTime = dayName + ' ' + monthName + ' ' + currDate + ' ' + year + ' ' + hours + ':' + minutes + ' ' + ampm;
+
+	var strTime = monthName + ' ' + currDate + nth(currDate) +', ' + year + ' ' + hours + ':' + minutes + ampm;
+
+    //alert(strTime);
+
+	document.write(strTime);
+
+}
+
+
+
+function getMonthName(month) {
+
+    var ar = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+
+    return ar[month];
+
+}
+
+
+
+function getDayName(day) {
+
+    var ar1 = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+
+    return ar1[day];
+
+}
+
+function nth(d) {
+
+  if (d > 3 && d < 21) return 'th'; 
+
+  switch (d % 10) {
+
+    case 1:  return "st";
+
+    case 2:  return "nd";
+
+    case 3:  return "rd";
+
+    default: return "th";
+
+  }
+
+}
+
+</script>
+<style>
+.green-quan {
+	color: #026360;
+}
+.pd-4 {
+	padding: 0px 4%;
+}
+.mdl-foot {
+	padding-bottom: 0px;
+}
+#test {
+	width: 100%;
+	height: 20px;
+}
+.upsell-wrapper {
+	margin: 10px 0px 30px;
+}
+.mdl-close {
+	background: #000 !important;
+	border: 2px solid #fff !important;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 17px;
+	font-weight: 700;
+	padding: 1px 9px !important;
+	position: absolute;
+	top: -19px;
+	right: -19px;
+	text-decoration: none!important;
+	display: block;
+	width: 35px;
+	height: 35px;
+	z-index: 321;
+	opacity: 1;
+}
+ @media only screen and (max-width:480px) {
+.mdl-head h5 {
+	font-size: 24px;
+}
+.mdl-body {
+	font-size: 15px;
+}
+.mybutton {
+	font-size: 15px;
+}
+.exit-gif {
+	margin-top: -70px !important;
+}
+}
+</style>
+
+
+<div>
+<div>
+  <div id="expireMessage" class="hidden">
+    <h4>The Discount Has Ended</h4>
+    <a class="closeDialog">Close</a></div>
+  
+  <!-- Modal -->
+  
+  <div class="modal fade" id="pop-modal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header mdl-head">
+          <!-- <button type="button" class="close mdl-close" data-dismiss="modal" aria-label="Close">x</button> -->
+           <button type="button" class="close mdl-close close-re" data-dismiss="modal">x</button>
+          <h5 class="modal-title pay-link" id="exampleModalLabel">Wait! Save $10 With This Voucher!</h5>
+        </div>
+        <div class="modal-body mdl-bdy"></div>
+        <div class="modal-footer mdl-foot">
+          <center>
+            <img src="images/fbf-exit-to-discount-vouchers7b30.gif?v=4" alt="" class="exit-gif img-responsive" />
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section header">
+    <div class="content rich-text">
+      <h1><b>IMPORTANT:</b> 
+        <script>formatAMPM();</script> 
+        We are currently experiencing very high demand. This exclusive discounted price will expire very soon. I can only guarantee this discount for the next 7 minutes. Act immediately below to take advantage of this deal.</h1>
+    </div>
+    
+    <!-- .content --></div>
+  
+  <!-- .section -->
+  
+  <div class="section default">
+    <div class="content rich-text">
+      <div class="insertion center">
+        <h1 class="limited-h1">Limited Time Offer</h1>
+        <h3 class="save-text">Save <span class="red-text">$10</span> For The Next <span class="red-text">7 Minutes</span> ONLY</h3>
+      </div>
+      <h2><b>Get the complete <span class="cl-red">Warrior's Secret System </span> + 3 Free Bonuses for <u>$10 Off</u></b></h2>
+      <div class="insertion center">
+        <center>
+          <img class="mobile-full-width img-responsive all-img" src="images/WS_Cover_Bundle6654.png?v1" alt="" width="75%" />
+        </center>
+      </div>
+      <h2 class="no-vert-margs">Discount Locked In For The Next</h2>
+      <p class="fast-timer">09:00</p>
+      <div class="insertion center">
+        <center>
+          <a class="purchase pay-link" href="http://7.warriorsec.pay.clickbank.net/?cbskin=32624&amp;cbfid=57191"><img class="mobile-3of4-width img-responsive" src="images/addtocart-red.png" alt="" /></a>
+        </center>
+      </div>
+      <ul class="features">
+        <li>IMMEDIATE ACCESS</li>
+        <li>SAFE SECURE PAYMENT</li>
+        <li>SATISFACTION GUARANTEED</li>
+        <li>Take Advantage Of This Incredible Offer And Make Your Penis-Stiffening Tonic Tonight</li>
+      </ul>
+      <div class="subsect guarantee">
+        <div class="insertion left">
+          <center>
+            <img class="mobile-half-width img-responsive" src="images/guarantee.png" alt="" width="240" />
+          </center>
+        </div>
+        <h3 class="grt-h3">Your small investment today is covered by a 100 percent, 60-day Money Back Guarantee</h3>
+        <p>If you're not 100 percent happy with the erectile performance you get from using the Warrior's Secret System, send us a simple email saying so and you get back every cent in 48 hours.</p>
+        <p>If you're ready for a potent, stiff erections on a daily basis, a raging sex drive and impressive ejaculations then simple click below to start.</p>
+        <p>With this cup of tonic at breakfast time, you’ll quickly reverse the root cause of ED, no matter your age and no matter how long you’ve had ED, and harden your erections naturally again, just like you used to.</p>
+        <p>I have thousands of success stories of people just like you whose marriages and lives were on the brink who suddenly saw their erectile hardness restored in weeks or sometimes days thanks to this protocol.</p>
+        <p><b>You can try this system out for a full 60 days and if for whatever reason you are not completely satisfied; I will instantly refund the money you invested with no questions asked.</b></p>
+      </div>
+      
+      <!-- .subsect -->
+      
+      <h2>Start Using The Unique Penis Hardening System NOW</h2>
+      <div class="insertion center">
+        <center>
+          <img class="mobile-full-width img-responsive all-img" src="images/WS_Cover_Bundle6654.png?v1" alt="" width="75%" />
+        </center>
+      </div>
+      <h2 class="no-vert-margs">Discount Locked In For The Next</h2>
+      <p class="fast-timer">09:00</p>
+      <div class="insertion center">
+        <center>
+          <a class="purchase pay-link" href="http://7.warriorsec.pay.clickbank.net/?cbskin=32624&amp;cbfid=57191"><img class="mobile-3of4-width img-responsive" src="images/addtocart-red.png" alt="" /></a>
+        </center>
+      </div>
+    </div>
+  </div>
+  <div class="section footer">
+    <div class="content rich-text">
+      <p>For any questions, please contact us at <a href="#">support@thewarriorsecret.com</span></a></p>
+      <p>ClickBank is the retailer of products on this site. CLICKBANK&reg;️ is a registered trademark of Click Sales Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p>
+      <p>Copyright thewarriorsecret.com All rights reserved. | <a href="#" target="_blank" rel="noopener">Refunds</a> | <a href="#" target="_blank" rel="noopener">Terms</a></p>
+    </div>
+  </div>
+  <!-- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script src="js/exit-pop.js"></script>
+  <div class="modal fade" id="pop-modal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content mdl-content">
+        <div class="modal-header mdl-head">
+          <!-- <button type="button" class="close mdl-close" data-dismiss="modal" aria-label="Close">x</button> -->
+          <button type="button" class="close mdl-close" data-dismiss="modal">x</button>
+          <h5 class="modal-title" id="exampleModalLabel">Wait! Save $10 Now With This Voucher</h5>
+        </div>
+        <div class="modal-body mdl-bdy"></div>
+        <div class="modal-footer mdl-foot">
+          <center>
+            <img src="images/fbf-exit-to-discount-vouchers7350.gif?v=1.15" alt="" class=" img-responsive exit-gif " />
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+
+
+          var exitHtml = '<p>This is your final chance to get your hands penis-stiffening morning tonic that not only HARDENS your manhood, but also astonishes you with how often, how quickly and for how LONG you stay hard…all naturally.</p><p class="pd-4"><span class="blue-save">Save $10 on the entire Warriors Secret System with this time limited voucher.  (only 4 vouchers left</span>)</p><p><a class="mybutton shake" href="http://7.warriorsec.pay.clickbank.net/?cbskin=32624&amp;cbfid=57191">Claim $10 Discount Voucher Now!</a></p>';
+
+
+            $('.close-re').on('click', function () {
+
+              location.href="http://7.warriorsec.pay.clickbank.net/?cbskin=32624&amp;cbfid=57191";
+
+            });
+
+
+  </script> 
+</div>
+
+<!-- cbf extraction -->
+
+<script src="js/cbf-extract-parameters.js"></script>
+
+<!-- ClickBank Trust Badge --> 
+
+<script src="http://cbtb.clickbank.net/?vendor=warriorsec&amp;position=bottom_left&amp;theme=white"></script>
+
+
+</div>
+<script defer async>
+      document.addEventListener('DOMContentLoaded', function() {
+
+        const augmentedPaymentLinks = [["pay.clickbank.net",{"user_id":"__user_id","page_id":"__page_id","page_version":"__page_version","hostname":"__hostname"}]]
+          .sort(function(a,b) { return b[0].length - a[0].length })
+          .map(function(entry) {
+            return [
+              new RegExp('^https?://(.+\\.)?' + entry[0], 'i'),
+              entry[1],
+              Object.keys(entry[1]).reduce(function(map,key) {
+                map[key] = new RegExp('[?|&]' + entry[1][key] + '=')
+                return map
+              }, {})
+            ]
+          })
+
+        for (let el of document.getElementsByTagName('A')) {
+          const href = el.getAttribute('href')
+          if (!href || href === '#') {
+            continue
+          }
+          for (let entry of augmentedPaymentLinks) {
+            if (!entry[0].test(href)) {
+              continue
+            }
+            const params = []
+            if (entry[1].user_id && !entry[2].user_id.test(href)) {
+              const user_id = __app.cookies.user_id || ''
+              params.push(entry[1].user_id + '=' + encodeURIComponent(user_id))
+            }
+            if (entry[1].page_id && !entry[2].page_id.test(href)) {
+              params.push(entry[1].page_id + '=18')
+            }
+            if (entry[1].page_version && !entry[2].page_version.test(href)) {
+              params.push(entry[1].page_version + '=')
+            }
+            if (entry[1].hostname && !entry[2].hostname.test(href)) {
+              params.push(entry[1].hostname + '=rapidfire.thewarriorssecret.com')
+            }
+            if (!params.length) {
+              continue
+            }
+            const glue = href.includes('?')
+              ? '&'
+              : '?'
+            el.setAttribute('href', href + glue + params.join('&'))
+          }
+        }
+      })
+    </script></body>
+
+
+<!-- Mirrored from thewarriorssecret.com/limited-discount/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Jan 2026 07:26:34 GMT -->
+</html>

@@ -1,0 +1,502 @@
+BODY {
+}
+.section {
+}
+
+
+.all-img{
+	width:51%;
+}
+
+
+.section .content {
+}
+.section.header {
+    color: #fff;
+    background-color: red;
+}
+.section.header .content {
+    padding: 1px 0;
+}
+.section.header H1 {
+    font-size: 17px;
+    line-height: 1.25em;
+    text-align: center;
+    margin: 1.25em 0;
+}
+.section.default {
+    padding: .01em 0;
+    margin: 1em 0;
+}
+.section.footer {
+    color: #777;
+    font-size: 16px;
+    text-align: center;
+    background-color: #ccc;
+}
+.section.footer A {
+    color: #0088d8;
+    text-decoration: none;
+}
+.section.footer A:hover, .section.footer A:focus {
+    color: #666;
+    text-decoration: underline;
+}
+.section.footer .content {
+    overflow: hidden;
+	font-size:14px;
+}
+.section.footer P {
+    margin: 2em 0;
+}
+h2 {
+    font-size:28px;
+    letter-spacing: -.02em;
+    line-height: 122%;
+    text-align: center;
+    margin: 1em 0;
+}
+h3 {
+    font-size: 30px;
+    line-height: 1.5em;
+    text-align: center;
+    margin: 1em 0;
+}
+h4 {
+    font-size: 26px;
+    line-height: 1.5em;
+    margin: 1em 0;
+}
+.three-things {
+    margin: 0!important;
+}
+.three-things .item {
+    list-style: none!important;
+    padding: 1px 100px 1px;
+    margin: 0;
+    position: relative;
+}
+.three-things .item.no-1 {
+    padding-top: 20px;
+}
+.three-things .item.no-3 {
+    padding-top: 20px;
+}
+.three-things .item.no-1, .three-things .item.no-2 {
+    background-color: #ededed;
+}
+.three-things .item.no-1 .arr, .three-things .item.no-2 .arr, .three-things .item.no-3 .arr {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 74px;
+    text-indent: 65px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 107px;
+    height: 74px;
+    position: absolute;
+    left: -22px;
+}
+.three-things .item.no-1 .arr {
+    color: #fff;
+    background-image: url(../../../theflatbellyfix.com/written/discount/web/i/xthree-things-arrow-12-bg.png.pagespeed.ic.JViNLKveNA.html);
+    top: 0;
+}
+.three-things .item.no-2 .arr {
+    color: #fff;
+    background-image: url(../../../theflatbellyfix.com/written/discount/web/i/xthree-things-arrow-12-bg.png.pagespeed.ic.JViNLKveNA.html);
+    top: -20px;
+}
+.three-things .item.no-3 {
+    color: #fff;
+    background-color: #1b1942;
+   background-image: url(../../../theflatbellyfix.com/written/discount/web/i/xthree-things-btmarr.gif.pagespeed.ic.youf_keKRs.html);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 55px;
+}
+.three-things .item.no-3 .arr {
+    color: #000;
+    background-image: url(../../../theflatbellyfix.com/written/discount/web/i/xthree-things-arrow-3-bg.png.pagespeed.ic.73pBGkg-Sz.html);
+    top: 0;
+}
+.subsect {
+    border: 2px solid #222;
+    padding: 10px 50px;
+    margin: 1.5em 0;
+    overflow: hidden;
+}
+.section.default.options {
+    overflow: hidden;
+}
+.subsect.opt-1 {
+    padding: 10px 80px;
+    overflow: visible;
+}
+.subsect.opt-1 H4, .subsect.opt-2 H4 {
+    font-weight: 500;
+    position: relative;
+}
+.subsect.opt-1 H4 .acontainer {
+    position: relative;
+}
+.subsect.opt-1 H4 .arrow {
+    background-image: url(../../../theflatbellyfix.com/written/discount/web/i/xopt-1-to-2-arr.png.pagespeed.ic.vEFqQ8Ecmd.html);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: .5em;
+    left: 1em;
+    width: 85px;
+    height: 138px;
+}
+.subsect.opt-1 H4 .no {
+    background-image: url(../../../theflatbellyfix.com/written/discount/web/i/xsubsect-opt1-no.png.pagespeed.ic.lrDOE2Qtyb.html);
+    background-position: top left no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 93px;
+    height: 51px;
+    position: absolute;
+    top: 5px;
+    left: -101px;
+}
+.subsect.opt-2 BIG, .subsect.opt-1 BIG {
+    font-size: 150%}
+.subsect.opt-2 {
+    border: 2px solid #efae2c;
+    background-color: #f4ebd3;
+    padding: 10px 80px;
+    overflow: visible;
+}
+.subsect.opt-2 H4 .no {
+    background-image: url(../../../theflatbellyfix.com/written/discount/web/i/xsubsect-opt2-no.png.pagespeed.ic.xciyiodxrW.html);
+    background-position: top right no-repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 93px;
+    height: 51px;
+    position: absolute;
+    top: 5px;
+    right: -101px;
+}
+.subsect.opt-2 .insertion {
+    margin-right: -70px!important;
+}
+.ff-hofs {
+    font-family: "Hand Of Sean";
+    letter-spacing: .02em;
+    line-height: 2em;
+}
+.ff-robcd {
+    font-family: "Roboto Condensed";
+    font-weight: 500;
+}
+.ulllearn {
+    border: 2px solid #222;
+    border-left: none;
+    border-right: none;
+}
+.ulllearn P {
+    font-weight: 500;
+    border-top: 2px solid #222;
+    background-color: #fff;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .35);
+    box-shadow: 0 6px 10px 1px rgba(0, 0, 0, .35);
+    padding: 1em 50px;
+    margin: 1em 0 1.5em!important;
+}
+.feelthat {
+    font-size: 110%}
+.pricing {
+    text-align: center;
+}
+.pricing BIG {
+    color: #393;
+    font-size: 36px;
+}
+.guarantee {
+    font-size: 87%;
+    background: #efefef;
+}
+.blob {
+    font-family: "Architects Daughter";
+    font-size: 4.35vw;
+    letter-spacing: .02em;
+    text-align: center;
+    -webkit-border-radius: 15vw;
+    border-radius: 15vw;
+    -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, .35);
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, .35);
+    padding: 2vw 6vw;
+    margin: 1em 3vw 1.5em;
+    -moz-transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+}
+.fast-timer {
+    color: #ff9a1a;
+    font-family: "Roboto Condensed";
+    font-size: 48px;
+    font-weight: 500;
+    text-align: center;
+    margin: .15em 0 .75em!important;
+}
+.features {
+    font-size: 22px;
+    text-align: center;
+    margin: 1.25em 0 1.75em!important;
+}
+.features LI {
+    list-style: none!important;
+    background-image: url(../../../theflatbellyfix.com/written/discount/web/i/discount/xfeatures-checkmark.png.pagespeed.ic.6WHuaRuKht.html);
+    background-position: 0 .35em;
+    background-repeat: no-repeat;
+    padding-left: 1.25em;
+    margin: .5em .25em!important;
+    display: inline-block;
+	font-size:18px;
+}
+.purchase {
+}
+.purchase.disabled {
+    filter: gray;
+    filter: grayscale(100%);
+    filter: url(desaturate.html#greyscale);
+    opacity: .35;
+    filter:  alpha(opacity=35);
+}
+.greyout (-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);)
+#expireMessage {
+}
+#expireMessage H4 {
+    color: #777;
+    font-family: "Roboto Condensed";
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 3em;
+    text-align: center;
+}
+.noTitleStuff .ui-dialog-titlebar {
+    display: none;
+}
+.noTitleStuff {
+    position: relative;
+}
+.noTitleStuff .closeDialog {
+    text-indent: -9999px;
+    background: url(../../../theflatbellyfix.com/written/discount/web/i/xdialog-close-cross.png.pagespeed.ic._xTiLgOvYh.html) top left no-repeat;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 13px;
+    height: 13px;
+    -moz-opacity: .35;
+    filter:  alpha(opacity=35);
+    opacity: .35;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+.noTitleStuff .closeDialog:hover {
+    -moz-opacity: 1;
+    filter:  alpha(opacity=100);
+    opacity: 1;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+.ui-widget-overlay {
+    background: rgba(0, 0, 0, .65)!important;
+    opacity: 1!important;
+}
+.no-shipping-cost {
+    margin: 2em 0 0!important;
+}
+.no-shipping-cost P {
+    text-align: center;
+    margin: 0!important;
+}
+.no-shipping-cost IMG {
+    width: 80%}
+	
+	.limited-h1
+	{ text-align: center;
+    font-size: 85px;
+    font-weight: 600;
+    color: #25aede;
+	}
+	
+	.grt-h3
+	{ font-weight: 600;
+    line-height: 119%;
+    font-size: 29px;
+	}
+	
+	
+	.save-text
+	{ margin: 0px 13% 30px;
+    font-weight: 600;
+     background: #fff100;
+    font-size: 41px;
+	
+}
+
+.red-text{ color:red;
+}
+
+.img-responsive
+{ max-width:100%;
+display:block;
+}
+	
+	
+	
+@media screen and (max-width:1300px) {
+    BODY {
+    font-size: 4.5vw;
+}
+.section.header .content {
+    padding: 10px;
+}
+.section.header H1 {
+    font-size: 17px;
+    margin: .25em 0;
+}
+.section.default .content {
+    padding: 10px;
+}
+.section.footer {
+    font-size: 2.65vw;
+}
+.section.footer P {
+    margin: 1em 0;
+}
+H2 {
+    font-size: 17px;
+    line-height: 1.25em;
+}
+H3 {
+    font-size: 5vw;
+}
+H4 {
+    font-size: 4vw;
+}
+.subsect {
+    padding: 1px 20px;
+}
+.features {
+    font-size: 3.35vw;
+}
+.features LI {
+    background-position: 0 .1em;
+    padding-left: 1.75em;
+    margin: .25em 0!important;
+}
+#expireMessage H4 {
+    font-size: 7vw;
+    line-height: 4em;
+}
+.no-shipping-cost {
+    margin: 0!important;
+}
+.no-shipping-cost IMG {
+    width: 100%}
+	
+	.insertion.center {
+    margin-top: 0px;
+}	
+	.section.default {
+    padding: 0px 0px;
+	margin:20px 0px;
+}
+	
+	.rich-text P {
+    line-height: 1.3em;
+    margin: 1em 0;
+    font-size: 20px;
+}
+
+.mobile-half-width {
+    width: auto !important;
+}
+
+.insertion.center, .insertion.left, .insertion.right {
+    margin: 20px 0;
+    float: none;
+}
+	
+}
+
+@media only screen and (max-width:1200px)
+{
+	
+
+	
+	
+}
+
+@media only screen and (max-width:991px)
+{
+	
+	
+	
+	
+	
+}
+
+@media only screen and (max-width:767px)
+{
+	
+	
+	
+	
+	
+}
+
+
+@media only screen and (max-width:480px)
+{
+.limited-h1 {
+    text-align: center;
+    font-size: 41px;
+}
+
+.save-text
+{ font-size:19px;
+}
+
+.rich-text P {
+    line-height: 1.3em;
+    margin: 1em 1% !important;
+    font-size: 12px;
+}
+
+.rich-text UL LI {
+   
+    font-size: 12px;
+}
+
+	.grt-h3 {
+   
+    font-size: 25px;
+    margin: 0px;
+}
+	
+.section.header H1 {
+ font-size:12px;
+}
+	
+	
+	
+}

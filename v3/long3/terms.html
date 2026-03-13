@@ -1,0 +1,3045 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<!-- Mirrored from thewarriorssecret.com/terms by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Jan 2026 07:26:47 GMT -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript" src="javascripts/privacy/injectable.js.download"></script>
+  <title>Terms and Condition</title>
+  <meta property="og:url" content="https://thewarriorssecret.com/privacy">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+
+
+  <script>
+    window.__app = {
+      visit_id: undefined,
+      query: Object.freeze(window.location.search.substr(1).split(/&+/).reduce(function (map, c) {
+        var a = c.match(/([^=]+)=(.*)/) || []
+        if (a[1]) {
+          map[a[1]] = a[2]
+        }
+        return map
+      }, {})),
+      cookies: Object.freeze(document.cookie.split(/;\s+/).reduce(function (map, c) {
+        var a = c.match(/([^=]+)=(.*)/) || []
+        if (a[1]) {
+          map[a[1]] = a[2]
+        }
+        return map
+      }, {})),
+    }
+  </script>
+
+  <script defer="" async="">
+    (function (script) {
+      script.src = "//" + location.hostname +
+        "/api/visits?page_id=8&page_version=&request_id=A29EB3B0%3AF4FC_A2DB8C0E%3A01BB_61DADF47_6BBA5%3A2FF2C6" +
+        "&querystring=" + encodeURIComponent(window.location.search.substr(1)) +
+        "&fbclid=" + encodeURIComponent(__app.query.fbclid || "") +
+        "&fbp=" + encodeURIComponent(__app.cookies._fbp || "") +
+        "&fbc=" + encodeURIComponent(__app.cookies._fbc || "") +
+        "&referrer=" + encodeURIComponent(document.referrer);
+      document.head.appendChild(script);
+    })(document.createElement("script"));
+  </script>
+  <script src="javascripts/privacy/visits.html"></script>
+
+  <script>
+    function recordEmailConversion(email) {
+      return new Promise(function (resolve, reject) {
+
+        const url = "//" +
+          location.hostname +
+          "/api/conversions/email-collected" +
+          location.search
+
+        const xhr = new XMLHttpRequest
+
+        xhr.onreadystatechange = function () {
+
+          if (xhr.readyState !== XMLHttpRequest.DONE) {
+            return
+          }
+
+          if (Math.floor(xhr.status / 100) !== 2) {
+            return reject(xhr.responseText || "Network Error")
+          }
+
+          try {
+            var response = JSON.parse(xhr.responseText)
+          } catch (error) {
+            return reject("Failed parsing server response: " + error.toString())
+          }
+
+          resolve(response)
+        }
+
+        xhr.onerror = reject
+
+        xhr.open("POST.html", url)
+        xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
+
+        xhr.send(JSON.stringify({
+          email,
+          page_id: 8,
+          page_version: "" || undefined,
+          referrer: document.referrer,
+          visit_id: __app.visit_id,
+          request_id: "A29EB3B0:F4FC_A2DB8C0E:01BB_61DADF47_6BBA5:2FF2C6" || undefined,
+        }))
+      })
+    }
+  </script>
+  <style type="text/css">
+    @charset "UTF-8";
+
+    .animated {
+      animation-duration: 1s;
+      animation-fill-mode: both
+    }
+
+    .animated.infinite {
+      animation-iteration-count: infinite
+    }
+
+    .animated.hinge {
+      animation-duration: 2s
+    }
+
+    .animated.flipOutX,
+    .animated.flipOutY,
+    .animated.bounceIn,
+    .animated.bounceOut {
+      animation-duration: .75s
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale3d(1, 1, 1)
+      }
+
+      50% {
+        transform: scale3d(1.05, 1.05, 1.05)
+      }
+
+      100% {
+        transform: scale3d(1, 1, 1)
+      }
+    }
+
+    .pulse {
+      animation-name: pulse
+    }
+
+    .cbtb html {
+      font-family: sans-serif;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%
+    }
+
+    .cbtb body {
+      margin: 0
+    }
+
+    .cbtb article,
+    .cbtb aside,
+    .cbtb details,
+    .cbtb figcaption,
+    .cbtb figure,
+    .cbtb footer,
+    .cbtb header,
+    .cbtb hgroup,
+    .cbtb main,
+    .cbtb menu,
+    .cbtb nav,
+    .cbtb section,
+    .cbtb summary {
+      display: block
+    }
+
+    .cbtb audio,
+    .cbtb canvas,
+    .cbtb progress,
+    .cbtb video {
+      display: inline-block;
+      vertical-align: baseline
+    }
+
+    .cbtb audio:not([controls]) {
+      display: none;
+      height: 0
+    }
+
+    .cbtb [hidden],
+    .cbtb template {
+      display: none
+    }
+
+    .cbtb a {
+      background-color: transparent
+    }
+
+    .cbtb a:active,
+    .cbtb a:hover {
+      outline: 0
+    }
+
+    .cbtb abbr[title] {
+      border-bottom: 1px dotted
+    }
+
+    .cbtb b,
+    .cbtb strong {
+      font-weight: 700
+    }
+
+    .cbtb dfn {
+      font-style: italic
+    }
+
+    .cbtb h1 {
+      font-size: 2em;
+      margin: .67em 0
+    }
+
+    .cbtb mark {
+      background: #ff0;
+      color: #000
+    }
+
+    .cbtb small {
+      font-size: 80%
+    }
+
+    .cbtb sub,
+    .cbtb sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline
+    }
+
+    .cbtb sup {
+      top: -.5em
+    }
+
+    .cbtb sub {
+      bottom: -.25em
+    }
+
+    .cbtb img {
+      border: 0
+    }
+
+    .cbtb svg:not(:root) {
+      overflow: hidden
+    }
+
+    .cbtb figure {
+      margin: 1em 40px
+    }
+
+    .cbtb hr {
+      box-sizing: content-box;
+      height: 0
+    }
+
+    .cbtb pre {
+      overflow: auto
+    }
+
+    .cbtb code,
+    .cbtb kbd,
+    .cbtb pre,
+    .cbtb samp {
+      font-family: monospace, monospace;
+      font-size: 1em
+    }
+
+    .cbtb button,
+    .cbtb input,
+    .cbtb optgroup,
+    .cbtb select,
+    .cbtb textarea {
+      color: inherit;
+      font: inherit;
+      margin: 0
+    }
+
+    .cbtb button {
+      overflow: visible
+    }
+
+    .cbtb button,
+    .cbtb select {
+      text-transform: none
+    }
+
+    .cbtb button,
+    .cbtb html input[type=button],
+    .cbtb input[type=reset],
+    .cbtb input[type=submit] {
+      -webkit-appearance: button;
+      cursor: pointer
+    }
+
+    .cbtb button[disabled],
+    .cbtb html input[disabled] {
+      cursor: default
+    }
+
+    .cbtb button::-moz-focus-inner,
+    .cbtb input::-moz-focus-inner {
+      border: 0;
+      padding: 0
+    }
+
+    .cbtb input {
+      line-height: normal
+    }
+
+    .cbtb input[type=checkbox],
+    .cbtb input[type=radio] {
+      box-sizing: border-box;
+      padding: 0
+    }
+
+    .cbtb input[type=number]::-webkit-inner-spin-button,
+    .cbtb input[type=number]::-webkit-outer-spin-button {
+      height: auto
+    }
+
+    .cbtb input[type=search] {
+      -webkit-appearance: textfield;
+      box-sizing: content-box
+    }
+
+    .cbtb input[type=search]::-webkit-search-cancel-button,
+    .cbtb input[type=search]::-webkit-search-decoration {
+      -webkit-appearance: none
+    }
+
+    .cbtb fieldset {
+      border: 1px solid silver;
+      margin: 0 2px;
+      padding: .35em .625em .75em
+    }
+
+    .cbtb legend {
+      border: 0;
+      padding: 0
+    }
+
+    .cbtb textarea {
+      overflow: auto
+    }
+
+    .cbtb optgroup {
+      font-weight: 700
+    }
+
+    .cbtb table {
+      border-collapse: collapse;
+      border-spacing: 0
+    }
+
+    .cbtb td,
+    .cbtb th {
+      padding: 0
+    }
+
+    .cbtb * {
+      box-sizing: border-box
+    }
+
+    .cbtb *:before,
+    .cbtb *:after {
+      box-sizing: border-box
+    }
+
+    .cbtb html {
+      font-size: 10px;
+      -webkit-tap-highlight-color: transparent
+    }
+
+    .cbtb body {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #333;
+      background-color: #fff
+    }
+
+    .cbtb input,
+    .cbtb button,
+    .cbtb select,
+    .cbtb textarea {
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit
+    }
+
+    .cbtb a {
+      color: #337ab7;
+      text-decoration: none
+    }
+
+    .cbtb a:hover,
+    .cbtb a:focus {
+      color: #23527c;
+      text-decoration: underline
+    }
+
+    .cbtb a:focus {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px
+    }
+
+    .cbtb figure {
+      margin: 0
+    }
+
+    .cbtb img {
+      vertical-align: middle
+    }
+
+    .cbtb .cbtb-img-responsive {
+      display: block;
+      max-width: 100%;
+      height: auto
+    }
+
+    .cbtb .cbtb-img-rounded {
+      border-radius: 6px
+    }
+
+    .cbtb .cbtb-img-thumbnail {
+      padding: 4px;
+      line-height: 1.42857143;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: all .2s ease-in-out;
+      display: inline-block;
+      max-width: 100%;
+      height: auto
+    }
+
+    .cbtb .cbtb-img-circle {
+      border-radius: 50%
+    }
+
+    .cbtb hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 0;
+      border-top: 1px solid #eee
+    }
+
+    .cbtb .cbtb-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0
+    }
+
+    .cbtb .cbtb-sr-only-focusable:active,
+    .cbtb .cbtb-sr-only-focusable:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      clip: auto
+    }
+
+    .cbtb [role=button] {
+      cursor: pointer
+    }
+
+    .cbtb .cbtb-container {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px
+    }
+
+    @media(min-width:768px) {
+      .cbtb .cbtb-container {
+        width: 750px
+      }
+    }
+
+    @media(min-width:992px) {
+      .cbtb .cbtb-container {
+        width: 970px
+      }
+    }
+
+    @media(min-width:1200px) {
+      .cbtb .cbtb-container {
+        width: 1170px
+      }
+    }
+
+    .cbtb .cbtb-container-fluid {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px
+    }
+
+    .cbtb .cbtb-row {
+      margin-left: -15px;
+      margin-right: -15px
+    }
+
+    .cbtb .cbtb-col-xs-1,
+    .cbtb .cbtb-col-sm-1,
+    .cbtb .cbtb-col-md-1,
+    .cbtb .cbtb-col-lg-1,
+    .cbtb .cbtb-col-xs-2,
+    .cbtb .cbtb-col-sm-2,
+    .cbtb .cbtb-col-md-2,
+    .cbtb .cbtb-col-lg-2,
+    .cbtb .cbtb-col-xs-3,
+    .cbtb .cbtb-col-sm-3,
+    .cbtb .cbtb-col-md-3,
+    .cbtb .cbtb-col-lg-3,
+    .cbtb .cbtb-col-xs-4,
+    .cbtb .cbtb-col-sm-4,
+    .cbtb .cbtb-col-md-4,
+    .cbtb .cbtb-col-lg-4,
+    .cbtb .cbtb-col-xs-5,
+    .cbtb .cbtb-col-sm-5,
+    .cbtb .cbtb-col-md-5,
+    .cbtb .cbtb-col-lg-5,
+    .cbtb .cbtb-col-xs-6,
+    .cbtb .cbtb-col-sm-6,
+    .cbtb .cbtb-col-md-6,
+    .cbtb .cbtb-col-lg-6,
+    .cbtb .cbtb-col-xs-7,
+    .cbtb .cbtb-col-sm-7,
+    .cbtb .cbtb-col-md-7,
+    .cbtb .cbtb-col-lg-7,
+    .cbtb .cbtb-col-xs-8,
+    .cbtb .cbtb-col-sm-8,
+    .cbtb .cbtb-col-md-8,
+    .cbtb .cbtb-col-lg-8,
+    .cbtb .cbtb-col-xs-9,
+    .cbtb .cbtb-col-sm-9,
+    .cbtb .cbtb-col-md-9,
+    .cbtb .cbtb-col-lg-9,
+    .cbtb .cbtb-col-xs-10,
+    .cbtb .cbtb-col-sm-10,
+    .cbtb .cbtb-col-md-10,
+    .cbtb .cbtb-col-lg-10,
+    .cbtb .cbtb-col-xs-11,
+    .cbtb .cbtb-col-sm-11,
+    .cbtb .cbtb-col-md-11,
+    .cbtb .cbtb-col-lg-11,
+    .cbtb .cbtb-col-xs-12,
+    .cbtb .cbtb-col-sm-12,
+    .cbtb .cbtb-col-md-12,
+    .cbtb .cbtb-col-lg-12 {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px
+    }
+
+    .cbtb .cbtb-col-xs-1,
+    .cbtb .cbtb-col-xs-2,
+    .cbtb .cbtb-col-xs-3,
+    .cbtb .cbtb-col-xs-4,
+    .cbtb .cbtb-col-xs-5,
+    .cbtb .cbtb-col-xs-6,
+    .cbtb .cbtb-col-xs-7,
+    .cbtb .cbtb-col-xs-8,
+    .cbtb .cbtb-col-xs-9,
+    .cbtb .cbtb-col-xs-10,
+    .cbtb .cbtb-col-xs-11,
+    .cbtb .cbtb-col-xs-12 {
+      float: left
+    }
+
+    .cbtb .cbtb-col-xs-12 {
+      width: 100%
+    }
+
+    .cbtb .cbtb-col-xs-11 {
+      width: 91.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-10 {
+      width: 83.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-9 {
+      width: 75%
+    }
+
+    .cbtb .cbtb-col-xs-8 {
+      width: 66.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-7 {
+      width: 58.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-6 {
+      width: 50%
+    }
+
+    .cbtb .cbtb-col-xs-5 {
+      width: 41.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-4 {
+      width: 33.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-3 {
+      width: 25%
+    }
+
+    .cbtb .cbtb-col-xs-2 {
+      width: 16.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-1 {
+      width: 8.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-pull-12 {
+      right: 100%
+    }
+
+    .cbtb .cbtb-col-xs-pull-11 {
+      right: 91.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-pull-10 {
+      right: 83.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-pull-9 {
+      right: 75%
+    }
+
+    .cbtb .cbtb-col-xs-pull-8 {
+      right: 66.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-pull-7 {
+      right: 58.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-pull-6 {
+      right: 50%
+    }
+
+    .cbtb .cbtb-col-xs-pull-5 {
+      right: 41.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-pull-4 {
+      right: 33.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-pull-3 {
+      right: 25%
+    }
+
+    .cbtb .cbtb-col-xs-pull-2 {
+      right: 16.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-pull-1 {
+      right: 8.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-pull-0 {
+      right: auto
+    }
+
+    .cbtb .cbtb-col-xs-push-12 {
+      left: 100%
+    }
+
+    .cbtb .cbtb-col-xs-push-11 {
+      left: 91.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-push-10 {
+      left: 83.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-push-9 {
+      left: 75%
+    }
+
+    .cbtb .cbtb-col-xs-push-8 {
+      left: 66.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-push-7 {
+      left: 58.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-push-6 {
+      left: 50%
+    }
+
+    .cbtb .cbtb-col-xs-push-5 {
+      left: 41.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-push-4 {
+      left: 33.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-push-3 {
+      left: 25%
+    }
+
+    .cbtb .cbtb-col-xs-push-2 {
+      left: 16.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-push-1 {
+      left: 8.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-push-0 {
+      left: auto
+    }
+
+    .cbtb .cbtb-col-xs-offset-12 {
+      margin-left: 100%
+    }
+
+    .cbtb .cbtb-col-xs-offset-11 {
+      margin-left: 91.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-offset-10 {
+      margin-left: 83.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-offset-9 {
+      margin-left: 75%
+    }
+
+    .cbtb .cbtb-col-xs-offset-8 {
+      margin-left: 66.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-offset-7 {
+      margin-left: 58.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-offset-6 {
+      margin-left: 50%
+    }
+
+    .cbtb .cbtb-col-xs-offset-5 {
+      margin-left: 41.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-offset-4 {
+      margin-left: 33.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-offset-3 {
+      margin-left: 25%
+    }
+
+    .cbtb .cbtb-col-xs-offset-2 {
+      margin-left: 16.66666667%
+    }
+
+    .cbtb .cbtb-col-xs-offset-1 {
+      margin-left: 8.33333333%
+    }
+
+    .cbtb .cbtb-col-xs-offset-0 {
+      margin-left: 0
+    }
+
+    @media(min-width:768px) {
+
+      .cbtb .cbtb-col-sm-1,
+      .cbtb .cbtb-col-sm-2,
+      .cbtb .cbtb-col-sm-3,
+      .cbtb .cbtb-col-sm-4,
+      .cbtb .cbtb-col-sm-5,
+      .cbtb .cbtb-col-sm-6,
+      .cbtb .cbtb-col-sm-7,
+      .cbtb .cbtb-col-sm-8,
+      .cbtb .cbtb-col-sm-9,
+      .cbtb .cbtb-col-sm-10,
+      .cbtb .cbtb-col-sm-11,
+      .cbtb .cbtb-col-sm-12 {
+        float: left
+      }
+
+      .cbtb .cbtb-col-sm-12 {
+        width: 100%
+      }
+
+      .cbtb .cbtb-col-sm-11 {
+        width: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-10 {
+        width: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-9 {
+        width: 75%
+      }
+
+      .cbtb .cbtb-col-sm-8 {
+        width: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-7 {
+        width: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-6 {
+        width: 50%
+      }
+
+      .cbtb .cbtb-col-sm-5 {
+        width: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-4 {
+        width: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-3 {
+        width: 25%
+      }
+
+      .cbtb .cbtb-col-sm-2 {
+        width: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-1 {
+        width: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-pull-12 {
+        right: 100%
+      }
+
+      .cbtb .cbtb-col-sm-pull-11 {
+        right: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-pull-10 {
+        right: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-pull-9 {
+        right: 75%
+      }
+
+      .cbtb .cbtb-col-sm-pull-8 {
+        right: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-pull-7 {
+        right: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-pull-6 {
+        right: 50%
+      }
+
+      .cbtb .cbtb-col-sm-pull-5 {
+        right: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-pull-4 {
+        right: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-pull-3 {
+        right: 25%
+      }
+
+      .cbtb .cbtb-col-sm-pull-2 {
+        right: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-pull-1 {
+        right: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-pull-0 {
+        right: auto
+      }
+
+      .cbtb .cbtb-col-sm-push-12 {
+        left: 100%
+      }
+
+      .cbtb .cbtb-col-sm-push-11 {
+        left: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-push-10 {
+        left: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-push-9 {
+        left: 75%
+      }
+
+      .cbtb .cbtb-col-sm-push-8 {
+        left: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-push-7 {
+        left: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-push-6 {
+        left: 50%
+      }
+
+      .cbtb .cbtb-col-sm-push-5 {
+        left: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-push-4 {
+        left: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-push-3 {
+        left: 25%
+      }
+
+      .cbtb .cbtb-col-sm-push-2 {
+        left: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-push-1 {
+        left: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-push-0 {
+        left: auto
+      }
+
+      .cbtb .cbtb-col-sm-offset-12 {
+        margin-left: 100%
+      }
+
+      .cbtb .cbtb-col-sm-offset-11 {
+        margin-left: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-offset-10 {
+        margin-left: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-offset-9 {
+        margin-left: 75%
+      }
+
+      .cbtb .cbtb-col-sm-offset-8 {
+        margin-left: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-offset-7 {
+        margin-left: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-offset-6 {
+        margin-left: 50%
+      }
+
+      .cbtb .cbtb-col-sm-offset-5 {
+        margin-left: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-offset-4 {
+        margin-left: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-offset-3 {
+        margin-left: 25%
+      }
+
+      .cbtb .cbtb-col-sm-offset-2 {
+        margin-left: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-sm-offset-1 {
+        margin-left: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-sm-offset-0 {
+        margin-left: 0
+      }
+    }
+
+    @media(min-width:992px) {
+
+      .cbtb .cbtb-col-md-1,
+      .cbtb .cbtb-col-md-2,
+      .cbtb .cbtb-col-md-3,
+      .cbtb .cbtb-col-md-4,
+      .cbtb .cbtb-col-md-5,
+      .cbtb .cbtb-col-md-6,
+      .cbtb .cbtb-col-md-7,
+      .cbtb .cbtb-col-md-8,
+      .cbtb .cbtb-col-md-9,
+      .cbtb .cbtb-col-md-10,
+      .cbtb .cbtb-col-md-11,
+      .cbtb .cbtb-col-md-12 {
+        float: left
+      }
+
+      .cbtb .cbtb-col-md-12 {
+        width: 100%
+      }
+
+      .cbtb .cbtb-col-md-11 {
+        width: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-md-10 {
+        width: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-md-9 {
+        width: 75%
+      }
+
+      .cbtb .cbtb-col-md-8 {
+        width: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-md-7 {
+        width: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-md-6 {
+        width: 50%
+      }
+
+      .cbtb .cbtb-col-md-5 {
+        width: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-md-4 {
+        width: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-md-3 {
+        width: 25%
+      }
+
+      .cbtb .cbtb-col-md-2 {
+        width: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-md-1 {
+        width: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-md-pull-12 {
+        right: 100%
+      }
+
+      .cbtb .cbtb-col-md-pull-11 {
+        right: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-md-pull-10 {
+        right: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-md-pull-9 {
+        right: 75%
+      }
+
+      .cbtb .cbtb-col-md-pull-8 {
+        right: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-md-pull-7 {
+        right: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-md-pull-6 {
+        right: 50%
+      }
+
+      .cbtb .cbtb-col-md-pull-5 {
+        right: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-md-pull-4 {
+        right: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-md-pull-3 {
+        right: 25%
+      }
+
+      .cbtb .cbtb-col-md-pull-2 {
+        right: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-md-pull-1 {
+        right: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-md-pull-0 {
+        right: auto
+      }
+
+      .cbtb .cbtb-col-md-push-12 {
+        left: 100%
+      }
+
+      .cbtb .cbtb-col-md-push-11 {
+        left: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-md-push-10 {
+        left: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-md-push-9 {
+        left: 75%
+      }
+
+      .cbtb .cbtb-col-md-push-8 {
+        left: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-md-push-7 {
+        left: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-md-push-6 {
+        left: 50%
+      }
+
+      .cbtb .cbtb-col-md-push-5 {
+        left: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-md-push-4 {
+        left: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-md-push-3 {
+        left: 25%
+      }
+
+      .cbtb .cbtb-col-md-push-2 {
+        left: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-md-push-1 {
+        left: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-md-push-0 {
+        left: auto
+      }
+
+      .cbtb .cbtb-col-md-offset-12 {
+        margin-left: 100%
+      }
+
+      .cbtb .cbtb-col-md-offset-11 {
+        margin-left: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-md-offset-10 {
+        margin-left: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-md-offset-9 {
+        margin-left: 75%
+      }
+
+      .cbtb .cbtb-col-md-offset-8 {
+        margin-left: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-md-offset-7 {
+        margin-left: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-md-offset-6 {
+        margin-left: 50%
+      }
+
+      .cbtb .cbtb-col-md-offset-5 {
+        margin-left: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-md-offset-4 {
+        margin-left: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-md-offset-3 {
+        margin-left: 25%
+      }
+
+      .cbtb .cbtb-col-md-offset-2 {
+        margin-left: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-md-offset-1 {
+        margin-left: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-md-offset-0 {
+        margin-left: 0
+      }
+    }
+
+    @media(min-width:1200px) {
+
+      .cbtb .cbtb-col-lg-1,
+      .cbtb .cbtb-col-lg-2,
+      .cbtb .cbtb-col-lg-3,
+      .cbtb .cbtb-col-lg-4,
+      .cbtb .cbtb-col-lg-5,
+      .cbtb .cbtb-col-lg-6,
+      .cbtb .cbtb-col-lg-7,
+      .cbtb .cbtb-col-lg-8,
+      .cbtb .cbtb-col-lg-9,
+      .cbtb .cbtb-col-lg-10,
+      .cbtb .cbtb-col-lg-11,
+      .cbtb .cbtb-col-lg-12 {
+        float: left
+      }
+
+      .cbtb .cbtb-col-lg-12 {
+        width: 100%
+      }
+
+      .cbtb .cbtb-col-lg-11 {
+        width: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-10 {
+        width: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-9 {
+        width: 75%
+      }
+
+      .cbtb .cbtb-col-lg-8 {
+        width: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-7 {
+        width: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-6 {
+        width: 50%
+      }
+
+      .cbtb .cbtb-col-lg-5 {
+        width: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-4 {
+        width: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-3 {
+        width: 25%
+      }
+
+      .cbtb .cbtb-col-lg-2 {
+        width: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-1 {
+        width: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-pull-12 {
+        right: 100%
+      }
+
+      .cbtb .cbtb-col-lg-pull-11 {
+        right: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-pull-10 {
+        right: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-pull-9 {
+        right: 75%
+      }
+
+      .cbtb .cbtb-col-lg-pull-8 {
+        right: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-pull-7 {
+        right: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-pull-6 {
+        right: 50%
+      }
+
+      .cbtb .cbtb-col-lg-pull-5 {
+        right: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-pull-4 {
+        right: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-pull-3 {
+        right: 25%
+      }
+
+      .cbtb .cbtb-col-lg-pull-2 {
+        right: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-pull-1 {
+        right: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-pull-0 {
+        right: auto
+      }
+
+      .cbtb .cbtb-col-lg-push-12 {
+        left: 100%
+      }
+
+      .cbtb .cbtb-col-lg-push-11 {
+        left: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-push-10 {
+        left: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-push-9 {
+        left: 75%
+      }
+
+      .cbtb .cbtb-col-lg-push-8 {
+        left: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-push-7 {
+        left: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-push-6 {
+        left: 50%
+      }
+
+      .cbtb .cbtb-col-lg-push-5 {
+        left: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-push-4 {
+        left: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-push-3 {
+        left: 25%
+      }
+
+      .cbtb .cbtb-col-lg-push-2 {
+        left: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-push-1 {
+        left: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-push-0 {
+        left: auto
+      }
+
+      .cbtb .cbtb-col-lg-offset-12 {
+        margin-left: 100%
+      }
+
+      .cbtb .cbtb-col-lg-offset-11 {
+        margin-left: 91.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-offset-10 {
+        margin-left: 83.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-offset-9 {
+        margin-left: 75%
+      }
+
+      .cbtb .cbtb-col-lg-offset-8 {
+        margin-left: 66.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-offset-7 {
+        margin-left: 58.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-offset-6 {
+        margin-left: 50%
+      }
+
+      .cbtb .cbtb-col-lg-offset-5 {
+        margin-left: 41.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-offset-4 {
+        margin-left: 33.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-offset-3 {
+        margin-left: 25%
+      }
+
+      .cbtb .cbtb-col-lg-offset-2 {
+        margin-left: 16.66666667%
+      }
+
+      .cbtb .cbtb-col-lg-offset-1 {
+        margin-left: 8.33333333%
+      }
+
+      .cbtb .cbtb-col-lg-offset-0 {
+        margin-left: 0
+      }
+    }
+
+    .cbtb .cbtb-fade {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      transition: opacity .15s linear
+    }
+
+    .cbtb .cbtb-fade.cbtb-in {
+      opacity: 1;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+    }
+
+    .cbtb .cbtb-collapse {
+      display: none
+    }
+
+    .cbtb .cbtb-collapse.cbtb-in {
+      display: block
+    }
+
+    .cbtb tr.cbtb-collapse.cbtb-in {
+      display: table-row
+    }
+
+    .cbtb tbody.cbtb-collapse.cbtb-in {
+      display: table-row-group
+    }
+
+    .cbtb .cbtb-collapsing {
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      transition-property: height, visibility;
+      transition-duration: .35s;
+      transition-timing-function: ease
+    }
+
+    .cbtb .cbtb-close {
+      float: right;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1;
+      color: #000;
+      text-shadow: 0 1px 0 #fff;
+      opacity: .2;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+      filter: alpha(opacity=20)
+    }
+
+    .cbtb .cbtb-close:hover,
+    .cbtb .cbtb-close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      opacity: .5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity=50)
+    }
+
+    .cbtb button.cbtb-close {
+      padding: 0;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      -webkit-appearance: none
+    }
+
+    .cbtb .cbtb-modal-open {
+      overflow: hidden
+    }
+
+    .cbtb .cbtb-modal {
+      display: none;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1050;
+      -webkit-overflow-scrolling: touch;
+      outline: 0
+    }
+
+    .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog {
+      transform: translate(0, -25%);
+      transition: transform .3s ease-out
+    }
+
+    .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog {
+      transform: translate(0, 0)
+    }
+
+    .cbtb .cbtb-modal-open .cbtb-modal {
+      overflow-x: hidden;
+      overflow-y: auto
+    }
+
+    .cbtb .cbtb-modal-dialog {
+      position: relative;
+      width: auto;
+      margin: 10px
+    }
+
+    .cbtb .cbtb-modal-content {
+      position: relative;
+      background-color: #fff;
+      border: 1px solid #999;
+      border: 1px solid rgba(0, 0, 0, .2);
+      border-radius: 6px;
+      box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+      background-clip: padding-box;
+      outline: 0
+    }
+
+    .cbtb .cbtb-modal-backdrop {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1040;
+      background-color: #000
+    }
+
+    .cbtb .cbtb-modal-backdrop.cbtb-fade {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0)
+    }
+
+    .cbtb .cbtb-modal-backdrop.cbtb-in {
+      opacity: .5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity=50)
+    }
+
+    .cbtb .cbtb-modal-header {
+      padding: 15px;
+      border-bottom: 1px solid #e5e5e5;
+      min-height: 16.42857143px
+    }
+
+    .cbtb .cbtb-modal-header .cbtb-close {
+      margin-top: -2px
+    }
+
+    .cbtb .cbtb-modal-title {
+      margin: 0;
+      line-height: 1.42857143
+    }
+
+    .cbtb .cbtb-modal-body {
+      position: relative;
+      padding: 15px
+    }
+
+    .cbtb .cbtb-modal-footer {
+      padding: 15px;
+      text-align: right;
+      border-top: 1px solid #e5e5e5
+    }
+
+    .cbtb .cbtb-modal-footer .cbtb-btn+.cbtb-btn {
+      margin-left: 5px;
+      margin-bottom: 0
+    }
+
+    .cbtb .cbtb-modal-footer .cbtb-btn-group .cbtb-btn+.cbtb-btn {
+      margin-left: -1px
+    }
+
+    .cbtb .cbtb-modal-footer .cbtb-btn-block+.cbtb-btn-block {
+      margin-left: 0
+    }
+
+    .cbtb .cbtb-modal-scrollbar-measure {
+      position: absolute;
+      top: -9999px;
+      width: 50px;
+      height: 50px;
+      overflow: scroll
+    }
+
+    @media(min-width:768px) {
+      .cbtb .cbtb-modal-dialog {
+        width: 600px;
+        margin: 30px auto
+      }
+
+      .cbtb .cbtb-modal-content {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5)
+      }
+
+      .cbtb .cbtb-modal-sm {
+        width: 300px
+      }
+    }
+
+    @media(min-width:992px) {
+      .cbtb .cbtb-modal-lg {
+        width: 900px
+      }
+    }
+
+    .cbtb .cbtb-clearfix:before,
+    .cbtb .cbtb-clearfix:after,
+    .cbtb .cbtb-container:before,
+    .cbtb .cbtb-container:after,
+    .cbtb .cbtb-container-fluid:before,
+    .cbtb .cbtb-container-fluid:after,
+    .cbtb .cbtb-row:before,
+    .cbtb .cbtb-row:after,
+    .cbtb .cbtb-modal-footer:before,
+    .cbtb .cbtb-modal-footer:after {
+      content: " ";
+      display: table
+    }
+
+    .cbtb .cbtb-clearfix:after,
+    .cbtb .cbtb-container:after,
+    .cbtb .cbtb-container-fluid:after,
+    .cbtb .cbtb-row:after,
+    .cbtb .cbtb-modal-footer:after {
+      clear: both
+    }
+
+    .cbtb .cbtb-center-block {
+      display: block;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .cbtb .cbtb-pull-right {
+      float: right !important
+    }
+
+    .cbtb .cbtb-pull-left {
+      float: left !important
+    }
+
+    .cbtb .cbtb-hide {
+      display: none !important
+    }
+
+    .cbtb .cbtb-show {
+      display: block !important
+    }
+
+    .cbtb .cbtb-invisible {
+      visibility: hidden
+    }
+
+    .cbtb .cbtb-text-hide {
+      font: 0/0 a;
+      color: transparent;
+      text-shadow: none;
+      background-color: transparent;
+      border: 0
+    }
+
+    .cbtb .cbtb-hidden {
+      display: none !important
+    }
+
+    .cbtb .cbtb-affix {
+      position: fixed
+    }
+
+    @-ms-viewport {
+      width: device-width
+    }
+
+    .cbtb .cbtb-visible-xs,
+    .cbtb .cbtb-visible-sm,
+    .cbtb .cbtb-visible-md,
+    .cbtb .cbtb-visible-lg {
+      display: none !important
+    }
+
+    .cbtb .cbtb-visible-xs-block,
+    .cbtb .cbtb-visible-xs-inline,
+    .cbtb .cbtb-visible-xs-inline-block,
+    .cbtb .cbtb-visible-sm-block,
+    .cbtb .cbtb-visible-sm-inline,
+    .cbtb .cbtb-visible-sm-inline-block,
+    .cbtb .cbtb-visible-md-block,
+    .cbtb .cbtb-visible-md-inline,
+    .cbtb .cbtb-visible-md-inline-block,
+    .cbtb .cbtb-visible-lg-block,
+    .cbtb .cbtb-visible-lg-inline,
+    .cbtb .cbtb-visible-lg-inline-block {
+      display: none !important
+    }
+
+    @media(max-width:767px) {
+      .cbtb .cbtb-visible-xs {
+        display: block !important
+      }
+
+      .cbtb table.cbtb-visible-xs {
+        display: table !important
+      }
+
+      .cbtb tr.cbtb-visible-xs {
+        display: table-row !important
+      }
+
+      .cbtb th.cbtb-visible-xs,
+      .cbtb td.cbtb-visible-xs {
+        display: table-cell !important
+      }
+    }
+
+    @media(max-width:767px) {
+      .cbtb .cbtb-visible-xs-block {
+        display: block !important
+      }
+    }
+
+    @media(max-width:767px) {
+      .cbtb .cbtb-visible-xs-inline {
+        display: inline !important
+      }
+    }
+
+    @media(max-width:767px) {
+      .cbtb .cbtb-visible-xs-inline-block {
+        display: inline-block !important
+      }
+    }
+
+    @media(min-width:768px) and (max-width:991px) {
+      .cbtb .cbtb-visible-sm {
+        display: block !important
+      }
+
+      .cbtb table.cbtb-visible-sm {
+        display: table !important
+      }
+
+      .cbtb tr.cbtb-visible-sm {
+        display: table-row !important
+      }
+
+      .cbtb th.cbtb-visible-sm,
+      .cbtb td.cbtb-visible-sm {
+        display: table-cell !important
+      }
+    }
+
+    @media(min-width:768px) and (max-width:991px) {
+      .cbtb .cbtb-visible-sm-block {
+        display: block !important
+      }
+    }
+
+    @media(min-width:768px) and (max-width:991px) {
+      .cbtb .cbtb-visible-sm-inline {
+        display: inline !important
+      }
+    }
+
+    @media(min-width:768px) and (max-width:991px) {
+      .cbtb .cbtb-visible-sm-inline-block {
+        display: inline-block !important
+      }
+    }
+
+    @media(min-width:992px) and (max-width:1199px) {
+      .cbtb .cbtb-visible-md {
+        display: block !important
+      }
+
+      .cbtb table.cbtb-visible-md {
+        display: table !important
+      }
+
+      .cbtb tr.cbtb-visible-md {
+        display: table-row !important
+      }
+
+      .cbtb th.cbtb-visible-md,
+      .cbtb td.cbtb-visible-md {
+        display: table-cell !important
+      }
+    }
+
+    @media(min-width:992px) and (max-width:1199px) {
+      .cbtb .cbtb-visible-md-block {
+        display: block !important
+      }
+    }
+
+    @media(min-width:992px) and (max-width:1199px) {
+      .cbtb .cbtb-visible-md-inline {
+        display: inline !important
+      }
+    }
+
+    @media(min-width:992px) and (max-width:1199px) {
+      .cbtb .cbtb-visible-md-inline-block {
+        display: inline-block !important
+      }
+    }
+
+    @media(min-width:1200px) {
+      .cbtb .cbtb-visible-lg {
+        display: block !important
+      }
+
+      .cbtb table.cbtb-visible-lg {
+        display: table !important
+      }
+
+      .cbtb tr.cbtb-visible-lg {
+        display: table-row !important
+      }
+
+      .cbtb th.cbtb-visible-lg,
+      .cbtb td.cbtb-visible-lg {
+        display: table-cell !important
+      }
+    }
+
+    @media(min-width:1200px) {
+      .cbtb .cbtb-visible-lg-block {
+        display: block !important
+      }
+    }
+
+    @media(min-width:1200px) {
+      .cbtb .cbtb-visible-lg-inline {
+        display: inline !important
+      }
+    }
+
+    @media(min-width:1200px) {
+      .cbtb .cbtb-visible-lg-inline-block {
+        display: inline-block !important
+      }
+    }
+
+    @media(max-width:767px) {
+      .cbtb .cbtb-hidden-xs {
+        display: none !important
+      }
+    }
+
+    @media(min-width:768px) and (max-width:991px) {
+      .cbtb .cbtb-hidden-sm {
+        display: none !important
+      }
+    }
+
+    @media(min-width:992px) and (max-width:1199px) {
+      .cbtb .cbtb-hidden-md {
+        display: none !important
+      }
+    }
+
+    @media(min-width:1200px) {
+      .cbtb .cbtb-hidden-lg {
+        display: none !important
+      }
+    }
+
+    .cbtb .cbtb-visible-print {
+      display: none !important
+    }
+
+    @media print {
+      .cbtb .cbtb-visible-print {
+        display: block !important
+      }
+
+      .cbtb table.cbtb-visible-print {
+        display: table !important
+      }
+
+      .cbtb tr.cbtb-visible-print {
+        display: table-row !important
+      }
+
+      .cbtb th.cbtb-visible-print,
+      .cbtb td.cbtb-visible-print {
+        display: table-cell !important
+      }
+    }
+
+    .cbtb .cbtb-visible-print-block {
+      display: none !important
+    }
+
+    @media print {
+      .cbtb .cbtb-visible-print-block {
+        display: block !important
+      }
+    }
+
+    .cbtb .cbtb-visible-print-inline {
+      display: none !important
+    }
+
+    @media print {
+      .cbtb .cbtb-visible-print-inline {
+        display: inline !important
+      }
+    }
+
+    .cbtb .cbtb-visible-print-inline-block {
+      display: none !important
+    }
+
+    @media print {
+      .cbtb .cbtb-visible-print-inline-block {
+        display: inline-block !important
+      }
+    }
+
+    @media print {
+      .cbtb .cbtb-hidden-print {
+        display: none !important
+      }
+    }
+
+    .cbtb br {
+      display: block
+    }
+
+    .cbtb :before,
+    .cbtb :after {
+      display: none
+    }
+
+    .cbtb .header-mode .show-header {
+      display: block !important
+    }
+
+    .cbtb .header-mode .show-tab {
+      display: none !important
+    }
+
+    .cbtb .tab-mode .show-tab {
+      display: block !important
+    }
+
+    .cbtb .tab-mode .show-header {
+      display: none !important
+    }
+
+    .cbtb .trust-badge .show-header {
+      display: block !important
+    }
+
+    .cbtb .trust-badge .show-tab {
+      display: none !important
+    }
+
+    .cbtb .cbtb-modal-dialog .show-tab {
+      display: block !important
+    }
+
+    .cbtb .cbtb-modal-dialog .show-header {
+      display: none !important
+    }
+
+    @media(min-width:480px) {
+      .cbtb .trust-badge.tab .show-tab {
+        display: block !important
+      }
+
+      .cbtb .trust-badge.tab .show-header {
+        display: none !important
+      }
+    }
+
+    @media(min-width:768px) {
+      .cbtb .cbtb-modal-dialog.header .show-header {
+        display: block !important
+      }
+
+      .cbtb .cbtb-modal-dialog.header .show-tab {
+        display: none !important
+      }
+    }
+
+    .cbtb .trust-badge {
+      background-color: white;
+      width: 100%;
+      position: relative;
+      padding: 0;
+      min-height: 26px
+    }
+
+    .cbtb .trust-badge a {
+      outline: none
+    }
+
+    .cbtb .trust-badge a img {
+      margin-top: 4px;
+      max-height: 18px
+    }
+
+    .cbtb .trust-badge a img.accented {
+      margin-top: 3px
+    }
+
+    .cbtb .trust-badge.header {
+      border: none !important
+    }
+
+    .cbtb .trust-badge.header img:hover {
+      animation: pulse 500ms
+    }
+
+    @media(max-width:480px) {
+      .cbtb .trust-badge {
+        border: none !important;
+        display: none !important
+      }
+
+      .cbtb .trust-badge img:hover {
+        animation: pulse 500ms
+      }
+    }
+
+    @media(min-width:480px) {
+      .cbtb .trust-badge.tab {
+        position: absolute;
+        z-index: 2147483646;
+        padding: 5px 10px;
+        border-radius: 0 0 5px 5px;
+        width: 190px;
+        height: 50px;
+        top: 0;
+        left: 10px
+      }
+
+      .cbtb .trust-badge.tab:hover {
+        animation: pulse 500ms
+      }
+
+      .cbtb .trust-badge.tab a img {
+        max-height: 100%;
+        max-width: 100%
+      }
+
+      .cbtb .trust-badge.tab.top-left,
+      .cbtb .trust-badge.tab.top-right {
+        border-top: none
+      }
+
+      .cbtb .trust-badge.tab.top-right,
+      .cbtb .trust-badge.tab.bottom-right {
+        left: auto;
+        right: 10px
+      }
+
+      .cbtb .trust-badge.tab.bottom-left,
+      .cbtb .trust-badge.tab.bottom-right {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        border-radius: 5px 5px 0 0;
+        border-top: auto;
+        border-bottom: none
+      }
+    }
+
+    @media(max-width:480px) {
+
+      .cbtb .cbtb-modal,
+      .cbtb .cbtb-modal-backdrop,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in {
+        display: none !important
+      }
+    }
+
+    .cbtb #cbTabBBBReviewLink,
+    .cbtb #cbHeaderBBBReviewLink {
+      visibility: hidden
+    }
+
+    .cbtb .cbtb-modal,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in {
+      position: fixed;
+      z-index: 2147483647;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background: none;
+      border: none;
+      box-shadow: none
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog {
+      padding: 0;
+      top: 0;
+      width: 400px;
+      max-width: 100%;
+      margin: 0 auto;
+      border: none
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content {
+      border-radius: 0 0 6px 6px
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-close.ie8,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-close.ie8 {
+      filter: none
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-row,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-row {
+      padding: 0
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header {
+      padding: 5px 15px
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header a,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header a {
+      outline: none
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header a img,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header a img {
+      margin: 10px 0;
+      max-width: 67%
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header a img.accented,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header a img.accented {
+      margin: 7px 0 10px
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header .bbb,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header .bbb {
+      max-width: 27%
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header .bbb img,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header .bbb img {
+      margin: 0;
+      max-width: 100%
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header .cbtb-close,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-header .cbtb-close {
+      position: absolute;
+      top: 15px;
+      right: 15px
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body p,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body p {
+      line-height: 1.5em;
+      margin-bottom: 5px;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif !important;
+      font-size: 12px !important;
+      font-weight: 400 !important
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body p.trust-statement,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body p.trust-statement {
+      font-size: 14px !important
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body p.trust-statement strong,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body p.trust-statement strong {
+      word-wrap: break-word
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body .bbb,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body .bbb {
+      max-width: 20%;
+      position: absolute;
+      top: 10px;
+      right: 10px
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body .bbb img,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body .bbb img {
+      max-width: 100%
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body .cbtb-close,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .cbtb-modal-body .cbtb-close {
+      position: absolute;
+      bottom: 15px;
+      right: 15px
+    }
+
+    .cbtb .cbtb-modal .cbtb-modal-dialog .cbtb-modal-content .show-header,
+    .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog .cbtb-modal-content .show-header {
+      display: none
+    }
+
+    .cbtb .cbtb-modal-open {
+      overflow: auto !important
+    }
+
+    .cbtb .cbtb-modal-backdrop {
+      opacity: 0 !important;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+    }
+
+    @media(min-width:480px) {
+
+      .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog.tab.bottom-left,
+      .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog.tab.bottom-right {
+        transform: translate(0, 25%)
+      }
+
+      .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog.tab.bottom-left,
+      .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog.tab.bottom-right {
+        transform: translate(0, 0)
+      }
+
+      .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog.tab,
+      .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog.tab,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.tab {
+        position: absolute;
+        margin: 0;
+        left: 10px
+      }
+
+      .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog.tab.top-right,
+      .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog.tab.top-right,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.tab.top-right,
+      .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog.tab.bottom-right,
+      .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog.tab.bottom-right,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.tab.bottom-right {
+        left: auto;
+        right: 10px
+      }
+
+      .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog.tab.bottom-left,
+      .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog.tab.bottom-left,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.tab.bottom-left,
+      .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog.tab.bottom-right,
+      .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog.tab.bottom-right,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.tab.bottom-right {
+        top: auto;
+        bottom: -6px
+      }
+
+      .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog.tab.bottom-left .cbtb-modal-content,
+      .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog.tab.bottom-left .cbtb-modal-content,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.tab.bottom-left .cbtb-modal-content,
+      .cbtb .cbtb-modal.cbtb-fade .cbtb-modal-dialog.tab.bottom-right .cbtb-modal-content,
+      .cbtb .cbtb-modal.cbtb-in .cbtb-modal-dialog.tab.bottom-right .cbtb-modal-content,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.tab.bottom-right .cbtb-modal-content {
+        border-radius: 6px 6px 0 0;
+        border-bottom: none
+      }
+    }
+
+    @media(min-width:768px) {
+
+      .cbtb .cbtb-modal .cbtb-modal-dialog.header,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.header {
+        width: 550px
+      }
+
+      .cbtb .cbtb-modal .cbtb-modal-dialog.header .cbtb-modal-content .cbtb-modal-header a img,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.header .cbtb-modal-content .cbtb-modal-header a img {
+        max-width: 400px
+      }
+
+      .cbtb .cbtb-modal .cbtb-modal-dialog.header .cbtb-modal-content .show-tab,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.header .cbtb-modal-content .show-tab {
+        display: none
+      }
+
+      .cbtb .cbtb-modal .cbtb-modal-dialog.header .cbtb-modal-content .show-header,
+      .cbtb .cbtb-modal.cbtb-fade.cbtb-in .cbtb-modal-dialog.header .cbtb-modal-content .show-header {
+        display: block
+      }
+    }
+
+    .cbtb .trust-badge,
+    .cbtb .cbtb-modal-content {
+      border: 1px solid #ccc;
+      color: #2f485c !important
+    }
+
+    .cbtb .trust-badge .cbtb-modal-header,
+    .cbtb .cbtb-modal-content .cbtb-modal-header {
+      border-bottom: 1px solid #ccc
+    }
+
+    .cbtb .trust-badge .cbtb-close,
+    .cbtb .cbtb-modal-content .cbtb-close {
+      opacity: .6;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+      color: #2f485c !important
+    }
+
+    .cbtb .trust-badge.light-grey,
+    .cbtb .cbtb-modal-content.light-grey {
+      background-color: #f2f2f2 !important;
+      border: 1px solid #ccc;
+      color: #2f485c !important
+    }
+
+    .cbtb .trust-badge.light-grey .cbtb-modal-header,
+    .cbtb .cbtb-modal-content.light-grey .cbtb-modal-header {
+      border-bottom: 1px solid #ccc
+    }
+
+    .cbtb .trust-badge.light-grey .cbtb-close,
+    .cbtb .cbtb-modal-content.light-grey .cbtb-close {
+      color: #2f485c !important
+    }
+
+    .cbtb .trust-badge.dark-grey,
+    .cbtb .cbtb-modal-content.dark-grey {
+      background-color: #333 !important;
+      border: 1px solid #8a959e;
+      color: #ccc !important
+    }
+
+    .cbtb .trust-badge.dark-grey .cbtb-modal-header,
+    .cbtb .cbtb-modal-content.dark-grey .cbtb-modal-header {
+      border-bottom: 1px solid #8a959e
+    }
+
+    .cbtb .trust-badge.dark-grey .cbtb-close,
+    .cbtb .cbtb-modal-content.dark-grey .cbtb-close {
+      color: #ccc !important
+    }
+
+    .cbtb .trust-badge.black,
+    .cbtb .cbtb-modal-content.black {
+      background-color: #000 !important;
+      border: 1px solid #2f485c;
+      color: #fff !important
+    }
+
+    .cbtb .trust-badge.black .cbtb-modal-header,
+    .cbtb .cbtb-modal-content.black .cbtb-modal-header {
+      border-bottom: 1px solid #2f485c
+    }
+
+    .cbtb .trust-badge.black .cbtb-close,
+    .cbtb .cbtb-modal-content.black .cbtb-close {
+      color: #fff !important
+    }
+
+    .cbtb .trust-badge.light-blue,
+    .cbtb .cbtb-modal-content.light-blue {
+      background-color: #c4dceb !important;
+      border: 1px solid #8a959e;
+      color: #2f485c !important
+    }
+
+    .cbtb .trust-badge.light-blue .cbtb-modal-header,
+    .cbtb .cbtb-modal-content.light-blue .cbtb-modal-header {
+      border-bottom: 1px solid #8a959e
+    }
+
+    .cbtb .trust-badge.light-blue .cbtb-close,
+    .cbtb .cbtb-modal-content.light-blue .cbtb-close {
+      color: #2f485c !important
+    }
+
+    .cbtb .trust-badge.dark-blue,
+    .cbtb .cbtb-modal-content.dark-blue {
+      background-color: #2f485c !important;
+      border: 1px solid #8a959e;
+      color: #ccc !important
+    }
+
+    .cbtb .trust-badge.dark-blue .cbtb-modal-header,
+    .cbtb .cbtb-modal-content.dark-blue .cbtb-modal-header {
+      border-bottom: 1px solid #8a959e
+    }
+
+    .cbtb .trust-badge.dark-blue .cbtb-close,
+    .cbtb .cbtb-modal-content.dark-blue .cbtb-close {
+      color: #ccc !important
+    }
+
+    .cbtb .trust-badge.light-yellow,
+    .cbtb .cbtb-modal-content.light-yellow {
+      background-color: #faebab !important;
+      border: 1px solid #8a959e;
+      color: #2f485c !important
+    }
+
+    .cbtb .trust-badge.light-yellow .cbtb-modal-header,
+    .cbtb .cbtb-modal-content.light-yellow .cbtb-modal-header {
+      border-bottom: 1px solid #8a959e
+    }
+
+    .cbtb .trust-badge.light-yellow .cbtb-close,
+    .cbtb .cbtb-modal-content.light-yellow .cbtb-close {
+      color: #2f485c !important
+    }
+
+    .cbtb .trust-badge.light-green,
+    .cbtb .cbtb-modal-content.light-green {
+      background-color: #c8edc8 !important;
+      border: 1px solid #ccc;
+      color: #2f485c !important
+    }
+
+    .cbtb .trust-badge.light-green .cbtb-modal-header,
+    .cbtb .cbtb-modal-content.light-green .cbtb-modal-header {
+      border-bottom: 1px solid #ccc
+    }
+
+    .cbtb .trust-badge.light-green .cbtb-close,
+    .cbtb .cbtb-modal-content.light-green .cbtb-close {
+      color: #2f485c !important
+    }
+
+    .cbtb-modal-open {
+      overflow: hidden;
+      overflow: auto !important
+    }
+
+    .cbtb-modal-backdrop,
+    .cbtb-modal-backdrop.cbtb-fade.cbtb-in {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1040;
+      background-color: #000;
+      opacity: 0 !important;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cbtb">
+    <!--[if (!IE) | (gt IE 7)]-->
+    <div id="cbBadge" class="trust-badge tab bottom-left white cbtb-clearfix"><a id="cbInfoModalLink"
+        href="privacy.html" data-toggle="cbtb-modal" data-target="#cbInfoModal" rel="noopener"><img
+          class=" show-header cbtb-center-block" src="images/privacy/logo-header-two-tone-en.png">
+        <img class=" show-tab cbtb-center-block" src="images/privacy/logo-tab-two-tone-en.png"></a></div>
+    <!--[endif]-->
+    <div id="cbInfoModal" class="cbtb-modal cbtb-fade">
+      <div class="tab bottom-left cbtb-modal-dialog" role="document">
+        <div class="white cbtb-modal-content">
+          <div class="cbtb-modal-header">
+            <!--[if (!IE) | (gt IE 8)]--><button type="button" class="show-header cbtb-close" data-dismiss="cbtb-modal"
+              aria-label="Close">×</button>
+            <!--[endif]-->
+            <!--[if IE 8]>
+ <button type="button" class="ie8 show-header cbtb-close" data-dismiss="cbtb-modal" aria-label="Close">
+ &times;
+ </button>
+ <![endif]--><a id="cbTabBBBReviewLink" class="show-tab bbb cbtb-pull-right" target="_blank"
+              title="ClickBank BBB Business Review" rel="noopener"
+              href="http://www.bbb.org/snakeriver/business-reviews/internet-shopping/clickbank-in-boise-id-5004291/#bbbonlineclick"><img
+                alt="ClickBank BBB Business Review" src="images/privacy/blue-seal-153-100-clickbank-5004291.png"></a>
+            <a href="privacy.html" data-dismiss="cbtb-modal" aria-label="Close" rel="noopener"><img
+                class=" show-header" src="images/privacy/logo-header-two-tone-en.png"> <img class=" show-tab"
+                src="images/privacy/logo-tab-two-tone-en.png"></a></div>
+          <div class="cbtb-modal-body">
+            <div class="cbtb-row">
+              <div class="cbtb-col-sm-12">
+                <p class="trust-statement"><span class="translate">ClickBank is the trusted retailer for</span>
+                  <strong>thewarriorssecret.com</strong>.</p>
+              </div>
+              <div class="cbtb-col-sm-3"></div>
+            </div>
+            <div class="cbtb-row">
+              <div class="cbtb-col-sm-12">
+                <p class="translate">If you aren't completely satisfied with your purchase, let us know. We'll make it
+                  right. Your satisfaction is guaranteed!</p>
+              </div>
+              <div class="cbtb-col-sm-3"></div><a id="cbHeaderBBBReviewLink" class="show-header bbb" target="_blank"
+                title="ClickBank BBB Business Review" rel="noopener"
+                href="http://www.bbb.org/snakeriver/business-reviews/internet-shopping/clickbank-in-boise-id-5004291/#bbbonlineclick"><img
+                  alt="ClickBank BBB Business Review"
+                  src="images/privacy/blue-seal-153-100-clickbank-5004291.png"></a>
+              <!--[if (!IE) | (gt IE 8)]--><button type="button" class="show-tab cbtb-close" data-dismiss="cbtb-modal"
+                aria-label="Close">×</button>
+              <!--[endif]-->
+              <!--[if IE 8]>
+ <button type="button" class="ie8 show-tab cbtb-close" data-dismiss="cbtb-modal" aria-label="Close">
+ &times;
+ </button>
+ <![endif]-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="page-top">
+    <link href="stylesheets/privacy/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/privacy/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/privacy/css.html" rel="stylesheet" type="text/css">
+    <link href="stylesheets/privacy/css(1).html" rel="stylesheet" type="text/css"><!-- Plugin CSS -->
+    <link href="stylesheets/privacy/magnific-popup.css" rel="stylesheet"><!-- Custom styles for this template -->
+    <link href="stylesheets/privacy/creative.min.css" rel="stylesheet">
+
+    <nav class="navbar navbar-default " id="nv-menu">
+      <div class="container " style="margin-top: 30px; margin-bottom: 10px;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header ">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>-->
+          <!-- <a class="" href="https://thewarriorssecret.com/" id="nv-brand"><img src="./images/privacy/MHM_Logo_Tiny.png"
+              class="img-responsive rm-logo" alt="img"></a> -->
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto special-middle insideContainer aff-white-box">
+        <!-- 
+        <div class="row header-title-container">
+          <div class="col header-title-content">
+            <h1 style="color: black !important;  font-weight: bold !important;">Welcome to the Warrior’s Secret Affiliate Resources Page!</h1>
+          </div>
+
+        </div> -->
+
+
+
+        <div class="row">
+          <div class="col-lg-12 mx-auto">
+            <h2>Acceptance of the Terms of Use</h2>
+            <p class="text-faded mb-5">These terms of use are entered into between you and the Epiphany Marketing LLC
+              (the “<b>Company</b>”). The following terms and conditions, together with any documents they expressly
+              incorporate by reference (collectively, this “<b>agreement</b>”), govern your access to and use of the
+              <b<b>Warrior’s Secret Program websites, including any content, functionality, and services offered on
+                or through the <b>Warrior’s Secret</b> Program websites (collectively, the “<b>Website</b>”).</b<b>
+            </p>
+            <p class="text-faded mb-5">Please read this agreement carefully before you start to use the Website. <b>By
+                using the Website or by clicking to accept or agree to this agreement when this option is made available
+                to you, you accept and agree to be bound and abide by this agreement and the Company’s Privacy Policy,
+                found at https://www.thewarriorssecret.com/policy, incorporated by reference</b>. If you do
+              not want to agree to this agreement or the Privacy Policy, you must not access or use the Website.</p>
+            <p>This Website is offered and available to users who are 18-years old or older. By using this Website, you
+              state that you are of legal age to form a binding contract with the Company and meet all the foregoing
+              eligibility requirements, if any. If you do not meet all these requirements, you must not access or use
+              the Website.</p>
+            <h4><b>Changes to the Agreement</b></h4>
+            <p>The Company may revise and update this agreement on one or more occasions in its sole discretion. All
+              changes are effective immediately when the Company posts them and apply to all access to and use of the
+              Website from then on. But any changes to the dispute resolution provisions set out in Governing Law and
+              Jurisdiction will not apply to any disputes for which the parties have actual notice on or before the date
+              the change is posted on the Website.</p>
+            <p>Your continued use of the Website after the posting of the revised agreement means that you accept and
+              agree to the changes. You are expected to check this page often, so you are aware of any changes, as they
+              are binding on you.</p>
+            <h4><b>Accessing the Website and Account Security</b></h4>
+            <p>The Company may withdraw or amend this Website, and any service or material the Company provides on the
+              Website, in its sole discretion without notice. The Company will not be liable if for any reason all or
+              any part of the Website is unavailable at any time or for any period. On one or more occasions, the
+              Company may restrict access to some parts of the Website, or the entire Website, to users, including
+              registered users.</p>
+            <p>You are responsible for:</p>
+            <ul>
+              <li>Making all arrangements necessary for you to have access to the Website.</li>
+              <li>Ensuring that all persons who access the Website through your Internet connection are aware of this
+                agreement and comply with it.</li>
+            </ul>
+            <p>To access the Website or some of the resources it offers, you may be asked to provide certain
+              registration details or other information. It is a condition of your use of the Website that all the
+              information you provide on the Website is correct, current, and complete. You acknowledge that all
+              information you provide to register with this Website or otherwise, including through the use of any
+              interactive features on the Website, is governed by the <a href="privacy.html"
+                class="link-color" target="_blank">Privacy Policy</a>, and you consent to all actions the Company takes
+              with respect to your information consistent with the <a href="privacy.html"
+                class="link-color" target="_blank">Privacy Policy</a>.</p>
+            <p>If you choose, or are provided with, a username, password, or any other piece of information as part of
+              the Company’s security procedures, you must treat this information as confidential, and you must not
+              disclose it to any other person or entity. You also acknowledge that your account is personal to you and
+              will not provide any other person with access to this Website or parts of it using your username,
+              password, or other security information. You will promptly notify the Company of any unauthorized access
+              to or use of your username or password or any other breach of security. You also will ensure that you exit
+              from your account at the end of each session. You should use particular caution when accessing your
+              account from a public or shared computer so that others are not able to view or record your password or
+              other personal information.</p>
+            <p>The Company may disable any username, password, or other identifier, whether chosen by you or provided by
+              the Company, at any time in its sole discretion for any or no reason, including if, in the Company’s
+              opinion, you have violated any part of this agreement.</p>
+            <h4><b>Intellectual-Property Rights</b></h4>
+            <p>The Website and its entire contents, features, and functionality (including all information, software,
+              text, displays, images, video, and audio, and the design, selection, and arrangement of it) are owned by
+              the Company, its licensors, or other providers of that material and are protected by United States and
+              international copyright, trademark, patent, trade secret, and other intellectual property or proprietary
+              rights laws.</p>
+            <p>This agreement permits you to use the Website for your personal, non-commercial use only. You must not
+              reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish,
+              download, store, or transmit any of the material on the Website, except as follows:</p>
+            <ul>
+              <li>Your computer may temporarily store copies of those materials in RAM incidental to your accessing and
+                viewing those materials.</li>
+              <li>You may store files that are automatically cached by your Web browser for display enhancement
+                purposes.</li>
+              <li>You may print or download one copy of a reasonable number of pages of the Website for your own
+                personal, noncommercial use and not for further reproduction, publication, or distribution.</li>
+              <li>If the Company provides desktop, mobile, or other applications for download, you may download a single
+                copy to your computer or mobile device solely for your own personal, noncommercial use, on condition
+                that you agree to be bound by the Company’s end user license agreement for those applications.</li>
+              <li>If the Company provides social media features with certain content, you may take those actions as are
+                enabled by those features.</li>
+            </ul>
+            <p>You must not:</p>
+            <ul>
+              <li>Modify copies of any materials from this Website.</li>
+              <li>Use any illustrations, photographs, video or audio sequences, or any graphics separately from the
+                accompanying text.</li>
+              <li>Delete or alter any copyright, trademark, or other proprietary rights notices from copies of materials
+                from this Website.</li>
+            </ul>
+            <p>You must not access or use for any commercial purposes any part of the Website or any services or
+              materials available through the Website.</p>
+            <p>If you print, copy, modify, download, or otherwise use or provide any other person with access to any
+              part of the Website in breach of this agreement, your right to use the Website will stop immediately and
+              you must, at the Company’s option, return or destroy any copies of the materials you have made. No
+              interest in or to the Website or any content on the Website is transferred to you, and all rights not
+              expressly granted are reserved by the Company. Any use of the Website not expressly permitted by this
+              agreement is a breach of this agreement and may violate copyright, trademark, and other laws.</p>
+            <h4><b>Trademarks</b></h4>
+            <p>The Company name, the terms Epiphany Marketing LLC and Warrior’s Secret, the Company logo, and all related
+              names,
+              logos, product and service names, designs, and slogans are trademarks of the Company or its affiliates or
+              licensors. You must not use those marks without the Company’s written permission. All other names, logos,
+              product and service names, designs, and slogans on this Website are the trademarks of their respective
+              owners.</p>
+            <h4><b>Prohibited Uses</b></h4>
+            <p>You may use the Website only for lawful purposes and in accordance with this agreement. You must not use
+              the Website:</p>
+            <ul>
+              <li>In any way that violates any applicable federal, state, local, or international law or regulation
+                (including any laws regarding the export of data or software to and from the US or other countries).
+              </li>
+              <li>To exploit, harm, or attempt to exploit or harm minors in any way by exposing them to inappropriate
+                content, asking for personally identifiable information, or otherwise.</li>
+              <li>To send, knowingly receive, upload, download, use, or re-use any material that does not comply with
+                common decency or applicable intellectual-property rights laws.</li>
+              <li>To transmit, or procure the sending of, any advertising or promotional material without the Company’s
+                written consent, including any “junk mail,” “chain letter,” “spam,” or any other similar solicitation.
+              </li>
+              <li>To impersonate or attempt to impersonate the Company, a Company employee, another user, or any other
+                person or entity (including by using email addresses or usernames associated with any of the foregoing).
+              </li>
+              <li>To engage in any other conduct that restricts or inhibits anyone’s use or enjoyment of the Website, or
+                which, as determined by the Company, may harm the Company or users of the Website or expose them to
+                liability.</li>
+            </ul>
+            <p>Additionally, you must not:</p>
+            <ul>
+              <li>Use the Website in any manner that could disable, overburden, damage, or impair the Website or
+                interfere with any other party’s use of the Website, including their ability to engage in real time
+                activities through the Website.</li>
+              <li>Use any robot, spider, or other automatic device, process, or means to access the Website for any
+                purpose, including monitoring or copying any of the material on the Website.</li>
+              <li>Use any manual process to monitor or copy any of the material on the Website or for any other
+                unauthorized purpose without the Company’s written consent.</li>
+              <li>Use any device, software, or routine that interferes with the proper working of the Website.</li>
+              <li>Introduce any viruses, trojan horses, worms, logic bombs, or other material that is malicious or
+                technologically harmful.</li>
+              <li>Attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the Website,
+                the server on which the Website is stored, or any server, computer, or database connected to the
+                Website.</li>
+              <li>Attack the Website via a denial-of-service attack or a distributed denial-of-service attack.</li>
+              <li>Otherwise try to interfere with the proper working of the Website.</li>
+            </ul>
+            <h4><b>Reliance on Information Posted</b></h4>
+            <p>The information presented on or through the Website is made available solely for general information
+              purposes. The Company is not making any warranty about the accuracy, completeness, or usefulness of this
+              information. Any reliance you place on that information is strictly at your own risk. The Company
+              disclaims all liability and responsibility arising from any reliance placed on those materials by you or
+              any other visitor to the Website, or by anyone who may be informed of any of its contents.</p>
+            <p>This Website may include content provided by third parties, including materials provided by other users,
+              bloggers, and third-party licensors, syndicators, aggregators, or reporting services. All statements or
+              opinions expressed in these materials, and all articles and responses to questions and other content,
+              other than the content provided by the Company, are solely the opinions and the responsibility of the
+              person or entity providing those materials. These materials do not necessarily reflect the opinion of the
+              Company. The Company is not responsible, or liable to you or any third party, for the content or accuracy
+              of any materials provided by any third parties.</p>
+            <h4><b>Changes to the Website</b></h4>
+            <p>The Company may update the content on this Website on one or more occasions, but its content is not
+              necessarily complete or up-to-date. Any of the material on the Website may be out of date at any given
+              time, and the Company is not required to update that material.</p>
+            <h4><b>Information About You and Your Visits to the Website</b></h4>
+            <p>All information the Company collects on this Website is subject to its <a
+                href="privacy.html" target="_blank" class="link-color">Privacy Policy</a>. By
+              using the Website, you consent to all actions taken by the Company with respect to your information in
+              compliance with the <a href="privacy.html" target="_blank" class="link-color">Privacy
+                Policy</a>.</p>
+            <h4><b>Online Purchases and Other Terms</b></h4>
+            <p>All purchases through the Website or other transactions for the sale of goods formed through the Website
+              or as a result of visits made by you are governed by the Website’s Terms of Sale
+              www.flatbellyrevelation.com/terms-of-sale-agreement, which are incorporated into this agreement.</p>
+            <p>Additional terms may also apply to specific portions, services, or features of the Website. Any
+              additional terms are incorporated by this reference into this agreement.</p>
+            <h4><b>Linking to the Website</b></h4>
+            <p>You may link to the Website’s homepage, on condition that you do so in a way that is fair and legal and
+              does not damage the Company’s reputation or take advantage of it, but you must not establish a link in a
+              way that suggests any form of association, approval, or endorsement on the Company’s part without the
+              Company’s express written consent.</p>
+            <h4><b>Links from the Website</b></h4>
+            <p>If the Website contains links to other websites and resources provided by third parties, these links are
+              provided for your convenience only. This includes links contained in advertisements, including banner
+              advertisements and sponsored links. The Company has no control over the contents of those websites or
+              resources and accepts no responsibility for them or for any loss or damage that may arise from your use of
+              them. If you decide to access any of the third-party websites linked to this Website, you do so entirely
+              at your own risk and subject to the terms and conditions of use for those websites.</p>
+            <h4><b>Electronic Communications from the Website</b></h4>
+            <p>By providing your email address, you consent to receiving electronic communications from the Company
+              regarding your order. <b>You also consent to receiving certain other communications from the Company,
+                including newsletters about new features and content, special offers, promotional announcements, and
+                customer surveys via email. You acknowledge that electronic communications you receive from the Company
+                may contain links to third-party websites or resources. You acknowledge that the Company is not
+                responsible or liable for (a) the availability or accuracy of those websites or resources; or (b) the
+                content, products, or services on or available from those websites or resources. Links to those websites
+                or resources do not imply any endorsement by the Company of those websites or resources. You acknowledge
+                sole responsibility for and assume all risk arising from your use of any third-party websites or
+                resources</b>.</p>
+            <h4><b>Geographic Restrictions</b></h4>
+            <p>The owner of the Website is based in the United States. The Company provides this Website for use only by
+              persons located in the United States. The Company makes no claims that the Website or any of its content
+              is accessible or appropriate outside of the United States. Access to the Website may not be legal by
+              certain persons or in certain countries. If you access the Website from outside the United States, you do
+              so on your own initiative and are responsible for compliance with local laws.</p>
+            <h4><b>Health Disclaimers</b></h4>
+            <p><b>Before using the Warrior’s Secret Program, we recommend that you consult with your physician or
+                other qualified health provider and receive medical permission to use the Warrior’s Secret.</b></p>
+            <p>Any references to physical or mental health on the Website constitute an educational service consisting
+              solely of general health information. The materials on the Website are provided “as is” and without
+              warranties of any kind either express or implied.</p>
+            <p><b>Not a Substitute for Professional Medical Advice or Treatment</b>. The Website’s content is not a
+              substitute for direct, personal, professional medical care and diagnosis. None of the exercises or
+              treatments (including products and services) mentioned on the Website should be performed or otherwise
+              used without clearance from your physician or health care provider. The information contained within the
+              Website is not intended to provide specific physical or mental health advice, or any other advice, for any
+              individual and should not be relied on in that regard. Neither the Company nor its owner are medical
+              professionals and nothing on this Website should be misconstrued to mean otherwise.</p>
+            <p><b>Health Risks</b>. There may be risks associated with participating in activities mentioned on the
+              Website. If you choose to participate in these risks, you do so of your own free will and accord,
+              knowingly and voluntarily assuming all risks associated with those activities.</p>
+            <p><b>Injuries or Death</b>. You will hold the Website, its owner, agents, and employees harmless from all
+              liability for all claims for damages due to injuries or death, including attorneys’ fees and costs,
+              incurred by you or third parties, arising out of or relating to the activities discussed on this Website,
+              excepting only claims for gross negligence or intentional tort.</p>
+            <h4><b>Disclaimer of Warranties</b></h4>
+            <p>You understand that the Company cannot and does not guarantee or warrant that files available for
+              downloading from the Internet or the Website will be free of viruses or other destructive code. You are
+              responsible for implementing sufficient procedures and checkpoints to satisfy your particular requirements
+              for anti-virus protection and accuracy of data input and output, and for maintaining a means external to
+              the Website for any reconstruction of any lost data. <b>To the greatest extent provided by law, the
+                Company will not be liable for any loss or damage caused by a distributed denial-of-service attack,
+                viruses, or other technologically harmful material that may infect your computer equipment, computer
+                programs, data, or other proprietary material due to your use of the Website or any services or items
+                obtained through the Website or to your downloading of any material posted on it, or on any website
+                linked to it.</b></p>
+            <p><b>Your use of the Website, its content, and any services or items obtained through the Website is at
+                your own risk. The Website, its content, and any services or items obtained through the Website are
+                provided “as is” and “as available,” without any warranties of any kind, either express or implied.
+                Neither the Company nor any person associated with the Company is making any warranty or representation
+                with respect to the completeness, security, reliability, quality, accuracy, or availability of the
+                Website. Neither the Company nor anyone associated with the Company represents or warrants that the
+                Website, its content, or any services or items obtained through the Website will be accurate, reliable,
+                error-free, or uninterrupted, that defects will be corrected, that the Website or the server that makes
+                it available are free of viruses or other harmful components, or that the Website or any services or
+                items obtained through the Website will otherwise meet your needs or expectations.</b></p>
+            <p><b>To the greatest extent provided by law, the Company hereby disclaims all warranties of any kind,
+                whether express or implied, statutory, or otherwise, including but not limited to any warranties of
+                merchantability, noninfringement, and fitness for particular purpose.</b></p>
+            <p><b>The foregoing does not affect any warranties that cannot be excluded or limited under applicable
+                law.</b></p>
+            <h4><b>Limitation on Liability</b></h4>
+            <p><b>To the greatest extent provided by law, in no event will the Company, its affiliates, or their
+                licensors, service providers, employees, agents, officers, or directors be liable for damages of any
+                kind, under any legal theory, arising out of or in connection with your use, or inability to use, the
+                Website, any websites linked to it, any content on the Website or those other websites or any services
+                or items obtained through the Website or those other websites, including any direct, indirect, special,
+                incidental, consequential, or punitive damages, including personal injury, pain and suffering, emotional
+                distress, loss of revenue, loss of profits, loss of business or anticipated savings, loss of use, loss
+                of goodwill, loss of data, and whether caused by tort (including negligence), breach of contract, or
+                otherwise, even if foreseeable. In addition, the Company is not liable for any spam emails that come
+                from a third party claiming to be the Company or its owner. Nor will the Company be liable for any spam
+                emails from third parties promoting our products.</b></p>
+            <p><b>The foregoing does not affect any liability that cannot be excluded or limited under applicable
+                law.</b></p>
+            <h4><b>Indemnification</b></h4>
+            <p>You will defend, indemnify, and hold harmless the Company, its affiliates, licensors, and service
+              providers, and its and their respective officers, directors, employees, contractors, agents, licensors,
+              suppliers, successors, and assigns from and against any claims, liabilities, damages, judgments, awards,
+              losses, costs, expenses, or fees (including reasonable attorneys’ fees) arising out of or relating to your
+              violation of this agreement or your use of the Website, including your User Contributions, any use of the
+              Website’s content, services, and products other than as expressly authorized in this agreement or your use
+              of any information obtained from the Website.</p>
+            <h4><b>Governing Law and Jurisdiction</b></h4>
+            <p>Michigan law governs all matters relating to the Website and this agreement and any dispute or claim
+              arising from or related to it (in each case, including non-contractual disputes or claims) without giving
+              effect to any choice or conflict of law provision or rule (whether of Michigan or any other jurisdiction).
+            </p>
+            <p>Any legal suit, action, or proceeding arising out of, or related to, this agreement or the Website not
+              subject to arbitration will be instituted exclusively in the federal courts of the United States located
+              in the state of Michigan or the state courts of the state of Michigan, although the Company may bring any
+              suit, action, or proceeding against you for breach of this agreement in your country of residence or any
+              other relevant country. You waive all objections to the exercise of jurisdiction over you by those courts
+              and to venue in those courts.</p>
+            <h4><b>Arbitration</b></h4>
+            <p><b>At the Company’s sole discretion, it may require you to submit any disputes arising from this
+                agreement or the use of the Website, including disputes arising from or concerning the interpretation,
+                violation, invalidity, nonperformance, or termination of this agreement, to final and binding
+                arbitration under the Rules of Arbitration of the American Arbitration Association applying Michigan
+                law.</b></p>
+            <h4><b>Class Action Waiver</b></h4>
+            <p><b>All claims arising out of or relating to this agreement or the Website must be brought in the parties’
+                individual capacity, and not as a plaintiff or class member in any purported class or representative
+                proceeding, and, unless the Company agrees otherwise, the arbitrator must not consolidate more than one
+                person’s claims.</b></p>
+            <h4><b>Limitation on Time to File Claims</b></h4>
+            <p><b>Any cause of action or claim you may have arising out of or relating to this agreement or the Website
+                must be commenced within one year after the cause of action accrues, otherwise, that cause of action or
+                claim is permanently barred.</b></p>
+            <h4><b>Waiver and Severability</b></h4>
+            <p>No waiver by the Company of any term stated in this agreement will be deemed a further or continuing
+              waiver of that term or a waiver of any other term, and any failure of the Company to assert a right or
+              provision under this agreement will not constitute a waiver of that right or provision.</p>
+            <p>If any provision of this agreement is held by a court or other tribunal of competent jurisdiction to be
+              invalid, illegal, or unenforceable for any reason, that provision will be eliminated or limited to the
+              minimum extent so that the remaining provisions of this agreement will continue in full effect.</p>
+            <h4><b>Entire Agreement</b></h4>
+            <p>This agreement, the <a href="privacy.html" class="link-color" target="_blank">Privacy
+                Policy</a>, and the Terms of Sale
+              www.flatbellyrevelation.com/terms-of-sale-agreement constitute the entire agreement between you and the
+              Company regarding the Website and supersede all earlier and contemporaneous understandings, agreements,
+              representations, and warranties, both written and oral, regarding the Website.</p>
+            <h4><b>Feedback</b></h4>
+            <p>The Company encourages you to give feedback about the Company or the Website. But the Company will not
+              treat as confidential any suggestion or idea you give, and nothing in this agreement will restrict the
+              Company’s right to use, profit from, disclose, publish, or otherwise exploit any feedback, without payment
+              to you.</p>
+            <h4><b>Your Comments and Concerns</b></h4>
+            <p>This Website is operated by Epiphany Marketing LLC, 1910 Thomes Ave, Cheyenne, WY. All feedback,
+              comments, requests for technical support, and other communications relating to the Website should be
+              directed to: <span style="color: blue;">support@thewarriorssecret.com</span></p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <style>
+      .footer-links {
+        padding-left: 0;
+      }
+
+      .footer-links li {
+        list-style-type: none;
+        display: inline-block;
+      }
+
+      .footer-links li a {
+        padding: 0 7px;
+        font-size: 16px;
+      }
+
+      .footer-wrapper {
+        padding: 0px 13%;
+      }
+
+      @media only screen and (max-width: 991px) {
+        .footer-wrapper {
+          padding: 0px 11%;
+        }
+
+        @media only screen and (max-width: 767px) {
+          .footer-wrapper {
+            padding: 0px 2%;
+          }
+    </style>
+
+    <section id="contact" class="text-center">
+      <div class="container">
+        <div class="footer-wrapper">
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="row footer-links" style="color: black !important;">
+                <li><a href="privacy.html" target="_blank">Privacy</a></li>
+                |
+                <li><a href="terms.html" target="_blank">Terms and Conditions </a></li>
+                |
+                <li><a href="disclaimer.html" target="_blank">Disclaimer</a></li>
+                |
+                <li><a href="contact.html" target="_blank">Contact</a></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="javascripts/privacy/jquery.min.js.download"> </script>
+    <script src="javascripts/privacy/bootstrap.min.js.download">
+
+    </script> <!-- Plugin JavaScript -->
+
+    <script src="javascripts/privacy/jquery.easing.min.js.download"></script>
+    <script src="javascripts/privacy/scrollreveal.min.js.download"></script>
+    <script src="javascripts/privacy/jquery.magnific-popup.min.js.download"></script>
+
+    <!-- Custom scripts for this template -->
+
+    <script src="javascripts/privacy/creative.min.js.download"></script>
+    <link href="stylesheets/privacy/css(2).html" rel="stylesheet" type="text/css">
+  </div><!-- ClickBank Trust Badge -->
+  <script src="javascripts/privacy/saved_resource.html"></script>
+
+  <script defer="" async="">
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const augmentedPaymentLinks = [
+          ["pay.clickbank.net", {
+            "user_id": "__user_id",
+            "page_id": "__page_id",
+            "page_version": "__page_version",
+            "hostname": "__hostname"
+          }]
+        ]
+        .sort(function (a, b) {
+          return b[0].length - a[0].length
+        })
+        .map(function (entry) {
+          return [
+            new RegExp('^https?://(.+\\.)?' + entry[0], 'i'),
+            entry[1],
+            Object.keys(entry[1]).reduce(function (map, key) {
+              map[key] = new RegExp('[?|&]' + entry[1][key] + '=')
+              return map
+            }, {})
+          ]
+        })
+
+      for (let el of document.getElementsByTagName('A')) {
+        const href = el.getAttribute('href')
+        if (!href || href === '#') {
+          continue
+        }
+        for (let entry of augmentedPaymentLinks) {
+          if (!entry[0].test(href)) {
+            continue
+          }
+          const params = []
+          if (entry[1].user_id && !entry[2].user_id.test(href)) {
+            const user_id = __app.cookies.user_id || ''
+            params.push(entry[1].user_id + '=' + encodeURIComponent(user_id))
+          }
+          if (entry[1].page_id && !entry[2].page_id.test(href)) {
+            params.push(entry[1].page_id + '=8')
+          }
+          if (entry[1].page_version && !entry[2].page_version.test(href)) {
+            params.push(entry[1].page_version + '=')
+          }
+          if (entry[1].hostname && !entry[2].hostname.test(href)) {
+            params.push(entry[1].hostname + '=thewarriorssecret.com')
+          }
+          if (!params.length) {
+            continue
+          }
+          const glue = href.includes('?') ?
+            '&' :
+            '?'
+          el.setAttribute('href', href + glue + params.join('&'))
+        }
+      }
+    })
+  </script>
+
+
+
+</body>
+
+
+<!-- Mirrored from thewarriorssecret.com/terms by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Jan 2026 07:26:47 GMT -->
+</html>

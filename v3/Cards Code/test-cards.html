@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Cards - Test Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a237e;
+        }
+
+        /* =====================================================
+           DESKTOP CARDS CSS
+           ===================================================== */
+        .mt-product-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1rem;
+            justify-content: center;
+            padding: 2rem 1rem;
+            background-color: transparent;
+            font-family: "Montserrat", sans-serif;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mt-product-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 340px;
+            width: calc(33.333% - 0.75rem);
+            min-width: 280px;
+            flex: 1 1 auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            font-family: "Montserrat", sans-serif;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mt-product-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .mt-product-card.mt-featured {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border: 2px solid #ffc107;
+        }
+
+        .mt-product-header {
+            background: linear-gradient(135deg, #1a237e 0%, #303f9f 100%);
+            text-align: center;
+            padding: 0.6rem 1rem;
+            color: white;
+        }
+
+        .mt-product-card.mt-featured .mt-product-header {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 50%, #42a5f5 100%);
+        }
+
+        .mt-product-header h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .mt-product-header p {
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .mt-product-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .mt-product-image {
+            width: 100%;
+            position: relative;
+            text-align: center;
+            padding: 0.6rem;
+            border: 2px solid #bbdefb;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            margin-bottom: 0.5rem;
+        }
+
+        .mt-product-image img {
+            width: 100%;
+            max-width: 252px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .mt-best-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #1a237e, #303f9f);
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(26, 35, 126, 0.4);
+        }
+
+        .mt-product-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            width: 100%;
+        }
+
+        .mt-product-price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
+        .mt-product-price h4, .mt-display-price {
+            font-size: 4.5rem;
+            color: #1565c0;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .mt-price-info p {
+            font-size: 1.3rem;
+            color: #1565c0;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .mt-subscription-toggle {
+            width: 100%;
+            background: #1a1a2e;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .mt-subscription-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        .mt-subscription-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mt-subscription-option.active {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mt-option-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mt-radio-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid #666;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .mt-subscription-option.active .mt-radio-dot {
+            border-color: #fff;
+            background: #fff;
+        }
+
+        .mt-radio-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #1a1a2e;
+            opacity: 0;
+        }
+
+        .mt-subscription-option.active .mt-radio-dot::after {
+            opacity: 1;
+        }
+
+        .mt-option-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .mt-option-price {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .mt-option-price span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #ccc;
+        }
+
+        .mt-recurring-price {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #1565c0;
+            font-weight: 600;
+            margin-top: 5px;
+            display: none !important;
+        }
+
+        .mt-recurring-price.show {
+            display: none !important;
+        }
+
+        .mt-savings-badge {
+            background: none;
+            color: #000;
+            padding: 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 8px 0 0 0;
+            display: block;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .mt-buy-now-btn {
+            display: block;
+            margin-top: 2px;
+            width: 100%;
+            max-width: 220px;
+        }
+
+        .mt-buy-now-btn img {
+            width: 100%;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .mt-buy-now-btn:hover img {
+            transform: scale(1.05);
+        }
+
+        .mt-shipping-text {
+            color: #000;
+            font-size: 1rem;
+            margin-top: 3px;
+            font-weight: 500;
+        }
+
+        .mt-total-line {
+            font-size: 1.1rem;
+            margin-top: 3px;
+            font-weight: 500;
+        }
+
+        .mt-strikethrough {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 0.5rem;
+        }
+
+        .mt-final-price {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .mt-payment-icons {
+            margin: 0.4rem 0;
+            padding: 0;
+        }
+
+        .mt-payment-icons img {
+            width: 100%;
+            max-width: 200px;
+            padding: 0;
+        }
+
+        .mt-subscribe-savings {
+            display: none;
+            text-align: center;
+            margin: 4px 0;
+            background: rgba(26, 26, 46, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(26, 26, 46, 0.15);
+            border-radius: 8px;
+            padding: 6px 10px;
+        }
+
+        .mt-subscribe-savings.show {
+            display: block;
+            animation: borderFlicker 2.5s ease-in-out infinite;
+        }
+
+        @keyframes borderFlicker {
+            0%, 100% { border-color: transparent; }
+            50% { border-color: #000; }
+        }
+
+        .mt-subscribe-savings .line1 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1565c0;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .mt-subscribe-savings .line2 {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #333;
+            display: block;
+            line-height: 1.3;
+        }
+
+        .mt-subscribe-savings .line2 .price-highlight {
+            font-weight: 700;
+            color: #1565c0;
+        }
+
+        .mt-cancel-notice {
+            display: none;
+            text-align: center;
+            margin: 4px 0;
+            padding: 6px 10px;
+            background: #28a745;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .mt-cancel-notice.show {
+            display: block;
+        }
+
+        .mt-subscription-guarantee {
+            text-align: center;
+            padding: 25px 30px;
+            margin-top: 25px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mt-subscription-guarantee .guarantee-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a237e;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+
+        .mt-subscription-guarantee .guarantee-title span {
+            color: #1565c0;
+        }
+
+        .mt-subscription-guarantee .guarantee-text {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* =====================================================
+           MOBILE RESPONSIVE CSS
+           ===================================================== */
+
+        /* Tablet Responsive - 992px and below */
+        @media (max-width: 992px) {
+            .mt-product-grid {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .mt-product-card {
+                max-width: 400px;
+                width: 100%;
+            }
+
+            .mt-product-card.mt-featured {
+                order: -1;
+            }
+
+            .mt-product-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0.8rem;
+            }
+
+            .mt-product-image {
+                width: 100%;
+                max-width: 200px;
+                padding: 0.5rem;
+            }
+
+            .mt-product-details {
+                width: 100%;
+                padding: 0 0.5rem;
+            }
+
+            .mt-product-price h4, .mt-display-price {
+                font-size: 3rem;
+            }
+
+            .mt-product-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .mt-product-header p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Mobile Side-by-Side Layout (767px and below) */
+        @media (max-width: 767px) {
+            .mt-product-grid {
+                padding: 0 5px;
+                gap: 0.8rem;
+            }
+
+            .mt-product-card {
+                border: 2px solid #1565c0;
+                border-radius: 8px;
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .mt-product-card.mt-featured {
+                border-color: #FFD700;
+            }
+
+            .mt-product-header {
+                padding: 8px 12px;
+                border-radius: 6px 6px 0 0;
+            }
+
+            .mt-product-header h3 {
+                font-size: 1.1rem;
+                margin: 0;
+            }
+
+            .mt-product-header p {
+                font-size: 0.7rem;
+                margin: 0;
+            }
+
+            .mt-product-content {
+                display: grid;
+                grid-template-columns: 42% 58%;
+                grid-template-rows: auto 1fr;
+                padding: 0;
+                background: #fff;
+                position: relative;
+            }
+
+            .mt-product-image {
+                grid-column: 1;
+                grid-row: 2;
+                min-width: 130px;
+                max-width: 200px;
+                padding: 5px 5px 8px 8px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                border: none;
+                background: transparent;
+            }
+
+            .mt-product-image img {
+                max-height: 180px;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .mt-product-details {
+                grid-column: 2;
+                grid-row: 2;
+                padding: 0 8px 8px 5px;
+                border-left: none;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .mt-subscription-toggle {
+                grid-column: 1 / -1;
+                grid-row: 1;
+                gap: 3px;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                padding: 6px 8px;
+            }
+
+            .mt-subscription-option {
+                padding: 5px 8px;
+            }
+
+            .mt-option-label {
+                font-size: 0.75rem;
+            }
+
+            .mt-radio-dot {
+                width: 14px;
+                height: 14px;
+            }
+
+            .mt-cancel-notice {
+                font-size: 0.7rem;
+                padding: 5px 8px;
+            }
+
+            .mt-product-card.mt-featured .mt-product-details {
+                border-left: none;
+            }
+
+            .mt-best-badge {
+                position: absolute;
+                top: 5px;
+                left: 10px;
+                right: auto;
+                font-size: 0.5rem;
+                padding: 3px 8px;
+                border-radius: 10px;
+                width: auto;
+                height: auto;
+            }
+
+            .mt-option-btn {
+                padding: 6px 10px;
+                font-size: 0.7rem;
+            }
+
+            .mt-option-label {
+                font-size: 0.65rem;
+            }
+
+            .mt-option-price {
+                font-size: 0.75rem;
+            }
+
+            .mt-product-price h4, .mt-display-price {
+                font-size: 2.2rem;
+                margin: 5px 0;
+            }
+
+            .mt-savings-badge {
+                font-size: 0.85rem;
+                margin: 5px 0;
+            }
+
+            .mt-buy-now-btn {
+                max-width: 150px;
+                margin: 5px auto 0;
+            }
+
+            .mt-shipping-text {
+                font-size: 0.75rem;
+                margin-top: 5px;
+            }
+
+            .mt-total-line {
+                font-size: 0.8rem;
+                margin-top: 5px;
+            }
+
+            .mt-payment-icons {
+                margin: 8px 0;
+            }
+
+            .mt-payment-icons img {
+                max-width: 150px;
+            }
+
+            .mt-subscribe-savings {
+                padding: 6px 8px;
+                margin: 5px 0;
+            }
+
+            .mt-subscribe-savings .line1 {
+                font-size: 0.75rem;
+            }
+
+            .mt-subscribe-savings .line2 {
+                font-size: 0.65rem;
+            }
+
+            .mt-recurring-price {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* Small Mobile (480px and below) */
+        @media (max-width: 480px) {
+            .mt-product-price h4, .mt-display-price {
+                font-size: 1.8rem;
+            }
+
+            .mt-product-image {
+                width: 42%;
+                min-width: 110px;
+                max-width: 150px;
+            }
+
+            .mt-product-image img {
+                max-height: 130px;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .mt-option-label {
+                font-size: 0.6rem;
+            }
+
+            .mt-option-price {
+                font-size: 0.7rem;
+            }
+
+            .mt-buy-now-btn {
+                max-width: 130px;
+            }
+        }
+
+        /* =====================================================
+           SOCIAL PROOF NOTIFICATION CSS
+           ===================================================== */
+        .custom-social-proof {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9999999999999!important;
+            font-family: 'Open Sans', sans-serif;
+            display: none
+        }
+
+        .custom-notification {
+            width: 320px;
+            border: 0;
+            text-align: left;
+            z-index: 99999;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font-weight: 400;
+            border-radius: 6px;
+            padding-bottom: 7px;
+            -webkit-box-shadow: 2px 2px 10px 2px hsla(0,4%,4%,.2);
+            box-shadow: 2px 2px 10px 2px hsla(0,4%,4%,.2);
+            background-color: #fff;
+            position: relative;
+            cursor: pointer
+        }
+
+        .custom-notification-container {
+            display: block!important;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            max-width: 320px;
+            width: 100%;
+            height: 80px
+        }
+
+        .custom-notification-image-wrapper {
+            float: left;
+            width: 80px;
+            margin-top: 5px
+        }
+
+        .custom-notification-image-wrapper img {
+            max-height: 75px;
+            width: auto;
+            display: block;
+            margin: 0 auto 5px;
+            overflow: hidden;
+            border-radius: 6px 0 0 6px
+        }
+
+        .custom-notification-content-wrapper {
+            margin: 0;
+            height: 100%;
+            color: gray;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 0 6px 6px 0;
+            padding-bottom: 5px
+        }
+
+        .custom-notification-content {
+            font-family: inherit!important;
+            padding: 0!important;
+            font-size: 14px;
+            line-height: 16px;
+            width: calc(100% - 70px);
+            float: left;
+            margin-left: 10px;
+            padding-bottom: 5px;
+            margin-top: 10px
+        }
+
+        .custom-notification-content small {
+            margin-top: 3px!important;
+            display: block!important;
+            font-size: 12px!important;
+            opacity: .8
+        }
+
+        .custom-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            height: 12px;
+            width: 12px;
+            cursor: pointer;
+            -webkit-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            opacity: 0
+        }
+
+        .custom-close:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: gray;
+            position: absolute;
+            left: 0;
+            top: 5px
+        }
+
+        .custom-close:after {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 2px;
+            background-color: gray;
+            position: absolute;
+            left: 5px;
+            top: 0
+        }
+
+        .custom-social-proof .custom-notification:hover .custom-close {
+            opacity: 1
+        }
+
+        .heartbeat {
+            -webkit-animation: heartbeat 5s ease 0 infinite normal;
+            animation: heartbeat 5s ease 0 infinite normal;
+            -webkit-transform: scale(.94);
+            transform: scale(.94);
+            -webkit-font-smoothing: antialiased
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(.94) }
+            3% { transform: scale(1) }
+            6% { transform: scale(.94) }
+            12% { transform: scale(1) }
+            18% { transform: scale(.94) }
+        }
+
+        /* =====================================================
+           BONUSES SECTION CSS
+           ===================================================== */
+        .bonuses-wrapper {
+          width: 100%;
+          padding: 20px 15px;
+          background: transparent;
+        }
+        .bonuses-section {
+          background: linear-gradient(135deg, #1a3a5c 0%, #0d2840 100%);
+          padding: 60px 20px;
+          border-radius: 20px;
+          margin: 0 auto;
+          max-width: 1100px;
+        }
+        .bonuses-container {
+          max-width: 900px;
+          margin: 0 auto;
+        }
+        .bonuses-header {
+          text-align: center;
+          color: #ff4444;
+          font-size: 2rem;
+          font-weight: 800;
+          margin-bottom: 40px;
+          text-transform: uppercase;
+          line-height: 1.3;
+        }
+        .bonus-card {
+          display: flex;
+          align-items: center;
+          background: #fff;
+          border-radius: 12px;
+          margin-bottom: 25px;
+          overflow: hidden;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .bonus-card.reverse {
+          flex-direction: row-reverse;
+        }
+        .bonus-content {
+          flex: 1;
+          padding: 25px 30px;
+        }
+        .bonus-badge {
+          display: inline-block;
+          background: linear-gradient(135deg, #1a5a8a 0%, #0d3a5c 100%);
+          color: #fff;
+          padding: 8px 20px;
+          border-radius: 5px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+        }
+        .bonus-title {
+          font-size: 1.25rem;
+          font-weight: 800;
+          color: #1a3a5c;
+          margin-bottom: 10px;
+          line-height: 1.3;
+        }
+        .bonus-description {
+          font-size: 0.9rem;
+          color: #555;
+          line-height: 1.5;
+          margin-bottom: 15px;
+        }
+        .bonus-pricing {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          flex-wrap: wrap;
+          margin-top: 15px;
+        }
+        .bonuses-section .retail-price {
+          color: #c00 !important;
+          font-weight: 600;
+          text-decoration: line-through;
+          font-size: 0.95rem;
+          display: inline-block;
+        }
+        .bonuses-section .free-price {
+          background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+          color: #fff !important;
+          padding: 8px 20px;
+          border-radius: 5px;
+          font-weight: 700;
+          font-size: 0.95rem;
+          display: inline-block;
+        }
+        .bonus-image {
+          flex: 0 0 200px;
+          padding: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .bonus-image img {
+          max-width: 160px;
+          max-height: 180px;
+          object-fit: contain;
+          border-radius: 8px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        @media (max-width: 768px) {
+          .bonuses-section { padding: 40px 15px; }
+          .bonuses-header { font-size: 1.5rem; margin-bottom: 30px; }
+          .bonus-card, .bonus-card.reverse { flex-direction: column; }
+          .bonus-content { padding: 20px; order: 2; }
+          .bonus-image { flex: 0 0 auto; width: 100%; padding: 20px 20px 0; order: 1; }
+          .bonus-image img { max-width: 140px; }
+          .bonus-title { font-size: 1.1rem; }
+          .bonus-description { font-size: 0.85rem; }
+          .bonus-pricing { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Pricing Cards + Social Proof Test</h1>
+
+    <!-- PRICING CARDS HTML STRUCTURE -->
+    <div id="buynow" class="mt-product-grid">
+        <!-- 2 Bottles -->
+        <div class="mt-product-card" data-card="2bottle">
+            <div class="mt-product-header">
+                <h3>2 BOTTLES</h3>
+                <p>60 DAY SUPPLY</p>
+            </div>
+            <div class="mt-product-content">
+                <div class="mt-product-image">
+                    <img src="../Images/2-bottles-vigor.webp" alt="VigorX Pro 2 Bottles">
+                </div>
+                <div class="mt-product-details">
+                    <div class="mt-subscription-toggle">
+                        <div class="mt-subscription-option" data-type="subscribe" data-price="71" data-total="142" data-save="218" data-url="#subscribe-2bottle">
+                            <div class="mt-option-left">
+                                <div class="mt-radio-dot"></div>
+                                <span class="mt-option-label">Subscribe & save up to 30%</span>
+                            </div>
+                        </div>
+                        <div class="mt-subscription-option active" data-type="onetime" data-price="79" data-total="158" data-save="200" data-url="#">
+                            <div class="mt-option-left">
+                                <div class="mt-radio-dot"></div>
+                                <span class="mt-option-label">One-time purchase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-product-price">
+                        <h4 class="mt-display-price">$79</h4>
+                        <div class="mt-price-info"><p>/Bottle</p></div>
+                    </div>
+                    <div class="mt-savings-badge">YOU SAVE $200!</div>
+                    <div class="mt-subscribe-savings">
+                        <span class="line1">Congrats!</span>
+                        <span class="line2">You will get <span class="price-highlight">30% OFF</span> on the Subscription Order! After <span class="price-highlight">60 Days</span>, 1 Bottle for Just <span class="price-highlight">$55+Shipping</span> will start delivering every Month.</span>
+                    </div>
+                    <div class="mt-cancel-notice">Cancel subscription anytime!</div>
+                    <a href="#" class="mt-buy-now-btn">
+                        <img src="images/buy-now.webp" alt="Buy Now">
+                    </a>
+                    <p class="mt-shipping-text">+ $19.99 Shipping</p>
+                    <p class="mt-total-line">TOTAL: <span class="mt-strikethrough">$260</span> <span class="mt-final-price">$158</span></p>
+                    <div class="mt-payment-icons"><img src="images/cards.webp" alt="Payment Methods"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6+1 Bottles - BEST VALUE -->
+        <div class="mt-product-card mt-featured" data-card="6bottle">
+            <div class="mt-product-header">
+                <h3>6 + 1 BOTTLES</h3>
+                <p>+ 1 FREE BOTTLE + 2 PREMIUM EBOOKS • 210 DAY SUPPLY</p>
+            </div>
+            <div class="mt-product-content">
+                <div class="mt-product-image">
+                    <img src="../Images/7-bottles-vigor.webp" alt="VigorX Pro 7 Bottles - Best Value">
+                    <div class="mt-best-badge">BEST VALUE</div>
+                </div>
+                <div class="mt-product-details">
+                    <div class="mt-subscription-toggle">
+                        <div class="mt-subscription-option" data-type="subscribe" data-price="44" data-total="264" data-save="810" data-url="#subscribe-6bottle">
+                            <div class="mt-option-left">
+                                <div class="mt-radio-dot"></div>
+                                <span class="mt-option-label">Subscribe & save up to 30%</span>
+                            </div>
+                        </div>
+                        <div class="mt-subscription-option active" data-type="onetime" data-price="49" data-total="294" data-save="780" data-url="#">
+                            <div class="mt-option-left">
+                                <div class="mt-radio-dot"></div>
+                                <span class="mt-option-label">One-time purchase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-product-price">
+                        <h4 class="mt-display-price">$49</h4>
+                        <div class="mt-price-info"><p>/Bottle</p></div>
+                    </div>
+                    <div class="mt-savings-badge">YOU SAVE $780!</div>
+                    <div class="mt-subscribe-savings">
+                        <span class="line1">Congrats!</span>
+                        <span class="line2">You will get <span class="price-highlight">30% OFF</span> on the Subscription Order! After <span class="price-highlight">210 Days</span>, 1 Bottle for Just <span class="price-highlight">$34</span> will start delivering every Month.</span>
+                    </div>
+                    <div class="mt-cancel-notice">Cancel subscription anytime!</div>
+                    <a href="#" class="mt-buy-now-btn">
+                        <img src="images/buy-now2.webp" alt="Buy Now">
+                    </a>
+                    <p class="mt-shipping-text">FREE Shipping</p>
+                    <p class="mt-total-line">TOTAL: <span class="mt-strikethrough">$1,074</span> <span class="mt-final-price">$294</span></p>
+                    <div class="mt-payment-icons"><img src="images/cards.webp" alt="Payment Methods"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 Bottles -->
+        <div class="mt-product-card" data-card="4bottle">
+            <div class="mt-product-header">
+                <h3>4 BOTTLES</h3>
+                <p>FREE SHIPPING • 120 DAY SUPPLY</p>
+            </div>
+            <div class="mt-product-content">
+                <div class="mt-product-image">
+                    <img src="../Images/4-bottles-vigor.webp" alt="VigorX Pro 4 Bottles">
+                </div>
+                <div class="mt-product-details">
+                    <div class="mt-subscription-toggle">
+                        <div class="mt-subscription-option" data-type="subscribe" data-price="58" data-total="232" data-save="475" data-url="#subscribe-4bottle">
+                            <div class="mt-option-left">
+                                <div class="mt-radio-dot"></div>
+                                <span class="mt-option-label">Subscribe & save up to 30%</span>
+                            </div>
+                        </div>
+                        <div class="mt-subscription-option active" data-type="onetime" data-price="64" data-total="256" data-save="450" data-url="#">
+                            <div class="mt-option-left">
+                                <div class="mt-radio-dot"></div>
+                                <span class="mt-option-label">One-time purchase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-product-price">
+                        <h4 class="mt-display-price">$64</h4>
+                        <div class="mt-price-info"><p>/Bottle</p></div>
+                    </div>
+                    <div class="mt-savings-badge">YOU SAVE $450!</div>
+                    <div class="mt-subscribe-savings">
+                        <span class="line1">Congrats!</span>
+                        <span class="line2">You will get <span class="price-highlight">30% OFF</span> on the Subscription Order! After <span class="price-highlight">120 Days</span>, 1 Bottle for Just <span class="price-highlight">$49</span> will start delivering every Month.</span>
+                    </div>
+                    <div class="mt-cancel-notice">Cancel subscription anytime!</div>
+                    <a href="#" class="mt-buy-now-btn">
+                        <img src="images/buy-now.webp" alt="Buy Now">
+                    </a>
+                    <p class="mt-shipping-text">FREE Shipping</p>
+                    <p class="mt-total-line">TOTAL: <span class="mt-strikethrough">$706</span> <span class="mt-final-price">$256</span></p>
+                    <div class="mt-payment-icons"><img src="images/cards.webp" alt="Payment Methods"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-subscription-guarantee">
+        <p class="guarantee-title"><span>No Hassle</span> Guarantee</p>
+        <p class="guarantee-text">For Subscription Orders, you are always notified before each shipment and you can cancel anytime.</p>
+    </div>
+
+    <!-- FREE Bonuses Section -->
+    <div class="bonuses-wrapper">
+    <section class="bonuses-section">
+      <div class="bonuses-container">
+        <h2 class="bonuses-header">Order 6 Bottles and<br>Get 3 FREE Bonuses!</h2>
+
+        <!-- Bonus 1 -->
+        <div class="bonus-card">
+          <div class="bonus-content">
+            <div class="bonus-badge">BONUS #1</div>
+            <h3 class="bonus-title">FREE Extra Bottle of VigorX Pro</h3>
+            <p class="bonus-description">Get one extra bottle absolutely FREE when you order the 6-bottle package. That's a 7th bottle to maximize your prostate health journey and ensure you never run out!</p>
+            <div class="bonus-pricing">
+              <span class="retail-price">Retail Price - $79</span>
+              <span class="free-price">Today: FREE</span>
+            </div>
+          </div>
+          <div class="bonus-image">
+            <img src="../Images/1-bottles-vigor.webp" alt="Free Extra Bottle">
+          </div>
+        </div>
+
+        <!-- Bonus 2 -->
+        <div class="bonus-card reverse">
+          <div class="bonus-image">
+            <img src="images/ebook1.png" alt="Prostate Health Guide eBook">
+          </div>
+          <div class="bonus-content">
+            <div class="bonus-badge">BONUS #2</div>
+            <h3 class="bonus-title">Prostate Health Guide: Foods That Support Male Wellness</h3>
+            <p class="bonus-description">Unlock 50+ nutritious recipes and dietary tips designed to support prostate health and overall male vitality. Easy-to-make meals that complement your VigorX Pro regimen.</p>
+            <div class="bonus-pricing">
+              <span class="retail-price">Retail Price - $49</span>
+              <span class="free-price">Today: FREE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bonus 3 -->
+        <div class="bonus-card">
+          <div class="bonus-content">
+            <div class="bonus-badge">BONUS #3</div>
+            <h3 class="bonus-title">30-Day Wellness Plan: Your Complete Vitality Guide</h3>
+            <p class="bonus-description">A step-by-step 30-day lifestyle guide to maximize your VigorX Pro results. Includes daily health tips, exercise routines, and strategies for optimal prostate wellness and male vitality.</p>
+            <div class="bonus-pricing">
+              <span class="retail-price">Retail Price - $39</span>
+              <span class="free-price">Today: FREE</span>
+            </div>
+          </div>
+          <div class="bonus-image">
+            <img src="images/powerplan.png" alt="30-Day Wellness Plan">
+          </div>
+        </div>
+
+      </div>
+    </section>
+    </div><!-- end bonuses-wrapper -->
+
+    <!-- SOCIAL PROOF NOTIFICATION -->
+    <section class="custom-social-proof">
+        <div class="custom-notification">
+            <div class="custom-notification-container">
+                <div class="custom-notification-image-wrapper">
+                    <img src="../Images/1-bottles-vigor.webp">
+                </div>
+                <div class="custom-notification-content-wrapper">
+                    <p class="custom-notification-content">
+                        <span id="notify-customer">Eli H</span> - <span id="notify-state">TX</span><br> Purchased <strong><span id="notify-quantity">7</span></strong> Bottle(s) of <b>VigorX Pro</b> <small><span id="notify-ago">9 minutes ago</span></small>
+                    </p>
+                </div>
+            </div>
+            <div class="custom-close"></div>
+        </div>
+    </section>
+
+    <!-- SUBSCRIPTION TOGGLE JAVASCRIPT -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Store original buy button images
+        document.querySelectorAll('.mt-buy-now-btn img').forEach(img => {
+            img.dataset.originalSrc = img.src;
+        });
+
+        const subscriptionOptions = document.querySelectorAll('.mt-subscription-option');
+
+        subscriptionOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const card = this.closest('.mt-product-card');
+                const toggle = this.closest('.mt-subscription-toggle');
+                const savingsText = card.querySelector('.mt-subscribe-savings');
+                const buyButton = card.querySelector('.mt-buy-now-btn');
+
+                // Remove active from all options in this toggle
+                toggle.querySelectorAll('.mt-subscription-option').forEach(opt => opt.classList.remove('active'));
+
+                // Add active to clicked option
+                this.classList.add('active');
+
+                // Update price display
+                const price = this.dataset.price;
+                const total = this.dataset.total;
+                const save = this.dataset.save;
+                const type = this.dataset.type;
+                const url = this.dataset.url;
+
+                card.querySelector('.mt-display-price').textContent = '$' + price;
+                card.querySelector('.mt-final-price').textContent = '$' + total;
+
+                // Update savings badge text based on type
+                if (type === 'subscribe') {
+                    card.querySelector('.mt-savings-badge').innerHTML = 'YOU SAVE 10% EXTRA ON THIS ORDER<br>($' + save + ' Saved)!';
+                } else {
+                    card.querySelector('.mt-savings-badge').textContent = 'YOU SAVE $' + save + '!';
+                }
+
+                // Update Buy button URL based on selected option
+                if (buyButton && url) {
+                    buyButton.href = url;
+                }
+
+                // Swap buy button image based on selection type
+                const btnImg = buyButton ? buyButton.querySelector('img') : null;
+                if (btnImg) {
+                    if (type === 'subscribe') {
+                        btnImg.src = 'images/subscribe.webp';
+                        btnImg.alt = 'Subscribe Now';
+                    } else {
+                        btnImg.src = btnImg.dataset.originalSrc;
+                        btnImg.alt = 'Buy Now';
+                    }
+                }
+
+                // Show/hide savings text and cancel notice
+                const cancelNotice = card.querySelector('.mt-cancel-notice');
+                if (type === 'subscribe') {
+                    if (savingsText) savingsText.classList.add('show');
+                    if (cancelNotice) cancelNotice.classList.add('show');
+                } else {
+                    if (savingsText) savingsText.classList.remove('show');
+                    if (cancelNotice) cancelNotice.classList.remove('show');
+                }
+            });
+        });
+    });
+    </script>
+
+    <!-- SOCIAL PROOF NOTIFICATION JAVASCRIPT -->
+    <script>
+    var customerFirst = ['Liam', 'Emma', 'Noah', 'Olivia', 'William', 'Ava', 'James', 'Isabella',
+      'Logan', 'Sophia', 'Benjamin', 'Mia', 'Mason', 'Charlotte', 'Elijah', 'Amelia', 'Oliver',
+      'Evelyn', 'Jacob', 'Abigail', 'Lucas', 'Harper', 'Michael', 'Emily', 'Alexander',
+      'Elizabeth', 'Ethan', 'Avery', 'Daniel', 'Sofia', 'Matthew', 'Ella', 'Aiden', 'Madison',
+      'Henry', 'Scarlett', 'Joseph', 'Victoria', 'Jackson', 'Aria', 'Samuel', 'Grace',
+      'Sebastian', 'Chloe', 'David', 'Camila', 'Carter', 'Penelope', 'Wyatt', 'Riley', 'Jayden',
+      'Layla', 'John', 'Lillian', 'Owen', 'Nora', 'Dylan', 'Zoey', 'Luke', 'Mila', 'Gabriel',
+      'Aubrey', 'Anthony', 'Hannah', 'Isaac', 'Lily', 'Grayson', 'Addison', 'Jack', 'Eleanor',
+      'Julian', 'Natalie', 'Levi', 'Luna', 'Christopher', 'Savannah', 'Joshua', 'Brooklyn',
+      'Andrew', 'Leah', 'Lincoln', 'Zoe', 'Mateo', 'Stella', 'Ryan', 'Hazel', 'Jaxon', 'Ellie',
+      'Nathan', 'Paisley', 'Aaron', 'Audrey', 'Isaiah', 'Skylar', 'Thomas', 'Violet', 'Charles',
+      'Claire', 'Caleb', 'Bella', 'Josiah', 'Aurora', 'Christian', 'Lucy', 'Hunter', 'Anna',
+      'Eli', 'Samantha', 'Jonathan', 'Caroline', 'Connor', 'Genesis', 'Landon', 'Aaliyah',
+      'Adrian', 'Kennedy', 'Asher', 'Kinsley', 'Cameron', 'Allison', 'Leo', 'Maya', 'Theodore',
+      'Sarah', 'Jeremiah', 'Madelyn', 'Hudson', 'Adeline', 'Robert', 'Alexa', 'Easton', 'Ariana',
+      'Nolan', 'Elena', 'Nicholas', 'Gabriella', 'Ezra', 'Naomi', 'Colton', 'Alice', 'Angel',
+      'Sadie', 'Brayden', 'Hailey', 'Jordan', 'Eva', 'Dominic', 'Emilia', 'Austin', 'Autumn',
+      'Ian', 'Quinn', 'Adam', 'Nevaeh', 'Elias', 'Piper', 'Jaxson', 'Ruby', 'Greyson', 'Serenity',
+      'Jose', 'Willow', 'Ezekiel', 'Everly', 'Carson', 'Cora', 'Evan', 'Kaylee', 'Maverick',
+      'Lydia', 'Bryson', 'Aubree', 'Jace', 'Arianna', 'Cooper', 'Eliana', 'Xavier', 'Peyton',
+      'Parker', 'Melanie', 'Roman', 'Gianna', 'Jason', 'Isabelle', 'Santiago', 'Julia', 'Chase',
+      'Valentina', 'Sawyer', 'Nova', 'Gavin', 'Clara', 'Leonardo', 'Vivian', 'Kayden', 'Reagan',
+      'Ayden', 'Mackenzie', 'Jameson', 'Madeline'
+    ];
+
+    var customerLast = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+      'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+    ];
+
+    var customerStates = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL',
+      'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV',
+      'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX',
+      'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+    ];
+
+    var customerQuantities = ['2', '4', '7'];
+
+    function updateSocial() {
+      var rCustomerFirst = customerFirst[Math.floor(Math.random() * customerFirst.length)];
+      var rCustomerLast = customerLast[Math.floor(Math.random() * customerLast.length)];
+      var rStates = customerStates[Math.floor(Math.random() * customerStates.length)];
+      var rQuantities = customerQuantities[Math.floor(Math.random() * customerQuantities.length)];
+      var rAgo = Math.floor(Math.random() * 21) + 1;
+
+      $('#notify-customer').html(rCustomerFirst + ' ' + rCustomerLast);
+      $('#notify-state').html(rStates);
+      $('#notify-quantity').html(rQuantities);
+      $('#notify-ago').html(rAgo + ' minutes ago');
+    }
+
+    setInterval(function() {
+      var divID = $('.custom-social-proof');
+      if (divID.is(':hidden')) {
+        $('.custom-social-proof').stop().slideToggle('slow');
+        updateSocial();
+      } else {
+        $(divID).stop().slideToggle('slow');
+      }
+    }, 7000);
+
+    $('.custom-close').click(function() {
+      $('.custom-social-proof').stop().slideToggle('slow');
+    });
+    </script>
+</body>
+</html>
