@@ -95,14 +95,35 @@ window.__lo_site_id = 329229;
 			height: 23px;
 		}
 
-		/* Logo bar black background */
-		.header-banner-wrapper {
-			background: #1a1a1a !important;
+		/* Logo box spacing */
+		.banner-logo {
+			margin-bottom: 20px !important;
 		}
 
 		/* Footer black background */
 		#main-footer {
 			background: #1a1a1a !important;
+		}
+
+		/* Mobile responsive logo box */
+		@media (max-width: 768px) {
+			.banner-logo {
+				padding: 10px 15px !important;
+				margin-bottom: 15px !important;
+			}
+			.banner-logo img {
+				max-height: 55px !important;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.banner-logo {
+				padding: 8px 12px !important;
+				margin-bottom: 10px !important;
+			}
+			.banner-logo img {
+				max-height: 45px !important;
+			}
 		}
 
 		/* Navigation Bar Styles (matching MetaTrim) */
@@ -301,12 +322,12 @@ window.__lo_site_id = 329229;
 		<header style="height: 100%;">
 			<div class="header-banner-wrapper">
 
-				<span class="banner-logo">
+				<span class="banner-logo" style="background: #1a1a1a; border-radius: 15px; padding: 15px 25px; display: inline-block; top: 10px;">
 					<img src="../../../Images/logo.png" alt="Trusted Nutra Products"
 						style="max-height: 80px; width: auto; object-fit: contain;">
 				</span>
 
-				<div class="banner-line" style="margin-top: 10px; height: 50px;"></div>
+				<div class="banner-line" style="display: none;"></div>
 
 			</div>
 
@@ -1522,243 +1543,80 @@ window.__lo_site_id = 329229;
 						</button>
 
 						<div class="campaign-slider" id="campaignSlider">
-							<!-- Non-suggestive images first -->
 							<div class="campaign-slide" data-index="0">
-								<img src="../../../All%20Image%20Assets/Persons/nate.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/a6.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="1">
-								<img src="../../../All%20Image%20Assets/Persons/mark.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/a9.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="2">
-								<img src="../../../All%20Image%20Assets/Persons/chad-slide1.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/a10.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="3">
-								<img src="../../../All%20Image%20Assets/Persons/chad-howse-264-282_mini.jpg"
-									alt="Campaign Image" class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/a11.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="4">
-								<img src="../../../All%20Image%20Assets/Persons/teachinglive.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/a14.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="5">
-								<img src="../../../All%20Image%20Assets/Persons/CharlieResearch.jpg"
-									alt="Campaign Image" class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/a17.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="6">
-								<img src="../../../All%20Image%20Assets/Persons/demoonscreen.png" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/couple1b26.webp" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="7">
-								<img src="../../../All%20Image%20Assets/Persons/happy.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/demoonscreen.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="8">
-								<img src="../../../All%20Image%20Assets/Persons/happy.png" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/FeltLikeAMan.jpg" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="9">
-								<img src="../../../All%20Image%20Assets/Persons/image3.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/happy.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="10">
-								<img src="../../../All%20Image%20Assets/Persons/image04.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/Image_6.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="11">
-								<img src="../../../All%20Image%20Assets/Persons/image09-1.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/Image_12.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="12">
-								<img src="../../../All%20Image%20Assets/Persons/image102.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/Image_17.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="13">
-								<img src="../../../All%20Image%20Assets/Persons/TestNumber3-min.jpg"
-									alt="Campaign Image" class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/Image_18.jpg" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="14">
-								<img src="../../../All%20Image%20Assets/Persons/topbgs-1.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image%20(10).jpg" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="15">
-								<img src="../../../All%20Image%20Assets/Persons/introtruth.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image%20(13).jpg" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="16">
-								<img src="../../../All%20Image%20Assets/Persons/upset.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image%20(18).jpg" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="17">
-								<img src="../../../All%20Image%20Assets/Persons/upset2.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image%20(21).jpg" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="18">
-								<img src="../../../All%20Image%20Assets/Persons/black.jpg" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/s2.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="19">
-								<img src="../../../All%20Image%20Assets/Persons/Image_6.png" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/s3.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="20">
-								<img src="../../../All%20Image%20Assets/Persons/Image_8.png" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/sex-on-carpet.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="21">
-								<img src="../../../All%20Image%20Assets/Persons/Image_11.png" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/small-muscle1b26.webp" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="22">
-								<img src="../../../All%20Image%20Assets/Persons/Image_12.png" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/Webimage_5.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="23">
-								<img src="../../../All%20Image%20Assets/Persons/Image_17.png" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/Webimage_7.png" alt="Campaign Image" class="campaign-img">
 							</div>
 							<div class="campaign-slide" data-index="24">
-								<img src="../../../All%20Image%20Assets/Persons/Image_18.jpg" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="25">
-								<img src="../../../All%20Image%20Assets/Persons/Image_19.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="26">
-								<img src="../../../All%20Image%20Assets/Persons/Webimage_5.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="27">
-								<img src="../../../All%20Image%20Assets/Persons/Webimage_6.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="28">
-								<img src="../../../All%20Image%20Assets/Persons/Webimage_7.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="29">
-								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image (9).jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="30">
-								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image (10).jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="31">
-								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image (13).jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="32">
-								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image (14).jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="33">
-								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image (15).jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="34">
-								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image (18).jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="35">
-								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image (19).jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="36">
-								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image (20).jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="37">
-								<img src="../../../All%20Image%20Assets/Persons/MDSM2022Image (21).jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="38">
-								<img src="../../../All%20Image%20Assets/Persons/a6.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="39">
-								<img src="../../../All%20Image%20Assets/Persons/a9.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="40">
-								<img src="../../../All%20Image%20Assets/Persons/a10.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="41">
-								<img src="../../../All%20Image%20Assets/Persons/a11.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="42">
-								<img src="../../../All%20Image%20Assets/Persons/TopTierDopamineHijacker.jpg"
-									alt="Campaign Image" class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="43">
-								<img src="../../../All%20Image%20Assets/Persons/FeltLikeAMan.jpg" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="44">
-								<img src="../../../All%20Image%20Assets/Persons/ManWithED.jpg" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<!-- More suggestive/intimate images last -->
-							<div class="campaign-slide" data-index="45">
-								<img src="../../../All%20Image%20Assets/Persons/woman.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="46">
-								<img src="../../../All%20Image%20Assets/Persons/a13.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="47">
-								<img src="../../../All%20Image%20Assets/Persons/a14.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="48">
-								<img src="../../../All%20Image%20Assets/Persons/a16.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="49">
-								<img src="../../../All%20Image%20Assets/Persons/a17.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="50">
-								<img src="../../../All%20Image%20Assets/Persons/a18.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="51">
-								<img src="../../../All%20Image%20Assets/Persons/top.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="52">
-								<img src="../../../All%20Image%20Assets/Persons/backview.jpg" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="53">
-								<img src="../../../All%20Image%20Assets/Persons/s1.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="54">
-								<img src="../../../All%20Image%20Assets/Persons/s2.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="55">
-								<img src="../../../All%20Image%20Assets/Persons/s3.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="56">
-								<img src="../../../All%20Image%20Assets/Persons/wifebed2.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="57">
-								<img src="../../../All%20Image%20Assets/Persons/last.png" alt="Campaign Image"
-									class="campaign-img">
-							</div>
-							<div class="campaign-slide" data-index="58">
-								<img src="../../../All%20Image%20Assets/Persons/sex-on-carpet.png" alt="Campaign Image"
-									class="campaign-img">
+								<img src="../../../All%20Image%20Assets/Persons/woman.png" alt="Campaign Image" class="campaign-img">
 							</div>
 						</div>
 
