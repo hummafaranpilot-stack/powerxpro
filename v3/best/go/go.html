@@ -1,6 +1,7 @@
 ﻿
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
@@ -13,7 +14,7 @@
 <link href="../css/all.min.css" rel="stylesheet">
 <link href="../css/main.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Montserrat:400,400i,600,600i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="../../Clickbank Structure/favicon.png">
+<link rel="icon" type="image/webp" href="../../Images/1-bottles-vigor.webp">
 <!-- Top Banner -->
 <div class="top-banner">
     <p>🔥 Hurry! Limited Stock – Grab Your PowerX Pro Today! 🔥</p>
@@ -21,27 +22,12 @@
 
 <style>
 .top-banner {
-    width: 100%;
-    background: #1a1a1a;
-    color: #fff;
-    text-align: center;
-    padding: 6px 10px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    width: 100%; background: #1a1a1a; color: #fff; text-align: center;
+    padding: 6px 10px; font-size: 14px; font-weight: 600;
+    letter-spacing: 0.3px; position: static; z-index: auto;
 }
 .top-banner p { margin: 0; line-height: 1.3; }
-@media (max-width:768px){
-    .top-banner { font-size: 12px; padding: 5px 8px; }
-}
+@media (max-width: 991px) { .top-banner { display: none !important; } }
 </style>
 
 <!-- Logo Area -->
@@ -574,20 +560,8 @@
 }
 </style>
 
-<!-- Start Lucky Orange Script -->
-<!-- <script type="text/javascript">
-window.__lo_site_id = 271871;
-
-    (function() {
-        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
-        wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
-      })();
-</script> -->
-<!-- End Lucky Orange Script -->
 	<!-- Additional CSS Goes Here -->
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&amp;display=swap" rel="stylesheet">
-	<link href="../css/all.min.css" rel="stylesheet" />
 	<link href="../css/sl.css" rel="stylesheet" />
 	<link href="../css/atc.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -645,8 +619,6 @@ window.__lo_site_id = 271871;
 	.text-success { color: #c8922a !important; }
 	</style>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
 	<!-- Replace the existing scroll handler -->
 	<script>
 		$(document).ready(function () {
@@ -675,17 +647,120 @@ window.__lo_site_id = 271871;
 		});
 	</script>
 	<script src="https://cdn.trustednutraproduct.com/t.js?v=powerxpro-trustednutraproduct-com-v3"></script>
+
+<!-- PowerX Pro Shared Features CSS -->
+<style>
+/* Creative Image Hover */
+.creative-img { transition: transform 0.3s ease; cursor: pointer; }
+.creative-img:hover { transform: scale(1.05); }
+@media (max-width: 768px) { .creative-img { width: 100% !important; max-width: 100% !important; } }
+/* Gold Video Player */
+.mv-title { text-align: center; margin: 0 auto 8px; max-width: 550px; padding: 0 10px; }
+.mv-title h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 800; color: #1a1a1a; line-height: 1.3; margin: 0; }
+.mv-title h3 .mv-highlight { color: #c8922a; font-style: italic; }
+@media (max-width: 768px) { .mv-title h3 { font-size: 18px; } }
+.mv-player { position: relative; max-width: 550px; margin: 0 auto 10px; border-radius: 10px; overflow: hidden; background: transparent; box-shadow: 0 4px 20px rgba(0,0,0,0.12); cursor: pointer; }
+.mv-player video { width: 100%; height: auto; display: block; max-height: 340px; object-fit: contain; background: #111; }
+.mv-progress-bar { position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: rgba(255,255,255,0.2); z-index: 3; }
+.mv-progress-fill { height: 100%; width: 0%; background: #c8922a; transition: width 0.3s linear; }
+.mv-mute-btn { position: absolute; bottom: 12px; right: 12px; width: 32px; height: 32px; border-radius: 50%; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 4; transition: background 0.2s; }
+.mv-mute-btn:hover { background: rgba(0,0,0,0.7); }
+.mv-mute-btn svg { width: 16px; height: 16px; }
+.mv-end-cta { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.75); display: none; flex-direction: column; align-items: center; justify-content: center; gap: 12px; z-index: 5; }
+.mv-end-cta.show { display: flex; }
+.mv-end-cta-btn { background: linear-gradient(135deg, #c8922a, #e8b84a, #d4a032, #f0c85a, #c8922a); color: #000 !important; font-size: 16px; font-weight: 800; font-family: 'Montserrat', sans-serif; padding: 14px 32px; border-radius: 32px; text-decoration: none !important; text-transform: uppercase; letter-spacing: 0.5px; transition: transform 0.2s; }
+.mv-end-cta-btn:hover { transform: scale(1.05); }
+.mv-end-replay { color: rgba(255,255,255,0.7) !important; font-size: 13px; text-decoration: underline !important; cursor: pointer; background: none; border: none; font-family: 'Montserrat', sans-serif; }
+.mv-badge { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.6); color: #fff; font-size: 11px; font-weight: 700; font-family: 'Montserrat', sans-serif; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; z-index: 4; }
+.mv-caption { text-align: center; font-size: 13px; color: #666; margin-top: 8px; font-style: italic; max-width: 550px; margin-left: auto; margin-right: auto; }
+@media (max-width: 768px) { .mv-player video { max-height: 240px; } .mv-player { margin: 0 10px 10px; } .mv-mute-btn { width: 28px; height: 28px; bottom: 10px; right: 10px; } }
+.mv-play-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; z-index: 4; cursor: pointer; }
+.mv-play-btn { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease, background 0.2s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+.mv-play-overlay:hover .mv-play-btn { transform: scale(1.1); background: rgba(255,255,255,0.25); }
+.mv-play-btn svg { width: 24px; height: 24px; margin-left: 3px; }
+.mv-play-overlay.playing, .mv-play-overlay.paused { top: auto; left: auto; bottom: 8px; right: 50px; align-items: flex-end; justify-content: flex-end; }
+.mv-play-overlay.playing .mv-play-btn, .mv-play-overlay.paused .mv-play-btn { width: 32px; height: 32px; box-shadow: none; border: none; }
+.mv-play-overlay.playing .mv-play-btn svg, .mv-play-overlay.paused .mv-play-btn svg { width: 14px; height: 14px; margin-left: 0; }
+.mv-play-overlay .mv-pause-icon { display: none; }
+.mv-play-overlay.playing .mv-play-icon { display: none; }
+.mv-play-overlay.playing .mv-pause-icon { display: block; }
+.mv-play-overlay.hidden { display: none; }
+@media (max-width: 768px) { .mv-play-btn { width: 52px; height: 52px; } .mv-play-btn svg { width: 20px; height: 20px; } }
+/* Sticky Bar */
+#sticky-cta-desktop { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9998; background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); box-shadow: 0 -4px 30px rgba(0,0,0,0.4); animation: slideUpBar 0.5s ease; }
+@keyframes slideUpBar { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@media (max-width: 991px) { #sticky-cta-desktop { display: none !important; } }
+.sticky-cta-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; padding: 12px 30px; gap: 18px; }
+.sticky-cta-img { width: 52px; height: 52px; border-radius: 8px; object-fit: contain; background: rgba(255,255,255,0.08); padding: 4px; flex-shrink: 0; }
+.sticky-cta-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.sticky-cta-stars { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #c8922a; font-family: 'Montserrat', sans-serif; }
+.sticky-cta-stars span { color: rgba(255,255,255,0.6); font-weight: 500; }
+.sticky-cta-headline { font-size: 15px; font-weight: 800; font-family: 'Montserrat', sans-serif; color: #fff; }
+.sticky-cta-timer { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #ff6b6b; font-weight: 600; font-family: 'Montserrat', sans-serif; }
+.sticky-cta-timer-val { background: rgba(255,107,107,0.15); padding: 2px 8px; border-radius: 4px; font-variant-numeric: tabular-nums; letter-spacing: 1px; }
+.sticky-cta-btn { background: linear-gradient(135deg, #c8922a, #e8b84a, #d4a032, #f0c85a, #c8922a); color: #000 !important; font-size: 15px; font-weight: 800; font-family: 'Montserrat', sans-serif; padding: 14px 32px; border-radius: 32px; text-decoration: none !important; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; transition: transform 0.2s ease; flex-shrink: 0; }
+.sticky-cta-btn:hover { transform: scale(1.05); }
+.sticky-cta-close { background: none; border: none; color: rgba(255,255,255,0.35); font-size: 22px; cursor: pointer; padding: 0 4px; line-height: 1; flex-shrink: 0; }
+.sticky-cta-close:hover { color: rgba(255,255,255,0.8); }
+/* Mobile Toast */
+#mobile-toast { position: fixed; top: 0; left: 0; right: 0; z-index: 9996; animation: slideDownToast 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes slideDownToast { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+@media (min-width: 992px) { #mobile-toast { display: none !important; } }
+.mobile-toast-inner { background: linear-gradient(135deg, #c8922a 0%, #e8b84a 100%); padding: 8px 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 25px rgba(0,0,0,0.2); max-width: 100vw; overflow: hidden; }
+.mobile-toast-content { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; }
+.mobile-toast-title { margin: 0; font-size: 12px; font-weight: 700; color: #fff; font-family: 'Montserrat', sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 1; min-width: 0; }
+.mobile-toast-buttons { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+.mobile-toast-btn-primary { background: #1a1a1a; color: #fff !important; padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; text-decoration: none !important; font-family: 'Montserrat', sans-serif; white-space: nowrap; }
+.mobile-toast-close { background: none; border: none; color: rgba(255,255,255,0.6); font-size: 20px; cursor: pointer; padding: 0 2px; line-height: 1; flex-shrink: 0; }
+.mobile-toast-close:hover { color: #fff; }
+/* Desktop Toast */
+#desktop-toast { position: fixed; bottom: 110px; right: 25px; z-index: 9997; animation: slideInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes slideInRight { from { transform: translateX(120%); } to { transform: translateX(0); } }
+@media (max-width: 991px) { #desktop-toast { display: none !important; } }
+.desktop-toast-inner { background: #fff; border-radius: 16px; padding: 0; box-shadow: 0 12px 40px rgba(0,0,0,0.18); width: 320px; font-family: 'Montserrat', sans-serif; position: relative; overflow: hidden; }
+.desktop-toast-header { background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); padding: 12px 18px; display: flex; align-items: center; gap: 8px; }
+.desktop-toast-header-icon { font-size: 16px; }
+.desktop-toast-header-text { font-size: 12px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.5px; }
+.desktop-toast-body { padding: 16px 18px; display: flex; align-items: center; gap: 14px; }
+.desktop-toast-img { width: 50px; height: 50px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+.desktop-toast-content { flex: 1; }
+.desktop-toast-title { margin: 0; font-size: 14px; font-weight: 700; color: #1a1a1a; }
+.desktop-toast-desc { margin: 3px 0 0; font-size: 12px; color: #666; }
+.desktop-toast-footer { padding: 0 18px 16px; display: flex; gap: 10px; align-items: center; }
+.desktop-toast-btn { flex: 1; background: linear-gradient(135deg, #c8922a, #e8b84a, #d4a032); color: #000 !important; padding: 10px 18px; border-radius: 32px; font-size: 13px; font-weight: 700; text-decoration: none !important; text-align: center; white-space: nowrap; transition: transform 0.2s; }
+.desktop-toast-btn:hover { transform: scale(1.03); }
+.desktop-toast-close { position: absolute; top: 10px; right: 12px; background: none; border: none; font-size: 16px; color: rgba(255,255,255,0.5); cursor: pointer; padding: 0; line-height: 1; }
+.desktop-toast-close:hover { color: #fff; }
+/* 1-Bottle Try It First Banner */
+.mt-tryit-banner { display: flex; align-items: center; justify-content: center; gap: 1.5rem; max-width: 1100px; margin: 0 auto 1rem; padding: 1rem 1.5rem; background: #fff; border: 2px solid #c8922a; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.07); font-family: "Montserrat", sans-serif; }
+.mt-tryit-banner .tryit-img { flex-shrink: 0; }
+.mt-tryit-banner .tryit-img img { height: 110px; width: auto; object-fit: contain; }
+.mt-tryit-banner .tryit-text { flex: 1; min-width: 0; }
+.mt-tryit-banner .tryit-text h4 { font-size: 1.15rem; font-weight: 700; color: #1a1a1a; margin: 0 0 2px 0; }
+.mt-tryit-banner .tryit-text p { font-size: 0.9rem; color: #555; margin: 0; font-weight: 500; }
+.mt-tryit-banner .tryit-right { display: flex; align-items: center; gap: 1.2rem; flex-shrink: 0; }
+.mt-tryit-banner .tryit-price { text-align: center; flex-shrink: 0; }
+.mt-tryit-banner .tryit-price .price-amount { font-size: 2.5rem; font-weight: 800; color: #1a1a1a; line-height: 1; }
+.mt-tryit-banner .tryit-price .price-per { font-size: 0.9rem; color: #1a1a1a; font-weight: 600; }
+.mt-tryit-banner .tryit-stack { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.mt-tryit-banner .tryit-guarantee img { height: 36px; width: auto; object-fit: contain; }
+.mt-tryit-banner .tryit-action { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.mt-tryit-banner .tryit-action .mt-buy-now-btn { max-width: 160px; margin: 0; }
+.mt-tryit-banner .tryit-action .tryit-shipping { font-size: 0.78rem; color: #555; font-weight: 500; margin: 0; }
+@media (max-width: 768px) { .mt-tryit-banner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 15px 15px 12px; border-radius: 10px; margin: 0 5px 1rem; } .mt-tryit-banner .tryit-img img { height: 90px; } .mt-tryit-banner .tryit-text h4 { font-size: 1.1rem; } .mt-tryit-banner .tryit-text p { font-size: 0.85rem; } .mt-tryit-banner .tryit-right { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; } .mt-tryit-banner .tryit-price .price-amount { font-size: 2rem; } .mt-tryit-banner .tryit-price .price-per { font-size: 0.8rem; } .mt-tryit-banner .tryit-stack { flex-direction: column; gap: 5px; align-items: center; } .mt-tryit-banner .tryit-guarantee img { height: 30px; } .mt-tryit-banner .tryit-action .mt-buy-now-btn { max-width: 140px; } .mt-tryit-banner .tryit-action .tryit-shipping { font-size: 0.7rem; } }
+</style>
+
 </head>
 
 <body>
 	<!-- Page Content -->	
 	<div class="shop-now" style="display:none;">
 		<div class="shop-now-align">
-			<div class="button-center riskfree"><a style="color:#000;" href="#bottomorder"><strong>READY TO ORDER?</strong></a></div>
+			<div class="button-center riskfree"><a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;"><strong>READY TO ORDER?</strong></a></div>
 		</div>
 	</div>
 
-	<section id="" class="pb-0 pb-md-3">
+	<section class="pb-0 pb-md-3">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-lg-9 col-md-7 mx-auto text-center"> 
@@ -700,7 +775,7 @@ window.__lo_site_id = 271871;
 		</div>
 	</section>	
 
-	<section id="" class="pb-3">
+	<section class="pb-3">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9 col-lg-11 mx-auto text-center"> 
@@ -742,12 +817,39 @@ window.__lo_site_id = 271871;
 
 	<div class="text-center" style="margin: 20px 0 10px;">
 		<div class="button-center riskfree text-uppercase" style="display: inline-block;">
-			<a style="color:#000;" href="#bottomorder">TRY NOW — <br class="d-block d-md-none">GET UP TO 61% OFF <i class="fas fa-arrow-right"></i></a>
+			<a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;">TRY NOW — <br class="d-block d-md-none">GET UP TO 45% OFF <i class="fas fa-arrow-right"></i></a>
 		</div>
+
+<div class="mv-title"><h3>Feel the <span class="mv-highlight">Energy Transformation</span></h3></div>
+<div class="mv-player" data-video-id="pxp-vid3">
+    <span class="mv-badge">VITALITY</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/3_id-3-type-Energy-Transformation-niche-Vitality-Ant.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-vid3')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Experience the difference PowerX Pro makes in your daily energy and stamina.</p>
 		<p class="secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 	</div>
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -874,7 +976,7 @@ window.__lo_site_id = 271871;
 			<div class="row">
 				<div class="col-12 col-lg-6 col-md-7 mx-auto py-1 py-md-3">
 					<div class="button-center riskfree text-center text-uppercase">
-						<a style="color:#000;" href="#bottomorder">TRY NOW — <br class="d-block d-md-none">GET UP TO 61% OFF <i class="fas fa-arrow-right"></i></a>
+						<a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;">TRY NOW — <br class="d-block d-md-none">GET UP TO 45% OFF <i class="fas fa-arrow-right"></i></a>
 					</div>
 					<p class="text-center secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 				</div>
@@ -888,7 +990,7 @@ window.__lo_site_id = 271871;
 	font-family: 'Merriweather', serif;
 }
 </style>
-<section id="" class="">
+<section class="">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-9 mx-auto">
@@ -954,14 +1056,14 @@ window.__lo_site_id = 271871;
 		<div class="row">
 			<div class="col-12 col-lg-6 col-md-7 mx-auto py-1 py-md-3">
 				<div class="button-center riskfree text-center text-uppercase">
-					<a style="color:#000;" href="#bottomorder">TRY NOW — <br class="d-block d-md-none">GET UP TO 61% OFF <i class="fas fa-arrow-right"></i></a>
+					<a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;">TRY NOW — <br class="d-block d-md-none">GET UP TO 45% OFF <i class="fas fa-arrow-right"></i></a>
 				</div>
 				<p class="text-center secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 			</div>
 		</div>
 	</div>
 </section>
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -1011,16 +1113,7 @@ window.__lo_site_id = 271871;
 					<!--END HEADLINE-->	
 
 					<div class="col-lg-12 mx-auto">
-						<!-- <picture class="img-fluid mt-md-2 mt-0 mb-3">
-							<source class="" srcset="../../All Image Assets/Persons/s2.png" type="image/webp"/>
-							<img loading="lazy" class="img-fluid img-100 mt-md-2 mt-0 mb-3 d-block mx-auto" src="../../All Image Assets/Persons/s2.png" alt="">
-						</picture> -->
-
-<video autoplay loop muted playsinline style="display: block; height: auto;max-width: 100%" class="img-fluid img-100 mt-md-2 mt-0 mb-3 d-block mx-auto">
-							<source src="../../All Image Assets/Persons/s2.png" type="video/mp4">
-							<source src="../../All Image Assets/Persons/s2.png" type="video/webm">
-							Your browser does not support the video tag.
-						</video>
+						<img loading="lazy" class="img-fluid img-100 mt-md-2 mt-0 mb-3 d-block mx-auto creative-img" src="../../creative-assets/intimacy-desire/s2.png" alt="">
 					</div>
 
 					<p class="font-weight-bold">I’ve helped hundreds of men regain their confidence, energy, and <span style="white-space:nowrap;">vitality</span>.</p>
@@ -1222,6 +1315,8 @@ window.__lo_site_id = 271871;
 					</div>
 
 					<p>How does PowerX Pro do all this?</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/prostate-pain-point/59_id-59-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p>Well. You may be very surprised to <span style="white-space:nowrap;">hear this.</span></p>
 					<p>But… <span class="font-weight-bold text-highlight">PowerX Pro <span class="font-italic">literally changes</span> the prostate cells.<sup class="bodyCit"></sup></span></p>
 					<p>Wait. What?</p>
@@ -1277,6 +1372,8 @@ window.__lo_site_id = 271871;
 						</div>
 					</div>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/a6.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p>But what if this same person took PowerX Pro's natural extract?</p>
 
 					<div class="row justify-content-around mb-0 mb-md-4">
@@ -1369,6 +1466,8 @@ window.__lo_site_id = 271871;
 								<h4 class="text-success text-center mb-0 d-lg-none">Have powerful antioxidative effects</h4>
 							</div>
 						</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/prostate-pain-point/58_id-58-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					</div>
 
 					<!--START HEADLINE-->			  
@@ -1410,6 +1509,8 @@ window.__lo_site_id = 271871;
 
 					<p class="font-weight-bold">We looked at hundreds of studies and traditional remedies.</p>
 					<p><u>And we narrowed it down to 7 powerful ingredients that work together synergistically.</u></p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/hook-clips/introtruth.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p>I personally spent over 100 hours reviewing the clinical research on each one…</p>
 					<p><span class="font-weight-bold text-highlight">And here are the <span class="font-italic">two standout ingredients</span> that form the core of the PowerX Pro formula.</span></p>
 					<p>Let me tell you about them…</p>
@@ -1421,6 +1522,33 @@ window.__lo_site_id = 271871;
 								<h2 class="text-blue">The First One Is Found in <br class="d-none d-md-block">the Mountains of China:</h2>
 								<h3 class="text-yellow mb-3">A powerful herb called <span style="white-space:nowrap;">Horny Goat Weed.</span></h3>
 							</div>
+
+<div class="mv-title"><h3>The Power of <span class="mv-highlight">Horny Goat Weed</span></h3></div>
+<div class="mv-player" data-video-id="pxp-c21">
+    <span class="mv-badge">KEY INGREDIENT</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ErectVSL/C21_ingredient_Epimedium_HGW_38s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-c21')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">This ancient herb has been used for centuries to support male vitality and performance.</p>
 						</div>
 					</div>				  
 					<!--END HEADLINE-->
@@ -1455,6 +1583,8 @@ window.__lo_site_id = 271871;
 										<div class="col-md-7">
 											<p class="font-weight-bold"><u>Its active compound, icariin, is what makes it so powerful for men's health.</u></p>
 											<p>Modern research has confirmed what <br class="d-none d-lg-block">ancient healers knew:</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/mens-health-awareness/63_id-63-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 											<p>After all, <span class="font-weight-bold text-highlight">Horny Goat Weed supports healthy blood flow, boosts nitric oxide production, and enhances energy and stamina.<sup class="bodyCit"></sup></span></p>
 										</div>
 									</div>
@@ -1521,6 +1651,8 @@ window.__lo_site_id = 271871;
 						</div>
 					</div>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/prostate-pain-point/Image_8.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p><u><em>But there was also a second ingredient I found just as powerful.</em></u></p>
 					<p>In fact, it’s so extraordinary that it’s been called the <b>”Peruvian ginseng”</b>.<sup class=”bodyCit”></sup></p>
 					<p>The Inca warriors were known to consume it before battle for strength and endurance.</p>
@@ -1597,6 +1729,35 @@ window.__lo_site_id = 271871;
 												<h5 class="text-blue text-center mb-0">Promote mental <br class="d-none d-md-block d-lg-none">clarity and focus</h5>
 											</div>
 										</div>
+
+<div class="mv-title"><h3>The Prostate <span class="mv-highlight">Paradox</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/mens-health-awareness/66_id-66-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-p01">
+    <span class="mv-badge">PROSTATE HEALTH</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ProstaVSL/P01_prostate_paradox_hook_34s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-p01')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Discover why millions of men are struggling with their prostate.</p>
 									</div>
 								</div>
 							</div>
@@ -1626,6 +1787,8 @@ window.__lo_site_id = 271871;
 								width="326" height="349"/>
 							</picture>
 						</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/a9.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 						<div class="col-md-7">
 							<p>Many prostate supplements on the market today use proprietary blends that hide exactly how much of each ingredient you’re getting.</p>
 							<p>Others use cheap, synthetic forms of ingredients that your body can’t absorb properly.</p>
@@ -1657,6 +1820,35 @@ window.__lo_site_id = 271871;
 
 					<p>Each capsule contains a precise blend of Horny Goat Weed, Maca Root, L-Arginine, Muira Puama, Panax Ginseng, Tongkat Ali, and Tribulus Terrestris — using 21st century extraction technology.</p>
 
+
+<div class="mv-title"><h3>L-Arginine: <span class="mv-highlight">96% Success Rate</span></h3></div>
+<div class="mv-player" data-video-id="pxp-c17">
+    <span class="mv-badge">KEY INGREDIENT</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ErectVSL/C17_ingredient_L_Arginine_23s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-c17')">&#8635; Replay</button>
+    </div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/testimonials/16_id-16-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+</div>
+<p class="mv-caption">Clinical studies show L-Arginine supports healthy blood flow in 96% of men.</p>
 					<div class="col-lg-11 col-md-10 mx-auto my-4">
 						<div class="bg-bright text-blue p-2">
 							<div class="border-blue h-100 p-md-4 p-3 pb-0">
@@ -1709,6 +1901,8 @@ window.__lo_site_id = 271871;
 						<div class="col-md-7">
 							<p>It took us several months… a lot of Zoom meetings… and countless tours of manufacturing facilities.</p>
 							<p class="font-weight-bold">Producing high-quality herbal extracts that maintain their potency is a real challenge — and not many manufacturers meet our standards.</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/doctor-comparison/53_id-53-imagereference-1-bottles-vigorpng-prompt-A-c.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 							<p>Not many manufacturers are doing it the way we wanted. </p>
 						</div>
 					</div>
@@ -1757,6 +1951,35 @@ window.__lo_site_id = 271871;
 								<h4 class="font-weight-bold text-blue d-md-block d-none m-0 px-5 py-4">They do everything they can to ensure their products are the <span class="text-success">purest, most potent, and most effective supplements on the market.</span></h4>
 								<p class="font-weight-bold text-blue d-md-none p-3 bg-bright m-0">They do everything they can to ensure their products are the<span class="text-success"> purest, most potent, and most effective supplements on <br class="d-block d-md-none">the market.</span></p>
 							</div>
+
+<div class="mv-title"><h3>Is Your <span class="mv-highlight">Performance Fading?</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/influencer/teachinglive.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-c01">
+    <span class="mv-badge">MALE PERFORMANCE</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ErectVSL/C01_problem_hook_32s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-c01')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">The hidden reason behind declining male performance.</p>
 						</div>	
 
 						<div class="col-12 col-md-11 row align-items-stretch justify-content-center mb-4 p-0" style="border: 1px solid rgba(0,0,0,.125);">
@@ -1796,6 +2019,8 @@ window.__lo_site_id = 271871;
 								</picture>	
 								<h4 class="text-blue text-center mb-0">It’s manufactured in a <span style="white-space:nowrap;">cGMP facility.</span></h4>			
 							</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/doctor-comparison/57_id-57-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 							<div class="p-md-4 p-2 col-10 col-lg-6 text-center">
 								<picture class="img-fluid mt-md-2 mt-0 mb-3">
 									<source class="" srcset="https://cdn.truegcloud.com/puraburn/images/colin-31b.webp" type="image/webp"/>
@@ -1827,6 +2052,35 @@ window.__lo_site_id = 271871;
 							<div class="col-12 mx-auto text-center py-2">
 								<h2 class="text-blue ">The Results We Got Back <br class="d-none d-lg-block">Were Amazing.</h2>
 							</div>
+
+<div class="mv-title"><h3>From Struggling to <span class="mv-highlight">Complete Freedom</span></h3></div>
+<div class="mv-player" data-video-id="pxp-p10">
+    <span class="mv-badge">TRANSFORMATION</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ProstaVSL/P10_transformation_story_71s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-p10')">&#8635; Replay</button>
+    </div>
+</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/doctor-comparison/demoonscreen.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<p class="mv-caption">One man's journey from prostate problems to complete freedom and confidence.</p>
 						</div>
 					</div>				  
 					<!--END HEADLINE-->
@@ -1850,13 +2104,7 @@ window.__lo_site_id = 271871;
 		</div>
 	</section>
 
-	
-<style>
-.card-text{
-	font-family: 'Merriweather', serif;
-}
-</style>
-<section id="" class="">
+<section class="">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-9 mx-auto">
@@ -1887,6 +2135,8 @@ window.__lo_site_id = 271871;
 					</div>
 				</div>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/mens-health-awareness/Webimage_5.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 				<p>Gino D. (52), from Denver, Colorado who struggled with low energy levels had <br class="d-none d-lg-block">this to say…</p>
 				<div class="card bg-bright mb-3 col-lg-11 mx-auto">
 					<div class="card-body">
@@ -1931,14 +2181,43 @@ window.__lo_site_id = 271871;
 		<div class="row">
 			<div class="col-12 col-lg-6 col-md-7 mx-auto py-1 py-md-3">
 				<div class="button-center riskfree text-center text-uppercase">
-					<a style="color:#000;" href="#bottomorder">TRY NOW — <br class="d-block d-md-none">GET UP TO 61% OFF <i class="fas fa-arrow-right"></i></a>
+					<a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;">TRY NOW — <br class="d-block d-md-none">GET UP TO 45% OFF <i class="fas fa-arrow-right"></i></a>
 				</div>
 				<p class="text-center secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 			</div>
+
+<div class="mv-title"><h3>The Hidden <span class="mv-highlight">Root Cause</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/mens-health-awareness/small-muscle1b26.webp" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-p08">
+    <span class="mv-badge">SCIENCE</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ProstaVSL/P08_smooth_muscle_science_83s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-p08')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">The smooth muscle mechanism that controls prostate health.</p>
 		</div>
 	</div>
 </section>
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -1958,6 +2237,8 @@ window.__lo_site_id = 271871;
 				</div>
 			</div>
 		</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/mens-health-awareness/64_id-64-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 	</section>
 
 	<section>
@@ -1965,7 +2246,7 @@ window.__lo_site_id = 271871;
 			<div class="row">
 				<div class="col-12 col-lg-6 col-md-7 mx-auto py-1 py-md-3">
 					<div class="button-center riskfree text-center text-uppercase">
-						<a style="color:#000;" href="#bottomorder">TRY NOW — <br class="d-block d-md-none">GET UP TO 61% OFF <i class="fas fa-arrow-right"></i></a>
+						<a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;">TRY NOW — <br class="d-block d-md-none">GET UP TO 45% OFF <i class="fas fa-arrow-right"></i></a>
 					</div>
 					<p class="text-center secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 				</div>
@@ -1973,7 +2254,7 @@ window.__lo_site_id = 271871;
 		</div>
 	</section>
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -1984,7 +2265,7 @@ window.__lo_site_id = 271871;
 </div>
 							<div class="col-12 col-lg-6 col-md-7 mx-auto py-1 py-md-3">
 								<div class="button-center riskfree text-center text-uppercase">
-									<a style="color:#000;" href="#bottomorder">TRY NOW — <br class="d-block d-md-none">GET UP TO 61% OFF <i class="fas fa-arrow-right"></i></a>
+									<a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;">TRY NOW — <br class="d-block d-md-none">GET UP TO 45% OFF <i class="fas fa-arrow-right"></i></a>
 								</div>
 								<p class="text-center secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 							</div>
@@ -2027,6 +2308,8 @@ window.__lo_site_id = 271871;
 								<h5 class="text-blue text-center mb-0">Improve bladder control</h5>	
 							</div>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/banner-ads/6_id-6-imagereference-1-bottles-vigorpng-prompt-Powe.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 							<div class="col-12 col-md-4 col-lg-4 text-center px-2 px-md-4 py-3 py-md-0 mb-md-4">
 								<picture class="img-fluid mt-md-2 mt-0 mb-3">
 									<source class="" srcset="../../lib/img/ingredient_4.jpg" type="image/webp"/>
@@ -2086,6 +2369,8 @@ window.__lo_site_id = 271871;
 								<p class="font-weight-bold text-blue d-md-none p-3 bg-bright m-0">And <span class="text-success">allow you to finally feel confident and happy</span> in your body again.</p>
 							</div>
 						</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/Image_18.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					</div>
 
 					<p>Plus, you can finally enjoy uninterrupted sleep and live life on your terms again.</p>
@@ -2120,8 +2405,64 @@ window.__lo_site_id = 271871;
 
 					<p>Especially when they see you living life fully again!</p>
 
-					<h3 class="text-success my-4 text-center"><u class="font-weight-bold">Simply take capsule</u> of PowerX Pro<sup class="tm"></sup> <br class="d-none d-lg-block">before your main meal of the day, like an appetizer, <br class="d-none d-lg-block">and let it work its wondrously.</h3>
+					<h3 class="text-success my-4 text-center"><u class="font-weight-bold">Simply take 2 capsules</u> of PowerX Pro<sup class="tm"></sup> <br class="d-none d-lg-block">before your main meal of the day, like an appetizer, <br class="d-none d-lg-block">and let it work its wondrously.</h3>
 
+
+<div class="mv-title"><h3>Your New <span class="mv-highlight">Morning Routine</span></h3></div>
+<div class="mv-player" data-video-id="pxp-vid5">
+    <span class="mv-badge">DAILY WELLNESS</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/5_id-5-type-Morning-Routine-niche-Daily-Performance-.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+
+<div class="mv-title"><h3>How Erections <span class="mv-highlight">Really Work</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/hook-clips/29_id-29-imagereference-1-bottles-vigorpng-prompt-A-s.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-c06">
+    <span class="mv-badge">SCIENCE</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ErectVSL/C06_science_erections_59s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-c06')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Understanding the science behind male performance.</p>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-vid5')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Start every day with the confidence that comes from optimal prostate health.</p>
 					<div class="col-md-10 mx-auto bg-bright p-2 mb-4">
 						<div class="border-blue p-md-4 p-3">
 							<h3 class="text-blue font-weight-bold">And it won’t take long before…</h3>
@@ -2162,6 +2503,8 @@ window.__lo_site_id = 271871;
 					<!--END HEADLINE-->
 
 					<p>And I want it in your hands—right now. </p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/woman.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p><em>But something was bothering me.</em></p>
 
 					<h3 class="text-success font-weight-bold text-center">I knew PowerX Pro<sup class="tm"></sup> <br class="d-block d-md-none">could be even better. </h3>
@@ -2226,6 +2569,8 @@ window.__lo_site_id = 271871;
 								<h3 class="text-yellow">It’s because of this:</h3>
 							</div>
 						</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/banner-ads/7_id-7-imagereference-1-bottles-vigorpng-prompt-Powe.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					</div>				  
 					<!--END HEADLINE-->
 
@@ -2274,6 +2619,8 @@ window.__lo_site_id = 271871;
 								<h2 class="text-blue mb-2">And I’m So Happy <br class="d-block d-md-none">With <br class="d-none d-lg-block">the Results Our <br class="d-block d-md-none">Customers Have Gotten With PowerX Pro<sup class="tm"></sup>...</h2>
 							</div>
 						</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/hook-clips/31_id-31-imagereference-1-bottles-vigorpng-prompt-Mac.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					</div>				  
 					<!--END HEADLINE-->
 				</div>
@@ -2281,13 +2628,7 @@ window.__lo_site_id = 271871;
 		</div>
 	</section>
 
-	
-<style>
-.card-text{
-	font-family: 'Merriweather', serif;
-}
-</style>
-<section id="" class="">
+<section class="">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-9 mx-auto">
@@ -2330,6 +2671,35 @@ window.__lo_site_id = 271871;
 						</picture>
 
 						<p class="card-text">"It’s now in my daily routine… My nighttime bathroom trips went from 5 to just 1 in 4 months."<sup>†</sup></p>
+
+<div class="mv-title"><h3>Why Doctors Recommend <span class="mv-highlight">PowerX Pro</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/mens-health-awareness/MAN-DIET-GRAPH.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-vid7">
+    <span class="mv-badge">DOCTOR RECOMMENDED</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/7_id-7-type-Doctor-Recommendation-niche-Trust-Author.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-vid7')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Leading health professionals share why they trust PowerX Pro.</p>
 						<p class=" font-weight-bold"><em>—George S. (69), Alabama</em></p>
 					</div>
 				</div>
@@ -2339,18 +2709,20 @@ window.__lo_site_id = 271871;
 		<div class="row">
 			<div class="col-12 col-lg-6 col-md-7 mx-auto py-1 py-md-3">
 				<div class="button-center riskfree text-center text-uppercase">
-					<a style="color:#000;" href="#bottomorder">TRY NOW — <br class="d-block d-md-none">GET UP TO 61% OFF <i class="fas fa-arrow-right"></i></a>
+					<a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;">TRY NOW — <br class="d-block d-md-none">GET UP TO 45% OFF <i class="fas fa-arrow-right"></i></a>
 				</div>
 				<p class="text-center secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 			</div>
 		</div>
 	</div>
 </section>
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
 					<p>Do you see why I can’t wait to get PowerX Pro into your hands?</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/mens-health-awareness/67_id-67-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p>Now, with that said…</p>
 
 					<!--START HEADLINE-->			  
@@ -2394,6 +2766,8 @@ window.__lo_site_id = 271871;
 					<!--END HEADLINE-->
 
 					<p>Now, granted, we heard from many of our customers that they would <span class="font-italic">gladly</span> pay that amount and more… </p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/before-after/46_id-46-imagereference-1-bottles-vigorpng-prompt-Lan.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p class="font-weight-bold"><span class="text-highlight">Because they’ve witnessed the prostate health powers of PowerX Pro.</span></p>
 					<p>After all what is the cost of not living the life you deserve… </p>	
 					<p>And going through life...</p>
@@ -2456,6 +2830,8 @@ window.__lo_site_id = 271871;
 							<div class="col-md-9 col-12 order-md-1 p-0 d-flex align-items-center bg-bright">
 								<h4 class=”font-weight-bold text-blue d-md-block d-none m-0 px-5 py-4”>Imagine <span class=”text-success”>not having to worry about nighttime bathroom trips disrupting your sleep.</span></h4>
 								<p class=”font-weight-bold text-blue d-md-none p-3 bg-bright m-0”>Imagine <span class=”text-success”>not having to worry about nighttime bathroom trips disrupting <span style=”white-space:nowrap;”>your sleep.</span></span></p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/before-after/43_id-43-imagereference-1-bottles-vigorpng-prompt-Lan.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 							</div>
 						</div>
 
@@ -2509,6 +2885,35 @@ window.__lo_site_id = 271871;
 								<h4 class="font-weight-bold text-blue d-md-block d-none m-0 px-5 py-4">And <span class="text-success">never again having to deal with the frustration</span> of poor urinary flow and low energy.</h4>
 								<p class="font-weight-bold text-blue d-md-none p-3 bg-bright m-0">And <span class="text-success">never again having to deal with the frustration</span> of poor urinary flow and low energy.</p>
 							</div>
+
+<div class="mv-title"><h3>Harvard & Cleveland Clinic <span class="mv-highlight">Confirm It</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/before-after/44_id-44-imagereference-1-bottles-vigorpng-prompt-Lan.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-p04">
+    <span class="mv-badge">CLINICAL RESEARCH</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ProstaVSL/P04_science_promise_53s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-p04')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Top research institutions validate these ingredients.</p>
 						</div>
 					</div>	
 
@@ -2524,11 +2929,13 @@ window.__lo_site_id = 271871;
 					<div class="d-lg-block">
 						<div class="row">
 							<div class="col-12 mx-auto text-center py-2">
-								<h2 class="text-blue">For You Only, One Bottle of <br class="d-none d-md-block">PowerX Pro<sup class="tm"></sup> Is Just $69.</h2>
-								<h3 class="text-yellow mb-2">That’s a savings of %.</h3>
+								<h2 class="text-blue">For You Only, One Bottle of <br class="d-none d-md-block">PowerX Pro<sup class="tm"></sup> Is Just $79.</h2>
+								<h3 class="text-yellow mb-2">That’s a savings of 45%.</h3>
 							</div>
 						</div>
 					</div>				  
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/testimonials/17_id-17-imagereference-1-bottles-vigorpng-prompt-An-.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<!--END HEADLINE-->					
 
 				</div>
@@ -2537,7 +2944,7 @@ window.__lo_site_id = 271871;
 	</section>
 
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -2546,14 +2953,14 @@ window.__lo_site_id = 271871;
 					<p>But I’d like to encourage you to get more than just one bottle today...</p>
 					<p><span class="font-weight-bold text-highlight">Because it gets even better, when you choose 3 or 6 bottles of PowerX Pro.</span></p>
 					<p>Firstly, it costs us less to send more bottles, so we’ll pass those savings on <span style="white-space:nowrap;">to you.</span></p>
-					<p>If you go with the 3 bottle package of PowerX Pro, you’ll only pay <br class="d-none d-md-block d-lg-none"><u class="font-weight-bold">$59 per bottle</u>.</p>
+					<p>If you go with the 3 bottle package of PowerX Pro, you’ll only pay <br class="d-none d-md-block d-lg-none"><u class="font-weight-bold">$64 per bottle</u>.</p>
 
 					<!--START HEADLINE-->			  
 					<div class="d-lg-block">
 						<div class="row">
 							<div class="col-12 mx-auto text-center py-2">
-								<h2 class="text-blue">And if You Order 6 Bottles Today, <br class="d-none d-lg-block">You’ll Get Each Bottle of PowerX Pro<sup class="tm"></sup> <br class="d-none d-lg-block">for <br class="d-block d-md-none">Just <span class="text-success">$39 Each!</span></h2>
-								<h3 class="text-yellow">Which means you’ll get a huge savings of $300 !</h3>
+								<h2 class="text-blue">And if You Order 6 Bottles Today, <br class="d-none d-lg-block">You’ll Get Each Bottle of PowerX Pro<sup class="tm"></sup> <br class="d-none d-lg-block">for <br class="d-block d-md-none">Just <span class="text-success">$49 Each!</span></h2>
+								<h3 class="text-yellow">Which means you’ll get a huge savings of $780 !</h3>
 							</div>
 						</div>
 					</div>				  
@@ -2568,6 +2975,8 @@ window.__lo_site_id = 271871;
 							<p class="font-weight-bold">You’ll get the best results if you take it for 90 days.</p>
 							<p>That’s because a 90 day period optimizes PowerX Pro’s abilities to support prostate. </p>
 						</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/ugc/36_id-36-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					</div>
 
 					<div class="col-lg-11 col-md-10 mx-auto my-4">
@@ -2605,7 +3014,7 @@ window.__lo_site_id = 271871;
 					<p><span class="font-weight-bold text-highlight">$39 per bottle is NOTHING.</span></p>
 					<p>Each bottle has 60 capsules and <u>it will last you an entire month</u>.</p>
 					<p>Let me put it another way:</p>
-					<p>That’s literally $1.03 a day to support your prostate health and reclaim your quality of life.</p>
+					<p>That’s literally $1.63 a day to support your prostate health and reclaim your quality of life.</p>
 
 					<!--START HEADLINE-->			  
 					<div class="d-lg-block">
@@ -2613,6 +3022,8 @@ window.__lo_site_id = 271871;
 							<div class="col-12 mx-auto text-center py-2">
 								<h2 class="text-blue">That’s Why I Strongly <br class="d-block d-md-none">Urge You to Get the <span style="white-space:nowrap;">3 Or </span><span style="white-space:nowrap;">6 Bottle</span> Package.</h2>
 							</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/hook-clips/28_id-28-imagereference-1-bottles-vigorpng-prompt-Ext.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 						</div>
 					</div>				  
 					<!--END HEADLINE-->
@@ -2622,7 +3033,7 @@ window.__lo_site_id = 271871;
 	</section>
 
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -2645,6 +3056,35 @@ window.__lo_site_id = 271871;
 
 					<p>You can even give one to a loved one or a friend who's also dealing with prostate health concerns.</p>
 
+
+<div class="mv-title"><h3>Real Men, <span class="mv-highlight">Real Results</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/MDSM2022Image (21).jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-c05">
+    <span class="mv-badge">VIDEO PROOF</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ErectVSL/C05_video_testimonials_27s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-c05')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Watch real testimonials from men who got their confidence back.</p>
 					<!--START HEADLINE-->			  
 					<div class="d-lg-block">
 						<div class="row">
@@ -2677,6 +3117,8 @@ window.__lo_site_id = 271871;
 									</div>
 								</div>
 							</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/Image_17.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 						</div>
 					</div>
 
@@ -2721,6 +3163,8 @@ window.__lo_site_id = 271871;
 
 					<p>Remember, PowerX Pro is formulated with seven key performance-supporting ingredients:</p>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/s3.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<div class="row mb-md-3">		
 						<div class="d-flex flex-wrap justify-content-xl-12-around mx-auto text-blue">
 							<div class="px-4 pb-3 col-lg-3 col-md-3 text-center">
@@ -2798,6 +3242,8 @@ window.__lo_site_id = 271871;
 								</div>
 							</div>
 						</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/prostate-pain-point/60_id-60-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					</div>
 
 					<!--START HEADLINE-->			  
@@ -2811,7 +3257,7 @@ window.__lo_site_id = 271871;
 					</div>				  
 					<!--END HEADLINE-->
 
-					<p>Six bottles at <u>$39 each</u> means you’ll have enough PowerX Pro for <span style="white-space:nowrap;">6 months</span>, and you’ll be <span class="font-weight-bold text-highlight">saving $300</span>… </p>
+					<p>Six bottles at <u>$39 each</u> means you’ll have enough PowerX Pro for <span style="white-space:nowrap;">6 months</span>, and you’ll be <span class="font-weight-bold text-highlight">saving $780</span>… </p>
 					<p class="font-weight-bold">Plus, you’ll get free shipping within <span style="white-space:nowrap;">the US.</span></p>
 				</div>
 			</div>					
@@ -2819,7 +3265,7 @@ window.__lo_site_id = 271871;
 	</section>
 
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -2885,6 +3331,35 @@ window.__lo_site_id = 271871;
 							<div class="col-md-9 col-12 order-md-1 p-0 d-flex align-items-center bg-bright">
 								<h4 class="font-weight-bold text-blue d-md-block d-none m-0 px-5 py-4">When you feel the confidence and vitality you had in your younger years…</h4>
 								<p class="font-weight-bold text-blue d-md-none p-3 bg-bright m-0">When you feel the confidence and vitality you had in your younger years…</p>
+
+<div class="mv-title"><h3>Nature's Most Powerful <span class="mv-highlight">Ingredients</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/prostate-pain-point/61_id-61-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-vid4">
+    <span class="mv-badge">ALL NATURAL</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/4_id-4-type-Nature-Ingredients-niche-Natural-Organic.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-vid4')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Every ingredient backed by clinical research.</p>
 							</div>
 						</div>
 
@@ -2917,6 +3392,8 @@ window.__lo_site_id = 271871;
 
 					<p>So whether you choose 1, 3, or 6 bottles of PowerX Pro today…</p>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/MDSM2022Image (20).jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<!--START HEADLINE-->			  
 					<div class="d-lg-block">
 						<div class="row">
@@ -2930,7 +3407,7 @@ window.__lo_site_id = 271871;
 
 					<p>I don’t want you to waste your money if this doesn’t work.</p>
 					<p>And that’s why…</p>
-					<p><span class="font-weight-bold text-highlight">I’m giving you a full year that’s <span style="white-space:nowrap;">60 days</span>to decide if PowerX Pro is right <span style="white-space:nowrap;">for you.</span></span></p>
+					<p><span class="font-weight-bold text-highlight">I’m giving you a full <span style="white-space:nowrap;">60 days</span> to decide if PowerX Pro is right <span style="white-space:nowrap;">for you.</span></span></p>
 
 				</div>
 			</div>
@@ -2966,18 +3443,49 @@ window.__lo_site_id = 271871;
 				</div>
 
 					<p>You can safely place your order with us, knowing that absolutely nothing will go wrong. <span class="font-weight-bold text-highlight">Give PowerX Pro a try, and experience the difference it will make in your life.</span></p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/hook-clips/33_id-33-imagereference-2-bottles-vigorpng-prompt-Two.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p>If you are not happy with PowerX Pro at any time, simply send back your bottles, and we will refund you immediately.</p>
 					<p><u>No questions asked.</u></p>
 					<p>We pride ourselves on having effective products and excellent customer service, so we want you to be absolutely satisfied.</p>
 					<p>And let’s be clear here: You’re not <em>really</em> making a decision today.</p>
 					<p class="font-weight-bold">You have a full 60 days that’s 60 days to decide if PowerX Pro is for you.</p>
 					<p>If, for any reason, PowerX Pro doesn’t work for you…</p>
+
+<div class="mv-title"><h3>Life-Changing <span class="mv-highlight">Results</span></h3></div>
+<div class="mv-player" data-video-id="pxp-p22">
+    <span class="mv-badge">EXTENDED PROOF</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ProstaVSL/P22_extended_testimonials_77s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-p22')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Extended testimonials showing the lasting impact of PowerX Pro.</p>
 					<p class="pb-3">Contact us, and we’ll give you a full and immediate refund.</p>
 			</div>
 		</div>
 	</div>
 </section>
-	<section id="">
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/testimonials/18_id-18-imagereference-1-bottles-vigorpng-prompt-A-c.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -3004,7 +3512,7 @@ window.__lo_site_id = 271871;
 	</section>
 
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -3031,6 +3539,35 @@ window.__lo_site_id = 271871;
 						
 						
 					</div>
+
+<div class="mv-title"><h3>Prostate Health <span class="mv-highlight">Relief Science</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/influencer/8_id-8-imagereference-1-bottles-vigorpng-prompt-A-co.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-vid10">
+    <span class="mv-badge">HEALTH</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/10_id-10-type-Prostate-Health-Relief-niche-Health-Com.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-vid10')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">The science behind prostate relief.</p>
                     <p>You’ll also receive free shipping within the US…</p>
 					<p>The only reason I’m throwing these bonuses in for free, <u class="font-weight-bold">is to match your commitment to effective prostate support</u>.</p>
 					<p>At the end of the day… <em>I don’t want you to stress over this decision.</em></p>
@@ -3062,6 +3599,8 @@ window.__lo_site_id = 271871;
 								<h4 class="font-weight-bold text-blue d-md-block d-none m-0 px-5 py-4">Like having <span class="text-success">more energy and better concentration.</span></h4>
 								<p class="font-weight-bold text-blue d-md-none p-3 bg-bright m-0">Like having <span class="text-success">more energy and better concentration.</span></p>
 							</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/a17.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 						</div>
 
 						<div class="col-12 col-md-10 row align-items-stretch justify-content-center mb-4 p-0" style="border: 1px solid rgba(0,0,0,.125);">
@@ -3121,6 +3660,8 @@ window.__lo_site_id = 271871;
 											<h4 class="mb-0 font-weight-bold col-12 col-md-11 text-center">That’s why our checkout page uses the highest level of encryption technology to keep your information safe and secure. <br class="d-md-block d-none"><strong><u>We use 256 bit <span style="white-space:nowrap;">SSL encryption.</span></u></strong></h4>
 										
 									</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/mens-health-awareness/65_id-65-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 								</div>			
 							</div>
 						</div>
@@ -3149,7 +3690,7 @@ window.__lo_site_id = 271871;
 						</div>
 						<div class="col-md-7">
 							<p>When it does, open a bottle immediately.</p>
-							<p class="font-weight-bold">Simply take capsule before your main  meal of the day. Think of it as an appetizer.</p>
+							<p class="font-weight-bold">Simply take 2 capsules before your main  meal of the day. Think of it as an appetizer.</p>
 							<p>It’s that easy.</p>
 							<p><span class="font-weight-bold text-highlight">And before you know it… you’ll start to <br class="d-none d-lg-block">see results.</span></p>
 						</div>
@@ -3163,6 +3704,8 @@ window.__lo_site_id = 271871;
 								<h3 class="text-yellow">Our beta-testers have reported seeing results <br class="d-none d-md-block">as early as the <span style="white-space:nowrap;">same day…</span></h3>
 							</div>
 						</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/banner-ads/3_id-3-imagereference-1-bottles-vigorpng-prompt-Powe.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					</div>				  
 					<!--END HEADLINE--> 
 
@@ -3179,7 +3722,7 @@ window.__lo_site_id = 271871;
 							<p><span class="font-weight-bold text-highlight">Some saw prostate support results in under <span style="white-space:nowrap;">a week.</span></span></p>
 							<p>Others, a little longer.</p>
 							<p class="font-weight-bold">Just remember it’s important that you get into the habit of taking PowerX Pro daily to get optimum results.</p>
-							<p>All you have to do is take capsule every day, before your main meal.</p>
+							<p>All you have to do is take 2 capsules every day, before your main meal.</p>
 						</div>
 					</div>
 
@@ -3201,6 +3744,35 @@ window.__lo_site_id = 271871;
 					<p>This is the moment you’ll look back on as <span class="font-italic">the moment</span> you’d done something to change your life for the better.</p> 
 					<p>And because of this one decision, <span style="white-space:nowrap;">you’ll realize… </span></p>
 
+
+<div class="mv-title"><h3>The <span class="mv-highlight">Performance Comeback</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/unboxing/52_id-52-imagereference-1-bottles-vigorpng-prompt-Cle.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-c14">
+    <span class="mv-badge">TRANSFORMATION</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ErectVSL/C14_visual_transformation_42s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-c14')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Watch the visual transformation.</p>
 					<div class="mx-3 mx-md-0 row justify-content-center">
 						<div class="col-12 col-md-11 row align-items-stretch justify-content-center mb-4 p-0" style="border: 1px solid rgba(0,0,0,.125);">
 							<div class="col-md-3 col-12 text-center order-md-2 mb-0 p-0">
@@ -3241,6 +3813,8 @@ window.__lo_site_id = 271871;
 							</div>
 						</div>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 						<div class="col-12 col-md-11 row align-items-stretch justify-content-center mb-4 p-0" style="border: 1px solid rgba(0,0,0,.125);">
 							<div class="col-md-3 col-12 text-center order-md-2 mb-0 p-0">
 								<picture class="img-fluid">
@@ -3295,6 +3869,8 @@ window.__lo_site_id = 271871;
 					</div>
 
 					<p>When you get back the life you had before prostate problems started affecting your daily routine…</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/unboxing/48_id-48-imagereference-3-bottles-vigorpng-prompt-Cle.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p><span class="font-weight-bold text-highlight">You’ll feel as if you’ve woken up from a horrific nightmare.</span></p>
 
 					<!--START HEADLINE-->			  
@@ -3347,6 +3923,8 @@ window.__lo_site_id = 271871;
 								<div class="col-md-7">
 									<h3 class="text-success font-weight-bold">And 6+1 bottles of PowerX Pro<sup class="tm"></sup>...</h3>
 									<p>Which makes the most sense for your health and wallet will <u class="font-weight-bold">guarantee ongoing prostate support</u>.</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/unboxing/49_id-49-imagereference-1-bottles-vigorpng-prompt-Mal.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 								</div>
 							</div>
 						</div>
@@ -3404,6 +3982,35 @@ window.__lo_site_id = 271871;
 					<p>Choosing to try PowerX Pro today means you are giving yourself permission to live the life you deserve… </p>
 					<p class="font-weight-bold">You should thrive live life to the fullest…</p>
 					<p><span class="font-weight-bold text-highlight">And not be trapped by prostate issues, frustrated with constant bathroom trips and having low energy levels.</span></p>
+
+<div class="mv-title"><h3>Real Men, <span class="mv-highlight">Real Results</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/happy.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-vid12">
+    <span class="mv-badge">TESTIMONIALS</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/12_id-12-type-Testimonial-Setup-niche-Social-Proof-im.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-vid12')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Hear from real men who transformed their lives.</p>
 					<p>I want freedom for you.</p>
 					<p>I know it’s what you want too… That’s why you’re here.</p>
 
@@ -3412,7 +4019,7 @@ window.__lo_site_id = 271871;
 						<div class="row">
 							<div class="col-12 mx-auto text-center py-2">
 								<h2 class="text-blue mb-2">Again, Your Entire Order Is Risk Free.</h2>
-								<h3 class="text-yellow">You have one full year to decide if <br class="d-none d-lg-block">PowerX Pro<sup class="tm"></sup> is right for you.</h3>
+								<h3 class="text-yellow">You have a full 60 days to decide if <br class="d-none d-lg-block">PowerX Pro<sup class="tm"></sup> is right for you.</h3>
 							</div>
 						</div>
 					</div>				  
@@ -3432,6 +4039,8 @@ window.__lo_site_id = 271871;
 						</div>
 					</div>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/wifebed2.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<p>But I can’t make the decision for you to try it… <u>You have to do <br class="d-none d-md-block d-lg-none">it yourself.</u></p>
 
 					<!--START HEADLINE-->			  
@@ -3500,6 +4109,8 @@ window.__lo_site_id = 271871;
 						</div>
 						<div class="col-md-7 my-auto">
 							<p>Maybe you'll go back to feeling uncomfortable and frustrated.</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/sex-on-carpet.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 							<p><span class="font-weight-bold text-highlight">But I do NOT want that for you. <em>That’s not living.</em></span></p>
 							<p>I wouldn’t wish that life on my worst enemies.</p>
 							<p class="font-weight-bold">So why punish yourself like that? Why take that risk?</p>
@@ -3533,11 +4144,26 @@ window.__lo_site_id = 271871;
 					<!--END HEADLINE-->
 				</div>
 			</div>					
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/Webimage_7.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 		</div>
 	</section>
 
+<div class="row justify-content-center my-4">
+    <div class="col-12 col-md-4 mb-3">
+        <img src="../../creative-assets/before-after/46_id-46-imagereference-1-bottles-vigorpng-prompt-Lan.jpg" class="creative-img img-fluid rounded" alt="Before and After" style="width:100%">
+    </div>
+    <div class="col-12 col-md-4 mb-3">
+        <img src="../../creative-assets/before-after/43_id-43-imagereference-1-bottles-vigorpng-prompt-Lan.jpg" class="creative-img img-fluid rounded" alt="Before and After" style="width:100%">
+    </div>
+    <div class="col-12 col-md-4 mb-3">
+        <img src="../../creative-assets/before-after/44_id-44-imagereference-1-bottles-vigorpng-prompt-Lan.jpg" class="creative-img img-fluid rounded" alt="Before and After" style="width:100%">
+    </div>
+    <p class="text-center text-muted" style="font-size:12px;">&dagger;Individual results may vary</p>
+</div>
 
-	<section id="">
+
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -3591,6 +4217,35 @@ window.__lo_site_id = 271871;
 								<h4 class="font-weight-bold text-blue d-md-block d-none m-0 px-5 py-4"><span class="text-success">Celebrating every night when you sleep through</span> without multiple bathroom trips.</h4>
 								<p class="font-weight-bold text-blue d-md-none p-3 bg-bright m-0"><span class="text-success">Celebrating every night when you sleep through</span> without multiple bathroom trips.</p>
 							</div>
+
+<div class="mv-title"><h3>Men Are <span class="mv-highlight">Speaking Out</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/Image_19.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-p05">
+    <span class="mv-badge">TESTIMONIALS</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ProstaVSL/P05_testimonial_burst_46s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-p05')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Powerful testimonials from men who found relief.</p>
 						</div>	
 
 						<div class="col-12 col-md-11 row align-items-stretch justify-content-center mb-4 p-0" style="border: 1px solid rgba(0,0,0,.125);">
@@ -3627,6 +4282,8 @@ window.__lo_site_id = 271871;
 							<ul class="text-blue check-list check-list ml-md-4 ml-2">
 								<p>The Hidden Toxins Affecting Your Prostate Health</p>
 								<p>How to Support Your Prostate Naturally</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/hook-clips/TopTierDopamineHijacker.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 								<p>Nighttime Habits That Help Support Prostate Function</p>
 							</ul>
 							<p class="mb-0"><span class="text-highlight font-weight-bold">All three are yours to keep, when you get the multi-bottle packages of PowerX Pro.</span></p>
@@ -3664,6 +4321,8 @@ window.__lo_site_id = 271871;
 					<p>As you know, the world is still facing global supply-chain issues...</p>
 					<p><em>No thanks to the war in Ukraine, and out-of-control inflation.</em></p>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/MDSM2022Image (15).jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 					<div class="row">
 						<div class="col-md-5 order-md-1 my-auto text-center mx-auto">
 							<img src="../../Images/7-bottles-vigor.webp" alt="PowerX Pro" style="width:500px; max-width:100%; height:auto;">
@@ -3701,10 +4360,12 @@ window.__lo_site_id = 271871;
 				</div>	
 			</div>	
 		</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/hook-clips/32_id-32-imagereference-1-bottles-vigorpng-prompt-Pow.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 	</section>			
 
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto">
@@ -3766,11 +4427,40 @@ window.__lo_site_id = 271871;
 							<div class="col-md-7">
 								<p>PowerX Pro is for anyone who <span class="text-highlight font-weight-bold">wants to support prostate health — without expensive prescriptions, invasive procedures, or risky side effects.</span></p>
 								<p>It doesn’t matter how old you are, or how long you’ve been dealing with prostate concerns…</p>
+
+<div class="mv-title"><h3>See What's <span class="mv-highlight">Inside PowerX Pro</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/influencer/11_id-11-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-vid17">
+    <span class="mv-badge">PRODUCT REVEAL</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/17_id-17-type-Container-Full-of-Product-niche-Product.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-vid17')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Take a closer look at the premium formula inside every bottle.</p>
 								<p class="font-weight-bold">PowerX Pro begins to work rapidly, and our customers have reported seeing results in as quickly as one week.</p>
 							</div>
 						</div>
 
-						<p>It works best when you take it daily (just Take capsule before your main meal), and consistently.</p>
+						<p>It works best when you take it daily (just take 2 capsules before your main meal), and consistently.</p>
 					</div>
 
 					<div class="btn btn-link mt-4 mb-0"  id="headingTwo">
@@ -3789,6 +4479,8 @@ window.__lo_site_id = 271871;
 						<p>But most important of all, you’ve met a few of the thousands of men whom PowerX Pro has worked for.</p>
 						<p>Just listen to some of their stories…</p>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/prostate-pain-point/62_id-62-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 						<div class="card bg-bright mb-3 col-lg-11 mx-auto">
 							<div class="card-body">
 								<img loading="lazy" alt="" class="test-left-pic border-testimonial center-align-testimonial" src="../../Images/istockphoto-1135381120-612x612.jpg" width="125">
@@ -3841,7 +4533,9 @@ window.__lo_site_id = 271871;
 						</span><i class="fa-arrowdown"></i> 
 					</div>
 					<div id="collapseThree" class="p-4 bg-white-new">
-						<p>Some of our beta testers have reported seeing results in as quickly as one week, after consistently take capsule before a meal <span style="white-space:nowrap;">every day.</span></p>
+						<p>Some of our beta testers have reported seeing results in as quickly as one week, after consistently take 2 capsules before a meal <span style="white-space:nowrap;">every day.</span></p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/ugc/40_id-40-imagereference-1-bottles-vigorpng-prompt-A-w.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 						<p><span class="font-weight-bold text-highlight">And the science backs this up! But consistency is key.</span> </p>
 						<p>Most of the clinical trials ran for at least 16 weeks before the participants saw significant results.<sup class="bodyCit"></sup> <sup class="bodyCit"></sup></p>
 						<p>However, that doesn’t mean PowerX Pro won’t start working right away.</p>
@@ -3909,6 +4603,8 @@ window.__lo_site_id = 271871;
 									<h5 class="text-blue text-center mb-0">Flush out toxins</h5>	
 								</div>
 							</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/unboxing/51_id-51-imagereference-1-bottles-vigorpng-prompt-A-w.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 						</div>
 
 						<p>In order to get the best results, you need to take PowerX Pro daily, and consistently. <u>Doing this will also make sure its benefits are long–lasting</u>.</p>
@@ -3939,6 +4635,35 @@ window.__lo_site_id = 271871;
 								</div>
 								<div id="collapseEight" class="p-4  bg-white-new">
 									<p>It’s very simple. If you’re not 100% satisfied with PowerX Pro, just let us know, and you’ll get back every penny you paid.</p>
+
+<div class="mv-title"><h3>Your Moment of <span class="mv-highlight">Freedom</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/influencer/9_id-9-imagereference-1-bottles-vigorpng-prompt-A-wo.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-c15">
+    <span class="mv-badge">INSPIRATION</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ErectVSL/C15_visual_victory_moment_51s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-c15')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">The moment everything changes.</p>
 									<p>What's more, no matter which package you choose, you're covered by our 60-day money-back guarantee.</p>
 									<p class="font-weight-bold">You have 60 days to try PowerX Pro to decide if it's right for you.</p>
 									<p>It’s that simple. No fine print. No hassle.</p>
@@ -3953,15 +4678,17 @@ window.__lo_site_id = 271871;
 									<p>Great! All you have to do is decide on how many bottles you’d like.</p>
 
 									<div class="col-md-10 btn-faq mb-3 mx-auto">
-										<a href="#bottomorder" class="btn text-blue" style="box-shadow: none;" role="button"><h2 class="mb-0">Click Here to Choose Your Bottles Now <i class="fa-solid fa-circle-right"></i></h2></a>
+										<a href="#buynow" onclick="scrollToCards();return false;" class="btn text-blue" style="box-shadow: none;" role="button"><h2 class="mb-0">Click Here to Choose Your Bottles Now <i class="fa-solid fa-circle-right"></i></h2></a>
 									</div>
 
-									<!--<div class="pt-0 mx-auto pb-4"> <a href="#bottomorder" class="btn btn-faq" style="box-shadow: none;" role="button">Click Here to Choose Your Bottles Now <i class="fa-solid fa-circle-right"></i></a> </div>-->
+									<!--<div class="pt-0 mx-auto pb-4"> <a href="#buynow" onclick="scrollToCards();return false;" class="btn btn-faq" style="box-shadow: none;" role="button">Click Here to Choose Your Bottles Now <i class="fa-solid fa-circle-right"></i></a> </div>-->
 
 									<p>Many of our customers choose the <b>3  or 6 bottle package of PowerX Pro</b> because of the extra savings…</p>
 									<p>And because they’ve experienced how PowerX Pro works best, and offers <span style="white-space:nowrap;">long-lasting</span> benefits, when it’s taken consistently.</p>
 									<p><span class="font-weight-bold text-highlight">To avoid an interruption to the prostate health, they wisely buy more bottles to ensure that they have a steady supply of PowerX Pro.</span></p>
 									<p>Right now, <u>$39/bottle for our 6-bottle package</u> is the lowest price you’ll ever see.</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/influencer/10_id-10-imagereference-1-bottles-vigorpng-prompt-A-f.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 									<p>Click on the package you want, fill out your details on the checkout page…</p>
 									<p>And you'll be well on your way to supporting your prostate health more quickly and easily.</p>
 									<p>Remember: You’re covered by our 100% money-back satisfaction guarantee.</p>
@@ -3975,7 +4702,7 @@ window.__lo_site_id = 271871;
 					<div class="row">
 						<div class="col-12 col-lg-6 col-md-7 mx-auto py-1 py-md-3">
 							<div class="button-center riskfree text-center text-uppercase">
-								<a style="color:#000;" href="#bottomorder">TRY NOW — <br class="d-block d-md-none">GET UP TO 61% OFF <i class="fas fa-arrow-right"></i></a>
+								<a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;">TRY NOW — <br class="d-block d-md-none">GET UP TO 45% OFF <i class="fas fa-arrow-right"></i></a>
 							</div>
 							<p class="text-center secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 						</div>
@@ -3983,7 +4710,7 @@ window.__lo_site_id = 271871;
 				</div>
 			</section>
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto mt-2 mb-0">
@@ -3999,13 +4726,15 @@ window.__lo_site_id = 271871;
 					<!--END HEADLINE-->
 
 					<p>Go ahead and make a selection now.</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/influencer/12_id-12-imagereference-1-bottles-vigorpng-prompt-A-w.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 				</div>
 			</div>
 		</div>
 	</section>
 
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto mt-2 mb-0">
@@ -4013,14 +4742,14 @@ window.__lo_site_id = 271871;
 					<p>Hopefully, your questions were answered.</p>
 					<p>But if you’re still wondering if PowerX Pro is <span class="font-italic">right for you…</span></p>
 					<p>Honestly? There’s only one way to find out… <span class="font-weight-bold text-highlight">And that’s to give it a try.</span></p>
-					<p>If it doesn’t work for you, simply ask for <br class="d-block d-md-none">a refund.</p></p>
+					<p>If it doesn’t work for you, simply ask for <br class="d-block d-md-none">a refund.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto mt-2 mb-0">
@@ -4044,6 +4773,8 @@ window.__lo_site_id = 271871;
 						</div>
 						<div class="col-md-7">
 							<p>You can breathe a sigh of relief. <em>It’s over.</em> </p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/prostate-pain-point/upset.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 							<p><span class="font-weight-bold text-highlight">And you can <span class="font-italic">forget</span> about all those prostate worries and how they tormented you.</span></p>
 							<p>It’ll seem as if they never existed… like a bad dream from a distant past.</p>
 							<p>But what you <em>will</em> remember is that the joy and relief PowerX Pro gives you…</p>
@@ -4071,7 +4802,62 @@ window.__lo_site_id = 271871;
 
 
 <!-- NEW PRICING CARDS -->
-<div id="buynow" class="mt-product-grid">
+<div id="buynow" class="mt-tryit-banner">
+  <div class="tryit-img">
+    <img src="../../Images/1-bottles-vigor.webp" alt="PowerX Pro 1 Bottle">
+  </div>
+  <div class="tryit-text">
+    <h4>Just Want To Try It First?</h4>
+    <p>1 Bottle &middot; 30 Day Supply</p>
+  </div>
+  <div class="tryit-right">
+    <div class="tryit-price">
+      <span class="price-amount">$79</span>
+      <span class="price-per">/Bottle</span>
+    </div>
+    <div class="tryit-stack">
+      <div class="tryit-guarantee">
+        <img src="../../pills/60days.webp" alt="60 Days Guarantee">
+      </div>
+      <div class="tryit-action">
+        <a href="https://powerxpro.pay.clickbank.net/?cbitems=main-1&template=checkout2&cbfid=62696&exitoffer=exit_1" class="mt-buy-now-btn">
+          <img src="../../lib/img/buy-now.webp" alt="Buy Now">
+        </a>
+        <p class="tryit-shipping">+ $19.99 Shipping</p>
+
+<div class="mv-title"><h3>Don't Wait — <span class="mv-highlight">Take Action Now</span></h3></div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/prostate-pain-point/upset2.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
+<div class="mv-player" data-video-id="pxp-p23">
+    <span class="mv-badge">FINAL PUSH</span>
+    <video muted playsinline preload="metadata">
+        <source src="../../videos/ProstaVSL/P23_final_emotional_push_45s.mp4" type="video/mp4">
+    </video>
+    <div class="mv-play-overlay" onclick="togglePlayPause(this)">
+        <div class="mv-play-btn">
+            <svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+    <button class="mv-mute-btn" aria-label="Toggle sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+            <line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+        </svg>
+    </button>
+    <div class="mv-end-cta">
+        <a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+        <button class="mv-end-replay" onclick="replayVideo('pxp-p23')">&#8635; Replay</button>
+    </div>
+</div>
+<p class="mv-caption">Every day you wait is another day without relief.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-product-grid">
   <!-- 2 Bottles -->
   <div class="mt-product-card" data-card="2bottle">
     <div class="mt-product-header">
@@ -4091,11 +4877,13 @@ window.__lo_site_id = 271871;
           <img src="../../pills/save200.png" alt="You Save $200" class="badge-img">
           <img src="../../pills/60days.webp" alt="60 Days Guarantee" class="badge-img">
         </div>
-        <a href="#" class="mt-buy-now-btn">
+        <a href="https://powerxpro.pay.clickbank.net/?cbitems=main-2&template=checkout2&cbfid=62696&exitoffer=exit_2" class="mt-buy-now-btn">
           <img src="../../lib/img/buy-now.webp" alt="Buy Now">
         </a>
         <p class="mt-shipping-text">+ $19.99 Shipping</p>
         <p class="mt-total-line">TOTAL: <span class="mt-strikethrough">$260</span> <span class="mt-final-price">$158</span></p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/prostate-pain-point/a11.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
         <div class="mt-payment-icons"><img src="../../lib/img/cards.webp" alt="Payment Methods"></div>
       </div>
     </div>
@@ -4123,7 +4911,7 @@ window.__lo_site_id = 271871;
           <img src="../../pills/60days.webp" alt="60 Days Guarantee" class="badge-img">
           <img src="../../pills/ebooks.png" alt="2 Free Ebooks" class="badge-img">
         </div>
-        <a href="#" class="mt-buy-now-btn">
+        <a href="https://powerxpro.pay.clickbank.net/?cbitems=main-7&template=checkout2&cbfid=62696&exitoffer=exit_7" class="mt-buy-now-btn">
           <img src="../../lib/img/buy-now2.webp" alt="Buy Now">
         </a>
         <p class="mt-shipping-text">FREE Shipping</p>
@@ -4138,6 +4926,8 @@ window.__lo_site_id = 271871;
     <div class="mt-product-header">
       <h3>3 BOTTLES</h3>
       <p>FREE SHIPPING &bull; 90 DAY SUPPLY</p>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/mens-health-awareness/Image_12.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
     </div>
     <div class="mt-product-content">
       <div class="mt-product-image">
@@ -4152,7 +4942,7 @@ window.__lo_site_id = 271871;
           <img src="../../pills/450.webp" alt="You Save $450" class="badge-img">
           <img src="../../pills/60days.webp" alt="60 Days Guarantee" class="badge-img">
         </div>
-        <a href="#" class="mt-buy-now-btn">
+        <a href="https://powerxpro.pay.clickbank.net/?cbitems=main-3&template=checkout2&cbfid=62696&exitoffer=exit_3" class="mt-buy-now-btn">
           <img src="../../lib/img/buy-now.webp" alt="Buy Now">
         </a>
         <p class="mt-shipping-text">FREE Shipping</p>
@@ -4184,6 +4974,8 @@ window.__lo_site_id = 271871;
       </div>
     </div>
 
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/happy.jpg" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
     <!-- Bonus 2 -->
     <div class="bonus-card reverse">
       <div class="bonus-image">
@@ -4236,10 +5028,12 @@ window.__lo_site_id = 271871;
 		<div class="row">
 			<div class="col-12 col-lg-6 col-md-7 mx-auto py-1 py-md-3">
 				<div class="button-center riskfree text-center text-uppercase">
-					<a style="color:#000;" href="#bottomorder">TRY NOW — <br class="d-block d-md-none">GET UP TO 61% OFF <i class="fas fa-arrow-right"></i></a>
+					<a style="color:#000;" href="#buynow" onclick="scrollToCards();return false;">TRY NOW — <br class="d-block d-md-none">GET UP TO 45% OFF <i class="fas fa-arrow-right"></i></a>
 				</div>
 				<p class="text-center secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 			</div>
+
+<img loading="lazy" class="img-fluid d-block mx-auto my-3 creative-img" src="../../creative-assets/intimacy-desire/a14.png" alt="PowerX Pro" style="max-width:100%; border-radius:8px;">
 		</div>
 	</div>
 </section>
@@ -4368,279 +5162,7 @@ window.__lo_site_id = 271871;
 	}
 </script>
 
-<style>
-	.atc p, .atc-tab {
-	font-family: 'montserrat';
-}
-
-.atc-tab {
-	display: inline-block;
-    background: #fbc630;
-    padding: 11px 23px;
-    border-radius: 15px 15px 0 0;
-    font-weight: bold;
-	margin: 0;
-	line-height: 1;
-}
-
-.atc {
-	background: url('https://cdn.truegcloud.com/xanoburn/images/atc/atc-bg.jpg');
-	background-size: cover;
-	background-position: center;
-	padding: 25px 15px;
-	position: relative;
-	border: 4px solid transparent;
-	display: flex;
-	flex-direction: column;
-}
-
-.atc.center {
-	border: 4px solid #fbc630;
-	border-radius: 0px 4px 4px 4px;
-}
-
-.atc-img {
-	max-height: 250px;
-}
-
-.atc-savings {
-	background: #f3bc00;
-    display: flex;
-	align-items: center;
-	justify-content: center;
-    position: absolute;
-    padding: 10px;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-
-	top: 25%;
-    left: 95%;
-    transform: translate(-95%, -25%) rotate(15deg);
-}
-
-.atc-guarantee {
-	display: none;
-	position: absolute;
-	width: 50px;
-    top: 95%;
-    left: 90%;
-    transform: translate(-90%, -95%);
-}
-
-.atc-savings p {
-	font-weight: 900;
-    font-size: 30px;
-    line-height: 1em;
-    color: #0a3b6c;
-	margin: 0;
-}
-
-.atc-dollar {
-    font-size: 30px;
-    vertical-align: top;
-    top: 12px;
-    position: relative;
-	margin-right: 3px;
-}
-
-.atc h5 {
-	color: white;
-    font-weight: bold;
-    display: inline-block;
-    letter-spacing: 1px;
-}
-
-.atc-whitetext {
-	font-weight: bold;
-    color: white;
-    letter-spacing: -0.5px;
-    font-size: 16px;
-    font-family: 'Roboto', 'Helvetica' !important;
-	margin: 0;
-	line-height: 1.3;
-}
-
-.atc-yellowtext {
-	font-weight: 900;
-    color: #edba14;
-    font-size: 12px;
-    margin-bottom: 2px;
-}
-
-.atc-price {
-	display: inline-block;
-    font-size: 77px;
-    color: #edba14;
-}
-
-.atc-button {
-	background: #f3bc00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    margin: 0 8px;
-}
-
-.atc-button h2 {
-	font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 0;
-	padding-right: 10px;
-	max-width: 80%;
-    display: inline-block;
-}
-
-.atc-button img {
-	max-width: 24px !important;
-}
-
-@media (max-width: 992px) {
-	.atc-tab {
-		padding: 8px 14px;
-		font-size: 16px;
-	}
-	.atc-dollar {
-		font-size: 20px;
-		top: 7px;
-	}
-}
-
-/*IPAD ONLY*/
-@media (min-width: 768px) and (max-width: 992px) {
-	.atc {
-		padding: 15px 5px;
-	}
-
-	.atc-img {
-		max-height: 200px;
-	}
-
-	.atc-savings {
-		width: 80px;
-		height: 80px;
-	}
-
-	.atc-savings p {
-		font-size: 22px;
-	}
-
-	.atc-price {
-		font-size: 45px;
-	}
-
-	.atc h5 {
-		font-size: 15px;
-	}
-
-	.atc-whitetext {
-		font-size: 12px;
-	}
-
-	.atc-button {
-		padding: 10px 0;
-	}
-
-	.atc-button h2 {
-		font-size: 15px;
-	}
-}
-
-/*IPHONE ONLY*/
-@media (max-width: 767px) {
-	.atc {
-		border: 2px solid #fbc630 !important;
-		flex-direction: row;
-		padding: 10px 5px;
-
-		background-color: #153d65;
-		background-position: 0px;
-		background-size: 45%;
-		background-repeat: no-repeat;
-	}
-
-	.atc-section {
-		width: 50%;
-		position: relative;
-	}
-
-	.atc-tab {
-		padding: 5px 14px;
-		font-size: 11px;
-		border-radius: 8px 8px 0 0;
-	}
-	
-	.atc-savings {
-		display: none;
-	}
-
-	.atc-guarantee {
-		display: block;
-	}
-
-	.atc-dollar {
-		font-size: 17px;
-		bottom: 16px;
-    	margin-right: 2px;
-		position: relative;
-	}
-
-	.atc h5 {
-		font-size: 13px;
-	}
-
-	.atc-price {
-		font-size: 40px;
-	}
-
-	.atc-button h2 {
-		font-size: 12px;
-		letter-spacing: 0;
-	}
-
-	.atc-button img {
-		max-width: 15px !important;
-	}
-
-	.atc-button {
-		padding: 10px 0;
-		width: 80%;
-    	margin: auto;
-	}
-
-	.atc-whitetext {
-		font-size: 8.5px;
-	}
-
-	#atc-left {
-		width: 45%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	#atc-right {
-		width: 55%;
-		border-left: 2px solid;
-   	 	border-image: linear-gradient( to top, transparent, #ffffff3d, transparent ) 1 100%;
-	}
-
-	.atc-img {
-		max-height: 120px;
-	}
-
-	.shipping-ribbon {
-		position: absolute;
-		z-index: 2;
-		width: 25%;
-		left: -5%;
-		top: 16%;
-		transform: translate(5%, -16%);
-	}
-}
-</style>					<center>
+					<center>
 	
 </center>				</div>
 			</div>
@@ -4668,7 +5190,7 @@ window.__lo_site_id = 271871;
          style="max-width:400px;">
 </div>
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto mt-2 mb-0">
@@ -4755,7 +5277,7 @@ window.__lo_site_id = 271871;
 						<div class="row">
 							<div class="col-12 mx-auto text-center py-2">
 								<h2 class="text-blue">But if You Can repair It...</h2>
-								<h3 class="text-yellow">If you can live a life unburdened by your excess weight… </h3>	
+								<h3 class="text-yellow">If you can live a life unburdened by your prostate issues… </h3>	
 							</div>
 						</div>
 					</div>				  
@@ -4802,7 +5324,7 @@ window.__lo_site_id = 271871;
 					</div>
 
 					<p>It’s when your life feels truly normal for the first time in a long while.</p>
-					<p><span class="font-weight-bold text-highlight">When you’re in control again—and not trapped by your weight.</span></p>
+					<p><span class="font-weight-bold text-highlight">When you’re in control again—and not trapped by your prostate problems.</span></p>
 					<p class="font-weight-bold">When you’re not fighting an invisible enemy that’s keeping you away from happiness—and a fulfilling life.</p>
 					<p>You can finally be there for the people who mean the most in your life:</p>
 
@@ -4874,7 +5396,7 @@ window.__lo_site_id = 271871;
 	</section>
 
 
-	<section id="">
+	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 mx-auto mt-2 mb-0">
@@ -5072,7 +5594,7 @@ window.__lo_site_id = 271871;
 			</div>
 			<div class="col-lg-6 order-lg-1">
 				<h6>Disclaimer</h6>
-				<p>&dagger; Testimonials, case studies, and examples found on this page are results that have been forwarded to us by users of MetaTrim BHB products and related products are not intended to represent or guarantee that anyone will achieve the same or similar results.</p>
+				<p>&dagger; Testimonials, case studies, and examples found on this page are results that have been forwarded to us by users of PowerX Pro products and related products are not intended to represent or guarantee that anyone will achieve the same or similar results.</p>
 				<p style="text-indent: 0px !important;">ClickBank is the retailer of this product. CLICKBANK&reg; is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of this product or any claim, statement or opinion used in promotion of this product.</p>
 				<p>Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using our products.</p>
 			</div>
@@ -5311,5 +5833,82 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- ClickBank Trust Badge -->
 <script src='//cbtb.clickbank.net/?vendor=powerxpro'></script>
+
+<!-- Sticky Bar -->
+<div id="sticky-cta-desktop" style="display:none;">
+    <div class="sticky-cta-inner">
+        <img src="../../Images/1-bottles-vigor.webp" alt="PowerX Pro" class="sticky-cta-img">
+        <div class="sticky-cta-info">
+            <div class="sticky-cta-stars">&starf;&starf;&starf;&starf;&starf; <span>4.9/5 (2,847 reviews)</span></div>
+            <span class="sticky-cta-headline">Up to 45% OFF PowerX Pro&trade;</span>
+            <div class="sticky-cta-timer">Offer ends in <span class="sticky-cta-timer-val" id="sticky-timer">04:59:59</span></div>
+        </div>
+        <a href="#buynow" class="sticky-cta-btn" onclick="scrollToCards();return false;">ORDER NOW &rarr;</a>
+        <button class="sticky-cta-close" onclick="dismissStickyBar()" aria-label="Close">&times;</button>
+    </div>
+</div>
+<!-- Mobile Toast -->
+<div id="mobile-toast" style="display:none;">
+    <div class="mobile-toast-inner">
+        <div class="mobile-toast-content">
+            <p class="mobile-toast-title">&darr; Up to 45% OFF &mdash; Limited Time</p>
+            <div class="mobile-toast-buttons"><a href="#buynow" class="mobile-toast-btn-primary" onclick="dismissMobileToast();scrollToCards();return false;">See Pricing</a></div>
+        </div>
+        <button class="mobile-toast-close" onclick="dismissMobileToast()" aria-label="Close">&times;</button>
+    </div>
+</div>
+<!-- Desktop Toast -->
+<div id="desktop-toast" style="display:none;">
+    <div class="desktop-toast-inner">
+        <div class="desktop-toast-header"><span class="desktop-toast-header-icon">&#128293;</span><span class="desktop-toast-header-text">Popular right now</span></div>
+        <div class="desktop-toast-body">
+            <img src="../../Images/1-bottles-vigor.webp" alt="PowerX Pro" class="desktop-toast-img">
+            <div class="desktop-toast-content"><p class="desktop-toast-title">Up to 45% OFF Today</p><p class="desktop-toast-desc">Free shipping &bull; 60-day guarantee</p></div>
+        </div>
+        <div class="desktop-toast-footer"><a href="#buynow" class="desktop-toast-btn" onclick="dismissDesktopToast();scrollToCards();return false;">View Packages &rarr;</a></div>
+        <button class="desktop-toast-close" onclick="dismissDesktopToast()" aria-label="Close">&times;</button>
+    </div>
+</div>
+
+<script>
+/* Social Proof Timing - VigorX Pro Standard */
+(function(){
+    var sp=document.querySelector('.custom-social-proof');
+    if(!sp)return;
+    sp.style.display='none';
+    var dismissed=false,cooldownEnd=0;
+    var close=sp.querySelector('.custom-close');
+    if(close)close.addEventListener('click',function(){
+        sp.style.display='none';dismissed=true;cooldownEnd=Date.now()+120000;
+    });
+    function showNotif(){
+        if(dismissed&&Date.now()<cooldownEnd)return;
+        dismissed=false;
+        sp.style.display='block';
+        if(typeof jQuery!=='undefined')jQuery(sp).hide().slideDown(400);
+        setTimeout(function(){
+            if(typeof jQuery!=='undefined')jQuery(sp).slideUp(400);
+            else sp.style.display='none';
+        },6000);
+    }
+    setTimeout(showNotif,35000);
+    setInterval(function(){showNotif();},31000);
+})();
+</script>
+<!-- === PowerX Pro Shared JS === -->
+<script>
+function scrollToCards(){var sb=document.getElementById('sticky-cta-desktop');if(sb)sb.style.display='none';var mt=document.getElementById('mobile-toast');if(mt)mt.style.display='none';var t=document.getElementById('buynow');if(t)t.scrollIntoView({block:'start'});}
+(function(){var t=document.getElementById('sticky-timer');if(!t)return;var total=5*3600-1;setInterval(function(){if(total<=0)return;total--;var h=Math.floor(total/3600),m=Math.floor((total%3600)/60),s=total%60;t.textContent=(h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s<10?'0':'')+s;},1000);})();
+function dismissStickyBar(){var b=document.getElementById('sticky-cta-desktop');if(b)b.style.display='none';window.__stickyDismissedAt=Date.now();}
+(function(){var c=document.getElementById('sticky-cta-desktop');if(!c)return;window.__stickyDismissedAt=0;window.addEventListener('scroll',function(){if(window.innerWidth<992)return;if(window.__stickyDismissedAt&&(Date.now()-window.__stickyDismissedAt)<120000)return;var p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;if(p>3){if(c.style.display==='none'||!c.style.display)c.style.display='block';}});})();
+function dismissMobileToast(){var t=document.getElementById('mobile-toast');if(t)t.style.display='none';window.__mtDismissedAt=Date.now();}
+(function(){var t=document.getElementById('mobile-toast');if(!t)return;window.__mtDismissedAt=0;var ah=null;window.addEventListener('scroll',function(){if(window.innerWidth>=992)return;if(window.__mtDismissedAt&&(Date.now()-window.__mtDismissedAt)<120000)return;var p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;if(p>=10&&p<50){if(t.style.display==='none'||!t.style.display){t.style.display='block';if(ah)clearTimeout(ah);ah=setTimeout(function(){t.style.display='none';window.__mtDismissedAt=Date.now();},8000);}}});})();
+function dismissDesktopToast(){var t=document.getElementById('desktop-toast');if(t)t.style.display='none';window.__dtDismissedAt=Date.now();}
+(function(){var t=document.getElementById('desktop-toast');if(!t)return;var st=Date.now();window.__dtDismissedAt=0;var ah=null;window.addEventListener('scroll',function(){if(window.innerWidth<992)return;if(window.__dtDismissedAt&&(Date.now()-window.__dtDismissedAt)<120000)return;var el=(Date.now()-st)/1000;var p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;if(el>=45&&p>=15&&p<60){var sb=document.getElementById('sticky-cta-desktop');var sv=sb&&sb.style.display==='block';if((t.style.display==='none'||!t.style.display)&&!sv){t.style.display='block';if(ah)clearTimeout(ah);ah=setTimeout(function(){t.style.display='none';window.__dtDismissedAt=Date.now();},12000);}}});})();
+(function(){var ps=document.querySelectorAll('.mv-player');if(!ps.length)return;var ob=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target.querySelector('video');if(!e.isIntersecting&&!v.paused)v.pause();});},{threshold:0.3});ps.forEach(function(p){ob.observe(p);var v=p.querySelector('video'),pf=p.querySelector('.mv-progress-fill'),ec=p.querySelector('.mv-end-cta'),mb=p.querySelector('.mv-mute-btn'),po=p.querySelector('.mv-play-overlay');v.addEventListener('playing',function(){if(po){po.classList.add('playing');po.classList.remove('paused');}});v.addEventListener('pause',function(){if(po&&!ec.classList.contains('show')){po.classList.remove('playing');po.classList.add('paused');}});v.addEventListener('timeupdate',function(){if(v.duration)pf.style.width=(v.currentTime/v.duration)*100+'%';});v.addEventListener('ended',function(){ec.classList.add('show');pf.style.width='100%';if(po)po.classList.add('hidden');});v.addEventListener('click',function(e){e.stopPropagation();if(v.paused)v.play().catch(function(){});else v.pause();});function hmt(e){e.stopPropagation();document.querySelectorAll('.mv-player video').forEach(function(ov){if(ov!==v){ov.muted=true;var ob2=ov.closest('.mv-player').querySelector('.mv-mute-btn');if(ob2){var o1=ob2.querySelector('.mv-mute-x1'),o2=ob2.querySelector('.mv-mute-x2');if(o1)o1.style.display='';if(o2)o2.style.display='';}}});if(v.muted){v.muted=false;v.pause();var ec2=p.querySelector('.mv-end-cta');if(ec2)ec2.classList.remove('show');var pf2=p.querySelector('.mv-progress-fill');if(pf2)pf2.style.width='0%';v.currentTime=0;v.addEventListener('seeked',function onS(){v.play().catch(function(){});v.removeEventListener('seeked',onS);});}else{v.muted=true;}var x1=mb.querySelector('.mv-mute-x1'),x2=mb.querySelector('.mv-mute-x2');if(v.muted){x1.style.display='';x2.style.display='';}else{x1.style.display='none';x2.style.display='none';}}mb.addEventListener('click',hmt);mb.addEventListener('touchend',function(e){e.preventDefault();hmt(e);});});})();
+function togglePlayPause(o){var p=o.closest('.mv-player'),v=p.querySelector('video');if(!v.paused){v.pause();return;}v.muted=false;document.querySelectorAll('.mv-player video').forEach(function(ov){if(ov!==v){ov.muted=true;ov.pause();}});function tp(){v.play().catch(function(){v.muted=true;v.play().catch(function(){});});}if(v.readyState>=2)tp();else{v.addEventListener('canplay',function onR(){tp();v.removeEventListener('canplay',onR);});v.load();}var mb2=p.querySelector('.mv-mute-btn');if(mb2){var mx1=mb2.querySelector('.mv-mute-x1'),mx2=mb2.querySelector('.mv-mute-x2');if(mx1)mx1.style.display='none';if(mx2)mx2.style.display='none';}}
+function replayVideo(id){var p=document.querySelector('.mv-player[data-video-id="'+id+'"]');if(!p)return;var v=p.querySelector('video'),ec=p.querySelector('.mv-end-cta'),pf=p.querySelector('.mv-progress-fill');ec.classList.remove('show');pf.style.width='0%';v.currentTime=0;v.play().catch(function(){});}
+</script>
+
 </body>
 </html>
