@@ -98,10 +98,11 @@ window.__lo_site_id = 330757;
 .pxp-thumb:hover { border-color: #c8922a; transform: scale(1.05); }
 .pxp-thumb.active { border-color: #c8922a; box-shadow: 0 0 0 2px rgba(200,146,42,0.3); }
 .pxp-gallery-main { flex: 1; min-width: 0; }
-.pxp-gallery-main img { width: 100%; height: auto; border-radius: 12px; object-fit: contain; background: #fafafa; transition: opacity 0.3s ease; min-height: 380px; }
+.pxp-gallery-main img { width: 100%; height: auto; border-radius: 12px; object-fit: contain; background: #fafafa; transition: opacity 0.3s ease; }
 @media (min-width: 992px) {
-  .pxp-gallery { max-width: 520px; }
-  .pxp-gallery-main img { min-height: 420px; }
+  #prod-description .row > .col-12.col-lg-6:first-child { flex: 0 0 58%; max-width: 58%; }
+  #prod-description .row > .col-12.col-lg-6.prod-description { flex: 0 0 42%; max-width: 42%; }
+  .pxp-gallery { max-width: 100%; }
   .pxp-thumb { width: 80px; height: 80px; }
   .pxp-gallery-thumbs { width: 80px; }
 }
