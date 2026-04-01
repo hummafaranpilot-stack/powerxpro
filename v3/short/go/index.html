@@ -2671,28 +2671,35 @@ margin-left: 12px;
 <script>window.socialProofBase='../../';</script>
 <script type="text/javascript" src="../../popup/js/social-proof.js"></script>
 <script>
-/* Social Proof Timing - VigorX Pro Standard */
+/* Social Proof Timing */
 (function(){
     var sp=document.querySelector('.custom-social-proof');
     if(!sp)return;
     sp.style.display='none';
-    var dismissed=false,cooldownEnd=0;
+    var cooldownEnd=0,hideTimer=null;
     var close=sp.querySelector('.custom-close');
-    if(close)close.addEventListener('click',function(){
-        sp.style.display='none';dismissed=true;cooldownEnd=Date.now()+120000;
+    if(close)close.addEventListener('click',function(e){
+        e.stopPropagation();
+        if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}
+        if(typeof jQuery!=='undefined')jQuery(sp).slideUp(300);
+        else sp.style.display='none';
+        cooldownEnd=Date.now()+120000;
+        scheduleNext(120000);
     });
     function showNotif(){
-        if(dismissed&&Date.now()<cooldownEnd)return;
-        dismissed=false;
+        if(Date.now()<cooldownEnd){scheduleNext(cooldownEnd-Date.now()+1000);return;}
+        if(typeof updateSocial==='function')updateSocial();
         sp.style.display='block';
         if(typeof jQuery!=='undefined')jQuery(sp).hide().slideDown(400);
-        setTimeout(function(){
+        hideTimer=setTimeout(function(){
             if(typeof jQuery!=='undefined')jQuery(sp).slideUp(400);
             else sp.style.display='none';
+            hideTimer=null;
+            scheduleNext(30000);
         },6000);
     }
+    function scheduleNext(delay){setTimeout(showNotif,delay);}
     setTimeout(showNotif,35000);
-    setInterval(function(){showNotif();},31000);
 })();
 </script>
 
