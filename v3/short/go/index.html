@@ -91,6 +91,21 @@ window.__lo_site_id = 330757;
 
 <!-- PowerX Pro Shared Features CSS -->
 <style>
+/* Product Image Gallery - Amazon style */
+.pxp-gallery { display: flex; gap: 10px; max-width: 650px; margin: 0 auto; }
+.pxp-gallery-thumbs { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; width: 72px; }
+.pxp-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid #e0e0e0; cursor: pointer; transition: border-color 0.2s, transform 0.2s; }
+.pxp-thumb:hover { border-color: #c8922a; transform: scale(1.05); }
+.pxp-thumb.active { border-color: #c8922a; box-shadow: 0 0 0 2px rgba(200,146,42,0.3); }
+.pxp-gallery-main { flex: 1; min-width: 0; }
+.pxp-gallery-main img { width: 100%; height: auto; border-radius: 12px; object-fit: contain; background: #fafafa; transition: opacity 0.3s ease; }
+@media (max-width: 768px) {
+  .pxp-gallery { flex-direction: column-reverse; gap: 8px; }
+  .pxp-gallery-thumbs { flex-direction: row; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; }
+  .pxp-gallery-thumbs::-webkit-scrollbar { display: none; }
+  .pxp-thumb { width: 56px; height: 56px; min-width: 56px; }
+  .pxp-gallery-main img { border-radius: 10px; }
+}
 /* Testimonial images - forced perfect circle */
 #reviews .rounded-circle,
 .carousel-item .rounded-circle {
@@ -769,9 +784,18 @@ window.__lo_site_id = 330757;
 			<div class="col-12 col-lg-11 mx-auto">
 				<div class="row ">
 					<div class="col-12 col-lg-6">
-						<div style="display:flex; flex-direction:column; gap:2px; max-width:650px; margin:0 auto;">
-							<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" class="img-fluid w-100" alt="PowerX Pro Unboxing" style="border-radius:12px;">
-							<img src="../../creative-assets/unboxing/52_id-52-imagereference-1-bottles-vigorpng-prompt-Cle.jpg" class="img-fluid w-100" alt="PowerX Pro Product" style="border-radius:12px;">
+						<div class="pxp-gallery">
+							<div class="pxp-gallery-thumbs">
+								<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro Unboxing 1" class="pxp-thumb active" onclick="pxpGallerySelect(this)">
+								<img src="../../creative-assets/unboxing/52_id-52-imagereference-1-bottles-vigorpng-prompt-Cle.jpg" alt="PowerX Pro Unboxing 2" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+								<img src="../../creative-assets/unboxing/49_id-49-imagereference-1-bottles-vigorpng-prompt-Mal.jpg" alt="PowerX Pro Unboxing 3" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+								<img src="../../creative-assets/unboxing/48_id-48-imagereference-3-bottles-vigorpng-prompt-Cle.jpg" alt="PowerX Pro 3 Bottles" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+								<img src="../../creative-assets/unboxing/50_id-50-imagereference-6-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro 6 Bottles" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+								<img src="../../Images/1-bottles-vigor.webp" alt="PowerX Pro Bottle" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+							</div>
+							<div class="pxp-gallery-main">
+								<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro" class="pxp-main-img">
+							</div>
 						</div>
 					</div>
 					<div class="col-12 col-lg-6 col-md-10 mx-auto prod-description px-1 px-md-3 my-auto">
@@ -1333,9 +1357,18 @@ bottom: unset;
 			<div class="col-12 col-lg-11 mx-auto">
 				<div class="row ">
 					<div class="col-12 col-lg-6">
-						<div style="display:flex; flex-direction:column; gap:2px; max-width:650px; margin:0 auto;">
-							<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" class="img-fluid w-100" alt="PowerX Pro Unboxing" style="border-radius:12px;">
-							<img src="../../creative-assets/unboxing/52_id-52-imagereference-1-bottles-vigorpng-prompt-Cle.jpg" class="img-fluid w-100" alt="PowerX Pro Product" style="border-radius:12px;">
+						<div class="pxp-gallery">
+							<div class="pxp-gallery-thumbs">
+								<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro Unboxing 1" class="pxp-thumb active" onclick="pxpGallerySelect(this)">
+								<img src="../../creative-assets/unboxing/52_id-52-imagereference-1-bottles-vigorpng-prompt-Cle.jpg" alt="PowerX Pro Unboxing 2" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+								<img src="../../creative-assets/unboxing/49_id-49-imagereference-1-bottles-vigorpng-prompt-Mal.jpg" alt="PowerX Pro Unboxing 3" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+								<img src="../../creative-assets/unboxing/48_id-48-imagereference-3-bottles-vigorpng-prompt-Cle.jpg" alt="PowerX Pro 3 Bottles" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+								<img src="../../creative-assets/unboxing/50_id-50-imagereference-6-bottles-vigorpng-prompt-A-m.jpg" alt="PowerX Pro 6 Bottles" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+								<img src="../../Images/1-bottles-vigor.webp" alt="PowerX Pro Bottle" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+							</div>
+							<div class="pxp-gallery-main">
+								<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro" class="pxp-main-img">
+							</div>
 						</div>
 					</div>
 					<div class="col-12 col-lg-6 col-md-10 mx-auto prod-description px-1 px-md-3 my-auto">
@@ -2727,6 +2760,7 @@ margin-left: 12px;
 
 <!-- === PowerX Pro Shared JS === -->
 <script>
+function pxpGallerySelect(thumb){var gallery=thumb.closest('.pxp-gallery');gallery.querySelectorAll('.pxp-thumb').forEach(function(t){t.classList.remove('active');});thumb.classList.add('active');var main=gallery.querySelector('.pxp-gallery-main img');main.style.opacity='0';setTimeout(function(){main.src=thumb.src;main.style.opacity='1';},150);}
 function scrollToCards(){var sb=document.getElementById('sticky-cta-desktop');if(sb)sb.style.display='none';var mt=document.getElementById('mobile-toast');if(mt)mt.style.display='none';var t=document.getElementById('buynow');if(t)t.scrollIntoView({block:'start'});}
 (function(){var t=document.getElementById('sticky-timer');if(!t)return;var total=5*3600-1;setInterval(function(){if(total<=0)return;total--;var h=Math.floor(total/3600),m=Math.floor((total%3600)/60),s=total%60;t.textContent=(h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s<10?'0':'')+s;},1000);})();
 function dismissStickyBar(){var b=document.getElementById('sticky-cta-desktop');if(b)b.style.display='none';window.__stickyDismissedAt=Date.now();}
