@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>PowerX Pro v3 — Image Asset Catalog</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; background: #f0f0f0; color: #222; padding: 20px; }
+h1 { text-align: center; margin-bottom: 10px; font-size: 28px; }
+.subtitle { text-align: center; color: #666; margin-bottom: 30px; font-size: 14px; }
+.stats { display: flex; gap: 15px; justify-content: center; margin-bottom: 30px; flex-wrap: wrap; }
+.stat { background: #fff; border-radius: 10px; padding: 12px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center; }
+.stat .num { font-size: 28px; font-weight: 800; }
+.stat .label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.stat.live .num { color: #22a655; }
+.stat.unused .num { color: #cc3333; }
+.filters { text-align: center; margin-bottom: 20px; }
+.filters button { padding: 8px 18px; margin: 4px; border: 2px solid #ddd; border-radius: 20px; background: #fff; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+.filters button:hover { border-color: #c8922a; }
+.filters button.active { background: #c8922a; color: #fff; border-color: #c8922a; }
+.section { margin-bottom: 40px; }
+.section-title { font-size: 20px; font-weight: 700; margin-bottom: 15px; padding: 10px 15px; background: #1a1a1a; color: #fff; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+.section-title .count { font-size: 13px; background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+.card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: transform 0.2s; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+.card-img { width: 100%; height: 180px; object-fit: contain; background: #fafafa; padding: 8px; display: block; }
+.card-body { padding: 10px 12px; }
+.card-name { font-size: 11px; font-weight: 600; word-break: break-all; color: #333; margin-bottom: 6px; line-height: 1.3; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.badge-live { background: #e6f9ee; color: #22a655; }
+.badge-unused { background: #fde8e8; color: #cc3333; }
+.card-pages { font-size: 10px; color: #888; margin-top: 4px; line-height: 1.4; }
+.card-pages strong { color: #555; }
+@media (max-width: 600px) { .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); } .card-img { height: 120px; } }
+</style>
+</head>
+<body>
+
+<h1>PowerX Pro v3 — Image Asset Catalog</h1>
+<p class="subtitle">All product images across the project. Green = Live on a page. Red = Unused.</p>
+
+<div class="stats">
+  <div class="stat live"><div class="num">~220</div><div class="label">Live Images</div></div>
+  <div class="stat unused"><div class="num">~686</div><div class="label">Unused Images</div></div>
+  <div class="stat"><div class="num">~906</div><div class="label">Total Images</div></div>
+</div>
+
+<div class="filters">
+  <button class="active" onclick="filterCards('all',this)">All</button>
+  <button onclick="filterCards('live',this)">Live Only</button>
+  <button onclick="filterCards('unused',this)">Unused Only</button>
+</div>
+
+<!-- ============================================ -->
+<!-- IMAGES/ (Root Product Images) -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">Images/ <span class="count">18 files</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/1-bottles-vigor.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">1-bottles-vigor.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3, upsell1, popup, short/go</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/2-bottles-vigor.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">2-bottles-vigor.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3, upsell1</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/3-bottles-vigor.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">3-bottles-vigor.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3, upsell1</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="Images/4-bottles-vigor.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">4-bottles-vigor.webp</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/6-bottles-vigor.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">6-bottles-vigor.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> upsell1</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/7-bottles-vigor.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">7-bottles-vigor.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/logo.png" alt="">
+      <div class="card-body">
+        <div class="card-name">logo.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> All pages (header logo)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/label.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">label.jpg</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short3, upsell3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/Image_8.png" alt="">
+      <div class="card-body">
+        <div class="card-name">Image_8.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> Testimonial photo (Harold S.)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/istockphoto-1961053928-612x612.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">istockphoto-1961053928-612x612.jpg</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> Testimonial photo (Alex M.)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/chad-howse-264-282_mini.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">chad-howse-264-282_mini.jpg</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> Testimonial photo (David H.)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/istockphoto-1135381120-612x612.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">istockphoto-1135381120-612x612.jpg</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> best/go</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/woman-showing-ok-sign_23-2148990150.avif" alt="">
+      <div class="card-body">
+        <div class="card-name">woman-showing-ok-sign.avif</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/socials.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">socials.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go (social proof bar)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/star-4.5.svg" alt="">
+      <div class="card-body">
+        <div class="card-name">star-4.5.svg</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go (trustpilot bar)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/1-orabiome.png" alt="">
+      <div class="card-body">
+        <div class="card-name">1-orabiome.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> upsell2</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/3-orabiome.png" alt="">
+      <div class="card-body">
+        <div class="card-name">3-orabiome.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> upsell2</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="Images/6-orabiome.png" alt="">
+      <div class="card-body">
+        <div class="card-name">6-orabiome.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> upsell2</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- CREATIVE ASSETS — UNBOXING -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">creative-assets/unboxing/ <span class="count">6 files</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">47 — Unboxing close-up</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go (gallery default)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/unboxing/52_id-52-imagereference-1-bottles-vigorpng-prompt-Cle.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">52 — Clean product shot</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go (gallery thumb 2)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/unboxing/49_id-49-imagereference-1-bottles-vigorpng-prompt-Mal.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">49 — Male hand unboxing</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/unboxing/48_id-48-imagereference-3-bottles-vigorpng-prompt-Cle.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">48 — 3 bottles clean</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/unboxing/50_id-50-imagereference-6-bottles-vigorpng-prompt-A-m.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">50 — 6 bottles display</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/unboxing/51_id-51-imagereference-1-bottles-vigorpng-prompt-A-w.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">51 — Woman holding bottle</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- CREATIVE ASSETS — DOCTOR COMPARISON -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">creative-assets/doctor-comparison/ <span class="count">5 files</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/doctor-comparison/53_id-53-imagereference-1-bottles-vigorpng-prompt-A-c.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">53 — Doctor with bottle</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go (gallery thumb 3)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/doctor-comparison/54_id-54-imagereference-1-bottles-vigorpng-prompt-A-h.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">54 — Doctor holding product</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/doctor-comparison/55_id-55-imagereference-1-bottles-vigorpng-prompt-A-s.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">55 — Doctor side view</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/doctor-comparison/56_id-56-imagereference-3-bottles-vigorpng-prompt-A-p.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">56 — Doctor 3 bottles</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/doctor-comparison/57_id-57-imagereference-1-bottles-vigorpng-prompt-A-d.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">57 — Doctor desk shot</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, best/go</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- CREATIVE ASSETS — BANNER ADS -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">creative-assets/banner-ads/ <span class="count">11 files</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/banner-ads/7_id-7-imagereference-1-bottles-vigorpng-prompt-Powe.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">7 — Product spotlight banner</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go (gallery thumb 4)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/banner-ads/3_id-3-imagereference-1-bottles-vigorpng-prompt-Bold.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">3 — Bold banner</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, best/go</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/banner-ads/6_id-6-imagereference-1-bottles-vigorpng-prompt-A-mo.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">6 — Modern banner</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/banner-ads/1_id-1-imagereference-1-bottles-vigorpng-prompt-A-hi.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">1 — Hi-res banner</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/banner-ads/2_id-2-imagereference-1-bottles-vigorpng-prompt-A-pr.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">2 — Product banner</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/banner-ads/4_id-4-imagereference-1-bottles-vigorpng-prompt-Clea.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">4 — Clean banner</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/banner-ads/5_id-5-imagereference-1-bottles-vigorpng-prompt-A-cl.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">5 — Classic banner</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- CREATIVE ASSETS — MENS HEALTH AWARENESS -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">creative-assets/mens-health-awareness/ <span class="count">5+ files</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/mens-health-awareness/63_id-63-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">63 — Men's health scene</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go (between sections)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/mens-health-awareness/66_id-66-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">66 — Awareness shot</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/mens-health-awareness/64_id-64-imagereference-1-bottles-vigorpng-prompt-A-f.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">64 — Fitness scene</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/mens-health-awareness/65_id-65-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">65 — Male lifestyle</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- CREATIVE ASSETS — INTIMACY/DESIRE -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">creative-assets/intimacy-desire/ <span class="count">Selected</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/intimacy-desire/a9.png" alt="">
+      <div class="card-body">
+        <div class="card-name">a9.png — Couple intimacy</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go (between sections)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/intimacy-desire/a6.png" alt="">
+      <div class="card-body">
+        <div class="card-name">a6.png — Desire scene</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/intimacy-desire/a10.png" alt="">
+      <div class="card-body">
+        <div class="card-name">a10.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/intimacy-desire/a17.png" alt="">
+      <div class="card-body">
+        <div class="card-name">a17.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long9</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- CREATIVE ASSETS — PROSTATE PAIN POINT -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">creative-assets/prostate-pain-point/ <span class="count">5 files</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/prostate-pain-point/59_id-59-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">59 — Pain point scene</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/prostate-pain-point/60_id-60-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">60 — Concerned man</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, best/go</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/prostate-pain-point/58_id-58-imagereference-1-bottles-vigorpng-prompt-A-s.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">58 — Sitting pain</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- CREATIVE ASSETS — TESTIMONIALS -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">creative-assets/testimonials/ <span class="count">5 files</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/testimonials/16_id-16-imagereference-1-bottles-vigorpng-prompt-A-h.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">16 — Happy customer</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/testimonials/17_id-17-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">17 — Male testimonial</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="creative-assets/testimonials/14_id-14-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">14 — Male portrait</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- CREATIVE ASSETS — BEFORE/AFTER -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">creative-assets/before-after/ <span class="count">6+ files</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/before-after/43_id-43-imagereference-1-bottles-vigorpng-prompt-Bef.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">43 — Before/After</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, best/go</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/before-after/44_id-44-imagereference-1-bottles-vigorpng-prompt-Bef.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">44 — Before/After 2</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="creative-assets/before-after/46_id-46-imagereference-1-bottles-vigorpng-prompt-Bef.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">46 — Before/After 3</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- PILLS -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">pills/ <span class="count">6 files — ALL LIVE</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="pills/450.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">450.webp — Price badge</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="pills/60days.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">60days.webp — 60-day badge</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="pills/780.png" alt="">
+      <div class="card-body">
+        <div class="card-name">780.png — Price badge</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="pills/discount.png" alt="">
+      <div class="card-body">
+        <div class="card-name">discount.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="pills/save200.png" alt="">
+      <div class="card-body">
+        <div class="card-name">save200.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="pills/ebooks.png" alt="">
+      <div class="card-body">
+        <div class="card-name">ebooks.png — Bonus badge</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- LIB/IMG — Key Live Files -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">lib/img/ (key files) <span class="count">~80 files, ~10 LIVE</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="lib/img/buy-now.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">buy-now.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="lib/img/buy-now2.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">buy-now2.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3, upsell3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="lib/img/cards.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">cards.webp — Payment cards</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> long3, long9, short2, short3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="lib/img/mbg.png" alt="">
+      <div class="card-body">
+        <div class="card-name">mbg.png — Money back guarantee</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short2, short/go</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="lib/img/ingredient_1.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">ingredient_1.jpg — Saw Palmetto</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go, short3, aff</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="lib/img/ingredient_2.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">ingredient_2.jpg — Beta-Sitosterol</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go, short3, aff</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="lib/img/ingredient_3.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">ingredient_3.jpg — Pygeum</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short/go, short3, aff</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="lib/img/ebook1.png" alt="">
+      <div class="card-body">
+        <div class="card-name">ebook1.png — Bonus ebook</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> short3, long3</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- TYIMAGES -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">tyimages/ (Thank You page) <span class="count">11 files, 2 LIVE</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="tyimages/label.png" alt="">
+      <div class="card-body">
+        <div class="card-name">label.png</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> Thankyou.html</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="tyimages/powerx_2.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">powerx_2.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> Thankyou.html (via JS)</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="tyimages/powerx_1.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">powerx_1.webp</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="tyimages/powerx_3.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">powerx_3.webp</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+    <div class="card" data-status="unused">
+      <img class="card-img" src="tyimages/powerx_6.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">powerx_6.webp</div>
+        <span class="badge badge-unused">UNUSED</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- ROOT FILES -->
+<!-- ============================================ -->
+<div class="section">
+  <div class="section-title">Root Level <span class="count">2 files</span></div>
+  <div class="grid">
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="single_bottle.webp" alt="">
+      <div class="card-body">
+        <div class="card-name">single_bottle.webp</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> upsell3</div>
+      </div>
+    </div>
+
+    <div class="card" data-status="live">
+      <img class="card-img" src="label.jpg" alt="">
+      <div class="card-body">
+        <div class="card-name">label.jpg</div>
+        <span class="badge badge-live">LIVE</span>
+        <div class="card-pages"><strong>Used in:</strong> upsell3</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function filterCards(status, btn) {
+  document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.card').forEach(c => {
+    if (status === 'all') { c.style.display = ''; return; }
+    c.style.display = c.dataset.status === status ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
