@@ -8,7 +8,7 @@ const matteBlackGradient = 'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #2a
 const lightGoldBg = 'linear-gradient(135deg, #fdf6e3 0%, #f5e6c4 100%)';
 
 // FAVICON
-html = html.replace(/<link rel="icon" href="images\/logo.png" type="image\/x-icon">/, '<link rel="icon" href="../../Images/1-bottles-vigor.webp" type="image/x-icon">');
+html = html.replace(/<link rel="icon" href="images\/logo.png" type="image\/x-icon">/, '<link rel="icon" href="../../Images/1-bottles-vigor.webp?v=2" type="image/x-icon">');
 
 // 1. Success header (Dark Red -> Golden Gradient)
 html = html.replace(/background: linear-gradient\(135deg, #8E0E00 0%, #1F1C18 100%\);/g, 'background: ' + goldenGradient + '; color: #000;');

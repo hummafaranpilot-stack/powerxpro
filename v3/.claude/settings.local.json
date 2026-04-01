@@ -42,7 +42,17 @@
       "Bash(grep -n \"$140\" \"d:/TrustedNutraProducts/PowerXPro/v3/aff/aff_details/aff/afftools.html\")",
       "Bash(grep -n \"$160-$170\\\\|$150 CPA\\\\|How You Reach\" \"d:/TrustedNutraProducts/PowerXPro/v3/aff/aff_details/aff/afftools.html\")",
       "Bash(python3:*)",
-      "Bash(start \"\" \"d:/TrustedNutraProducts/PowerXPro/v3/aff/aff_details/aff/afftools.html\")"
+      "Bash(start \"\" \"d:/TrustedNutraProducts/PowerXPro/v3/aff/aff_details/aff/afftools.html\")",
+      "Bash(for f:*)",
+      "Bash(do sed:*)",
+      "Bash(cp \"d:/TrustedNutraProducts/meta trim/New Funnel/v3/tyimages/label.png\" \"d:/TrustedNutraProducts/PowerXPro/v3/tyimages/\")",
+      "Bash(cp \"d:/TrustedNutraProducts/meta trim/New Funnel/v3/tyimages/cheatsheet.pdf\" \"d:/TrustedNutraProducts/PowerXPro/v3/tyimages/\")",
+      "Bash(cp \"d:/TrustedNutraProducts/PowerXPro/eBooks/30 days plan.pdf\" \"d:/TrustedNutraProducts/PowerXPro/v3/eBooks/\")",
+      "Bash(cp \"d:/TrustedNutraProducts/PowerXPro/eBooks/cover-30day.png\" \"d:/TrustedNutraProducts/PowerXPro/v3/eBooks/\")",
+      "WebSearch",
+      "WebFetch(domain:mysimplepromise.com)",
+      "WebFetch(domain:simplepromise.com)",
+      "WebFetch(domain:www.amazon.com)"
     ]
   }
 }

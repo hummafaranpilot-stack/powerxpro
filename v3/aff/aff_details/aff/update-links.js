@@ -4,7 +4,7 @@ let html = fs.readFileSync('afftools.html', 'utf8');
 // Title, Description, Favicon
 html = html.replace(/<title>.*?<\/title>/g, '<title>Trusted Nutra Products&#8482; - VigorX Pro Affiliate Tools</title>');
 html = html.replace(/<meta name="description" content=".*?">/g, '<meta name="description" content="VigorX Pro Affiliate Tools">');
-html = html.replace(/<link rel="icon" type="image\/png" href="\.\.\/\.\.\/\.\.\/lib\/img\/1bottle\.png">/g, '<link rel="icon" type="image/webp" href="../../../Images/1-bottles-vigor.webp">');
+html = html.replace(/<link rel="icon" type="image\/png" href="\.\.\/\.\.\/\.\.\/lib\/img\/1bottle\.png">/g, '<link rel="icon" type="image/webp" href="../../../Images/1-bottles-vigor.webp?v=2">');
 
 // The landing pages replacement
 const newLandingPages = 			<!-- Landing Pages Section -->
