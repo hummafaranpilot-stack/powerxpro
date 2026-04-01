@@ -41,20 +41,21 @@
     /* Center section */
     .logo-container {
         text-align: center;
-        margin-top: 15px;
+        margin-top: 5px;
+        padding: 4px 0;
     }
 
     /* Dark background only as wide as logo */
     .logo-wrapper {
         background-color: #111;
         display: inline-block;
-        padding: 12px 20px;
+        padding: 6px 12px;
         border-radius: 6px;
     }
 
     /* Logo sizing */
     .logo-img {
-        width: 120px;
+        width: 80px;
         height: auto;
         display: block;
     }
@@ -62,7 +63,7 @@
     /* Mobile Responsive */
     @media (max-width: 600px) {
         .logo-img {
-            width: 100px;
+            width: 65px;
         }
     }
 </style>
@@ -779,39 +780,82 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9 col-lg-11 mx-auto text-center"> 
-					<h1 class="text-blue headline-small mt-3">Doctors Are Shocked…<br>
+					<h1 class="text-blue headline-small mt-3" style="font-size:22px;">Doctors Are Shocked…<br>
  <span class="text-success">This Natural Discovery </span> <br class="d-none d-md-block">Supports Prostate Health & Male Vitality Like Never Before</h1>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Hero Image -->
+	<!-- Hero Videos -->
 	<section class="py-0 my-0">
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-10 col-md-8 col-lg-6 text-center">
-					<img src="../../All Image Assets/Persons/FeltLikeAMan.jpg" alt="PowerX Pro - Support Your Vitality" class="hero-attract-img">
+			<div class="hero-vids">
+				<div class="hero-vid-col">
+					<h4 class="hero-vid-title">Is This Happening to <em>You?</em></h4>
+					<div class="mv-player" data-video-id="hero-c01">
+						<span class="mv-badge">WATCH THIS</span>
+						<video muted playsinline preload="metadata">
+							<source src="../../videos/ErectVSL/C01_problem_hook_32s.mp4" type="video/mp4">
+						</video>
+						<div class="mv-play-overlay" onclick="togglePlayPause(this)">
+							<div class="mv-play-btn">
+								<svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+								<svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+							</div>
+						</div>
+						<div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+						<button class="mv-mute-btn" aria-label="Toggle sound">
+							<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M11 5L6 9H2v6h4l5 4V5z"/>
+								<line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+								<line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+							</svg>
+						</button>
+						<div class="mv-end-cta">
+							<a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+							<button class="mv-end-replay" onclick="replayVideo('hero-c01')">&#8635; Replay</button>
+						</div>
+					</div>
+				</div>
+				<div class="hero-vid-col">
+					<h4 class="hero-vid-title">Recommended by <em>Healthcare Professionals</em></h4>
+					<div class="mv-player" data-video-id="hero-doc">
+						<span class="mv-badge">DOCTOR RECOMMENDED</span>
+						<video muted playsinline preload="metadata">
+							<source src="../../videos/7_id-7-type-Doctor-Recommendation-niche-Trust-Author.mp4" type="video/mp4">
+						</video>
+						<div class="mv-play-overlay" onclick="togglePlayPause(this)">
+							<div class="mv-play-btn">
+								<svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
+								<svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+							</div>
+						</div>
+						<div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
+						<button class="mv-mute-btn" aria-label="Toggle sound">
+							<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M11 5L6 9H2v6h4l5 4V5z"/>
+								<line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
+								<line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
+							</svg>
+						</button>
+						<div class="mv-end-cta">
+							<a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
+							<button class="mv-end-replay" onclick="replayVideo('hero-doc')">&#8635; Replay</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<style>
-	.hero-attract-img {
-		width: 100%;
-		max-width: 500px;
-		height: auto;
-		display: block;
-		margin: 0 auto;
-		border-radius: 12px;
-		box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-	}
+	.hero-vids { display: flex; gap: 20px; justify-content: center; max-width: 900px; margin: 10px auto 0; }
+	.hero-vid-col { flex: 1; min-width: 0; }
+	.hero-vid-title { text-align: center; font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 800; color: #1a1a1a; margin: 0 0 8px; }
+	.hero-vid-title em { color: #c8922a; font-style: italic; }
 	@media (max-width: 768px) {
-		.hero-attract-img {
-			max-width: 100%;
-			border-radius: 8px;
-			margin: 0 auto;
-		}
+		.hero-vids { flex-direction: column; gap: 15px; padding: 0 10px; }
+		.hero-vid-title { font-size: 14px; }
 	}
 	</style>
 
