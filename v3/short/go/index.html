@@ -105,7 +105,7 @@ window.__lo_site_id = 330757;
   #moneyback .mbg-icon { max-width: 70px !important; }
 }
 /* Intimacy image smaller on mobile */
-@media (max-width: 768px) { .pxp-intimacy-img { max-width: 280px !important; margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; } }
+@media (max-width: 768px) { img.pxp-intimacy-img { max-width: 200px !important; width: 200px !important; margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; } }
 /* Fix horizontal overflow */
 html, body { overflow-x: hidden; }
 /* Product Image Gallery - Amazon style */
@@ -180,11 +180,14 @@ html, body { overflow-x: hidden; }
 }
 @media (max-width: 768px) {
     #carouselExampleControls .rounded-circle,
-    .carousel-item .rounded-circle {
+    .carousel-item .rounded-circle,
+    #reviews .rounded-circle {
         width: 100px !important;
         height: 100px !important;
+        max-width: 100px !important;
         object-fit: cover !important;
         border-radius: 50% !important;
+        aspect-ratio: 1/1;
     }
 }
 /* Ingredient section - vertical center */
