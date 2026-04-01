@@ -92,19 +92,23 @@ window.__lo_site_id = 330757;
 <!-- PowerX Pro Shared Features CSS -->
 <style>
 /* Product Image Gallery - Amazon style */
-.pxp-gallery { display: flex; gap: 10px; max-width: 650px; margin: 0 auto; }
-.pxp-gallery-thumbs { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; width: 72px; }
+.pxp-gallery { display: flex; gap: 10px; max-width: 650px; margin: 0 auto; height: 100%; }
+.pxp-gallery-thumbs { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; width: 72px; justify-content: space-between; }
 .pxp-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid #e0e0e0; cursor: pointer; transition: border-color 0.2s, transform 0.2s; }
 .pxp-thumb:hover { border-color: #c8922a; transform: scale(1.05); }
 .pxp-thumb.active { border-color: #c8922a; box-shadow: 0 0 0 2px rgba(200,146,42,0.3); }
-.pxp-gallery-main { flex: 1; min-width: 0; }
-.pxp-gallery-main img { width: 100%; height: auto; border-radius: 12px; object-fit: contain; background: #fafafa; transition: opacity 0.3s ease; }
+.pxp-gallery-main { flex: 1; min-width: 0; display: flex; align-items: stretch; }
+.pxp-gallery-main img { width: 100%; height: 100%; border-radius: 12px; object-fit: cover; background: #fafafa; transition: opacity 0.3s ease; }
+@media (min-width: 992px) {
+  #prod-description .row { align-items: stretch !important; }
+  #prod-description .col-12.col-lg-6:first-child { display: flex; }
+}
 @media (max-width: 768px) {
-  .pxp-gallery { flex-direction: column-reverse; gap: 8px; }
-  .pxp-gallery-thumbs { flex-direction: row; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; }
+  .pxp-gallery { flex-direction: column-reverse; gap: 8px; height: auto; }
+  .pxp-gallery-thumbs { flex-direction: row; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; justify-content: flex-start; }
   .pxp-gallery-thumbs::-webkit-scrollbar { display: none; }
   .pxp-thumb { width: 56px; height: 56px; min-width: 56px; }
-  .pxp-gallery-main img { border-radius: 10px; }
+  .pxp-gallery-main img { height: auto; object-fit: contain; border-radius: 10px; }
 }
 /* Testimonial images - forced perfect circle */
 #reviews .rounded-circle,
