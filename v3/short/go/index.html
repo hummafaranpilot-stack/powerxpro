@@ -104,6 +104,8 @@ window.__lo_site_id = 330757;
   #moneyback .row.py-2 { padding-top: 0.25rem !important; padding-bottom: 0.5rem !important; }
   #moneyback .mbg-icon { max-width: 70px !important; }
 }
+/* Intimacy image smaller on mobile */
+@media (max-width: 768px) { .pxp-intimacy-img { max-width: 280px !important; margin-top: 0.5rem !important; margin-bottom: 0.5rem !important; } }
 /* Fix horizontal overflow */
 html, body { overflow-x: hidden; }
 /* Product Image Gallery - Amazon style */
@@ -174,6 +176,15 @@ html, body { overflow-x: hidden; }
     height: 120px !important;
     object-fit: cover !important;
     border-radius: 50% !important;
+}
+@media (max-width: 768px) {
+    #carouselExampleControls .rounded-circle,
+    .carousel-item .rounded-circle {
+        width: 100px !important;
+        height: 100px !important;
+        object-fit: cover !important;
+        border-radius: 50% !important;
+    }
 }
 /* Ingredient section - vertical center */
 .ingredient-icons .row { align-items: center !important; }
@@ -1376,7 +1387,7 @@ bottom: unset;
 		</div>
 	</section>
 
-<img loading="lazy" class="img-fluid d-block mx-auto my-4 creative-img" src="../../creative-assets/intimacy-desire/a9.png" alt="Male Vitality" style="max-width:550px; border-radius:8px;">
+<img loading="lazy" class="img-fluid d-block mx-auto my-4 creative-img pxp-intimacy-img" src="../../creative-assets/intimacy-desire/a9.png" alt="Male Vitality" style="max-width:550px; border-radius:8px;">
 
 <div class="mv-title"><h3>The Power of <span class="mv-highlight">Horny Goat Weed</span></h3></div>
 <div class="mv-player" data-video-id="pxp-c21">
