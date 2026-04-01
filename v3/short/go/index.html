@@ -97,10 +97,11 @@ window.__lo_site_id = 330757;
 .pxp-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid #e0e0e0; cursor: pointer; transition: border-color 0.2s, transform 0.2s; }
 .pxp-thumb:hover { border-color: #c8922a; transform: scale(1.05); }
 .pxp-thumb.active { border-color: #c8922a; box-shadow: 0 0 0 2px rgba(200,146,42,0.3); }
-.pxp-gallery-main { flex: 1; min-width: 0; position: relative; }
-.pxp-gallery-main img.pxp-main-img { width: 100%; height: auto; border-radius: 12px; object-fit: contain; background: #fafafa; transition: opacity 0.3s ease, transform 0.3s ease; cursor: pointer; }
-.pxp-gallery-main img.pxp-main-img:hover { transform: scale(1.03); }
-.pxp-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.85); border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.15); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 3; transition: background 0.2s, transform 0.2s; }
+.pxp-gallery-main { flex: 1; min-width: 0; }
+.pxp-gallery-img-wrap { position: relative; display: inline-block; width: 100%; }
+.pxp-gallery-img-wrap img.pxp-main-img { width: 100%; height: auto; border-radius: 12px; object-fit: contain; background: #fafafa; transition: opacity 0.3s ease, transform 0.3s ease; cursor: pointer; display: block; }
+.pxp-gallery-img-wrap img.pxp-main-img:hover { transform: scale(1.03); }
+.pxp-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.85); border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.15); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 3; transition: background 0.2s, transform 0.2s; }
 .pxp-arrow:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
 .pxp-arrow svg { width: 16px; height: 16px; fill: none; stroke: #333; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 .pxp-arrow-left { left: 8px; }
@@ -822,9 +823,11 @@ window.__lo_site_id = 330757;
 
 							</div>
 							<div class="pxp-gallery-main">
-								<button class="pxp-arrow pxp-arrow-left" onclick="pxpGalleryNav(this,-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-								<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro" class="pxp-main-img">
-								<button class="pxp-arrow pxp-arrow-right" onclick="pxpGalleryNav(this,1)"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+								<div class="pxp-gallery-img-wrap">
+									<button class="pxp-arrow pxp-arrow-left" onclick="pxpGalleryNav(this,-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+									<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro" class="pxp-main-img">
+									<button class="pxp-arrow pxp-arrow-right" onclick="pxpGalleryNav(this,1)"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -1398,9 +1401,11 @@ bottom: unset;
 
 							</div>
 							<div class="pxp-gallery-main">
-								<button class="pxp-arrow pxp-arrow-left" onclick="pxpGalleryNav(this,-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-								<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro" class="pxp-main-img">
-								<button class="pxp-arrow pxp-arrow-right" onclick="pxpGalleryNav(this,1)"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+								<div class="pxp-gallery-img-wrap">
+									<button class="pxp-arrow pxp-arrow-left" onclick="pxpGalleryNav(this,-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+									<img src="../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro" class="pxp-main-img">
+									<button class="pxp-arrow pxp-arrow-right" onclick="pxpGalleryNav(this,1)"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+								</div>
 							</div>
 						</div>
 					</div>
