@@ -135,6 +135,7 @@ function showPopup() {
   .splash-container img, .jumbotron img, .f--section img {
     max-width: 100% !important;
     height: auto !important;
+    object-fit: contain !important;
   }
 }
 </style>
@@ -940,7 +941,7 @@ function showPopup() {
 
 <style>
 html, body { overflow-x: hidden; }
-img { max-width: 100%; height: auto; }
+img { max-width: 100%; height: auto; object-fit: contain; }
 .creative-img { border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; max-width: 100%; height: auto; }
 .creative-img:hover { transform: scale(1.05); }
 @media (max-width: 768px) { .creative-img { width: 100% !important; max-width: 100% !important; } }
