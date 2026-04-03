@@ -1120,20 +1120,6 @@
         </div>
         </div>
 
-        <!-- Insurance Section -->
-        <div id="insurance-section" class="container">
-            <div class="insurance-img">
-                <img src="tyimages/label.png" alt="Shipping Insurance">
-            </div>
-            <div class="insurance-info">
-                <h3>Shipment Insurance Active</h3>
-                <p>
-                    If you clicked the Checkbox (Include Shipment Insurance) while ordering, then this section is for you. 
-                    Your package is now fully protected against loss, damage, or theft during transit.
-                </p>
-                <a href="tyimages/cheatsheet.pdf" class="view-doc-btn" target="_blank">View Insurance Document</a>
-            </div>
-        </div>
     </section>
 
     <!-- eBook Bonus Section - shown only for product ID 7 -->
@@ -1147,16 +1133,16 @@
         </p>
         <div class="ebook-bonus-grid">
             <div class="ebook-bonus-card">
-                <img src="/eBooks/cover_30_days_plan.png" alt="30 Days Diet Plan">
+                <img src="../eBooks/cover-30day.png" alt="30 Days Diet Plan">
                 <h3>30 Days Diet Plan</h3>
                 <p>A complete day-by-day meal guide paired with PowerX Pro strategy for maximum results.</p>
-                <a href="/eBooks/Diet_Plan_ebook.pdf" class="ebook-dl-btn" target="_blank">&#11015; Download Now</a>
+                <a href="../eBooks/30 days plan.pdf" class="ebook-dl-btn" target="_blank">&#11015; Download Now</a>
             </div>
             <div class="ebook-bonus-card">
-                <img src="/eBooks/cover_keto_recipe.png" alt="Keto Recipe Guide">
-                <h3>Keto Recipe Guide</h3>
-                <p>50+ macro-balanced keto recipes to keep you in fat-burning mode &mdash; beginner-friendly.</p>
-                <a href="/eBooks/Keto_Recipe_ebook.pdf" class="ebook-dl-btn" target="_blank">&#11015; Download Now</a>
+                <img src="../eBooks/cover-guide.png" alt="Prostate Health Guide">
+                <h3>Prostate Health Guide</h3>
+                <p>A comprehensive guide to supporting prostate health naturally alongside PowerX Pro.</p>
+                <a href="../eBooks/prosta guide.pdf" class="ebook-dl-btn" target="_blank">&#11015; Download Now</a>
             </div>
         </div>
     </section>
@@ -1189,7 +1175,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">
-                    <img src="lib/img/logo.png" alt="Trusted Nutra Products" class="footer-logo">
+                    <img src="Images/logo.png" alt="Trusted Nutra Products" class="footer-logo">
                 </div>
                 <div class="col-lg-4">
                     <h6>Contact Information</h6>
@@ -1224,21 +1210,22 @@
             var params = new URLSearchParams(window.location.search);
 
             var PRODUCTS = {
-                '2':        { name: 'PowerX Pro',  desc: '2 Bottles (60 Day Supply)',    img: 'tyimages/powerx_2.webp',     type: 'main' },
-                '4':        { name: 'PowerX Pro',  desc: '3 Bottles (90 Day Supply)',    img: 'tyimages/powerx_3.webp',     type: 'main' },
-                '7':        { name: 'PowerX Pro',  desc: '6+1 Bottles (210 Day Supply)', img: 'tyimages/powerx_6+1.webp',   type: 'main', ebooks: true },
-                '8':        { name: 'PowerX Pro',  desc: '1 Bottle (Subscribe & Save)',  img: 'tyimages/powerx_1.webp',     type: 'upsell1' },
-                '9':        { name: 'PowerX Pro',  desc: '6 Bottles (180 Day Supply)',   img: 'tyimages/powerx_6.webp',     type: 'upsell1' },
-                '10':       { name: 'PowerX Pro',  desc: '3 Bottles (90 Day Supply)',    img: 'tyimages/powerx_3.webp',     type: 'upsell1' },
-                '11':       { name: 'Orabiome Pro',  desc: '6 Bottles (180 Day Supply)',   img: 'tyimages/6-orabiome.webp', type: 'upsell2' },
-                '12':       { name: 'Orabiome Pro',  desc: '3 Bottles (90 Day Supply)',    img: 'tyimages/3-orabiome.webp', type: 'upsell2' },
-                '13':       { name: 'Orabiome Pro',  desc: '1 Bottle (30 Day Supply)',     img: 'tyimages/1-orabiome.webp', type: 'upsell2' },
-                '14':       { name: 'Gutalia Prime', desc: '1 Bottle (FREE Trial)',        img: 'tyimages/1-gutalia.webp',  type: 'upsell3' },
-                '15':       { name: 'PowerX Pro',  desc: '1 Bottle (30 Day Supply)',     img: 'tyimages/powerx_1.webp',     type: 'upsell1' },
-                '16':       { name: 'Gutalia Prime', desc: '1 Bottle (FREE)',              img: 'tyimages/1-gutalia.webp',  type: 'upsell3' },
-                'ebook1':   { name: '30 Days Diet Plan', desc: 'Digital eBook Guide',      img: 'tyimages/powerx_2.webp',     type: 'bump', download: 'tyimages/met_ebook1.pdf' },
-                'ebook2':   { name: 'Keto Recipe Guide', desc: 'Digital eBook Guide',      img: 'tyimages/powerx_3.webp',     type: 'bump', download: 'tyimages/met_ebook1.pdf' },
-                'shipping': { name: 'Shipping Insurance', desc: 'Package Protection',      img: 'tyimages/powerx_1.webp',     type: 'bump', download: 'tyimages/cheatsheet.pdf' }
+                'main-1':   { name: 'PowerX Pro',  desc: '1 Bottle (30 Day Supply)',      img: 'Images/1-bottles-vigor.webp?v=2',   type: 'main' },
+                'main-2':   { name: 'PowerX Pro',  desc: '2 Bottles (60 Day Supply)',     img: 'Images/2-bottles-vigor.webp?v=2',   type: 'main' },
+                'main-3':   { name: 'PowerX Pro',  desc: '3 Bottles (90 Day Supply)',     img: 'Images/3-bottles-vigor.webp?v=2',   type: 'main' },
+                'main-7':   { name: 'PowerX Pro',  desc: '6+1 Bottles (210 Day Supply)',  img: 'Images/7-bottles-vigor.webp?v=2',   type: 'main', ebooks: true },
+                'up-1':     { name: 'PowerX Pro',  desc: '1 Bottle (30 Day Supply)',      img: 'Images/1-bottles-vigor.webp?v=2',   type: 'upsell1' },
+                'up-1s':    { name: 'PowerX Pro',  desc: '1 Bottle (Subscribe & Save)',   img: 'Images/1-bottles-vigor.webp?v=2',   type: 'upsell1' },
+                'up-3':     { name: 'PowerX Pro',  desc: '3 Bottles (90 Day Supply)',     img: 'Images/3-bottles-vigor.webp?v=2',   type: 'upsell1' },
+                'up-6':     { name: 'PowerX Pro',  desc: '6 Bottles (180 Day Supply)',    img: 'Images/6-bottles-vigor.webp?v=2',   type: 'upsell1' },
+                '11':       { name: 'Orabiome Pro',  desc: '6 Bottles (180 Day Supply)',  img: 'tyimages/6-orabiome.webp',          type: 'upsell2' },
+                '12':       { name: 'Orabiome Pro',  desc: '3 Bottles (90 Day Supply)',   img: 'tyimages/3-orabiome.webp',          type: 'upsell2' },
+                '13':       { name: 'Orabiome Pro',  desc: '1 Bottle (30 Day Supply)',    img: 'tyimages/1-orabiome.webp',          type: 'upsell2' },
+                '14':       { name: 'Gutalia Prime', desc: '1 Bottle (FREE Trial)',       img: 'tyimages/1-gutalia.webp',           type: 'upsell3' },
+                '16':       { name: 'Gutalia Prime', desc: '1 Bottle (FREE)',             img: 'tyimages/1-gutalia.webp',           type: 'upsell3' },
+                'ebook1':   { name: '30 Days Diet Plan',    desc: 'Digital eBook Guide',  img: 'Images/2-bottles-vigor.webp?v=2',   type: 'bump', download: '../eBooks/30 days plan.pdf' },
+                'ebook2':   { name: 'Prostate Health Guide', desc: 'Digital eBook Guide', img: 'Images/3-bottles-vigor.webp?v=2',   type: 'bump', download: '../eBooks/prosta guide.pdf' },
+                'shipping': { name: 'Shipping Insurance',  desc: 'Package Protection',    img: 'Images/1-bottles-vigor.webp?v=2',   type: 'bump', download: 'tyimages/cheatsheet.pdf' }
             };
 
             var HEADLINES = {
@@ -1354,19 +1341,17 @@
 
             // Default fallback if no products found
             if (!hasItems) {
-                productListContainer.innerHTML = '<div class="product-card"><img src="tyimages/powerx_2.webp" alt="PowerX Pro"><h3>PowerX Pro</h3><p>Your order is confirmed.</p></div>';
+                productListContainer.innerHTML = '<div class="product-card"><img src="Images/2-bottles-vigor.webp?v=2" alt="PowerX Pro"><h3>PowerX Pro</h3><p>Your order is confirmed.</p></div>';
             }
 
-            // Bonus eBook Section (only for IDs 7 or 4 - the bundles)
-            if (itemIds.indexOf('7') !== -1 || itemIds.indexOf('4') !== -1) {
+            // Bonus eBook Section (only for 6+1 bundle - main-7)
+            if (itemIds.indexOf('main-7') !== -1) {
                 var bonus = document.getElementById('ebook-bonus');
                 if (bonus) bonus.style.display = 'block';
-                
-                // HIDE Disclaimer specifically for Bundle 7 as they get eBooks immediately
-                if (itemIds.indexOf('7') !== -1) {
-                    var disc = document.getElementById('ebook-disclaimer');
-                    if (disc) disc.style.display = 'none';
-                }
+
+                // Hide disclaimer — 6+1 buyers get eBooks immediately
+                var disc = document.getElementById('ebook-disclaimer');
+                if (disc) disc.style.display = 'none';
             }
 
             // Insurance Section - Always show section now as per user request
