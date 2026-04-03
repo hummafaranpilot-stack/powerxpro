@@ -36,16 +36,16 @@
         padding: 2rem 1rem;
         background-color: transparent;
         font-family: "Montserrat", sans-serif;
-        max-width: 750px;
+        max-width: 1100px;
         margin: 0 auto;
     }
     .mt-product-card {
         background: #fff;
         border-radius: 20px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        max-width: 240px;
+        max-width: 340px;
         width: calc(33.333% - 0.75rem);
-        min-width: 200px;
+        min-width: 280px;
         flex: 1 1 auto;
         overflow: hidden;
         display: flex;
@@ -389,6 +389,8 @@
     <link rel="stylesheet" href="../popup/css/style1.css">
 <style>
 html, body { overflow-x: hidden; }
+.container { max-width: 1140px !important; }
+.col-md-9.main-col { flex: 0 0 100% !important; max-width: 100% !important; }
 .creative-img { border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; max-width: 100%; height: auto; }
 .creative-img:hover { transform: scale(1.05); }
 @media (max-width: 768px) { .creative-img { width: 100% !important; max-width: 100% !important; } }
@@ -829,15 +831,15 @@ html, body { overflow-x: hidden; }
                   <h2 style="color:rgb(10,10,95); font-family:Montserrat,sans-serif; font-weight:800;">Choose Your Package</h2>
                 </div>
 <style>
-.mt-tryit-banner { display: flex !important; align-items: center !important; justify-content: center !important; gap: 1.5rem !important; max-width: 750px; margin: 0 auto 1rem !important; padding: 0.8rem 1.2rem !important; background: #fff !important; border: 2px solid #c8922a !important; border-radius: 14px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.07) !important; font-family: "Montserrat", sans-serif !important; }
+.mt-tryit-banner { display: flex !important; align-items: center !important; justify-content: center !important; gap: 1.5rem !important; max-width: 1100px; margin: 0 auto 1rem !important; padding: 1rem 1.5rem !important; background: #fff !important; border: 2px solid #c8922a !important; border-radius: 14px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.07) !important; font-family: "Montserrat", sans-serif !important; }
 .mt-tryit-banner .tryit-img { flex-shrink: 0 !important; }
-.mt-tryit-banner .tryit-img img { height: 80px !important; width: auto !important; max-width: 80px !important; object-fit: contain !important; }
+.mt-tryit-banner .tryit-img img { height: 110px !important; width: auto !important; max-width: 110px !important; object-fit: contain !important; }
 .mt-tryit-banner .tryit-text { flex: 1 !important; min-width: 0 !important; text-align: left !important; }
-.mt-tryit-banner .tryit-text h4 { font-size: 1rem !important; font-weight: 700 !important; color: #1a1a1a !important; margin: 0 0 2px 0 !important; padding: 0 !important; line-height: 1.3 !important; text-transform: none !important; text-align: left !important; white-space: nowrap !important; }
-.mt-tryit-banner .tryit-text p { font-size: 0.8rem !important; color: #555 !important; margin: 0 !important; font-weight: 500 !important; line-height: 1.4 !important; text-align: left !important; white-space: nowrap !important; }
+.mt-tryit-banner .tryit-text h4 { font-size: 1.15rem !important; font-weight: 700 !important; color: #1a1a1a !important; margin: 0 0 2px 0 !important; padding: 0 !important; line-height: 1.3 !important; text-transform: none !important; text-align: left !important; white-space: nowrap !important; }
+.mt-tryit-banner .tryit-text p { font-size: 0.9rem !important; color: #555 !important; margin: 0 !important; font-weight: 500 !important; line-height: 1.4 !important; text-align: left !important; white-space: nowrap !important; }
 .mt-tryit-banner .tryit-right { display: flex !important; align-items: center !important; gap: 1.2rem !important; flex-shrink: 0 !important; }
-.mt-tryit-banner .tryit-price .price-amount { font-size: 2rem !important; font-weight: 800 !important; color: #1a1a1a !important; line-height: 1 !important; }
-.mt-tryit-banner .tryit-price .price-per { font-size: 0.8rem !important; color: #1a1a1a !important; font-weight: 600 !important; }
+.mt-tryit-banner .tryit-price .price-amount { font-size: 2.5rem !important; font-weight: 800 !important; color: #1a1a1a !important; line-height: 1 !important; }
+.mt-tryit-banner .tryit-price .price-per { font-size: 0.9rem !important; color: #1a1a1a !important; font-weight: 600 !important; }
 .mt-tryit-banner .tryit-stack { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 6px !important; }
 .mt-tryit-banner .tryit-guarantee img { height: 36px !important; width: auto !important; max-width: none !important; max-height: 36px !important; object-fit: contain !important; }
 .mt-tryit-banner .tryit-action { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 3px !important; }
@@ -1593,7 +1595,7 @@ html, body { overflow-x: hidden; }
                 <p>This bonus is <strong>valued at $79</strong>, and it's yours completely FREE.</p> 
                 <h2>2) Prostate Health Guide: Foods That Support Male Wellness</h2>
                 <div class="card card-left" style="max-width: 200px;">
-                    <img class="card-img-top" src="../lib/img/ebook1.png" style="max-height: 250px; object-fit: contain;">
+                    <img class="card-img-top" src="../lib/img/ebook1.png" style="max-width:160px; max-height:200px; object-fit:contain;">
                     <div class="card-body">
                         <p class="card-text">Complete Prostate Health Guide</p>
                     </div>
@@ -1605,7 +1607,7 @@ html, body { overflow-x: hidden; }
                 <p>This bonus is <strong>valued at $49</strong>, but today it's yours for FREE.</p>
                 <h2>3) 30-Day Wellness Plan: Your Complete Vitality Guide</h2>
                 <div class="card card-right" style="max-width: 200px;">
-                    <img class="card-img-top" src="../lib/img/powerplan.png" style="max-height: 250px; object-fit: contain;">
+                    <img class="card-img-top" src="../lib/img/powerplan.png" style="max-width:160px; height:auto; object-fit:contain;">
                     <div class="card-body">
                         <p class="card-text">30-Day Wellness Plan</p>
                     </div>
@@ -1942,6 +1944,27 @@ html, body { overflow-x: hidden; }
                   <img src="../lib/img/cards.webp" alt="Payment Methods" style="max-width:260px;">
                 </div>
 
+<style>
+.bonuses-wrapper { max-width: 800px; margin: 30px auto; padding: 0 15px; }
+.bonuses-header { text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.8rem; margin-bottom: 25px; }
+.bonus-card { display: flex; align-items: center; gap: 20px; background: #fff; border: 2px solid #e8d5a8; border-radius: 14px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.bonus-card.reverse { flex-direction: row-reverse; }
+.bonus-content { flex: 1; }
+.bonus-image { flex: 0 0 120px; text-align: center; }
+.bonus-image img { max-width: 120px !important; max-height: 150px !important; height: auto !important; object-fit: contain !important; }
+.bonus-badge { display: inline-block; background: #c8922a; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; margin-bottom: 6px; font-family: 'Montserrat', sans-serif; }
+.bonus-title { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; margin: 0 0 8px; }
+.bonus-description { font-size: 0.85rem; color: #555; line-height: 1.5; margin: 0 0 10px; }
+.bonus-pricing { display: flex; align-items: center; gap: 12px; }
+.retail-price { color: #c00; text-decoration: line-through; font-weight: 600; font-size: 0.85rem; }
+.free-price { background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%); color: #fff; padding: 5px 15px; border-radius: 5px; font-weight: 700; font-size: 0.85rem; }
+@media (max-width: 768px) {
+  .bonus-card, .bonus-card.reverse { flex-direction: column; text-align: center; }
+  .bonus-image { flex: 0 0 auto; }
+  .bonus-image img { max-width: 100px !important; }
+  .bonus-pricing { justify-content: center; }
+}
+</style>
                 <!-- FREE Bonuses Section -->
                 <div class="bonuses-wrapper">
                     <section class="bonuses-section">
@@ -1992,7 +2015,7 @@ html, body { overflow-x: hidden; }
                                     </div>
                                 </div>
                                 <div class="bonus-image">
-                                    <img src="../lib/img/powerplan.png" alt="30-Day Wellness Plan">
+                                    <img src="../lib/img/powerplan.png" style="max-width:200px; height:auto;" alt="30-Day Wellness Plan">
                                 </div>
                             </div>
 
