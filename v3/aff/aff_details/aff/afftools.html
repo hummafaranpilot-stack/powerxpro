@@ -90,6 +90,7 @@ window.__lo_site_id = 329229;
 	<link rel="stylesheet" type="text/css" href="../css/affstyle-new.css">
 
 	<style>
+		body { overflow-x: hidden; }
 		span.spinner-border.spinner-border-sm {
 			width: 23px;
 			height: 23px;
@@ -470,6 +471,76 @@ window.__lo_site_id = 329229;
 		#videoModal video { width: 100%; max-height: 85vh; display: block; }
 		#videoModal .video-modal-progress { width: 100%; height: 6px; background: #333; cursor: pointer; }
 		#videoModal .video-modal-progress-bar { height: 100%; width: 0%; background: #f0c040; transition: width 0.05s linear; }
+	/* PXP Gallery - exact from short/go */
+	.pxp-gallery { display: flex; gap: 10px; max-width: 650px; margin: 0 auto; height: 100%; }
+	.pxp-gallery-thumbs { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; width: 88px; }
+	.pxp-thumb { width: 88px; height: 50px; object-fit: contain; background: #f5f5f5; border-radius: 10px; border: 2px solid #e0e0e0; cursor: pointer; transition: border-color 0.2s, transform 0.2s; }
+	.pxp-thumb:hover { border-color: #c8922a; transform: scale(1.05); }
+	.pxp-thumb.active { border-color: #c8922a; box-shadow: 0 0 0 2px rgba(200,146,42,0.3); }
+	.pxp-gallery-main { flex: 1; min-width: 0; }
+	.pxp-gallery-img-wrap { position: relative; display: inline-block; width: 100%; }
+	.pxp-gallery-img-wrap img.pxp-main-img { width: 100%; height: auto; border-radius: 12px; object-fit: contain; background: #fafafa; transition: opacity 0.3s ease, transform 0.3s ease; cursor: pointer; display: block; }
+	.pxp-gallery-img-wrap img.pxp-main-img:hover { transform: scale(1.03); }
+	.pxp-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.85); border: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.15); cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 3; transition: background 0.2s, transform 0.2s; }
+	.pxp-arrow:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
+	.pxp-arrow svg { width: 16px; height: 16px; fill: none; stroke: #333; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+	.pxp-arrow-left { left: 8px; }
+	.pxp-arrow-right { right: 8px; }
+	@media (min-width: 992px) {
+		#prod-description .container { max-width: 1400px; }
+		#prod-description .col-12.col-lg-11 { flex: 0 0 96%; max-width: 96%; }
+		.pxp-gallery { max-width: 100%; }
+		.pxp-thumb { width: 122px; height: 69px; }
+		.pxp-gallery-thumbs { width: 122px; gap: 4px; }
+	}
+	@media (max-width: 768px) {
+		.pxp-gallery { flex-direction: column-reverse; gap: 8px; height: auto; max-width: 100%; }
+		.pxp-gallery-thumbs { flex-direction: row; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; justify-content: flex-start; }
+		.pxp-gallery-thumbs::-webkit-scrollbar { display: none; }
+		.pxp-thumb { width: 70px; height: 39px; min-width: 70px; }
+		.pxp-gallery-img-wrap img.pxp-main-img { border-radius: 10px; }
+		.pxp-arrow { width: 30px; height: 30px; }
+		.pxp-arrow svg { width: 14px; height: 14px; }
+		.pxp-arrow-left { left: 6px; }
+		.pxp-arrow-right { right: 6px; }
+	}
+	.pxp-trustpilot-bar { display: inline-flex; align-items: center; gap: 8px; background: #f5f5f5; border-radius: 6px; padding: 6px 12px; font-family: 'Montserrat', sans-serif; font-size: 13px; color: #333; flex-wrap: nowrap; }
+	.pxp-tp-wrap { text-align: left; margin-bottom: 8px; }
+	@media (max-width: 768px) { .pxp-tp-wrap { text-align: left; } }
+	.pxp-tp-stars { height: 18px; width: auto; flex-shrink: 0; }
+	.pxp-tp-score { font-weight: 800; font-size: 14px; color: #1a1a1a; }
+	.pxp-tp-sep { color: #ccc; }
+	.pxp-tp-text { color: #555; font-size: 12px; white-space: nowrap; }
+	.pxp-tp-text strong { color: #1a1a1a; }
+	@media (max-width: 768px) { .pxp-trustpilot-bar { font-size: 11px; padding: 5px 10px; gap: 5px; flex-wrap: wrap; justify-content: flex-start; } .pxp-tp-stars { height: 14px; } .pxp-tp-score { font-size: 12px; } .pxp-tp-text { font-size: 10px; white-space: normal; } .pxp-tp-sep { display: none; } }
+	.pxp-social-proof { display: flex; align-items: center; gap: 10px; padding: 8px 0; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; font-size: 13px; color: #555; flex-wrap: wrap; }
+	.pxp-sp-faces { height: 28px; width: auto; flex-shrink: 0; }
+	.pxp-sp-text { font-size: 13px; color: #333; }
+	.pxp-sp-text strong { color: #1a1a1a; }
+	.pxp-sp-stock { display: flex; align-items: center; gap: 5px; color: #4a9e6e; font-weight: 600; font-size: 13px; }
+	.pxp-sp-dot { width: 8px; height: 8px; background: #4a9e6e; border-radius: 50%; display: inline-block; }
+	@media (max-width: 768px) { .pxp-social-proof { font-size: 11px; gap: 6px; justify-content: flex-start; } .pxp-sp-faces { height: 22px; } .pxp-sp-text, .pxp-sp-stock { font-size: 10px; } }
+	.prod-description { text-align: left !important; }
+	.prod-description h3 { margin-bottom: 0 !important; text-align: left !important; }
+	.prod-description .stars { margin-bottom: 2px !important; text-align: left !important; }
+	.prod-description .pxp-tp-wrap { margin-bottom: 2px; text-align: left !important; }
+	#prod-description .prod-description p { margin-bottom: 0 !important; margin-top: 0 !important; text-align: left !important; }
+	#prod-description .prod-description .check-list { margin-bottom: 0 !important; margin-top: 0 !important; list-style: disc !important; padding-left: 18px !important; margin-left: 0 !important; }
+	#prod-description .prod-description .check-list li { margin-bottom: 2px !important; padding-left: 0 !important; line-height: 1.3 !important; display: list-item !important; list-style-type: disc !important; }
+	#prod-description .prod-description .check-list li::before { display: none !important; content: none !important; margin: 0 !important; padding: 0 !important; }
+	.prod-description .pxp-social-proof { margin-bottom: 0; margin-top: 0; padding: 0; }
+	.prod-description .button-center { margin-top: 2px; }
+	.button-center.riskfree a { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; color: #fff !important; background: #000 !important; border-color: #000 !important; }
+	#prod-description .button-center.riskfree { padding: 6px 18px !important; }
+	#prod-description .button-center.riskfree:hover { background-color: #222 !important; box-shadow: 0px 3px 0px #555 !important; transform: translateY(-1px); }
+	@media (max-width: 768px) { .riskfree { font-size: 14px !important; padding: 8px 16px !important; border-radius: 28px !important; white-space: nowrap !important; } }
+	#prod-description .prod-description .secure-text { margin-top: 4px !important; margin-bottom: 0 !important; text-align: center !important; }
+	#prod-description .prod-description p.mt-0 { margin-bottom: 4px !important; margin-top: 0 !important; padding-bottom: 0 !important; }
+	#prod-description .prod-description .check-list { margin-top: 0 !important; padding-top: 0 !important; }
+	#prod-description .prod-description .check-list li { margin-bottom: 4px !important; font-size: 18px !important; font-weight: 200 !important; }
+	#prod-description .prod-description .pxp-social-proof { margin-top: 4px !important; margin-bottom: 4px !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+	#prod-description .prod-description .button-center { margin-top: 0 !important; margin-bottom: 0 !important; }
+	#reviews img.rounded-circle { width: 100px !important; height: 100px !important; object-fit: cover !important; border-radius: 50% !important; }
 	</style>
 
 <script src="https://cdn.trustednutraproduct.com/t.js?v=powerxpro-trustednutraproduct-com-v3"></script>
@@ -491,8 +562,8 @@ window.__lo_site_id = 329229;
 			</div>
 
 			<div class="top-heading">
-				<h1 class="text-blue">MONSTER OFFER <br class="br-xr br-14pm">PowerX Pro<sup class="tm">TM</sup>!</h1>
-				<h3>is going to supercharge <br class="br-se br-14pm br-12p br-xr">your commissions!
+				<h1 class="text-blue" style="color: #000 !important;">MONSTER OFFER <br class="br-xr br-14pm">PowerX Pro<sup class="tm">TM</sup>!</h1>
+				<h3 style="color: #000 !important;">is going to supercharge <br class="br-se br-14pm br-12p br-xr">your commissions!
 				<br><span style="color: #d9534f; font-size: 0.85em; font-weight: 800;">AOV: $271.83 | EPC: $3.81+ | 70-90% Commission</span>
 				</h3>
 				<p class="text-center mt-3"><span style="display: inline-block; border: 2px dashed #1a4b8c; color: #1a4b8c; font-size: 16px; font-weight: 600; padding: 10px 25px; border-radius: 8px; background: #fff;">ClickBank Affiliates Only</span></p>
@@ -502,30 +573,40 @@ window.__lo_site_id = 329229;
 			<section id="prod-description" class="pt-1 pt-md-3 pb-4 pb-lg-5">
 				<div class="container">
 					<div class="col-12 col-lg-11 mx-auto">
-						<div class="row align-items-center">
-							<div class="col-12 col-lg-6 text-center">
-								<!--<img src="https://tgenics-cdn.s3.ap-southeast-1.amazonaws.com/ovunashop/img/ovuna.png" class="img-fluid">-->
-								<picture class="img-fluid d-block mx-auto">
-									<img src="../../../Images/7-bottles-vigor.webp?v=2" class="img-fluid mx-auto d-block"
-										alt="PowerX Pro Bottles" style="max-width: 400px;">
-								</picture>
+						<div class="row">
+							<div class="col-12 col-lg-6" style="padding-top: 30px;">
+								<div class="pxp-gallery">
+									<div class="pxp-gallery-thumbs">
+										<img src="../../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="Unboxing 1" class="pxp-thumb active" onclick="pxpGallerySelect(this)">
+										<img src="../../../creative-assets/unboxing/52_id-52-imagereference-1-bottles-vigorpng-prompt-Cle.jpg" alt="Unboxing 2" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+										<img src="../../../creative-assets/doctor-comparison/53_id-53-imagereference-1-bottles-vigorpng-prompt-A-c.jpg" alt="Doctor" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+										<img src="../../../creative-assets/banner-ads/7_id-7-imagereference-1-bottles-vigorpng-prompt-Powe.jpg" alt="Banner" class="pxp-thumb" onclick="pxpGallerySelect(this)">
+									</div>
+									<div class="pxp-gallery-main">
+										<div class="pxp-gallery-img-wrap">
+											<button class="pxp-arrow pxp-arrow-left" onclick="pxpGalleryNav(this,-1)"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+											<img src="../../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg" alt="PowerX Pro" class="pxp-main-img">
+											<button class="pxp-arrow pxp-arrow-right" onclick="pxpGalleryNav(this,1)"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-12 col-lg-6 col-md-10 mx-auto prod-description px-1 px-md-3 my-auto">
-								<ul class="text-left my-lg-4 col-12 col-md-10 mx-auto pl-4 pl-md-0 new-list">
-									<li class="mb-2 mb-lg-4 pb-md-2">Massive payouts - <strong>$150-$170 per
-											sale</strong> with tiered CPA structure</li>
-									<li class="mb-2 mb-lg-4 pb-md-2">Premium prostate health supplement - converts well
-										with men 40+ audience</li>
-									<li class="mb-2 mb-lg-4 pb-md-2">Constantly optimized swipes & landers to ensure
-										best conversions</li>
+								<h3 class="font-weight-bold mb-0">PowerX Pro<sup>&#8482;</sup></h3>
+								<div class="stars mb-0"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="text-dark">|</span> <span class="font-weight-bold text-success">In Stock</span></div>
+								<div class="pxp-tp-wrap"><span class="pxp-trustpilot-bar"><img src="../../../Images/star-4.5.svg" alt="Trustpilot" class="pxp-tp-stars"><span class="pxp-tp-score">4.7</span><span class="pxp-tp-sep">|</span><span class="pxp-tp-text">Rated <strong>Excellent</strong> based on 2000+ Reviews</span></span></div>
+								<p class="mt-0 mb-0">The powerful natural formula inside PowerX Pro&#8482; helps support your prostate health and male vitality&hellip;</p>
+								<ul class="check-list">
+									<li>Earn <strong>$170+ CPA per sale</strong> with a tiered commission structure</li>
+									<li>Two audiences: ED (men 20+) and Prostate Health (men 45+)</li>
+									<li>Constantly optimized swipes &amp; landers for best conversions</li>
 								</ul>
+								<div class="pxp-social-proof"><img src="../../../Images/socials.webp" alt="Happy Customers" class="pxp-sp-faces"><span class="pxp-sp-text"><strong>+2K</strong> Happy Customers</span><span class="pxp-sp-stock"><span class="pxp-sp-dot"></span> In stock and ready to ship</span></div>
+								<div class="button-center riskfree text-center text-uppercase" style="background-color:#000 !important;box-shadow:0px 3px 0px #333 !important;">
+									<a href="#landing-pages" style="display:inline-flex;align-items:center;gap:8px;background:#000;color:#fff;font-weight:800;font-size:16px;padding:10px 24px;border-radius:50px;text-decoration:none;letter-spacing:0.5px;border:none;cursor:pointer;transition:all 0.2s ease;">VIEW 12 HIGH QUALITY LANDING PAGES <i class="fas fa-arrow-right"></i></a>
+								</div>
+								<p class="text-center secure-text my-2"><i class="fas fa-lock"></i> 100% Secure Encrypted Transactions</p>
 							</div>
-
-
-
-
-
-
 						</div>
 					</div>
 				</div>
@@ -546,9 +627,96 @@ window.__lo_site_id = 329229;
 					<a href="#product-images">Product Images</a>
 					<a href="#install-pixels">Install Pixel</a>
 					<span style="flex-basis:100%;height:0;"></span>
+					<a href="#landing-pages" style="background:rgba(255,255,255,0.15) !important;border-radius:6px;padding:6px 12px !important;">VSL <span class="new-blink-badge">NEW</span></a>
+					<a href="#hoplink-generator" style="background:rgba(255,255,255,0.15) !important;border-radius:6px;padding:6px 12px !important;">Hoplink Generator <span class="new-blink-badge">NEW</span></a>
 					<a href="#ad-copy" style="background:rgba(255,255,255,0.15) !important;border-radius:6px;padding:6px 12px !important;">Ad Copy Swipes <span class="new-blink-badge">NEW</span></a>
 					<a href="#ad-images" style="background:rgba(255,255,255,0.15) !important;border-radius:6px;padding:6px 12px !important;">Campaign Creatives <span class="new-blink-badge">NEW</span></a>
 				</div>
+
+				<div style="text-align:center; padding: 30px 20px 10px;">
+					<h2 style="color:#1a4b8c; font-weight:800; font-size:28px; margin-bottom:20px; border-bottom:3px dashed #1a4b8c; display:inline-block; padding-bottom:8px;">Proofs of Offer Performance</h2>
+					<div style="max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:20px;">
+						<img src="https://metatrim.trustednutraproduct.com/v2/Proofs/2.png" alt="Proof 1" style="width:100%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+						<img src="https://metatrim.trustednutraproduct.com/v2/Proofs/1.png" alt="Proof 2" style="width:100%; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+					</div>
+				</div>
+
+				<!-- Performance Stats & Why Promote Section -->
+				<section id="offer-stats" class="container-md py-4">
+					<div class="row">
+						<div class="col-12 col-lg-10 mx-auto">
+							<div class="bg-bright py-4 px-4 px-md-5 rounded shadow-sm border">
+								<h3 class="text-blue text-center mb-4" style="font-weight: 800; font-size: 1.8rem; text-transform: uppercase;">Offer Performance Statistics</h3>
+								<p class="text-center mb-4" style="font-size: 1.1rem; color: #333; font-weight: 600;">Skyrocket your earnings with these industry-leading metrics!</p>
+								<div class="row mb-4">
+									<div class="col-md-6 mb-3">
+										<ul class="list-unstyled mb-0">
+											<li class="mb-4 mb-md-3 stat-item">
+												<i class="material-icons check-icon d-md-none">check</i>
+												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">analytics</i></div>
+												<div class="stat-info">
+													<strong class="stat-label">Average Order Value (AOV):</strong>
+													<span class="stat-value">$271.83</span>
+												</div>
+											</li>
+											<li class="mb-4 mb-md-3 stat-item">
+												<i class="material-icons check-icon d-md-none">check</i>
+												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">trending_up</i></div>
+												<div class="stat-info">
+													<strong class="stat-label">Average Customer LTV:</strong>
+													<span class="stat-value">$398.71</span>
+												</div>
+											</li>
+											<li class="mb-4 mb-md-3 stat-item">
+												<i class="material-icons check-icon d-md-none">check</i>
+												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">paid</i></div>
+												<div class="stat-info">
+													<strong class="stat-label">Commission Rate:</strong>
+													<span class="stat-value">70-90% Range</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="col-md-6 mb-3">
+										<ul class="list-unstyled mb-0">
+											<li class="mb-4 mb-md-3 stat-item">
+												<i class="material-icons check-icon d-md-none">check</i>
+												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">shopping_cart</i></div>
+												<div class="stat-info">
+													<strong class="stat-label">Checkout Conversion Rate:</strong>
+													<span class="stat-value">53.50%</span>
+												</div>
+											</li>
+											<li class="mb-4 mb-md-3 stat-item">
+												<i class="material-icons check-icon d-md-none">check</i>
+												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">group</i></div>
+												<div class="stat-info">
+													<strong class="stat-label">Monthly Visitors:</strong>
+													<span class="stat-value">76,987 (+5.46%)</span>
+												</div>
+											</li>
+											<li class="mb-4 mb-md-3 stat-item">
+												<i class="material-icons check-icon d-md-none">check</i>
+												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">bolt</i></div>
+												<div class="stat-info">
+													<strong class="stat-label">Earnings Per Click (EPC):</strong>
+													<span class="stat-value">$3.81+</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<p class="text-center font-italic text-muted mb-4" style="font-size: 0.95rem;">* These stats are from BuyGoods Launched Offer!</p>
+								<hr>
+								<div class="mt-4">
+									<h4 class="text-blue mb-3" style="font-weight: 700;">WHY THIS OFFER IS WORTH PROMOTING</h4>
+									<p style="font-size: 1.1rem; line-height: 1.7;">The <strong>AOV sits at $271.83</strong> and is climbing — that directly means larger commissions in your pocket per sale. The <strong>Customer LTV of $398.71</strong> tells you buyers aren't one-and-done; there's repeat value baked in. Most importantly, the <strong>checkout conversion rate is 53.50%</strong>, which means once your traffic hits the cart, more than half of them actually buy. That's rare.</p>
+									<p style="font-size: 1.1rem; line-height: 1.7;">The offer is doing over <strong>$660K a month in revenue</strong>. This isn't a test — it's a proven, scaled offer with active traffic and real buyers coming in every day.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 
 				<section class="container-md first-section section-paragraphs" id="offer-info">
 					<h3 class="section-header section-header-2">Offer Information<span></span></h3>
@@ -739,85 +907,6 @@ window.__lo_site_id = 329229;
 					</div>
 				</section>
 
-				
-
-				<!-- Performance Stats & Why Promote Section -->
-				<section id="offer-stats" class="container-md py-4">
-					<div class="row">
-						<div class="col-12 col-lg-10 mx-auto">
-							<div class="bg-bright py-4 px-4 px-md-5 rounded shadow-sm border">
-								<h3 class="text-blue text-center mb-4" style="font-weight: 800; font-size: 1.8rem; text-transform: uppercase;">Offer Performance Statistics</h3>
-								<p class="text-center mb-4" style="font-size: 1.1rem; color: #333; font-weight: 600;">Skyrocket your earnings with these industry-leading metrics!</p>
-								<div class="row mb-4">
-									<div class="col-md-6 mb-3">
-										<ul class="list-unstyled mb-0">
-											<li class="mb-4 mb-md-3 stat-item">
-												<i class="material-icons check-icon d-md-none">check</i>
-												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">analytics</i></div>
-												<div class="stat-info">
-													<strong class="stat-label">Average Order Value (AOV):</strong>
-													<span class="stat-value">$271.83</span>
-												</div>
-											</li>
-											<li class="mb-4 mb-md-3 stat-item">
-												<i class="material-icons check-icon d-md-none">check</i>
-												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">trending_up</i></div>
-												<div class="stat-info">
-													<strong class="stat-label">Average Customer LTV:</strong>
-													<span class="stat-value">$398.71</span>
-												</div>
-											</li>
-											<li class="mb-4 mb-md-3 stat-item">
-												<i class="material-icons check-icon d-md-none">check</i>
-												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">paid</i></div>
-												<div class="stat-info">
-													<strong class="stat-label">Commission Rate:</strong>
-													<span class="stat-value">70-90% Range</span>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="col-md-6 mb-3">
-										<ul class="list-unstyled mb-0">
-											<li class="mb-4 mb-md-3 stat-item">
-												<i class="material-icons check-icon d-md-none">check</i>
-												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">shopping_cart</i></div>
-												<div class="stat-info">
-													<strong class="stat-label">Checkout Conversion Rate:</strong>
-													<span class="stat-value">53.50%</span>
-												</div>
-											</li>
-											<li class="mb-4 mb-md-3 stat-item">
-												<i class="material-icons check-icon d-md-none">check</i>
-												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">group</i></div>
-												<div class="stat-info">
-													<strong class="stat-label">Monthly Visitors:</strong>
-													<span class="stat-value">76,987 (+5.46%)</span>
-												</div>
-											</li>
-											<li class="mb-4 mb-md-3 stat-item">
-												<i class="material-icons check-icon d-md-none">check</i>
-												<div class="icon-box"><i class="material-icons" style="font-size: 20px;">bolt</i></div>
-												<div class="stat-info">
-													<strong class="stat-label">Earnings Per Click (EPC):</strong>
-													<span class="stat-value">$3.81+</span>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<p class="text-center font-italic text-muted mb-4" style="font-size: 0.95rem;">* These stats are from BuyGoods Launched Offer!</p>
-								<hr>
-								<div class="mt-4">
-									<h4 class="text-blue mb-3" style="font-weight: 700;">WHY THIS OFFER IS WORTH PROMOTING</h4>
-									<p style="font-size: 1.1rem; line-height: 1.7;">The <strong>AOV sits at $271.83</strong> and is climbing — that directly means larger commissions in your pocket per sale. The <strong>Customer LTV of $398.71</strong> tells you buyers aren’t one-and-done; there’s repeat value baked in. Most importantly, the <strong>checkout conversion rate is 53.50%</strong>, which means once your traffic hits the cart, more than half of them actually buy. That’s rare.</p>
-									<p style="font-size: 1.1rem; line-height: 1.7;">The offer is doing over <strong>$660K a month in revenue</strong>. This isn’t a test — it’s a proven, scaled offer with active traffic and real buyers coming in every day.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
 				<section class="pb-3">
 					<div class="container ">
 
@@ -935,7 +1024,7 @@ window.__lo_site_id = 329229;
 							<div class="col-12 col-lg-9 col-md-10 mx-auto">
 								<div class="bg-bright py-4 px-5">
 									<h2 class="text-center text-blue" id="traffic-tips">Traffic Tips</h2>
-									<p>Affiliates promoting PowerX Pro&#8482; can earn <strong>$150-$170 per sale</strong>
+									<p>Affiliates promoting PowerX Pro&#8482; can earn <strong>$170+ CPA per sale</strong>
 										with subscription upsells!</p>
 									<p>We have made the best conversions among people who are: </p>
 									<ul class="new-list my-0 py-0 px-0 px-lg-4 mx-lg-4 mx-0">
@@ -945,7 +1034,7 @@ window.__lo_site_id = 329229;
 										<li class="mb-md-4">Wanting to improve male vitality and performance</li>
 										<li class="mb-md-4">Seeking supplements to support healthy prostate function
 										</li>
-										<li class="mb-md-4">Age groups 40-70 years old (primarily men 45+)</li>
+										<li class="mb-md-4">Two target batches: Erectile Dysfunction (men 20+) &amp; Prostate Health (men 45+)</li>
 										<li class="mb-md-4">Top converting markets: USA</li>
 									</ul>
 
@@ -957,9 +1046,129 @@ window.__lo_site_id = 329229;
 					</div>
 				</section>
 
+				<!-- Hoplink Generator Section -->
+				<section class="container-md py-4" id="hoplink-generator">
+					<h3 class="section-header text-center mb-4">Get Your Affiliate Links</h3>
+					<div class="row justify-content-center">
+						<div class="col-md-8 col-lg-6">
+							<div style="border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);">
+
+								<!-- Header -->
+								<div style="background:linear-gradient(135deg,#1565c0 0%,#1976d2 50%,#2196f3 100%);padding:25px 30px;display:flex;align-items:center;justify-content:space-between;">
+									<div>
+										<h4 style="color:#ff6b35;font-weight:800;font-size:1.5rem;margin:0;line-height:1.2;">Get Your Links And</h4>
+										<h4 style="color:white;font-weight:800;font-size:1.5rem;margin:0;">Get Started</h4>
+									</div>
+									<img src="../images/clickbank-logo.webp" alt="ClickBank" style="height:40px;background:white;padding:6px 10px;border-radius:6px;border:2px solid #1a237e;">
+								</div>
+
+								<!-- Form Body -->
+								<div style="background:white;padding:30px;">
+									<div style="position:relative;">
+										<!-- Vertical timeline line -->
+										<div style="position:absolute;left:8px;top:20px;bottom:60px;width:2px;background:#e0e0e0;z-index:0;"></div>
+
+										<!-- Step 1 -->
+										<div style="display:flex;align-items:flex-start;margin-bottom:22px;position:relative;">
+											<div style="width:18px;height:18px;border-radius:50%;background:#e53935;flex-shrink:0;margin-top:3px;z-index:1;border:3px solid #ffcdd2;"></div>
+											<div style="margin-left:16px;flex:1;">
+												<p style="color:#e53935;font-weight:700;font-size:13px;margin-bottom:4px;">Step 1</p>
+												<p style="font-weight:700;font-size:15px;margin-bottom:8px;">Enter your ClickBank Affiliate ID</p>
+												<input type="text" id="affiliateId" placeholder="Your ClickBank ID" style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:15px;outline:none;">
+												<span id="affiliate-error-message" style="color:#e53935;font-size:13px;display:block;margin-top:4px;"></span>
+											</div>
+										</div>
+
+										<!-- Step 2 -->
+										<div style="display:flex;align-items:flex-start;margin-bottom:22px;position:relative;">
+											<div style="width:18px;height:18px;border-radius:50%;background:#e53935;flex-shrink:0;margin-top:3px;z-index:1;border:3px solid #ffcdd2;"></div>
+											<div style="margin-left:16px;flex:1;">
+												<p style="color:#e53935;font-weight:700;font-size:13px;margin-bottom:4px;">Step 2</p>
+												<p style="font-weight:700;font-size:15px;margin-bottom:8px;">Enter your Tracking ID <span style="font-weight:400;color:#888;">(Optional)</span></p>
+												<input type="text" id="trackingId" placeholder="Your Tracking ID" style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:15px;outline:none;">
+											</div>
+										</div>
+
+										<!-- Step 3 -->
+										<div style="display:flex;align-items:flex-start;position:relative;">
+											<div style="width:18px;height:18px;border-radius:50%;background:#e53935;flex-shrink:0;margin-top:3px;z-index:1;border:3px solid #ffcdd2;"></div>
+											<div style="margin-left:16px;flex:1;">
+												<p style="color:#e53935;font-weight:700;font-size:13px;margin-bottom:4px;">Step 3</p>
+												<p style="font-weight:700;font-size:15px;margin-bottom:8px;">Select Landing Page</p>
+												<select id="landingPage" style="width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:6px;font-size:15px;background:white;outline:none;">
+													<option value="edvsl">ED VSL — Default / Recommended</option>
+													<option value="prostatevsl">Prostate Health VSL — High Converting</option>
+													<option value="dtc">DTC — Direct To Checkout (Quick Convert)</option>
+													<option value="longtsl1">Long TSL #1 — Top Performer</option>
+													<option value="longtsl2">Long TSL #2 — Recommended Bold</option>
+													<option value="longtsl3">Long TSL #3 — Testimonial Heavy</option>
+													<option value="longtsl4">Long TSL #4 — Authority Angle</option>
+													<option value="longtsl5">Long TSL #5 — Bedroom Performance</option>
+													<option value="longtsl6">Long TSL #6 — ED Solution</option>
+													<option value="short1">Short TSL #1 — Top Converting</option>
+													<option value="short2">Short TSL #2 — Recommended Bold</option>
+													<option value="short3">Short TSL #3 — Fast Loading</option>
+												</select>
+											</div>
+										</div>
+									</div>
+
+									<!-- Generate Button -->
+									<button id="submit" style="width:100%;background:#2e7d32;color:white;border:none;border-radius:8px;padding:16px;font-size:17px;font-weight:800;letter-spacing:1px;cursor:pointer;text-transform:uppercase;margin-top:24px;transition:background 0.2s;" onmouseover="this.style.background='#1b5e20'" onmouseout="this.style.background='#2e7d32'">
+										GENERATE HOPLINK &#10148;
+									</button>
+
+									<!-- Output -->
+									<div style="margin-top:20px;">
+										<p style="font-size:14px;font-weight:600;margin-bottom:6px;color:#333;">Your Hoplink:</p>
+										<div style="position:relative;">
+											<input type="text" id="SSLHopLink" readonly placeholder="" style="width:100%;padding:10px 42px 10px 12px;border:1px solid #ddd;border-radius:6px;font-size:14px;background:#f9f9f9;outline:none;">
+											<button id="copy" title="Copy to clipboard" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:#555;font-size:18px;padding:0;">
+												<i class="fas fa-copy"></i>
+											</button>
+											<span id="myTooltip" style="display:none;position:absolute;right:0;top:-28px;background:#333;color:white;font-size:12px;padding:3px 8px;border-radius:4px;">Copied!</span>
+										</div>
+									</div>
+
+									<!-- Contact -->
+									<p class="text-center mt-3" style="font-size:13px;">
+										<a href="mailto:contact@trustednutraproduct.com" style="color:#1565c0;text-decoration:none;">
+											&#9993; Contact Affiliate Success Manager
+										</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
 				<!-- Landing Pages Section -->
 				<section class="container-md py-4" id="landing-pages">
 					<h3 class="section-header text-center mb-4">Landing Pages</h3>
+
+					<!-- VSL Section -->
+					<div style="background:#184579;border-radius:0;padding:40px 20px;margin:0 -100vw 30px;padding-left:100vw;padding-right:100vw;overflow:hidden;">
+						<h4 class="text-center mb-1" style="font-weight:800;font-size:1.6rem;color:white;">Video Sales Letter (VSL) <span style="background:#fff;color:#000;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-left:6px;vertical-align:middle;display:inline-block;animation:blink-green 1.5s ease-in-out infinite;">NEW</span></h4>
+						<p class="text-center mb-4" style="color:rgba(255,255,255,0.6);font-size:14px;">Highest converting formats — send traffic directly to these</p>
+						<div class="row justify-content-center text-center">
+							<div class="col-md-5 col-lg-4 mb-3">
+								<div style="background:rgba(255,255,255,0.08);border:1px dashed rgba(255,255,255,0.25);border-radius:10px;padding:25px 20px;">
+									<h4 style="font-size:1.4rem;font-weight:700;color:white;text-align:center;">ED VSL</h4>
+									<p style="font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:12px;text-align:center;">Erectile Dysfunction Focused VSL</p>
+									<div style="text-align:center;"><span class="badge bg-danger mb-3" style="font-size:13px;padding:6px 14px;">Video Based</span></div>
+									<a href="https://powerxpro.trustednutraproduct.com/v3/edvsl/" class="btn btn-danger fw-bold mt-2 d-block mx-auto" style="font-size:15px;padding:10px 30px;" target="_blank">Preview Written TSL</a>
+								</div>
+							</div>
+							<div class="col-md-5 col-lg-4 mb-3">
+								<div style="background:rgba(255,255,255,0.08);border:1px dashed rgba(255,255,255,0.25);border-radius:10px;padding:25px 20px;">
+									<h4 style="font-size:1.4rem;font-weight:700;color:white;text-align:center;">Prostate VSL</h4>
+									<p style="font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:12px;text-align:center;">Prostate Focused VSL</p>
+									<div style="text-align:center;"><span class="badge bg-danger mb-3" style="font-size:13px;padding:6px 14px;">Highest Converting</span></div>
+									<a href="https://powerxpro.trustednutraproduct.com/v3/prostatevsl/" class="btn btn-danger fw-bold mt-2 d-block mx-auto" style="font-size:15px;padding:10px 30px;" target="_blank">Preview VSL</a>
+								</div>
+							</div>
+						</div>
+					</div>
 
 					<!-- Short TSLs -->
 					<h4 class="text-blue text-center mb-4" style="font-weight: 700; font-size: 1.6rem;">Short TSLs</h4>
@@ -1007,6 +1216,24 @@ window.__lo_site_id = 329229;
 								<a href="https://powerxpro.trustednutraproduct.com/v3/short3"
 									class="btn btn-danger fw-bold w-100" style="font-size: 15px; padding: 10px 20px;"
 									target="_blank">Preview Short TSL #3</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- DTC (Direct To Checkout) -->
+					<h4 class="text-blue text-center mb-4" style="font-weight: 700; font-size: 1.6rem;">DTC (Direct To Checkout) <span style="background:#fff;color:#000;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;margin-left:6px;vertical-align:middle;display:inline-block;animation:blink-green 1.5s ease-in-out infinite;">NEW</span></h4>
+					<div class="row justify-content-center mb-4">
+						<div class="col-md-6 col-lg-4 mb-3">
+							<div class="card-dashed d-flex flex-column justify-content-between align-items-center"
+								style="min-height: 220px;">
+								<div class="text-center">
+									<h4 style="font-size: 1.5rem; font-weight: 700; color: #1a4b8c;">DTC Page</h4>
+									<p class="mb-2" style="font-size: 15px; color: #555; font-weight: 500;">Direct To Checkout Funnel</p>
+									<span class="badge mb-3" style="font-size: 14px; padding: 8px 16px; background-color: #9C27B0; color: #fff;">NEW</span>
+								</div>
+								<a href="https://powerxpro.trustednutraproduct.com/v3/dtc/"
+									class="btn btn-danger fw-bold w-100" style="font-size: 15px; padding: 10px 20px;"
+									target="_blank">Preview DTC Page</a>
 							</div>
 						</div>
 					</div>
@@ -1172,7 +1399,8 @@ window.__lo_site_id = 329229;
 								<h5 class="text-blue mb-3" style="font-size: 1.4rem; font-weight: 600;">Core Audience
 								</h5>
 								<ul class="mb-0" style="list-style: none; padding-left: 0; font-size: 16px;">
-									<li class="mb-2"><strong>Age:</strong> 40-70</li>
+									<li class="mb-2"><strong>ED Audience:</strong> Men 20+</li>
+									<li class="mb-2"><strong>Prostate Audience:</strong> Men 45+</li>
 									<li class="mb-2"><strong>Gender:</strong> Male Only</li>
 									<li class="mb-2"><strong>Countries:</strong> USA</li>
 									<li class="mb-2"><strong>Devices:</strong> Mobile & Desktop</li>
@@ -1220,7 +1448,7 @@ window.__lo_site_id = 329229;
 								<h5 class="text-blue mb-3" style="font-size: 1.4rem; font-weight: 600;">Ad Copy
 									Headlines</h5>
 								<ul class="mb-0" style="list-style: none; padding-left: 0; font-size: 16px;">
-									<li class="mb-2">Natural Prostate Support for Men 40+</li>
+									<li class="mb-2">Natural Prostate &amp; ED Support for All Men</li>
 									<li class="mb-2">Stop Frequent Bathroom Trips</li>
 									<li class="mb-2">Reclaim Your Male Vitality</li>
 									<li class="mb-2">Sleep Through The Night Again</li>
@@ -1253,7 +1481,7 @@ window.__lo_site_id = 329229;
 								<ul class="orange-check-list">
 									<li><strong>Frontend:</strong> 65% per initial sale</li>
 									<li><strong>Backend:</strong> 40% per upsell</li>
-									<li><strong>Fixed CPA:</strong> Starting from $150/Sale</li>
+									<li><strong>Fixed CPA:</strong> $170+ per Sale</li>
 									<li><strong>Payout:</strong> NET 15, Monthly</li>
 								</ul>
 							</div>
@@ -1263,7 +1491,7 @@ window.__lo_site_id = 329229;
 							<div class="card-dashed">
 								<h5>Traffic & Audience</h5>
 								<ul class="orange-check-list">
-									<li><strong>Target:</strong> Ages 40+</li>
+									<li><strong>Target:</strong> ED (Men 20+) / Prostate (Men 45+)</li>
 									<li><strong>Restrictions:</strong> None - all sources allowed</li>
 									<li><strong>Best Sources:</strong> Google Ads & Facebook Ads</li>
 									<li><strong>Network:</strong> ClickBank Only</li>
@@ -1284,7 +1512,7 @@ window.__lo_site_id = 329229;
 								<strong>BASE OFFER (What You Publicly List)</strong>
 							</div>
 							<div class="bg-light p-4 mb-3" style="border: 1px solid #ddd; border-top: 0;">
-								<h3 class="text-success text-center mb-1" style="font-weight: 700;">$150</h3>
+								<h3 class="text-success text-center mb-1" style="font-weight: 700;">$170</h3>
 								<p class="text-center text-muted mb-3" style="font-size: 16px;">Flat CPA</p>
 								<ul class="mb-0 text-center" style="font-size: 15px; list-style: none; padding: 0;">
 									<li>Applies to all packages</li>
@@ -1298,7 +1526,7 @@ window.__lo_site_id = 329229;
 							<!-- Performance Tiers -->
 							<div class="bg-warning text-dark text-center py-2 mb-0"
 								style="border-radius: 8px 8px 0 0; font-size: 15px;">
-								<strong>PERFORMANCE TIERS (How You Reach $150-$170)</strong>
+								<strong>PERFORMANCE TIERS (How You Reach $170-$200+)</strong>
 							</div>
 							<div style="border: 1px solid #ddd; border-top: 0;">
 								<!-- Tier 1 -->
@@ -1307,11 +1535,11 @@ window.__lo_site_id = 329229;
 									<div>
 										<strong style="font-size: 16px;">Tier 1 - Starter</strong>
 										<p class="mb-0 text-muted" style="font-size: 14px;">0-19 sales/day</p>
-										<p class="mb-0" style="font-size: 15px;"><strong>Standard Rate:</strong> $150
+										<p class="mb-0" style="font-size: 15px;"><strong>Standard Rate:</strong> $170
 											CPA on ALL packages</p>
 									</div>
 									<span class="badge bg-success"
-										style="font-size: 16px; padding: 10px 20px;">$150</span>
+										style="font-size: 16px; padding: 10px 20px;">$170</span>
 								</div>
 								<!-- Tier 2 -->
 								<div class="d-flex justify-content-between align-items-center p-3"
@@ -1319,11 +1547,11 @@ window.__lo_site_id = 329229;
 									<div>
 										<strong style="font-size: 16px;">Tier 2 - Scalers</strong>
 										<p class="mb-0 text-muted" style="font-size: 14px;">20-49 sales/day</p>
-										<p class="mb-0" style="font-size: 15px;"><strong>Elevated Rate:</strong> $160
+										<p class="mb-0" style="font-size: 15px;"><strong>Elevated Rate:</strong> $190
 											CPA on ALL packages</p>
 									</div>
 									<span class="badge"
-										style="font-size: 16px; padding: 10px 20px; background: #f5a623;">$160</span>
+										style="font-size: 16px; padding: 10px 20px; background: #f5a623;">$190</span>
 								</div>
 								<!-- Tier 3 -->
 								<div class="d-flex justify-content-between align-items-center p-3"
@@ -1332,10 +1560,10 @@ window.__lo_site_id = 329229;
 										<strong style="font-size: 16px;">Tier 3 - Whales</strong>
 										<p class="mb-0 text-muted" style="font-size: 14px;">50+ sales/day</p>
 										<p class="mb-0" style="font-size: 15px;"><strong>Premium Rate:</strong>
-											$170 CPA on ALL packages</p>
+											$200+ CPA on ALL packages</p>
 									</div>
 									<span class="badge bg-danger"
-										style="font-size: 16px; padding: 10px 20px;">$170</span>
+										style="font-size: 16px; padding: 10px 20px;">$200+</span>
 								</div>
 							</div>
 						</div>
@@ -1640,6 +1868,12 @@ window.__lo_site_id = 329229;
 					</li>
 					<li class="nav-item m-1" role="presentation">
 						<button class="nav-link video-tab-btn" id="tab-videos" data-bs-toggle="pill" data-bs-target="#pane-videos" type="button" role="tab" aria-controls="pane-videos" aria-selected="false" style="font-weight:700;font-size:14px;padding:8px 20px;border-radius:20px;"><i class="fas fa-video me-1"></i> Video Clips <span class="new-blink-badge">NEW</span></button>
+					</li>
+					<li class="nav-item m-1" role="presentation">
+						<button class="nav-link video-tab-btn" id="tab-edvideos" data-bs-toggle="pill" data-bs-target="#pane-edvideos" type="button" role="tab" aria-controls="pane-edvideos" aria-selected="false" style="font-weight:700;font-size:14px;padding:8px 20px;border-radius:20px;"><i class="fas fa-video me-1"></i> ED Videos <span class="new-blink-badge">NEW</span></button>
+					</li>
+					<li class="nav-item m-1" role="presentation">
+						<button class="nav-link video-tab-btn" id="tab-prostavideos" data-bs-toggle="pill" data-bs-target="#pane-prostavideos" type="button" role="tab" aria-controls="pane-prostavideos" aria-selected="false" style="font-weight:700;font-size:14px;padding:8px 20px;border-radius:20px;"><i class="fas fa-video me-1"></i> Prostate Videos <span class="new-blink-badge">NEW</span></button>
 					</li>
 				</ul>
 
@@ -2024,6 +2258,282 @@ window.__lo_site_id = 329229;
 						</div>
 					</div>
 
+				<!-- ED Videos Tab -->
+					<div class="tab-pane fade" id="pane-edvideos" role="tabpanel" aria-labelledby="tab-edvideos">
+						<div style="background:#111;border-radius:12px;padding:20px;">
+							<h5 class="text-center text-white mb-3" style="font-weight:700;">ED VSL Video Clips <span class="badge bg-danger">21 Clips</span></h5>
+							<div class="video-grid">
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C01_problem_hook_32s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Problem Hook</div><div class="video-niche">32s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C02_agitation_hope_24s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Agitation &amp; Hope</div><div class="video-niche">24s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C03_authority_universities_12s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Authority Universities</div><div class="video-niche">12s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C04_testimonial_quickfire_19s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Testimonial Quickfire</div><div class="video-niche">19s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C05_video_testimonials_27s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Video Testimonials</div><div class="video-niche">27s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C06_science_erections_59s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Science of Erections</div><div class="video-niche">59s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C07_root_cause_plastics_32s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Root Cause: Plastics</div><div class="video-niche">32s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C08_root_cause_screens_EMF_44s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Root Cause: Screens &amp; EMF</div><div class="video-niche">44s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C09_spartan_origin_story_42s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Spartan Origin Story</div><div class="video-niche">42s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C10_visual_doctor_intro_9s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Visual Doctor Intro</div><div class="video-niche">9s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C11_visual_story_decline_49s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Visual Story Decline</div><div class="video-niche">49s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C12_visual_partner_pain_45s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Visual Partner Pain</div><div class="video-niche">45s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C13_visual_anniversary_disaster_31s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Anniversary Disaster</div><div class="video-niche">31s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C14_visual_transformation_42s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Visual Transformation</div><div class="video-niche">42s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C15_visual_victory_moment_51s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Victory Moment</div><div class="video-niche">51s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C16_visual_rapid_testimonials_20s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Rapid Testimonials</div><div class="video-niche">20s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C17_ingredient_L_Arginine_23s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ingredient: L-Arginine</div><div class="video-niche">23s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C18_ingredient_Tongkat_Ali_57s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ingredient: Tongkat Ali</div><div class="video-niche">57s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C19_ingredient_grape_seed_28s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ingredient: Grape Seed</div><div class="video-niche">28s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C20_ingredient_Black_Maca_32s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ingredient: Black Maca</div><div class="video-niche">32s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ErectVSL/C21_ingredient_Epimedium_HGW_38s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ingredient: Epimedium HGW</div><div class="video-niche">38s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+							</div>
+							<div class="text-center mt-3">
+								<a href="../../../creative-assets/zips/ed-videos.zip" class="btn btn-sm btn-outline-warning" download style="border-width:2px;font-weight:700;"><i class="fas fa-download me-1"></i>Download All ED Video Clips (ZIP)</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Prostate Videos Tab -->
+					<div class="tab-pane fade" id="pane-prostavideos" role="tabpanel" aria-labelledby="tab-prostavideos">
+						<div style="background:#111;border-radius:12px;padding:20px;">
+							<h5 class="text-center text-white mb-3" style="font-weight:700;">Prostate VSL Video Clips <span class="badge bg-danger">21 Clips</span></h5>
+							<div class="video-grid">
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P01_prostate_paradox_hook_34s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Prostate Paradox Hook</div><div class="video-niche">34s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P02_root_cause_reveal_41s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Root Cause Reveal</div><div class="video-niche">41s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P03_bob_story_hook_40s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Bob Story Hook</div><div class="video-niche">40s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P04_science_promise_53s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Science Promise</div><div class="video-niche">53s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P05_testimonial_burst_46s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Testimonial Burst</div><div class="video-niche">46s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P06_future_pacing_51s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Future Pacing</div><div class="video-niche">51s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P07_prostate_paradox_science_58s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Prostate Paradox Science</div><div class="video-niche">58s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P08_smooth_muscle_science_83s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Smooth Muscle Science</div><div class="video-niche">83s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P09_cause_sitting_xenoestrogens_45s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Cause: Sitting &amp; Xenoestrogens</div><div class="video-niche">45s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P10_transformation_story_71s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Transformation Story</div><div class="video-niche">71s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P11_ingredient_guanabana_51s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ingredient: Guanabana</div><div class="video-niche">51s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P12_ingredient_urtica_52s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ingredient: Urtica</div><div class="video-niche">52s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P13_ingredient_beta_sitosterol_64s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ingredient: Beta-Sitosterol</div><div class="video-niche">64s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P14_ingredient_pygeum_46s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ingredient: Pygeum</div><div class="video-niche">46s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P16_bob_trucker_story_52s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Bob Trucker Story</div><div class="video-niche">52s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P17_rock_bottom_wife_crying_49s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Rock Bottom: Wife Crying</div><div class="video-niche">49s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P18_ferris_wheel_humiliation_68s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Ferris Wheel Humiliation</div><div class="video-niche">68s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P19_turning_point_snapped_64s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Turning Point: Snapped</div><div class="video-niche">64s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P20_visual_product_intro_24s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Visual Product Intro</div><div class="video-niche">24s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P21_video_testimonials_69s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Video Testimonials</div><div class="video-niche">69s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+								<div class="video-card" onclick="openVideoModal(this)">
+									<video src="../../../videos/ProstaVSL/P22_extended_testimonials_77s.mp4" muted loop preload="metadata"></video>
+									<div class="video-overlay"><div class="play-icon"></div></div>
+									<div class="video-label"><div class="video-type">Extended Testimonials</div><div class="video-niche">77s</div></div>
+									<div class="video-progress"><div class="video-progress-bar"></div></div>
+								</div>
+							</div>
+							<div class="text-center mt-3">
+								<a href="../../../creative-assets/zips/prostate-videos.zip" class="btn btn-sm btn-outline-warning" download style="border-width:2px;font-weight:700;"><i class="fas fa-download me-1"></i>Download All Prostate Video Clips (ZIP)</a>
+							</div>
+						</div>
+					</div>
+
 				</div><!-- end tab-content -->
 			</section>
 
@@ -2276,6 +2786,64 @@ window.__lo_site_id = 329229;
 
 <!-- ClickBank Trust Badge -->
 <script src='//cbtb.clickbank.net/?vendor=powerxpro'></script>
+<script>
+function pxpGallerySelect(thumb){var gallery=thumb.closest('.pxp-gallery');gallery.querySelectorAll('.pxp-thumb').forEach(function(t){t.classList.remove('active');});thumb.classList.add('active');var main=gallery.querySelector('.pxp-gallery-main img.pxp-main-img');main.style.opacity='0';setTimeout(function(){main.src=thumb.src;main.style.opacity='1';},150);}
+function pxpGalleryNav(btn,dir){var gallery=btn.closest('.pxp-gallery');var thumbs=Array.from(gallery.querySelectorAll('.pxp-thumb'));var active=gallery.querySelector('.pxp-thumb.active');var idx=thumbs.indexOf(active);idx+=dir;if(idx<0)idx=thumbs.length-1;if(idx>=thumbs.length)idx=0;pxpGallerySelect(thumbs[idx]);}
+</script>
+<script>
+(function(){
+    var affiliateId = document.querySelector("#affiliateId");
+    var trackingId  = document.querySelector("#trackingId");
+    var hotLink     = document.querySelector("#SSLHopLink");
+    var submit      = document.querySelector("#submit");
+    var copy        = document.querySelector("#copy");
+    var landingPage = document.querySelector("#landingPage");
+    var tooltip     = document.querySelector("#myTooltip");
+    var affiliateErrorMesg = document.querySelector("#affiliate-error-message");
+
+    // edvsl is default (no cbpage param)
+    var cbPageMap = {
+        'edvsl':       '',
+        'prostatevsl': 'prostatevsl',
+        'dtc':         'dtc',
+        'longtsl1':    'longtsl1',
+        'longtsl2':    'longtsl2',
+        'longtsl3':    'longtsl3',
+        'longtsl4':    'longtsl4',
+        'longtsl5':    'longtsl5',
+        'longtsl6':    'longtsl6',
+        'short1':      'short1',
+        'short2':      'short2',
+        'short3':      'short3'
+    };
+
+    submit.addEventListener("click", function(e) {
+        e.preventDefault();
+        affiliateErrorMesg.innerHTML = '';
+        if (!affiliateId.value.trim()) {
+            affiliateErrorMesg.innerHTML = 'ClickBank Affiliate ID is required';
+            return;
+        }
+        var affId   = affiliateId.value.trim();
+        var pageVal = landingPage.options[landingPage.selectedIndex].value;
+        var cbpage  = cbPageMap[pageVal];
+        var link = 'https://hop.clickbank.net/?affiliate=' + affId + '&vendor=powerxpro';
+        if (cbpage) link += '&cbpage=' + cbpage;
+        if (trackingId.value.trim()) link += '&tid=' + trackingId.value.trim();
+        hotLink.value = link;
+    });
+
+    copy.addEventListener("click", function(e) {
+        e.preventDefault();
+        if (!hotLink.value) return;
+        hotLink.select();
+        hotLink.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(hotLink.value);
+        tooltip.style.display = "block";
+        setTimeout(function() { tooltip.style.display = "none"; }, 2000);
+    });
+})();
+</script>
 </body>
 
 </html>

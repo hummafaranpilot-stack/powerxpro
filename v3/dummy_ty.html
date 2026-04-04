@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PRODUCTS Map — Updated Mapping</title>
+<style>
+  body { background: #1a1a2e; color: #fff; font-family: Arial, sans-serif; padding: 30px; }
+  h1 { color: #FFD700; text-align: center; margin-bottom: 6px; }
+  .subtitle { text-align: center; color: #aaa; margin-bottom: 40px; font-size: 14px; }
+  .section-title { color: #FFD700; font-size: 18px; font-weight: bold; border-bottom: 2px solid #FFD700; padding-bottom: 8px; margin: 40px 0 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+  .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,215,0,0.25); border-radius: 12px; padding: 20px; text-align: center; }
+  .card.main { border-color: #FFD700; }
+  .card.upsell1 { border-color: #2196F3; }
+  .card.upsell2 { border-color: #9C27B0; }
+  .card.upsell3 { border-color: #FF5722; }
+  .card.bump { border-color: #4CAF50; }
+  .card img { max-width: 130px; max-height: 150px; object-fit: contain; display: block; margin: 0 auto 12px; }
+  .card .key { font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+  .card.main .key { color: #FFD700; }
+  .card.upsell1 .key { color: #64B5F6; }
+  .card.upsell2 .key { color: #CE93D8; }
+  .card.upsell3 .key { color: #FF8A65; }
+  .card.bump .key { color: #81C784; }
+  .card .name { font-size: 13px; color: #fff; font-weight: 600; margin-bottom: 3px; }
+  .card .desc { font-size: 11px; color: #8ecfcf; margin-bottom: 6px; }
+  .card .price { font-size: 13px; color: #FFD700; font-weight: 700; }
+  .badge { display: inline-block; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; }
+  .badge.main { background: #FFD700; color: #021a38; }
+  .badge.upsell1 { background: #2196F3; color: #fff; }
+  .badge.upsell2 { background: #9C27B0; color: #fff; }
+  .badge.upsell3 { background: #FF5722; color: #fff; }
+  .badge.bump { background: #4CAF50; color: #fff; }
+</style>
+</head>
+<body>
+
+<h1>PRODUCTS Map — Updated Keys & Images</h1>
+<p class="subtitle">All keys now match ClickBank CSV item numbers exactly</p>
+
+<div class="section-title">Main Orders</div>
+<div class="grid">
+
+  <div class="card main">
+    <span class="badge main">MAIN</span>
+    <img src="Images/1-bottles-vigor.webp?v=2" alt="1 bottle">
+    <div class="key">'main-1'</div>
+    <div class="name">PowerX Pro</div>
+    <div class="desc">1 Bottle (30 Day Supply)</div>
+    <div class="price">$79.00</div>
+  </div>
+
+  <div class="card main">
+    <span class="badge main">MAIN</span>
+    <img src="Images/2-bottles-vigor.webp?v=2" alt="2 bottles">
+    <div class="key">'main-2'</div>
+    <div class="name">PowerX Pro</div>
+    <div class="desc">2 Bottles (60 Day Supply)</div>
+    <div class="price">$158.00</div>
+  </div>
+
+  <div class="card main">
+    <span class="badge main">MAIN</span>
+    <img src="Images/3-bottles-vigor.webp?v=2" alt="3 bottles">
+    <div class="key">'main-3'</div>
+    <div class="name">PowerX Pro</div>
+    <div class="desc">3 Bottles (90 Day Supply)</div>
+    <div class="price">$192.00</div>
+  </div>
+
+  <div class="card main">
+    <span class="badge main">MAIN ★ eBooks</span>
+    <img src="Images/7-bottles-vigor.webp?v=2" alt="6+1 bottles">
+    <div class="key">'main-7'</div>
+    <div class="name">PowerX Pro</div>
+    <div class="desc">6+1 Bottles (210 Day Supply)</div>
+    <div class="price">$294.00</div>
+  </div>
+
+</div>
+
+<div class="section-title">Upsell 1 (PowerX Pro)</div>
+<div class="grid">
+
+  <div class="card upsell1">
+    <span class="badge upsell1">UPSELL 1</span>
+    <img src="Images/1-bottles-vigor.webp?v=2" alt="1 bottle">
+    <div class="key">'up-1'</div>
+    <div class="name">PowerX Pro</div>
+    <div class="desc">1 Bottle (30 Day Supply)</div>
+    <div class="price">$69.00</div>
+  </div>
+
+  <div class="card upsell1">
+    <span class="badge upsell1">UPSELL 1</span>
+    <img src="Images/1-bottles-vigor.webp?v=2" alt="1 bottle subscribe">
+    <div class="key">'up-1s'</div>
+    <div class="name">PowerX Pro</div>
+    <div class="desc">1 Bottle (Subscribe & Save)</div>
+    <div class="price">$69.00/mo</div>
+  </div>
+
+  <div class="card upsell1">
+    <span class="badge upsell1">UPSELL 1</span>
+    <img src="Images/3-bottles-vigor.webp?v=2" alt="3 bottles">
+    <div class="key">'up-3'</div>
+    <div class="name">PowerX Pro</div>
+    <div class="desc">3 Bottles (90 Day Supply)</div>
+    <div class="price">$162.00</div>
+  </div>
+
+  <div class="card upsell1">
+    <span class="badge upsell1">UPSELL 1</span>
+    <img src="Images/6-bottles-vigor.webp?v=2" alt="6 bottles">
+    <div class="key">'up-6'</div>
+    <div class="name">PowerX Pro</div>
+    <div class="desc">6 Bottles (180 Day Supply)</div>
+    <div class="price">$234.00</div>
+  </div>
+
+</div>
+
+<div class="section-title">Upsell 2 (Orabiome Pro) — Unchanged</div>
+<div class="grid">
+
+  <div class="card upsell2">
+    <span class="badge upsell2">UPSELL 2</span>
+    <img src="tyimages/1-orabiome.webp" alt="orabiome 1">
+    <div class="key">'13'</div>
+    <div class="name">Orabiome Pro</div>
+    <div class="desc">1 Bottle (30 Day Supply)</div>
+  </div>
+
+  <div class="card upsell2">
+    <span class="badge upsell2">UPSELL 2</span>
+    <img src="tyimages/3-orabiome.webp" alt="orabiome 3">
+    <div class="key">'12'</div>
+    <div class="name">Orabiome Pro</div>
+    <div class="desc">3 Bottles (90 Day Supply)</div>
+  </div>
+
+  <div class="card upsell2">
+    <span class="badge upsell2">UPSELL 2</span>
+    <img src="tyimages/6-orabiome.webp" alt="orabiome 6">
+    <div class="key">'11'</div>
+    <div class="name">Orabiome Pro</div>
+    <div class="desc">6 Bottles (180 Day Supply)</div>
+  </div>
+
+</div>
+
+<div class="section-title">Upsell 3 (Gutalia Prime) — Unchanged</div>
+<div class="grid">
+
+  <div class="card upsell3">
+    <span class="badge upsell3">UPSELL 3</span>
+    <img src="tyimages/1-gutalia.webp" alt="gutalia">
+    <div class="key">'14'</div>
+    <div class="name">Gutalia Prime</div>
+    <div class="desc">1 Bottle (FREE Trial)</div>
+  </div>
+
+  <div class="card upsell3">
+    <span class="badge upsell3">UPSELL 3</span>
+    <img src="tyimages/1-gutalia.webp" alt="gutalia">
+    <div class="key">'16'</div>
+    <div class="name">Gutalia Prime</div>
+    <div class="desc">1 Bottle (FREE)</div>
+  </div>
+
+</div>
+
+<div class="section-title">Order Bumps — Unchanged</div>
+<div class="grid">
+
+  <div class="card bump">
+    <span class="badge bump">BUMP</span>
+    <img src="Images/2-bottles-vigor.webp?v=2" alt="ebook1">
+    <div class="key">'ebook1'</div>
+    <div class="name">30 Days Diet Plan</div>
+    <div class="desc">Digital eBook Guide</div>
+  </div>
+
+  <div class="card bump">
+    <span class="badge bump">BUMP</span>
+    <img src="Images/3-bottles-vigor.webp?v=2" alt="ebook2">
+    <div class="key">'ebook2'</div>
+    <div class="name">Prostate Health Guide</div>
+    <div class="desc">Digital eBook Guide</div>
+  </div>
+
+  <div class="card bump">
+    <span class="badge bump">BUMP</span>
+    <img src="Images/1-bottles-vigor.webp?v=2" alt="shipping">
+    <div class="key">'shipping'</div>
+    <div class="name">Shipping Insurance</div>
+    <div class="desc">Package Protection — $6.99</div>
+  </div>
+
+</div>
+
+</body>
+</html>
