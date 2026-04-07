@@ -568,13 +568,24 @@ window.__lo_site_id = 329229;
 				</h3>
 				<p class="text-center mt-3"><span style="display: inline-block; border: 2px dashed #1a4b8c; color: #1a4b8c; font-size: 16px; font-weight: 600; padding: 10px 25px; border-radius: 8px; background: #fff;">ClickBank Affiliates Only</span></p>
 
-				<!-- Tier 1 Countries Allowed -->
+				<!-- Tier 1 Countries Allowed (Collapsible) -->
+				<style>
+					.tier1-toggle { cursor: pointer; list-style: none; outline: none; }
+					.tier1-toggle::-webkit-details-marker { display: none; }
+					.tier1-toggle .chevron { display: inline-block; transition: transform 0.3s ease; margin-left: 8px; }
+					details[open] .tier1-toggle .chevron { transform: rotate(180deg); }
+					.tier1-grid { animation: tier1FadeIn 0.3s ease; }
+					@keyframes tier1FadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+				</style>
 				<div class="container" style="max-width: 1100px; margin-top: 20px;">
-					<div style="background: linear-gradient(135deg, #1a4b8c 0%, #2c6cb0 100%); border-radius: 14px; padding: 22px 28px; box-shadow: 0 6px 24px rgba(26,75,140,0.25);">
-						<div class="text-center mb-3">
-							<h4 style="color: #fff; font-weight: 800; font-size: 1.5rem; margin-bottom: 4px;"><i class="fas fa-globe-americas" style="margin-right: 8px; color: #ffd700;"></i> 39+ Countries Allowed &mdash; Tier 1 Traffic</h4>
-							<p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 0;">Promote freely in all approved Tier 1 markets below</p>
-						</div>
+					<details>
+						<summary class="tier1-toggle" style="background: linear-gradient(135deg, #1a4b8c 0%, #2c6cb0 100%); border-radius: 14px; padding: 18px 28px; box-shadow: 0 6px 24px rgba(26,75,140,0.25); display: block;">
+							<div class="text-center">
+								<h4 style="color: #fff; font-weight: 800; font-size: 1.5rem; margin-bottom: 4px;"><i class="fas fa-globe-americas" style="margin-right: 8px; color: #ffd700;"></i> 39+ Countries Allowed &mdash; Tier 1 Traffic <i class="fas fa-chevron-down chevron" style="color: #ffd700; font-size: 1rem;"></i></h4>
+								<p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 0;">Click to view all approved Tier 1 markets</p>
+							</div>
+						</summary>
+						<div class="tier1-grid" style="background: linear-gradient(135deg, #1a4b8c 0%, #2c6cb0 100%); border-radius: 0 0 14px 14px; padding: 4px 28px 22px; margin-top: -14px; box-shadow: 0 6px 24px rgba(26,75,140,0.25);">
 						<div class="row g-2">
 							<div class="col-6 col-md-4 col-lg">
 								<div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 10px 12px; height: 100%;">
@@ -613,7 +624,8 @@ window.__lo_site_id = 329229;
 								</div>
 							</div>
 						</div>
-					</div>
+						</div>
+					</details>
 				</div>
 			</div>
 
