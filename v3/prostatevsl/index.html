@@ -801,18 +801,134 @@ html, body {
 
 <body>
 	<!-- VSL Video -->
-	<div style="width:100%; padding:0; position:relative;">
-		<div id="vidalytics_embed_lMsp87x2GhMZQMKM" style="width: 100%; position:relative; padding-top: 56.25%;"></div>
-		<script type="text/javascript">
-		(function (v, i, d, a, l, y, t, c, s) {
-		    y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
-		    if (!vsl){vsl=function(u,cb){
-		        if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
-		        if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
-		        i.getElementsByTagName("head")[0].appendChild(s);
-		    };}
-		    vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
-		})(window, document, 'Vidalytics', 'vidalytics_embed_lMsp87x2GhMZQMKM', 'https://fast.vidalytics.com/embeds/p2V5HR6s/lMsp87x2GhMZQMKM/');
+	<div style="width:100%; padding:0; position:relative; background:#000;">
+		<style>
+			@keyframes borderPulse {
+				0%   { box-shadow: 0 0 0 0px rgba(255,255,255,0.8), 0 8px 40px rgba(0,0,0,0.55); }
+				50%  { box-shadow: 0 0 0 14px rgba(255,255,255,0), 0 8px 40px rgba(0,0,0,0.55); }
+				100% { box-shadow: 0 0 0 0px rgba(255,255,255,0.8), 0 8px 40px rgba(0,0,0,0.55); }
+			}
+			#yt-player-wrapper { position:relative; padding-top:56.25%; background:#000; }
+			#yt-player-wrapper:fullscreen,
+			#yt-player-wrapper:-webkit-full-screen { padding-top:0 !important; height:100vh !important; }
+			#yt-controls { opacity:0; transition:opacity 0.3s; }
+			#yt-player-wrapper:hover #yt-controls { opacity:1; }
+			#yt-vol-range { -webkit-appearance:none; height:4px; border-radius:2px; background:#fff; outline:none; cursor:pointer; }
+			#yt-vol-range::-webkit-slider-thumb { -webkit-appearance:none; width:12px; height:12px; border-radius:50%; background:#fff; cursor:pointer; }
+		</style>
+		<div id="yt-player-wrapper">
+
+			<!-- Looping silent intro video overlay -->
+			<div id="yt-thumbnail" style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;overflow:hidden;z-index:3;">
+				<video id="intro-video" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+					<source src="./intro-thumb.mp4" type="video/mp4">
+				</video>
+				<div style="position:absolute;top:20%;bottom:20%;left:20%;right:20%;background:rgba(20,45,200,0.95);border:4px solid #fff;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;animation:borderPulse 2s ease-in-out infinite;">
+					<img src="https://cdn-icons-png.flaticon.com/512/2058/2058599.png" style="display:block;margin:0 auto 8%;filter:brightness(0) invert(1);width:clamp(32px,8vw,80px);height:auto;">
+					<div style="color:#fff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:clamp(13px,3vw,32px);font-weight:800;line-height:1.4;padding:0 6%;">Your Video is Playing<br>Click to Unmute</div>
+				</div>
+			</div>
+
+			<!-- Pause overlay -->
+			<div id="yt-pause-overlay" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.35);cursor:pointer;z-index:2;">
+				<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+					<svg height="58" viewBox="0 0 68 48" width="82">
+						<path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="rgba(0,0,0,0.55)"/>
+						<path d="M 45,24 27,14 27,34" fill="#fff"/>
+					</svg>
+				</div>
+			</div>
+
+			<!-- Click-to-pause overlay (covers video, below controls) -->
+			<div id="yt-playing-overlay" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:2;"></div>
+
+			<!-- YouTube iframe container -->
+			<div id="yt-player" style="position:absolute;top:0;left:0;width:100%;height:100%;"></div>
+
+			<!-- Custom controls bar (volume + fullscreen) -->
+			<div id="yt-controls" style="display:none;position:absolute;bottom:0;left:0;width:100%;z-index:6;padding:20px 16px 10px;box-sizing:border-box;background:linear-gradient(transparent,rgba(0,0,0,0.7));align-items:center;justify-content:flex-end;gap:10px;">
+				<button id="yt-mute-btn" onclick="ytToggleMute()" style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;z-index:7;">
+					<svg id="yt-vol-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#fff">
+						<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+					</svg>
+				</button>
+				<input id="yt-vol-range" type="range" min="0" max="100" value="100" style="width:75px;" oninput="ytSetVolume(this.value)">
+				<button onclick="ytToggleFullscreen()" style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;z-index:7;">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#fff">
+						<path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+					</svg>
+				</button>
+			</div>
+		</div>
+
+		<script src="https://www.youtube.com/iframe_api"></script>
+		<script>
+			var ytPlayer, ytVolume = 100;
+
+			function onYouTubeIframeAPIReady() {
+				ytPlayer = new YT.Player('yt-player', {
+					videoId: 'AmeAGhYa7YY',
+					playerVars: { autoplay:0, controls:0, rel:0, modestbranding:1, iv_load_policy:3, showinfo:0, playsinline:1, disablekb:1 },
+					events: { onStateChange: onYTStateChange }
+				});
+			}
+
+			document.getElementById('yt-thumbnail').addEventListener('click', function () {
+				var iv = document.getElementById('intro-video');
+				if (iv) { iv.pause(); iv.src = ''; }
+				this.style.display = 'none';
+				document.getElementById('yt-playing-overlay').style.display = 'block';
+				document.getElementById('yt-controls').style.display = 'flex';
+				ytPlayer.playVideo();
+			});
+
+			document.getElementById('yt-playing-overlay').addEventListener('click', function () {
+				ytPlayer.pauseVideo();
+			});
+
+			document.getElementById('yt-pause-overlay').addEventListener('click', function () {
+				this.style.display = 'none';
+				document.getElementById('yt-playing-overlay').style.display = 'block';
+				ytPlayer.playVideo();
+			});
+
+			function onYTStateChange(event) {
+				if (event.data === YT.PlayerState.PLAYING) {
+					document.getElementById('yt-pause-overlay').style.display = 'none';
+					document.getElementById('yt-playing-overlay').style.display = 'block';
+				} else if (event.data === YT.PlayerState.PAUSED) {
+					document.getElementById('yt-pause-overlay').style.display = 'block';
+					document.getElementById('yt-playing-overlay').style.display = 'none';
+				}
+			}
+
+			function ytToggleMute() {
+				if (ytPlayer.isMuted()) {
+					ytPlayer.unMute(); ytPlayer.setVolume(ytVolume);
+					document.getElementById('yt-vol-range').value = ytVolume;
+					document.getElementById('yt-vol-icon').innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
+				} else {
+					ytPlayer.mute();
+					document.getElementById('yt-vol-range').value = 0;
+					document.getElementById('yt-vol-icon').innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+				}
+			}
+
+			function ytSetVolume(val) {
+				ytVolume = parseInt(val);
+				ytPlayer.setVolume(ytVolume);
+				if (ytVolume === 0) { ytPlayer.mute(); document.getElementById('yt-vol-icon').innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>'; }
+				else { ytPlayer.unMute(); document.getElementById('yt-vol-icon').innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>'; }
+			}
+
+			function ytToggleFullscreen() {
+				var w = document.getElementById('yt-player-wrapper');
+				if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+					(w.requestFullscreen || w.webkitRequestFullscreen).call(w);
+				} else {
+					(document.exitFullscreen || document.webkitExitFullscreen).call(document);
+				}
+			}
 		</script>
 	</div>
 
