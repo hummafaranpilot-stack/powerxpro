@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="https://cdn.trustednutraproduct.com/t.js?v=powerxpro-trustednutraproduct-com-v3"></script>
+	<link rel="preconnect" href="https://customer-8ocoyclfhfvlpft9.cloudflarestream.com">
+<link rel="preconnect" href="https://videodelivery.net">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<script src="https://cdn.trustednutraproduct.com/t.js?v=powerxpro-trustednutraproduct-com-v3"></script>
 	<link rel="icon" type="image/png" href="../Clickbank Structure/favicon.png">
 
 
@@ -808,134 +811,229 @@ html, body {
 				50%  { box-shadow: 0 0 0 14px rgba(255,255,255,0), 0 8px 40px rgba(0,0,0,0.55); }
 				100% { box-shadow: 0 0 0 0px rgba(255,255,255,0.8), 0 8px 40px rgba(0,0,0,0.55); }
 			}
-			#yt-player-wrapper { position:relative; padding-top:56.25%; background:#000; }
-			#yt-player-wrapper:fullscreen,
-			#yt-player-wrapper:-webkit-full-screen { padding-top:0 !important; height:100vh !important; }
-			#yt-controls { opacity:0; transition:opacity 0.3s; }
-			#yt-player-wrapper:hover #yt-controls { opacity:1; }
-			#yt-vol-range { -webkit-appearance:none; height:4px; border-radius:2px; background:#fff; outline:none; cursor:pointer; }
-			#yt-vol-range::-webkit-slider-thumb { -webkit-appearance:none; width:12px; height:12px; border-radius:50%; background:#fff; cursor:pointer; }
+			@keyframes cfSkShimmer {
+				0%   { background-position: -200% 0; }
+				100% { background-position: 200% 0; }
+			}
+			#cf-player-wrapper { position:relative; padding-top:56.25%; background:#000; }
+			#cf-skeleton { position:absolute; top:0; left:0; width:100%; height:100%; z-index:10; transition:opacity 0.4s ease; background:linear-gradient(90deg,#0a0a0a 25%,#1f1f1f 50%,#0a0a0a 75%); background-size:200% 100%; animation:cfSkShimmer 1.5s infinite; }
+			#cf-skeleton.hidden { opacity:0; pointer-events:none; }
+			#cf-thumb-video, #cf-vsl-video { width:100%; height:100%; object-fit:contain; display:block; background:#000; }
+
+			/* VSL custom controls */
+			#cf-vsl-controls { position:absolute; bottom:0; left:0; right:0; z-index:6; padding:24px 14px 10px; background:linear-gradient(transparent,rgba(0,0,0,0.75)); display:flex; align-items:center; justify-content:flex-end; gap:6px; opacity:0; transition:opacity 0.25s ease; pointer-events:none; box-sizing:border-box; }
+			#cf-vsl.active:hover #cf-vsl-controls, #cf-vsl.active.show-ctrl #cf-vsl-controls { opacity:1; pointer-events:auto; }
+			.cf-ctrl-btn { background:rgba(0,0,0,0.5); border:none; color:#fff; cursor:pointer; padding:7px 9px; border-radius:6px; display:flex; align-items:center; justify-content:center; transition:background 0.15s; font:600 12px sans-serif; }
+			.cf-ctrl-btn:hover { background:rgba(0,0,0,0.75); }
+			.cf-ctrl-btn svg { width:18px; height:18px; fill:#fff; }
+			#cf-vol-wrap { position:relative; }
+			#cf-vol-slider { position:absolute; bottom:100%; left:50%; transform:translateX(-50%); margin-bottom:8px; background:rgba(0,0,0,0.85); border-radius:8px; padding:10px 6px; display:none; }
+			#cf-vol-wrap:hover #cf-vol-slider { display:block; }
+			#cf-vol-range { -webkit-appearance:none; appearance:none; width:6px; height:80px; writing-mode:bt-lr; -webkit-writing-mode:bt-lr; transform:rotate(270deg); transform-origin:center; background:transparent; outline:none; }
+			#cf-vol-range::-webkit-slider-runnable-track { width:80px; height:4px; background:rgba(255,255,255,0.3); border-radius:2px; }
+			#cf-vol-range::-webkit-slider-thumb { -webkit-appearance:none; width:12px; height:12px; border-radius:50%; background:#fff; cursor:pointer; margin-top:-4px; }
+			#cf-quality-menu { position:absolute; bottom:100%; right:0; margin-bottom:8px; background:rgba(0,0,0,0.9); border-radius:6px; padding:4px 0; display:none; min-width:90px; }
+			#cf-quality-wrap.open #cf-quality-menu { display:block; }
+			.cf-quality-item { padding:7px 14px; color:#fff; cursor:pointer; font:600 12px sans-serif; white-space:nowrap; text-align:left; }
+			.cf-quality-item:hover { background:rgba(255,255,255,0.15); }
+			.cf-quality-item.active { color:#4fc3f7; }
+			.cf-quality-item.active::before { content:"✓ "; }
+
+			/* Big center play/pause overlay for VSL */
+			#cf-vsl-bigplay { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:7; opacity:0; pointer-events:none; transition:opacity 0.2s; }
+			#cf-vsl.paused #cf-vsl-bigplay { opacity:1; }
+			#cf-vsl-bigplay svg { width:68px; height:68px; fill:rgba(255,255,255,0.9); filter:drop-shadow(0 4px 12px rgba(0,0,0,0.6)); }
+
+			/* Fullscreen mode */
+			#cf-player-wrapper:fullscreen, #cf-player-wrapper:-webkit-full-screen { padding-top:0 !important; height:100vh !important; }
 		</style>
-		<div id="yt-player-wrapper">
+		<div id="cf-player-wrapper">
 
-			<!-- Looping silent intro video overlay -->
-			<div id="yt-thumbnail" style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;overflow:hidden;z-index:3;">
-				<video id="intro-video" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
-					<source src="./intro-thumb.mp4" type="video/mp4">
-				</video>
-				<div style="position:absolute;top:20%;bottom:20%;left:20%;right:20%;background:rgba(20,45,200,0.95);border:4px solid #fff;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;animation:borderPulse 2s ease-in-out infinite;">
-					<img src="https://cdn-icons-png.flaticon.com/512/2058/2058599.png" style="display:block;margin:0 auto 8%;filter:brightness(0) invert(1);width:clamp(32px,8vw,80px);height:auto;">
-					<div style="color:#fff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:clamp(13px,3vw,32px);font-weight:800;line-height:1.4;padding:0 6%;">Your Video is Playing<br>Click to Unmute</div>
+			<!-- Skeleton loader shown until thumbnail plays -->
+			<div id="cf-skeleton"></div>
+
+			<!-- Looping silent thumbnail via HLS + hls.js (HD locked, no controls) -->
+			<div id="cf-thumbnail" style="position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;overflow:hidden;z-index:3;">
+				<video id="cf-thumb-video" autoplay muted loop playsinline preload="auto"></video>
+				<div style="position:absolute;top:32%;bottom:32%;left:32%;right:32%;background:rgba(20,45,200,0.7);border:3px solid #fff;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;animation:borderPulse 2s ease-in-out infinite;">
+					<img src="https://cdn-icons-png.flaticon.com/512/2058/2058599.png" style="display:block;margin:0 auto 6%;filter:brightness(0) invert(1);width:clamp(24px,5vw,56px);height:auto;">
+					<div style="color:#fff;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:clamp(11px,2vw,22px);font-weight:800;line-height:1.3;padding:0 6%;">Your Video is Playing<br>Click to Unmute</div>
 				</div>
 			</div>
 
-			<!-- Pause overlay -->
-			<div id="yt-pause-overlay" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.35);cursor:pointer;z-index:2;">
-				<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
-					<svg height="58" viewBox="0 0 68 48" width="82">
-						<path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="rgba(0,0,0,0.55)"/>
-						<path d="M 45,24 27,14 27,34" fill="#fff"/>
-					</svg>
+			<!-- Custom VSL player (native video + hls.js, buffering in bg, revealed on click) -->
+			<div id="cf-vsl" style="position:absolute;top:0;left:0;width:100%;height:100%;visibility:hidden;z-index:1;">
+				<video id="cf-vsl-video" playsinline preload="auto"></video>
+				<div id="cf-vsl-bigplay" aria-hidden="true">
+					<svg viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" opacity="0.75" fill="#000"/><path d="M 45,24 27,14 27,34" fill="#fff"/></svg>
 				</div>
-			</div>
-
-			<!-- Click-to-pause overlay (covers video, below controls) -->
-			<div id="yt-playing-overlay" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;z-index:2;"></div>
-
-			<!-- YouTube iframe container -->
-			<div id="yt-player" style="position:absolute;top:0;left:0;width:100%;height:100%;visibility:hidden;"></div>
-
-			<!-- Custom controls bar (volume + fullscreen) -->
-			<div id="yt-controls" style="display:none;position:absolute;bottom:0;left:0;width:100%;z-index:6;padding:20px 16px 10px;box-sizing:border-box;background:linear-gradient(transparent,rgba(0,0,0,0.7));align-items:center;justify-content:flex-end;gap:10px;">
-				<button id="yt-mute-btn" onclick="ytToggleMute()" style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;z-index:7;">
-					<svg id="yt-vol-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#fff">
-						<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-					</svg>
-				</button>
-				<input id="yt-vol-range" type="range" min="0" max="100" value="100" style="width:75px;" oninput="ytSetVolume(this.value)">
-				<button onclick="ytToggleFullscreen()" style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;z-index:7;">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#fff">
-						<path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
-					</svg>
-				</button>
+				<div id="cf-vsl-controls">
+					<!-- Volume -->
+					<div id="cf-vol-wrap">
+						<button id="cf-vol-btn" class="cf-ctrl-btn" aria-label="Mute">
+							<svg id="cf-vol-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+						</button>
+						<div id="cf-vol-slider"><input id="cf-vol-range" type="range" min="0" max="100" value="100"></div>
+					</div>
+					<!-- Quality -->
+					<div id="cf-quality-wrap" style="position:relative;">
+						<button id="cf-quality-btn" class="cf-ctrl-btn" aria-label="Quality"><span id="cf-quality-label">Auto</span></button>
+						<div id="cf-quality-menu"></div>
+					</div>
+					<!-- Fullscreen -->
+					<button id="cf-fs-btn" class="cf-ctrl-btn" aria-label="Fullscreen">
+						<svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+					</button>
+				</div>
 			</div>
 		</div>
 
-		<script src="https://www.youtube.com/iframe_api"></script>
+		<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js"></script>
 		<script>
-			var ytPlayer, ytVolume = 100, ytReady = false, ytPendingPlay = false;
+			(function() {
+				var THUMB_HLS = 'https://customer-8ocoyclfhfvlpft9.cloudflarestream.com/5ac9c4950faa397474a4357edd96f645/manifest/video.m3u8';
+				var VSL_HLS   = 'https://customer-8ocoyclfhfvlpft9.cloudflarestream.com/193044126ddb117977391f3bd7b19429/manifest/video.m3u8';
 
-			function onYouTubeIframeAPIReady() {
-				ytPlayer = new YT.Player('yt-player', {
-					videoId: 'mncg6FF6gAE',
-					playerVars: { autoplay:0, controls:0, rel:0, modestbranding:1, iv_load_policy:3, showinfo:0, playsinline:1, disablekb:1 },
-					events: {
-						onReady: function(e) {
-							ytReady = true;
-							if (ytPendingPlay) { ytPendingPlay = false; e.target.playVideo(); }
-						},
-						onStateChange: onYTStateChange
+				var thumbVideo = document.getElementById('cf-thumb-video');
+				var vslVideo   = document.getElementById('cf-vsl-video');
+				var skeleton   = document.getElementById('cf-skeleton');
+				var vslWrap    = document.getElementById('cf-vsl');
+
+				function hideSkeleton() {
+					skeleton.classList.add('hidden');
+					setTimeout(function() { skeleton.style.display = 'none'; }, 500);
+				}
+				thumbVideo.addEventListener('playing', hideSkeleton, { once: true });
+				setTimeout(hideSkeleton, 6000);
+
+				// THUMBNAIL: HD-locked, no controls
+				if (window.Hls && Hls.isSupported()) {
+					var thumbHls = new Hls({ capLevelToPlayerSize:false, maxBufferLength:30 });
+					thumbHls.loadSource(THUMB_HLS);
+					thumbHls.attachMedia(thumbVideo);
+					thumbHls.on(Hls.Events.MANIFEST_PARSED, function() {
+						var top = thumbHls.levels.length - 1;
+						thumbHls.currentLevel = top; thumbHls.nextLevel = top; thumbHls.loadLevel = top;
+						thumbVideo.play().catch(function(){});
+					});
+				} else if (thumbVideo.canPlayType('application/vnd.apple.mpegurl')) {
+					thumbVideo.src = THUMB_HLS;
+					thumbVideo.play().catch(function(){});
+				}
+
+				// VSL: hls.js preload, custom controls
+				var vslHls = null;
+				function setupVsl() {
+					if (window.Hls && Hls.isSupported()) {
+						vslHls = new Hls({ capLevelToPlayerSize:false, maxBufferLength:30, autoStartLoad:true });
+						vslHls.loadSource(VSL_HLS);
+						vslHls.attachMedia(vslVideo);
+						vslHls.on(Hls.Events.MANIFEST_PARSED, function() {
+							buildQualityMenu();
+						});
+					} else if (vslVideo.canPlayType('application/vnd.apple.mpegurl')) {
+						vslVideo.src = VSL_HLS;
 					}
+				}
+				setupVsl();
+
+				// Quality menu
+				function buildQualityMenu() {
+					var menu = document.getElementById('cf-quality-menu');
+					var label = document.getElementById('cf-quality-label');
+					menu.innerHTML = '';
+					var levels = vslHls ? vslHls.levels : [];
+
+					function pick(i, name) {
+						if (vslHls) { vslHls.currentLevel = i; vslHls.nextLevel = i; }
+						label.textContent = name;
+						Array.prototype.forEach.call(menu.children, function(c,idx){ c.classList.toggle('active', idx === 0 ? i===-1 : levels[idx-1]===levels[i]); });
+						document.getElementById('cf-quality-wrap').classList.remove('open');
+					}
+
+					var auto = document.createElement('div');
+					auto.className = 'cf-quality-item active';
+					auto.textContent = 'Auto';
+					auto.onclick = function() { pick(-1, 'Auto'); };
+					menu.appendChild(auto);
+
+					// Sort levels high to low
+					var sorted = levels.map(function(l,i){ return {l:l, i:i}; }).sort(function(a,b){ return b.l.height - a.l.height; });
+					sorted.forEach(function(item) {
+						var div = document.createElement('div');
+						div.className = 'cf-quality-item';
+						div.textContent = item.l.height + 'p';
+						div.onclick = (function(idx, name){ return function(){ pick(idx, name); }; })(item.i, item.l.height+'p');
+						menu.appendChild(div);
+					});
+				}
+				document.getElementById('cf-quality-btn').addEventListener('click', function(e) {
+					e.stopPropagation();
+					document.getElementById('cf-quality-wrap').classList.toggle('open');
 				});
-			}
+				document.addEventListener('click', function() {
+					document.getElementById('cf-quality-wrap').classList.remove('open');
+				});
 
-			document.getElementById('yt-thumbnail').addEventListener('click', function () {
-				var iv = document.getElementById('intro-video');
-				if (iv) { iv.pause(); iv.src = ''; }
-				this.style.display = 'none';
-				document.getElementById('yt-player').style.visibility = 'visible';
-				document.getElementById('yt-playing-overlay').style.display = 'block';
-				document.getElementById('yt-controls').style.display = 'flex';
-				if (ytReady) { ytPlayer.playVideo(); } else { ytPendingPlay = true; }
-			});
+				// Volume / mute
+				var volBtn = document.getElementById('cf-vol-btn');
+				var volRange = document.getElementById('cf-vol-range');
+				var volIcon = document.getElementById('cf-vol-icon');
+				var mutedIconPath = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+				var onIconPath = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
+				volBtn.onclick = function() {
+					vslVideo.muted = !vslVideo.muted;
+					volIcon.innerHTML = vslVideo.muted ? mutedIconPath : onIconPath;
+					volRange.value = vslVideo.muted ? 0 : vslVideo.volume * 100;
+				};
+				volRange.oninput = function() {
+					var v = parseInt(this.value);
+					vslVideo.volume = v / 100;
+					vslVideo.muted = v === 0;
+					volIcon.innerHTML = vslVideo.muted ? mutedIconPath : onIconPath;
+				};
 
-			document.getElementById('yt-playing-overlay').addEventListener('click', function () {
-				ytPlayer.pauseVideo();
-			});
+				// Fullscreen
+				document.getElementById('cf-fs-btn').onclick = function() {
+					var w = document.getElementById('cf-player-wrapper');
+					if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+						(w.requestFullscreen || w.webkitRequestFullscreen).call(w);
+					} else {
+						(document.exitFullscreen || document.webkitExitFullscreen).call(document);
+					}
+				};
 
-			document.getElementById('yt-pause-overlay').addEventListener('click', function () {
-				this.style.display = 'none';
-				document.getElementById('yt-playing-overlay').style.display = 'block';
-				ytPlayer.playVideo();
-			});
+				// Click video to toggle play/pause; sync paused/playing state for big play icon
+				vslVideo.addEventListener('click', function() {
+					if (vslVideo.paused) vslVideo.play(); else vslVideo.pause();
+				});
+				vslVideo.addEventListener('play',  function(){ vslWrap.classList.remove('paused'); });
+				vslVideo.addEventListener('pause', function(){ vslWrap.classList.add('paused'); });
 
-			function onYTStateChange(event) {
-				if (event.data === YT.PlayerState.PLAYING) {
-					document.getElementById('yt-pause-overlay').style.display = 'none';
-					document.getElementById('yt-playing-overlay').style.display = 'block';
-				} else if (event.data === YT.PlayerState.PAUSED) {
-					document.getElementById('yt-pause-overlay').style.display = 'block';
-					document.getElementById('yt-playing-overlay').style.display = 'none';
+				// Show controls briefly on playback start/tap
+				function flashControls(ms) {
+					vslWrap.classList.add('show-ctrl');
+					clearTimeout(vslWrap._t);
+					vslWrap._t = setTimeout(function(){ vslWrap.classList.remove('show-ctrl'); }, ms || 2500);
 				}
-			}
+				vslVideo.addEventListener('play', function(){ flashControls(1800); });
 
-			function ytToggleMute() {
-				if (ytPlayer.isMuted()) {
-					ytPlayer.unMute(); ytPlayer.setVolume(ytVolume);
-					document.getElementById('yt-vol-range').value = ytVolume;
-					document.getElementById('yt-vol-icon').innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
-				} else {
-					ytPlayer.mute();
-					document.getElementById('yt-vol-range').value = 0;
-					document.getElementById('yt-vol-icon').innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
-				}
-			}
-
-			function ytSetVolume(val) {
-				ytVolume = parseInt(val);
-				ytPlayer.setVolume(ytVolume);
-				if (ytVolume === 0) { ytPlayer.mute(); document.getElementById('yt-vol-icon').innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>'; }
-				else { ytPlayer.unMute(); document.getElementById('yt-vol-icon').innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>'; }
-			}
-
-			function ytToggleFullscreen() {
-				var w = document.getElementById('yt-player-wrapper');
-				if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-					(w.requestFullscreen || w.webkitRequestFullscreen).call(w);
-				} else {
-					(document.exitFullscreen || document.webkitExitFullscreen).call(document);
-				}
-			}
+				// THUMBNAIL CLICK → reveal custom VSL
+				document.getElementById('cf-thumbnail').addEventListener('click', function () {
+					this.style.display = 'none';
+					vslWrap.style.visibility = 'visible';
+					vslWrap.style.zIndex = '5';
+					vslWrap.classList.add('active');
+					vslVideo.muted = false;
+					volRange.value = 100;
+					vslVideo.play().catch(function() {
+						vslVideo.muted = true;
+						volIcon.innerHTML = mutedIconPath;
+						volRange.value = 0;
+						vslVideo.play();
+					});
+				});
+			})();
 		</script>
 	</div>
 
@@ -1112,40 +1210,6 @@ html, body {
     </div>
 </section>
 
-	<!-- PLACEMENT #2: Energy Transformation Video -->
-	<section class="py-4">
-		<div class="container">
-			<div class="mv-title">
-				<h3>Feel the <span class="mv-highlight">Energy Transformation</span></h3>
-			</div>
-			<div class="mv-player" data-video-id="vid-energy-transform">
-				<span class="mv-badge">Watch this</span>
-				<video muted playsinline preload="metadata">
-					<source src="../videos/3_id-3-type-Energy-Transformation-niche-Vitality-Ant.mp4" type="video/mp4">
-				</video>
-				<div class="mv-play-overlay" onclick="togglePlayPause(this)">
-					<div class="mv-play-btn">
-						<svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
-						<svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-					</div>
-				</div>
-				<div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
-				<button class="mv-mute-btn" aria-label="Toggle sound">
-					<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M11 5L6 9H2v6h4l5 4V5z"/>
-						<line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
-						<line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
-					</svg>
-				</button>
-				<div class="mv-end-cta">
-					<a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
-					<button class="mv-end-replay" onclick="replayVideo('vid-energy-transform')">&#8635; Replay</button>
-				</div>
-			</div>
-			<p class="mv-caption">See what happens when vitality returns (15 sec)</p>
-		</div>
-	</section>
-
 	<!-- 4. TRUST BADGES + CTA -->
 	<section  id="ATC-section2" class="bg-bright ">
 		<div class="container">
@@ -1201,48 +1265,6 @@ html, body {
 		</div>
 	</section>
 
-	<!-- PLACEMENT #4: Science/Mechanism &mdash; Video + 2 images -->
-	<section class="py-4">
-		<div class="container">
-			<div class="mv-title">
-				<h3>How <span class="mv-highlight">Men's Sexual Health</span> Declines After 40</h3>
-			</div>
-			<div class="mv-player" data-video-id="vid-mens-health">
-				<span class="mv-badge">The science</span>
-				<video muted playsinline preload="metadata">
-					<source src="../videos/9_id-9-type-Romantic-Confidence-niche-Relationship-C.mp4" type="video/mp4">
-				</video>
-				<div class="mv-play-overlay" onclick="togglePlayPause(this)">
-					<div class="mv-play-btn">
-						<svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
-						<svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-					</div>
-				</div>
-				<div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
-				<button class="mv-mute-btn" aria-label="Toggle sound">
-					<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M11 5L6 9H2v6h4l5 4V5z"/>
-						<line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
-						<line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
-					</svg>
-				</button>
-				<div class="mv-end-cta">
-					<a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
-					<button class="mv-end-replay" onclick="replayVideo('vid-mens-health')">&#8635; Replay</button>
-				</div>
-			</div>
-			<p class="mv-caption">Understanding the root cause (20 sec)</p>
-			<div class="row justify-content-center mt-3">
-				<div class="col-12 col-md-5 mb-3">
-					<img src="../creative-assets/doctor-comparison/demoonscreen.png" class="img-fluid rounded" alt="Men's Health Science" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-				</div>
-				<div class="col-12 col-md-5">
-					<img src="../creative-assets/hook-clips/28_id-28-imagereference-1-bottles-vigorpng-prompt-Ext.jpg" class="img-fluid rounded" alt="Testosterone Decline After 40" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- 6. AS SEEN ON + SYMPTOMS -->
 	<!-- <section class="bg-light">
 		<div class="container">
@@ -1256,52 +1278,6 @@ html, body {
 			</div>
 		</div>
 	</section> -->
-
-	<!-- PLACEMENT #7: Symptoms re-agitation -->
-	<div class="container py-3">
-		<div class="row justify-content-center">
-			<div class="col-12 col-md-6 mb-3">
-				<img src="../creative-assets/mens-health-awareness/65_id-65-imagereference-1-bottles-vigorpng-prompt-A-m.jpg" class="img-fluid rounded" alt="Men's Health Symptoms" style="border-radius: 12px;">
-			</div>
-			<div class="col-12 col-md-6">
-				<img src="../creative-assets/hook-clips/TopTierDopamineHijacker.jpg" class="img-fluid rounded" alt="Symptoms visualization" style="border-radius: 12px;">
-			</div>
-		</div>
-	</div>
-
-	<!-- PLACEMENT #8: Video Testimonial -->
-	<section class="py-4">
-		<div class="container">
-			<div class="mv-title">
-				<h3>Real Men, <span class="mv-highlight">Real Results</span> &mdash; Hear His Story</h3>
-			</div>
-			<div class="mv-player" data-video-id="vid-testimonial">
-				<span class="mv-badge">Real customer</span>
-				<video muted playsinline preload="metadata">
-					<source src="../videos/12_id-12-type-Testimonial-Setup-niche-Social-Proof-im.mp4" type="video/mp4">
-				</video>
-				<div class="mv-play-overlay" onclick="togglePlayPause(this)">
-					<div class="mv-play-btn">
-						<svg class="mv-play-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="6,3 20,12 6,21"/></svg>
-						<svg class="mv-pause-icon" viewBox="0 0 24 24" fill="#fff" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-					</div>
-				</div>
-				<div class="mv-progress-bar"><div class="mv-progress-fill"></div></div>
-				<button class="mv-mute-btn" aria-label="Toggle sound">
-					<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M11 5L6 9H2v6h4l5 4V5z"/>
-						<line x1="23" y1="9" x2="17" y2="15" class="mv-mute-x1"/>
-						<line x1="17" y1="9" x2="23" y2="15" class="mv-mute-x2"/>
-					</svg>
-				</button>
-				<div class="mv-end-cta">
-					<a href="#buynow" class="mv-end-cta-btn" onclick="scrollToCards();return false;">See Special Pricing &rarr;</a>
-					<button class="mv-end-replay" onclick="replayVideo('vid-testimonial')">&#8635; Replay</button>
-				</div>
-			</div>
-			<p class="mv-caption">"I feel like a different man" &mdash; PowerX Pro&trade; customer</p>
-		</div>
-	</section>
 
 	<!-- PLACEMENT #9: Before/After Transformation Grid -->
 	<section class="py-4">
@@ -1383,8 +1359,18 @@ html, body {
 
 	<!-- Text Version Link -->
 	<div style="width:100%; display:flex; justify-content:center; padding:8px 0; margin:0;">
-		<p style="font-size:14px; color:#666; margin:0;"><strong>Video not working?</strong> <em>In a hurry?</em> <a href="../best/go/go.html" style="color:#2563eb;">Click here to read the text version.</a></p>
+		<p style="font-size:14px; color:#666; margin:0;"><strong>Video not working?</strong> <em>In a hurry?</em> <a href="#" id="reveal-text-version" style="color:#2563eb;">Click here to read the text version.</a></p>
 	</div>
+	<script>
+	document.getElementById('reveal-text-version').addEventListener('click', function(e) {
+		e.preventDefault();
+		var sections = document.getElementById('magicalSections');
+		if (sections) {
+			sections.style.display = 'block';
+			sections.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	});
+	</script>
 
 	<!-- 8. REFERENCES + FOOTER -->
 <section id="footnote" class="py-2 pb-lg-4" style="width:100%; position:relative;">
