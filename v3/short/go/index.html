@@ -837,43 +837,15 @@ html, body { overflow-x: hidden; }
 </style>
 
 <body>
-	<!-- Skeleton Loader (hidden when critical assets preloaded) -->
+	<!-- Minimal top loading bar (auto-hides on DOMContentLoaded, non-blocking) -->
 	<style>
-		@keyframes pgskShimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-		#page-skeleton { position:fixed; inset:0; z-index:99999; background:#fff; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:30px 16px; box-sizing:border-box; transition:opacity 0.4s ease; }
-		#page-skeleton.hidden { opacity:0; pointer-events:none; }
-		#page-skeleton .sk-logo { width:120px; height:44px; border-radius:8px; background:#111; margin-bottom:20px; }
-		#page-skeleton .sk-block { width:100%; max-width:720px; border-radius:10px; margin-bottom:14px; background:linear-gradient(90deg,#e8e8e8 25%,#f5f5f5 50%,#e8e8e8 75%); background-size:200% 100%; animation:pgskShimmer 1.5s infinite; }
-		#page-skeleton .sk-headline { height:46px; max-width:420px; }
-		#page-skeleton .sk-subhead { height:22px; max-width:320px; margin-bottom:28px; }
-		#page-skeleton .sk-hero { display:flex; gap:18px; max-width:820px; width:100%; margin-bottom:18px; }
-		#page-skeleton .sk-hero > div { border-radius:12px; background:linear-gradient(90deg,#e8e8e8 25%,#f5f5f5 50%,#e8e8e8 75%); background-size:200% 100%; animation:pgskShimmer 1.5s infinite; }
-		#page-skeleton .sk-hero-img { flex:1; aspect-ratio:1/1; max-width:360px; }
-		#page-skeleton .sk-hero-text { flex:1; display:flex; flex-direction:column; gap:10px; }
-		#page-skeleton .sk-hero-text > div { height:20px; border-radius:8px; background:linear-gradient(90deg,#e8e8e8 25%,#f5f5f5 50%,#e8e8e8 75%); background-size:200% 100%; animation:pgskShimmer 1.5s infinite; }
-		#page-skeleton .sk-hero-text > div:nth-child(1) { height:32px; width:70%; }
-		#page-skeleton .sk-hero-text > div:nth-child(2) { height:18px; width:40%; }
-		#page-skeleton .sk-hero-text > div:nth-child(n+3) { height:14px; }
-		#page-skeleton .sk-hero-text > div:last-child { height:46px; width:80%; border-radius:30px; margin-top:8px; }
-		#page-skeleton .sk-video { height:260px; max-width:820px; }
-		@media (max-width:768px) {
-			#page-skeleton .sk-hero { flex-direction:column; }
-			#page-skeleton .sk-hero-img { max-width:100%; }
-			#page-skeleton .sk-video { height:200px; }
-		}
+		#pg-loadbar { position:fixed; top:0; left:0; right:0; height:3px; z-index:9999; background:transparent; pointer-events:none; transition:opacity 0.25s ease; }
+		#pg-loadbar::after { content:""; display:block; height:100%; width:0%; background:linear-gradient(90deg,#c8922a,#e8b84a,#c8922a); animation:pgLoadFill 1.2s ease-out forwards; box-shadow:0 0 8px rgba(200,146,42,0.6); }
+		#pg-loadbar.done { opacity:0; }
+		@keyframes pgLoadFill { 0% { width:0%; } 60% { width:70%; } 100% { width:100%; } }
 	</style>
-	<div id="page-skeleton" aria-hidden="true">
-		<div class="sk-logo"></div>
-		<div class="sk-block sk-headline"></div>
-		<div class="sk-block sk-subhead"></div>
-		<div class="sk-hero">
-			<div class="sk-hero-img"></div>
-			<div class="sk-hero-text">
-				<div></div><div></div><div></div><div></div><div></div><div></div>
-			</div>
-		</div>
-		<div class="sk-block sk-video"></div>
-	</div>
+	<div id="pg-loadbar"></div>
+	<script>document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('pg-loadbar');if(b){setTimeout(function(){b.classList.add('done');setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);},300);},200);}});</script>
 
 	<!-- Page Content -->
 	<button class="d-none d-lg-block trynow"><a class="action" style="color:#000;" href="#buynow" onclick="scrollToCards();return false;"> TRY NOW </a></button>
@@ -2736,101 +2708,32 @@ function dismissMobileToast(){var t=document.getElementById('mobile-toast');if(t
 (function(){var t=document.getElementById('mobile-toast');if(!t)return;window.__mtDismissedAt=0;var ah=null;window.addEventListener('scroll',function(){if(window.innerWidth>=992)return;if(window.__mtDismissedAt&&(Date.now()-window.__mtDismissedAt)<120000)return;var p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;if(p>=10&&p<50){if(t.style.display==='none'||!t.style.display){t.style.display='block';if(ah)clearTimeout(ah);ah=setTimeout(function(){t.style.display='none';window.__mtDismissedAt=Date.now();},8000);}}});})();
 function dismissDesktopToast(){var t=document.getElementById('desktop-toast');if(t)t.style.display='none';window.__dtDismissedAt=Date.now();}
 (function(){var t=document.getElementById('desktop-toast');if(!t)return;var st=Date.now();window.__dtDismissedAt=0;var ah=null;window.addEventListener('scroll',function(){if(window.innerWidth<992)return;if(window.__dtDismissedAt&&(Date.now()-window.__dtDismissedAt)<120000)return;var el=(Date.now()-st)/1000;var p=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;if(el>=45&&p>=15&&p<60){var sb=document.getElementById('sticky-cta-desktop');var sv=sb&&sb.style.display==='block';if((t.style.display==='none'||!t.style.display)&&!sv){t.style.display='block';if(ah)clearTimeout(ah);ah=setTimeout(function(){t.style.display='none';window.__dtDismissedAt=Date.now();},12000);}}});})();
-// ============ Preload Critical Assets + Skeleton Hide ============
+// ============ Lightweight idle-time preload (only when browser is idle) ============
 (function() {
-	var CF_BASE = 'https://customer-8ocoyclfhfvlpft9.cloudflarestream.com/';
-	var FIRST_VIDEO_UID = 'b78b539dbb8fcbfdf9805df65f85d293';
+	// Defer everything until after page is interactive
+	function idlePreload() {
+		var CF_BASE = 'https://customer-8ocoyclfhfvlpft9.cloudflarestream.com/';
 
-	var heroImages = [
-		'../../Images/logo.png',
-		'../../creative-assets/unboxing/47_id-47-imagereference-1-bottles-vigorpng-prompt-Clo.jpg',
-		'../../creative-assets/unboxing/52_id-52-imagereference-1-bottles-vigorpng-prompt-Cle.jpg',
-		'../../creative-assets/doctor-comparison/53_id-53-imagereference-1-bottles-vigorpng-prompt-A-c.jpg',
-		'../../creative-assets/banner-ads/7_id-7-imagereference-1-bottles-vigorpng-prompt-Powe.jpg',
-		'../../Images/star-4.5.svg',
-		'../../Images/socials.webp'
-	];
-
-	var notificationImages = [
-		'../../Images/1-bottles-vigor.webp',
-		'../../Images/2-bottles-vigor.webp',
-		'../../Images/3-bottles-vigor.webp',
-		'../../Images/4-bottles-vigor.webp',
-		'../../Images/6-bottles-vigor.webp',
-		'../../Images/7-bottles-vigor.webp'
-	];
-
-	var cfThumbnails = [
-		'b78b539dbb8fcbfdf9805df65f85d293',
-		'4e5a156f66e23097cfcfe994fbfe0132',
-		'b061ab37f8545f39b6789d8dc23afa62',
-		'5b1d25bedb5f934a705acb28b5ac2c3c',
-		'9f467f357a0ab4c57b6d6214a9899d67',
-		'892523387aac74b6af18be29d4fb1e48',
-		'ba587f8497f536a281cec4d928bb5c55',
-		'3dac6f619ace8771e59228de1307db91'
-	].map(function(uid) { return CF_BASE + uid + '/thumbnails/thumbnail.jpg?time=5s'; });
-
-	var allImages = heroImages.concat(notificationImages).concat(cfThumbnails);
-	var imagesLoaded = 0;
-	var firstVideoReady = false;
-	var skeletonHidden = false;
-
-	function hideSkeleton() {
-		if (skeletonHidden) return;
-		skeletonHidden = true;
-		var sk = document.getElementById('page-skeleton');
-		if (!sk) return;
-		sk.classList.add('hidden');
-		setTimeout(function() { if (sk.parentNode) sk.parentNode.removeChild(sk); }, 500);
+		// Delayed notification images + CF thumbnails only — no video preload, no critical-path work
+		var lowPriority = [
+			'../../Images/1-bottles-vigor.webp',
+			'../../Images/2-bottles-vigor.webp',
+			'../../Images/3-bottles-vigor.webp',
+			'../../Images/4-bottles-vigor.webp',
+			'../../Images/6-bottles-vigor.webp',
+			'../../Images/7-bottles-vigor.webp'
+		];
+		lowPriority.forEach(function(src) {
+			var img = new Image();
+			img.src = src;
+		});
 	}
 
-	function checkReady() {
-		if (imagesLoaded >= allImages.length && firstVideoReady) hideSkeleton();
+	if ('requestIdleCallback' in window) {
+		requestIdleCallback(idlePreload, { timeout: 3000 });
+	} else {
+		setTimeout(idlePreload, 2000);
 	}
-
-	// Preload every image in parallel
-	allImages.forEach(function(src) {
-		var img = new Image();
-		img.onload = img.onerror = function() { imagesLoaded++; checkReady(); };
-		img.src = src;
-	});
-
-	// Preload first video via hls.js (buffers in background)
-	function preloadFirstVideo() {
-		if (!window.Hls || !Hls.isSupported()) { firstVideoReady = true; checkReady(); return; }
-		try {
-			var hiddenVideo = document.createElement('video');
-			hiddenVideo.muted = true;
-			hiddenVideo.preload = 'auto';
-			hiddenVideo.style.cssText = 'position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;';
-			document.body.appendChild(hiddenVideo);
-			var hls = new Hls({ autoStartLoad: true, maxBufferLength: 120 }); // buffer up to 2 min
-			hls.loadSource(CF_BASE + FIRST_VIDEO_UID + '/manifest/video.m3u8');
-			hls.attachMedia(hiddenVideo);
-			// Consider ready after manifest + first fragment load
-			hls.on(Hls.Events.FRAG_LOADED, function onFrag() {
-				firstVideoReady = true;
-				hls.off(Hls.Events.FRAG_LOADED, onFrag);
-				checkReady();
-			});
-			// Fallback if FRAG_LOADED never fires
-			setTimeout(function() { firstVideoReady = true; checkReady(); }, 4000);
-		} catch (e) {
-			firstVideoReady = true;
-			checkReady();
-		}
-	}
-
-	// Load hls.js dynamically, then preload first video
-	var hlsScript = document.createElement('script');
-	hlsScript.src = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js';
-	hlsScript.onload = preloadFirstVideo;
-	hlsScript.onerror = function() { firstVideoReady = true; checkReady(); };
-	document.head.appendChild(hlsScript);
-
-	// Hard fallback: hide skeleton after 6 seconds no matter what
-	setTimeout(hideSkeleton, 6000);
 })();
 
 // Cloudflare Stream: click poster to swap in iframe with autoplay (skip first 3s static intro)
