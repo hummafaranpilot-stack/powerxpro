@@ -1014,15 +1014,43 @@ html, body {
 					volIcon.innerHTML = vslVideo.muted ? mutedIconPath : onIconPath;
 				};
 
-				// Fullscreen
+				// Fullscreen (+ auto-rotate to landscape on mobile)
+				function isMobileDevice() {
+					return window.matchMedia && window.matchMedia('(max-width: 991px), (pointer: coarse)').matches;
+				}
+				function lockLandscape() {
+					if (!isMobileDevice()) return;
+					try {
+						if (screen.orientation && screen.orientation.lock) {
+							var p = screen.orientation.lock('landscape');
+							if (p && p.catch) p.catch(function(){});
+						}
+					} catch (e) {}
+				}
+				function unlockOrientation() {
+					try {
+						if (screen.orientation && screen.orientation.unlock) screen.orientation.unlock();
+					} catch (e) {}
+				}
 				document.getElementById('cf-fs-btn').onclick = function() {
 					var w = document.getElementById('cf-player-wrapper');
 					if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-						(w.requestFullscreen || w.webkitRequestFullscreen).call(w);
+						var req = w.requestFullscreen || w.webkitRequestFullscreen;
+						var p = req.call(w);
+						if (p && p.then) p.then(lockLandscape).catch(function(){});
+						else lockLandscape();
 					} else {
 						(document.exitFullscreen || document.webkitExitFullscreen).call(document);
 					}
 				};
+				// Release rotation lock when leaving fullscreen (any source: Esc key, system back, etc.)
+				['fullscreenchange', 'webkitfullscreenchange'].forEach(function(ev) {
+					document.addEventListener(ev, function() {
+						if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+							unlockOrientation();
+						}
+					});
+				});
 
 				// Click video to toggle play/pause; sync paused/playing state for big play icon
 				vslVideo.addEventListener('click', function() {
