@@ -847,6 +847,21 @@ html, body {
 
 			/* Fullscreen mode */
 			#cf-player-wrapper:fullscreen, #cf-player-wrapper:-webkit-full-screen { padding-top:0 !important; height:100vh !important; }
+			/* Pseudo-fullscreen for iOS (avoids native player). Also used on Android. */
+			#cf-player-wrapper.pseudo-fullscreen {
+				position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+				width: 100% !important; height: 100% !important; max-width: none !important;
+				padding: 0 !important; padding-top: 0 !important; margin: 0 !important;
+				z-index: 99999 !important; background: #000 !important; aspect-ratio: auto !important;
+			}
+			@media (orientation: portrait) {
+				#cf-player-wrapper.pseudo-fullscreen {
+					width: 100vh !important; height: 100vw !important;
+					top: 50% !important; left: 50% !important; right: auto !important; bottom: auto !important;
+					transform: translate(-50%, -50%) rotate(90deg);
+					transform-origin: center center;
+				}
+			}
 		</style>
 		<div id="cf-player-wrapper">
 
@@ -1018,12 +1033,12 @@ html, body {
 					volIcon.innerHTML = vslVideo.muted ? mutedIconPath : onIconPath;
 				};
 
-				// Fullscreen (+ auto-rotate to landscape on mobile)
+				// Fullscreen: desktop uses real Fullscreen API, mobile uses pseudo-fullscreen (CSS rotation).
+				// Pseudo-fullscreen avoids iOS native player (scrubber, skip 10s, etc.) and keeps our custom controls.
 				function isMobileDevice() {
 					return window.matchMedia && window.matchMedia('(max-width: 991px), (pointer: coarse)').matches;
 				}
-				function lockLandscape() {
-					if (!isMobileDevice()) return;
+				function tryLockLandscape() {
 					try {
 						if (screen.orientation && screen.orientation.lock) {
 							var p = screen.orientation.lock('landscape');
@@ -1031,61 +1046,44 @@ html, body {
 						}
 					} catch (e) {}
 				}
-				function unlockOrientation() {
+				function tryUnlockOrientation() {
 					try {
 						if (screen.orientation && screen.orientation.unlock) screen.orientation.unlock();
 					} catch (e) {}
 				}
-				function isInFullscreen() {
+				var wrapperEl = document.getElementById('cf-player-wrapper');
+				function inPseudoFullscreen() { return wrapperEl.classList.contains('pseudo-fullscreen'); }
+				function inRealFullscreen() {
 					return document.fullscreenElement || document.webkitFullscreenElement ||
-					       document.mozFullScreenElement || document.msFullscreenElement ||
-					       (vslVideo && vslVideo.webkitDisplayingFullscreen);
+					       document.mozFullScreenElement || document.msFullscreenElement;
 				}
 				function enterFullscreen() {
-					var wrapper = document.getElementById('cf-player-wrapper');
-					var mobile = isMobileDevice();
-					if (mobile && vslVideo && typeof vslVideo.webkitEnterFullscreen === 'function' &&
-					    !wrapper.requestFullscreen && !wrapper.webkitRequestFullscreen) {
-						try { vslVideo.webkitEnterFullscreen(); } catch (e) {}
-						return;
+					if (isMobileDevice()) {
+						wrapperEl.classList.add('pseudo-fullscreen');
+						document.body.style.overflow = 'hidden';
+						tryLockLandscape();
+					} else {
+						var req = wrapperEl.requestFullscreen || wrapperEl.webkitRequestFullscreen;
+						if (req) try { req.call(wrapperEl); } catch (e) {}
 					}
-					var target = wrapper;
-					var req = wrapper.requestFullscreen || wrapper.webkitRequestFullscreen ||
-					          wrapper.mozRequestFullScreen || wrapper.msRequestFullscreen;
-					if (!req && vslVideo) {
-						target = vslVideo;
-						req = vslVideo.requestFullscreen || vslVideo.webkitRequestFullscreen ||
-						      vslVideo.webkitEnterFullscreen || vslVideo.mozRequestFullScreen || vslVideo.msRequestFullscreen;
-					}
-					if (!req) return;
-					try {
-						var p = req.call(target);
-						if (p && p.then) p.then(lockLandscape).catch(function(){ lockLandscape(); });
-						else lockLandscape();
-					} catch (e) {}
 				}
 				function exitFullscreen() {
-					try {
+					if (inPseudoFullscreen()) {
+						wrapperEl.classList.remove('pseudo-fullscreen');
+						document.body.style.overflow = '';
+						tryUnlockOrientation();
+					} else if (inRealFullscreen()) {
 						if (document.exitFullscreen) document.exitFullscreen();
 						else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-						else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
-						else if (document.msExitFullscreen) document.msExitFullscreen();
-						else if (vslVideo && vslVideo.webkitExitFullscreen) vslVideo.webkitExitFullscreen();
-					} catch (e) {}
+					}
 				}
 				document.getElementById('cf-fs-btn').onclick = function() {
-					if (!isInFullscreen()) enterFullscreen();
-					else exitFullscreen();
+					if (inPseudoFullscreen() || inRealFullscreen()) exitFullscreen();
+					else enterFullscreen();
 				};
-				['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'].forEach(function(ev) {
-					document.addEventListener(ev, function() {
-						if (!isInFullscreen()) unlockOrientation();
-					});
+				['fullscreenchange', 'webkitfullscreenchange'].forEach(function(ev) {
+					document.addEventListener(ev, function() { if (!inRealFullscreen()) tryUnlockOrientation(); });
 				});
-				if (vslVideo) {
-					vslVideo.addEventListener('webkitendfullscreen', unlockOrientation);
-					vslVideo.addEventListener('webkitbeginfullscreen', lockLandscape);
-				}
 
 				// Click video to toggle play/pause; sync paused/playing state for big play icon
 				vslVideo.addEventListener('click', function() {
