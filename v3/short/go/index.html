@@ -837,15 +837,123 @@ html, body { overflow-x: hidden; }
 </style>
 
 <body>
-	<!-- Minimal top loading bar (auto-hides on DOMContentLoaded, non-blocking) -->
-	<style>
-		#pg-loadbar { position:fixed; top:0; left:0; right:0; height:3px; z-index:9999; background:transparent; pointer-events:none; transition:opacity 0.25s ease; }
-		#pg-loadbar::after { content:""; display:block; height:100%; width:0%; background:linear-gradient(90deg,#c8922a,#e8b84a,#c8922a); animation:pgLoadFill 1.2s ease-out forwards; box-shadow:0 0 8px rgba(200,146,42,0.6); }
-		#pg-loadbar.done { opacity:0; }
-		@keyframes pgLoadFill { 0% { width:0%; } 60% { width:70%; } 100% { width:100%; } }
-	</style>
-	<div id="pg-loadbar"></div>
-	<script>document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('pg-loadbar');if(b){setTimeout(function(){b.classList.add('done');setTimeout(function(){if(b.parentNode)b.parentNode.removeChild(b);},300);},200);}});</script>
+<!-- Top progress bar + skeleton overlay (fades on critical-image load + 4s fallback) -->
+<style>
+	@keyframes pgShimmer { 0%{background-position:-200% 0;} 100%{background-position:200% 0;} }
+	#pg-loader { position:fixed; inset:0; z-index:100000; background:#fff; display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 20px; overflow:hidden; transition:opacity .45s ease, visibility .45s ease; }
+	#pg-loader.hidden { opacity:0; visibility:hidden; }
+	#pg-progress { position:fixed; top:0; left:0; right:0; height:3px; z-index:100001; background:#1a1a1a; pointer-events:none; }
+	#pg-progress-bar { height:100%; width:0%; background:linear-gradient(90deg,#c8922a,#e8b84a,#c8922a); background-size:200% 100%; animation:pgShimmer 1.4s linear infinite; box-shadow:0 0 10px rgba(200,146,42,0.7); transition:width .15s linear; }
+	.pg-sk { background:linear-gradient(90deg,#eef1f6 25%,#f6f8fb 50%,#eef1f6 75%); background-size:200% 100%; animation:pgShimmer 1.5s linear infinite; border-radius:10px; }
+	.pg-sk-logo { width:120px; height:60px; border-radius:10px; }
+	.pg-sk-h1   { width:min(560px,92%); height:36px; margin-top:4px; }
+	.pg-sk-h2   { width:min(420px,80%); height:22px; }
+	.pg-sk-hero { width:min(900px,95%); aspect-ratio:16/9; border-radius:14px; margin-top:8px; }
+	.pg-sk-row  { width:min(1080px,95%); display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:12px; }
+	.pg-sk-card { height:160px; border-radius:14px; }
+	@media (max-width:768px) { .pg-sk-row { grid-template-columns:1fr 1fr; } .pg-sk-card { height:130px; } }
+	@media (max-width:480px) { .pg-sk-row { grid-template-columns:1fr; } }
+	#pg-witty { --lh:52px; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:min(560px,94%); height:calc(var(--lh) * 3); overflow:hidden; pointer-events:none; z-index:2; -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,1) 38%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.5) 100%); mask-image:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,1) 38%, rgba(0,0,0,1) 62%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.5) 100%); font-family:'Montserrat',sans-serif; font-weight:700; font-size:20px; color:#000; }
+	.pg-witty-track { display:flex; flex-direction:column; animation:pgWittyScroll 15s ease-in-out infinite; }
+	.pg-witty-item { height:var(--lh); display:flex; align-items:center; justify-content:center; gap:12px; line-height:1; white-space:nowrap; }
+	.pg-witty-icon { width:24px; height:24px; flex:0 0 24px; color:#c8922a; }
+	@keyframes pgWittyScroll {
+		0%, 15%   { transform: translateY(0); }
+		20%, 35%  { transform: translateY(calc(var(--lh) * -1)); }
+		40%, 55%  { transform: translateY(calc(var(--lh) * -2)); }
+		60%, 75%  { transform: translateY(calc(var(--lh) * -3)); }
+		80%, 95%  { transform: translateY(calc(var(--lh) * -4)); }
+		100%      { transform: translateY(calc(var(--lh) * -5)); }
+	}
+</style>
+<div id="pg-loader" role="status" aria-label="Loading">
+	<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="kw-witty-tick" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M4 12.5l5 5L20 6.5"/></symbol></svg>
+	<div id="pg-progress"><div id="pg-progress-bar"></div></div>
+	<div class="pg-sk pg-sk-logo"></div>
+	<div class="pg-sk pg-sk-h1"></div>
+	<div class="pg-sk pg-sk-h2"></div>
+	<div class="pg-sk pg-sk-hero"></div>
+	<div class="pg-sk-row">
+		<div class="pg-sk pg-sk-card"></div>
+		<div class="pg-sk pg-sk-card"></div>
+		<div class="pg-sk pg-sk-card"></div>
+	</div>
+	<div id="pg-witty" aria-hidden="true">
+		<div class="pg-witty-track">
+			<div class="pg-witty-item"><svg class="pg-witty-icon"><use href="#kw-witty-tick"/></svg>60-day money-back guarantee</div>
+			<div class="pg-witty-item"><svg class="pg-witty-icon"><use href="#kw-witty-tick"/></svg>Welcome to PowerX Pro!</div>
+			<div class="pg-witty-item"><svg class="pg-witty-icon"><use href="#kw-witty-tick"/></svg>Securing your connection&hellip;</div>
+			<div class="pg-witty-item"><svg class="pg-witty-icon"><use href="#kw-witty-tick"/></svg>Trusted by 50,000+ customers</div>
+			<div class="pg-witty-item"><svg class="pg-witty-icon"><use href="#kw-witty-tick"/></svg>Doctor-formulated &bull; 100% natural</div>
+			<div class="pg-witty-item"><svg class="pg-witty-icon"><use href="#kw-witty-tick"/></svg>60-day money-back guarantee</div>
+			<div class="pg-witty-item"><svg class="pg-witty-icon"><use href="#kw-witty-tick"/></svg>Welcome to PowerX Pro!</div>
+			<div class="pg-witty-item"><svg class="pg-witty-icon"><use href="#kw-witty-tick"/></svg>Securing your connection&hellip;</div>
+		</div>
+	</div>
+</div>
+<script>
+(function() {
+	var bar = document.getElementById('pg-progress-bar');
+	var loader = document.getElementById('pg-loader');
+	var startTime = Date.now();
+	var loaded = 0, needed = 5, dismissed = false, crawlTimer;
+
+	function update() {
+		var imgPct = needed ? (loaded / needed) * 100 : 100;
+		var timePct = Math.min((Date.now() - startTime) / 4000 * 90, 90);
+		var pct = Math.max(imgPct, timePct);
+		bar.style.width = Math.min(pct, 99) + '%';
+		if (loaded >= needed) dismiss();
+	}
+
+	function dismiss() {
+		if (dismissed) return;
+		dismissed = true;
+		clearInterval(crawlTimer);
+		bar.style.width = '100%';
+		setTimeout(function() {
+			loader.classList.add('hidden');
+			setTimeout(function() { if (loader.parentNode) loader.parentNode.removeChild(loader); }, 500);
+		}, 200);
+	}
+
+	function trackImg(el) {
+		if (!el || el.tagName !== 'IMG') return false;
+		if (el.complete && el.naturalWidth > 0) { loaded++; return true; }
+		el.addEventListener('load', function() { loaded++; }, { once: true });
+		el.addEventListener('error', function() { loaded++; }, { once: true });
+		return true;
+	}
+
+	function init() {
+		var sels = [
+			'img[src*="logo" i], img[alt*="logo" i]',
+			'img[src*="bottle" i]',
+			'img[src*="guarantee" i]',
+			'img[src*="hero" i], .hero img, [class*="hero"] img',
+			'img'
+		];
+		var found = 0, used = [];
+		for (var i = 0; i < sels.length && found < 5; i++) {
+			var nodes = document.querySelectorAll(sels[i]);
+			for (var j = 0; j < nodes.length && found < 5; j++) {
+				if (used.indexOf(nodes[j]) !== -1) continue;
+				if (trackImg(nodes[j])) { used.push(nodes[j]); found++; }
+			}
+		}
+		needed = Math.max(found, 1);
+		crawlTimer = setInterval(update, 80);
+	}
+
+	if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+	else init();
+
+	// Hard 4s fallback
+	setTimeout(function() {
+		if (!dismissed) { loaded = needed; update(); dismiss(); }
+	}, 4000);
+})();
+</script>
 
 	<!-- Page Content -->
 	<button class="d-none d-lg-block trynow"><a class="action" style="color:#000;" href="#buynow" onclick="scrollToCards();return false;"> TRY NOW </a></button>
